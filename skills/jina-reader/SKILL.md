@@ -36,6 +36,7 @@ Search with Tavily first, then open top results through Jina Reader and return s
 
 ```bash
 python3 skills/jina-reader/scripts/search_fetch.py "OpenClaw 2026" --top 3 --max-chars 8000
+python3 skills/jina-reader/scripts/search_fetch.py "OpenClaw 2026" --top 3 --clean --summary --summary-chars 500
 ```
 
 ## Output behavior
