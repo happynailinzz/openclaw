@@ -4,7 +4,8 @@
 """
 每天晨报（郑州天气 + 农历/节假日/五行穿衣）
 - 天气：wttr.in JSON
-- 农历/节假日/五行：读取用户提供的年度 JSON
+- 农历/节假日：读取用户提供的年度 JSON
+- 五行穿衣：优先按“日地支五行”推导（用户指定口径）
 - 文案风格：公众号口吻 + emoji + 今日宜忌
 """
 
@@ -19,6 +20,37 @@ from pathlib import Path
 CITY = "郑州"
 TZ = timezone(timedelta(hours=8))  # Asia/Shanghai
 WUXING_JSON = Path("/root/daily_wuxing_2026.json")
+
+# 五行 -> 颜色
+WUXING_COLORS = {
+    "木": ["绿", "青", "翠绿", "浅绿"],
+    "火": ["红", "粉", "紫", "橙红"],
+    "土": ["黄", "咖", "棕", "褐", "橙黄"],
+    "金": ["白", "银", "灰", "米白", "乳白"],
+    "水": ["黑", "蓝", "深蓝", "藏蓝"],
+}
+
+# 相生 / 相克
+SHENG = {"木": "火", "火": "土", "土": "金", "金": "水", "水": "木"}
+KE = {"金": "木", "木": "土", "土": "水", "水": "火", "火": "金"}
+SHENG_INV = {v: k for k, v in SHENG.items()}  # 谁生我
+KE_INV = {v: k for k, v in KE.items()}  # 谁克我
+
+# 地支 -> 五行（用户指定口径）
+BRANCH_TO_WUXING = {
+    "子": "水",
+    "丑": "土",
+    "寅": "木",
+    "卯": "木",
+    "辰": "土",
+    "巳": "火",
+    "午": "火",
+    "未": "土",
+    "申": "金",
+    "酉": "金",
+    "戌": "土",
+    "亥": "水",
+}
 
 
 def fetch_weather(city: str) -> dict:
@@ -89,28 +121,74 @@ def load_wuxing_record(target_date: str) -> dict | None:
     return None
 
 
-def wuxing_summary(record: dict) -> tuple[list[str], str]:
+def get_day_branch_wuxing(target_date: str) -> tuple[str | None, str | None, str]:
+    """
+    返回: (日地支, 当日五行, 口径说明)
+    优先：日地支五行；回退：JSON中的日干五行
+    """
+    try:
+        from lunar_python import Solar
+
+        y, m, d = [int(x) for x in target_date.split("-")]
+        lunar = Solar.fromYmd(y, m, d).getLunar()
+        day_zhi = lunar.getDayZhi()
+        day_wuxing = BRANCH_TO_WUXING.get(day_zhi)
+        if day_wuxing:
+            return day_zhi, day_wuxing, "日地支"
+    except Exception:
+        pass
+
+    # 回退：用年度文件里已有的日干五行
+    rec = load_wuxing_record(target_date)
+    if rec:
+        wx = rec.get("wuxing", {})
+        return None, wx.get("day_wuxing"), "日干(回退)"
+
+    return None, None, "未知"
+
+
+def build_5_tiers(day_wuxing: str) -> dict:
+    """
+    按用户规则固定五档：
+    1) 贵人色：被当日五行生（X生Y中的Y）
+    2) 合作色：同当日五行（X）
+    3) 进财色：克当日五行（克X者）
+    4) 消耗色：生当日五行（生X者）
+    5) 不利色：被当日五行克（X克者）
+    """
+    guiren = SHENG[day_wuxing]      # 被X生
+    hezuo = day_wuxing              # 同X
+    jincai = KE_INV[day_wuxing]     # 克X
+    xiaohao = SHENG_INV[day_wuxing] # 生X
+    buli = KE[day_wuxing]           # 被X克
+
+    return {
+        "贵人色": {"element": guiren, "colors": WUXING_COLORS[guiren]},
+        "合作色": {"element": hezuo, "colors": WUXING_COLORS[hezuo]},
+        "进财色": {"element": jincai, "colors": WUXING_COLORS[jincai]},
+        "消耗色": {"element": xiaohao, "colors": WUXING_COLORS[xiaohao]},
+        "不利色": {"element": buli, "colors": WUXING_COLORS[buli]},
+    }
+
+
+def wuxing_summary(record: dict, target_date: str) -> tuple[list[str], str]:
     lunar = record.get("lunar", "-")
     solar_term = record.get("solar_term")
     holiday = record.get("holiday")
     rest_day = record.get("rest_day")
 
-    wx = record.get("wuxing", {})
-    day_stem = wx.get("day_stem", "-")
-    day_wx = wx.get("day_wuxing", "-")
-    guide = wx.get("guide", {})
+    day_zhi, day_wuxing, basis = get_day_branch_wuxing(target_date)
+    if not day_wuxing:
+        day_wuxing = "木"  # 极端兜底
+        basis = "默认兜底"
 
-    def g(name: str) -> tuple[str, str]:
-        item = guide.get(name, {})
-        element = item.get("element", "-")
-        colors = item.get("colors", [])
-        return element, "、".join(colors)
+    tiers = build_5_tiers(day_wuxing)
 
-    guiren_el, guiren_colors = g("贵人")
-    bijian_el, bijian_colors = g("比肩")
-    jincai_el, jincai_colors = g("进财")
-    xiaohao_el, xiaohao_colors = g("消耗")
-    jiyong_el, jiyong_colors = g("忌用")
+    def line(name: str) -> str:
+        item = tiers[name]
+        return f"- {name}：{item['element']}（{'、'.join(item['colors'])}）"
+
+    basis_text = f"{basis}{'（' + day_zhi + '）' if day_zhi else ''}"
 
     parts = [
         "📅 今日黄历",
@@ -118,17 +196,19 @@ def wuxing_summary(record: dict) -> tuple[list[str], str]:
         f"- 节气：{solar_term if solar_term else '无'}",
         f"- 节假日：{holiday if holiday else '无'}",
         f"- 作息：{'休息日' if rest_day else '工作日'}",
-        f"- 日干五行：{day_stem}（{day_wx}）",
+        f"- 当日五行：{day_wuxing}（口径：{basis_text}）",
         "",
-        "🎨 五行穿衣",
-        f"- 贵人色：{guiren_el}（{guiren_colors}）",
-        f"- 比肩色：{bijian_el}（{bijian_colors}）",
-        f"- 进财色：{jincai_el}（{jincai_colors}）",
-        f"- 消耗色：{xiaohao_el}（{xiaohao_colors}）",
-        f"- 忌用色：{jiyong_el}（{jiyong_colors}）",
+        "🎨 五行穿衣（固定五档）",
+        line("贵人色"),
+        line("合作色"),
+        line("进财色"),
+        line("消耗色"),
+        line("不利色"),
     ]
 
-    yi_ji = f"今日宜：优先选「{guiren_colors}」或「{bijian_colors}」系；今日忌：尽量避开「{jiyong_colors}」系。"
+    yi = "、".join(tiers["贵人色"]["colors"][:2]) + " / " + "、".join(tiers["合作色"]["colors"][:2])
+    ji = "、".join(tiers["不利色"]["colors"][:2])
+    yi_ji = f"今日宜：优先选「{yi}」系；今日忌：尽量避开「{ji}」系。"
     return parts, yi_ji
 
 
@@ -152,7 +232,7 @@ def main() -> int:
 
     rec = load_wuxing_record(today)
     if rec:
-        wx_lines, yi_ji = wuxing_summary(rec)
+        wx_lines, yi_ji = wuxing_summary(rec, today)
         lines.extend(wx_lines)
         lines.extend(["", f"✅ 今日宜忌：{yi_ji}"])
     else:
