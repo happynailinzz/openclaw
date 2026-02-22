@@ -12,6 +12,30 @@
     "agent-browser": {
       "version": "0.2.0",
       "installedAt": 1771745603683
+    },
+    "baidu-search": {
+      "version": "1.1.0",
+      "installedAt": 1771746262701
+    },
+    "baidu-baike-data": {
+      "version": "1.1.0",
+      "installedAt": 1771746272073
+    },
+    "ai-notes-ofvideo": {
+      "version": "1.1.0",
+      "installedAt": 1771746308760
+    },
+    "baidu-scholar-search-skill": {
+      "version": "1.1.0",
+      "installedAt": 1771746326243
+    },
+    "ai-picture-book": {
+      "version": "1.1.0",
+      "installedAt": 1771746328171
+    },
+    "deepresearch-conversation": {
+      "version": "1.1.2",
+      "installedAt": 1771746433568
     }
   }
 }
