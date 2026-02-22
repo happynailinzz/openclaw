@@ -5,12 +5,12 @@
 每天晨报（郑州天气 + 农历/节假日/五行穿衣）
 - 天气：wttr.in JSON
 - 农历/节假日/五行：读取用户提供的年度 JSON
+- 文案风格：公众号口吻 + emoji + 今日宜忌
 """
 
 from __future__ import annotations
 
 import json
-import sys
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -46,7 +46,7 @@ def weather_summary(city: str) -> tuple[str, str]:
     rain_prob = max((int(h.get("chanceofrain", "0")) for h in hourly), default=0)
 
     weather_line = (
-        f"{city}天气：{desc}，{min_t}~{max_t}℃，当前{temp}℃（体感{feels}℃），"
+        f"{city}：{desc}，{min_t}~{max_t}℃，当前{temp}℃（体感{feels}℃），"
         f"湿度{humidity}%，降雨概率约{rain_prob}%。"
     )
 
@@ -57,11 +57,11 @@ def weather_summary(city: str) -> tuple[str, str]:
         f = 20
 
     if f <= 5:
-        wear = "厚羽绒/呢大衣 + 保暖内搭，围巾可安排。"
+        wear = "厚羽绒/呢大衣 + 保暖内搭，围巾手套建议安排。"
     elif f <= 12:
-        wear = "厚外套（棉服/毛呢）+ 针织打底，早晚注意防风。"
+        wear = "厚外套（棉服/毛呢）+ 针织打底，早晚防风。"
     elif f <= 18:
-        wear = "夹克/风衣 + 长袖，体感偏凉时加一层薄针织。"
+        wear = "夹克/风衣 + 长袖，体感偏凉可加薄针织。"
     elif f <= 25:
         wear = "长袖或薄外套即可，通勤体感舒适。"
     else:
@@ -89,7 +89,7 @@ def load_wuxing_record(target_date: str) -> dict | None:
     return None
 
 
-def wuxing_summary(record: dict) -> list[str]:
+def wuxing_summary(record: dict) -> tuple[list[str], str]:
     lunar = record.get("lunar", "-")
     solar_term = record.get("solar_term")
     holiday = record.get("holiday")
@@ -100,27 +100,36 @@ def wuxing_summary(record: dict) -> list[str]:
     day_wx = wx.get("day_wuxing", "-")
     guide = wx.get("guide", {})
 
-    parts = [f"农历：{lunar}"]
-    if solar_term:
-        parts.append(f"节气：{solar_term}")
-    parts.append(f"节假日：{holiday if holiday else '无'}")
-    parts.append("作息：休息日" if rest_day else "作息：工作日")
-    parts.append(f"日干五行：{day_stem}（{day_wx}）")
-
-    def g(name: str) -> str:
+    def g(name: str) -> tuple[str, str]:
         item = guide.get(name, {})
-        colors = "、".join(item.get("colors", []))
         element = item.get("element", "-")
-        return f"{name}：{element}（{colors}）"
+        colors = item.get("colors", [])
+        return element, "、".join(colors)
 
-    parts.append("五行穿衣：")
-    parts.append(f"- {g('贵人')}")
-    parts.append(f"- {g('比肩')}")
-    parts.append(f"- {g('进财')}")
-    parts.append(f"- {g('消耗')}")
-    parts.append(f"- {g('忌用')}")
+    guiren_el, guiren_colors = g("贵人")
+    bijian_el, bijian_colors = g("比肩")
+    jincai_el, jincai_colors = g("进财")
+    xiaohao_el, xiaohao_colors = g("消耗")
+    jiyong_el, jiyong_colors = g("忌用")
 
-    return parts
+    parts = [
+        "📅 今日黄历",
+        f"- 农历：{lunar}",
+        f"- 节气：{solar_term if solar_term else '无'}",
+        f"- 节假日：{holiday if holiday else '无'}",
+        f"- 作息：{'休息日' if rest_day else '工作日'}",
+        f"- 日干五行：{day_stem}（{day_wx}）",
+        "",
+        "🎨 五行穿衣",
+        f"- 贵人色：{guiren_el}（{guiren_colors}）",
+        f"- 比肩色：{bijian_el}（{bijian_colors}）",
+        f"- 进财色：{jincai_el}（{jincai_colors}）",
+        f"- 消耗色：{xiaohao_el}（{xiaohao_colors}）",
+        f"- 忌用色：{jiyong_el}（{jiyong_colors}）",
+    ]
+
+    yi_ji = f"今日宜：优先选「{guiren_colors}」或「{bijian_colors}」系；今日忌：尽量避开「{jiyong_colors}」系。"
+    return parts, yi_ji
 
 
 def main() -> int:
@@ -133,18 +142,23 @@ def main() -> int:
         wear_line = "穿衣建议：天气数据异常，建议按体感分层穿搭。"
 
     lines = [
-        f"早安，今天是 {today}",
+        f"🌤️ 郑州晨报｜{today}",
+        "",
+        "【天气与穿搭】",
         weather_line,
-        wear_line,
+        f"👔 {wear_line}",
         "",
     ]
 
     rec = load_wuxing_record(today)
     if rec:
-        lines.extend(wuxing_summary(rec))
+        wx_lines, yi_ji = wuxing_summary(rec)
+        lines.extend(wx_lines)
+        lines.extend(["", f"✅ 今日宜忌：{yi_ji}"])
     else:
         lines.append("农历/节假日/五行：未在年度文件中找到当天记录。")
 
+    lines.extend(["", "祝你今天顺顺利利，出门有好运。🥟"])
     print("\n".join(lines))
     return 0
 
