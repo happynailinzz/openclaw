@@ -44,6 +44,10 @@
     "remotion-best-practices": {
       "version": "1.0.0",
       "installedAt": 1771748068982
+    },
+    "humanize-zh": {
+      "version": "1.0.0",
+      "installedAt": 1771753929481
     }
   }
 }
