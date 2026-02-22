@@ -1,7 +1,7 @@
 ---
 name: jina-reader
 description: Fetch and normalize web pages through Jina AI Reader (https://r.jina.ai/) to get clean markdown content, including difficult pages (dynamic sites, some paywalled content, X/Twitter links, and article pages with better extraction). Use when user asks to open links and read webpage content after search, or explicitly requests jina.ai Reader-style extraction.
-metadata: { "openclaw": { "emoji": "🦐", "requires": { "bins": ["python3"] } } }
+metadata: { "openclaw": { "emoji": "🦐", "requires": { "bins": ["python3"], "env": ["TAVILY_API_KEY"] }, "primaryEnv": "TAVILY_API_KEY" } }
 ---
 
 # Jina Reader
@@ -16,6 +16,8 @@ Use Jina Reader as a first-class fallback/alternative for webpage extraction.
 
 ## Usage
 
+### A) Single-link fetch
+
 ```bash
 python3 skills/jina-reader/scripts/fetch.py "https://example.com/article"
 ```
@@ -26,6 +28,14 @@ Optional flags:
 python3 skills/jina-reader/scripts/fetch.py "https://example.com/article" --max-chars 12000
 python3 skills/jina-reader/scripts/fetch.py "https://x.com/..." --timeout 40
 python3 skills/jina-reader/scripts/fetch.py "https://example.com" --json
+```
+
+### B) Search + fetch (integrated)
+
+Search with Tavily first, then open top results through Jina Reader and return structured JSON.
+
+```bash
+python3 skills/jina-reader/scripts/search_fetch.py "OpenClaw 2026" --top 3 --max-chars 8000
 ```
 
 ## Output behavior
