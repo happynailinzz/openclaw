@@ -25,8 +25,11 @@ pageNum="${2:-0}"
 # Include abstract (default false, not included)
 enable_abstract="${3:-false}"
 
+# URL-encode keyword to avoid malformed URL when it contains spaces/special chars
+encoded_wd=$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$WD")
+
 # Send request
 curl -s -X GET \
   -H "Authorization: Bearer $BAIDU_API_KEY" \
   -H "X-Appbuilder-From: openclaw" \
-  "https://qianfan.baidubce.com/v2/tools/baidu_scholar/search?wd=$WD&pageNum=$pageNum&enable_abstract=$enable_abstract"
+  "https://qianfan.baidubce.com/v2/tools/baidu_scholar/search?wd=$encoded_wd&pageNum=$pageNum&enable_abstract=$enable_abstract"
