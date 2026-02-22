@@ -53,33 +53,92 @@ BRANCH_TO_WUXING = {
 }
 
 
-def fetch_weather(city: str) -> dict:
+def fetch_weather_wttr(city: str) -> dict:
     q = urllib.parse.quote(city)
     url = f"https://wttr.in/{q}?format=j1"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=15) as resp:
+    with urllib.request.urlopen(req, timeout=12) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def _om_desc(code: int) -> str:
+    mapping = {
+        0: "晴",
+        1: "大部晴",
+        2: "多云",
+        3: "阴",
+        45: "雾",
+        48: "雾凇",
+        51: "小毛雨",
+        53: "毛毛雨",
+        55: "浓毛雨",
+        61: "小雨",
+        63: "中雨",
+        65: "大雨",
+        71: "小雪",
+        73: "中雪",
+        75: "大雪",
+        80: "阵雨",
+        81: "较强阵雨",
+        82: "强阵雨",
+        95: "雷暴",
+    }
+    return mapping.get(code, "未知")
+
+
+def fetch_weather_open_meteo_zhengzhou() -> dict:
+    # 郑州固定坐标，作为 wttr 超时的兜底源
+    lat, lon = 34.7466, 113.6254
+    url = (
+        "https://api.open-meteo.com/v1/forecast"
+        f"?latitude={lat}&longitude={lon}"
+        "&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code"
+        "&hourly=precipitation_probability"
+        "&daily=temperature_2m_max,temperature_2m_min"
+        "&timezone=Asia%2FShanghai"
+        "&forecast_days=1"
+    )
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=12) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
 def weather_summary(city: str) -> tuple[str, str]:
-    data = fetch_weather(city)
+    source = "wttr"
+    try:
+        data = fetch_weather_wttr(city)
+        current = data["current_condition"][0]
+        today = data["weather"][0]
 
-    current = data["current_condition"][0]
-    today = data["weather"][0]
+        desc = current.get("weatherDesc", [{"value": ""}])[0].get("value", "未知")
+        temp = current.get("temp_C", "?")
+        feels = current.get("FeelsLikeC", "?")
+        humidity = current.get("humidity", "?")
 
-    desc = current.get("weatherDesc", [{"value": ""}])[0].get("value", "未知")
-    temp = current.get("temp_C", "?")
-    feels = current.get("FeelsLikeC", "?")
-    humidity = current.get("humidity", "?")
+        max_t = today.get("maxtempC", "?")
+        min_t = today.get("mintempC", "?")
+        hourly = today.get("hourly", [])
+        rain_prob = max((int(h.get("chanceofrain", "0")) for h in hourly), default=0)
+    except Exception:
+        source = "open-meteo"
+        data = fetch_weather_open_meteo_zhengzhou()
+        cur = data.get("current", {})
+        daily = data.get("daily", {})
+        hourly = data.get("hourly", {})
 
-    max_t = today.get("maxtempC", "?")
-    min_t = today.get("mintempC", "?")
-    hourly = today.get("hourly", [])
-    rain_prob = max((int(h.get("chanceofrain", "0")) for h in hourly), default=0)
+        desc = _om_desc(int(cur.get("weather_code", -1)))
+        temp = str(round(float(cur.get("temperature_2m", 0))))
+        feels = str(round(float(cur.get("apparent_temperature", 0))))
+        humidity = str(round(float(cur.get("relative_humidity_2m", 0))))
+
+        max_t = str(round(float((daily.get("temperature_2m_max") or [0])[0])))
+        min_t = str(round(float((daily.get("temperature_2m_min") or [0])[0])))
+        rain_prob = max((hourly.get("precipitation_probability") or [0]))
 
     weather_line = (
         f"{city}：{desc}，{min_t}~{max_t}℃，当前{temp}℃（体感{feels}℃），"
         f"湿度{humidity}%，降雨概率约{rain_prob}%。"
+        f"{'（天气源兜底：Open-Meteo）' if source != 'wttr' else ''}"
     )
 
     # 穿衣建议（按体感+降雨+湿度）
