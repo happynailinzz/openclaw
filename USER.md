@@ -12,6 +12,7 @@ _Learn about the person you're helping. Update this as you go._
   用户指定称呼为“东城老饕”。
   用户要求：公众号相关任务（选题/策划/写作/改稿）优先使用其 Obsidian 知识库 `/opt/openclaw/knowledge/secendME`，其次 MEMORY，最后外部资料；回答中要标注来源类别（知识库/延伸/外部）。
   用户新增要求：以后 OpenClaw 生成的公众号选题与文章，默认同步存入 Notion 的「文章选题草稿箱」。
+  用户新增流程偏好（2026-02-27）：执行公众号一条龙时不要一次性全跑；每一步完成后先汇报并等待用户确认，再进入下一步。
 
 ## Context
 
