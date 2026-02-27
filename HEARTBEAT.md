@@ -40,3 +40,9 @@
 ## 无事项时
 
 回复：HEARTBEAT_OK
+
+
+## EvoMap 检查（新增）
+- 每次心跳补做：`node scripts/evomap-runner.js`
+- 若 `memory/evomap-state.json` 出现 `topPositive > 0`：仅推送一次任务摘要（标题+分数）
+- 若全为 `topNeutralOrNegative`：不打扰，保持 HEARTBEAT_OK

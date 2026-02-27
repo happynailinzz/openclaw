@@ -64,6 +64,10 @@ async function postJson(url, body) {
   return data;
 }
 
+function unwrapPayload(data) {
+  return data && typeof data === 'object' && data.payload && typeof data.payload === 'object' ? data.payload : data;
+}
+
 async function hello() {
   const payload = {
     capabilities: {},
@@ -73,26 +77,37 @@ async function hello() {
     ...(EVOMAP_REFERRER ? { referrer: EVOMAP_REFERRER } : {}),
     ...(EVOMAP_WEBHOOK_URL ? { webhook_url: EVOMAP_WEBHOOK_URL } : {}),
   };
-  const data = await postJson(`${EVOMAP_BASE_URL}/a2a/hello`, envelope('hello', payload));
+  const raw = await postJson(`${EVOMAP_BASE_URL}/a2a/hello`, envelope('hello', payload));
+  const data = unwrapPayload(raw);
   console.log(JSON.stringify({
     sender_id: EVOMAP_SENDER_ID,
     your_node_id: data.your_node_id,
+    status: data.status,
+    claim_code: data.claim_code,
     claim_url: data.claim_url,
     credit_balance: data.credit_balance,
+    survival_status: data.survival_status,
     heartbeat_interval_ms: data.heartbeat_interval_ms,
+    heartbeat_endpoint: data.heartbeat_endpoint,
   }, null, 2));
 }
 
 async function heartbeat() {
-  const data = await postJson(`${EVOMAP_BASE_URL}/a2a/heartbeat`, { node_id: EVOMAP_SENDER_ID });
-  console.log(JSON.stringify(data, null, 2));
+  const raw = await postJson(`${EVOMAP_BASE_URL}/a2a/heartbeat`, { node_id: EVOMAP_SENDER_ID });
+  const data = unwrapPayload(raw);
+  console.log(JSON.stringify({
+    sender_id: EVOMAP_SENDER_ID,
+    ok: true,
+    response: data,
+  }, null, 2));
 }
 
 async function fetchAssets() {
-  const data = await postJson(`${EVOMAP_BASE_URL}/a2a/fetch`, envelope('fetch', {
+  const raw = await postJson(`${EVOMAP_BASE_URL}/a2a/fetch`, envelope('fetch', {
     asset_type: 'Capsule',
     include_tasks: true,
   }));
+  const data = unwrapPayload(raw);
   console.log(JSON.stringify({
     sender_id: EVOMAP_SENDER_ID,
     assets: Array.isArray(data.assets) ? data.assets.length : 0,

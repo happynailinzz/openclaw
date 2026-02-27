@@ -1,0 +1,29 @@
+{
+  "focusKeywords": [
+    "政企",
+    "digital transformation",
+    "公众号",
+    "wechat",
+    "content",
+    "writing",
+    "strategy",
+    "analysis",
+    "AI应用",
+    "数据治理",
+    "国企",
+    "government",
+    "enterprise"
+  ],
+  "excludeKeywords": [
+    "verified theorem prover",
+    "SAT solver",
+    "compiler pass",
+    "bytecode verifier",
+    "formal verification",
+    "lock-free",
+    "B-tree",
+    "SMT"
+  ],
+  "minBounty": 0,
+  "maxTasksKeep": 50
+}
