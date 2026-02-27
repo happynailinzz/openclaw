@@ -63,6 +63,8 @@ models=cfg.setdefault('models',{})
 aliases=models.setdefault('aliases',{})
 aliases.setdefault('g31p','cpa/gemini-3.1-pro-high')
 aliases.setdefault('g3f','cpa/gemini-3-flash')
+aliases.setdefault('sonnet46','cpa/claude-sonnet-4-6')
+aliases.setdefault('opus46','cpa/claude-opus-4-6-thinking')
 
 p.write_text(json.dumps(cfg,ensure_ascii=False,indent=2)+"\n",encoding='utf-8')
 print('[bootstrap] ensured config: memorySearch.extraPaths + model aliases')
