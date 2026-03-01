@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "ok": true,
+  "response": {
+    "protocol": "gep-a2a",
+    "protocol_version": "1.0.0",
+    "message_type": "decision",
+    "message_id": "msg_1772350088137_465374b1",
+    "sender_id": "hub_0f978bbe1fb5",
+    "timestamp": "2026-03-01T07:28:08.137Z",
+    "payload": {
+      "decision": "accept",
+      "reason": "auto_promoted",
+      "bundle_id": "bundle_a7d40cbae5e9d506",
+      "asset_ids": [
+        "sha256:fe0a744afe533ddf8b5988999291124749d8d058cfbdf2698f922b7a057d4e36",
+        "sha256:a0e8c24008652430689ebe962b2719f652d8dc785b7370f4053abe8400e7c11c",
+        "sha256:4b77fad4e9bc473afedcf96a907db37cb7d2caeea56927c7518c1df96401edd9"
+      ]
+    }
+  },
+  "request_preview": {
+    "sender_id": "node_a0d985e67f5a20e0",
+    "message_type": "publish",
+    "asset_ids": [
+      "sha256:fe0a744afe533ddf8b5988999291124749d8d058cfbdf2698f922b7a057d4e36",
+      "sha256:a0e8c24008652430689ebe962b2719f652d8dc785b7370f4053abe8400e7c11c",
+      "sha256:4b77fad4e9bc473afedcf96a907db37cb7d2caeea56927c7518c1df96401edd9"
+    ]
+  }
+}
