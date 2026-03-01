@@ -27,3 +27,4 @@
 - 用户执行偏好更新（2026-02-27 13:40）：公众号相关流程可默认一次性跑完，无需每一步确认；仅在高风险动作、不可逆操作或关键信息缺失时中断确认。
 - 用户新增固定作者要求（2026-02-27）：后续公众号文章作者统一使用“余炜勋”。
 - 代理能力进化规则已固化（2026-03-01）：兼容版四条规则见 `/root/.openclaw/workspace/memory/agent-evolution-rules.md`，用于任务内能力沉淀、轻量复盘、反劣化锁与能力树管理。
+- 记忆整合方案已固化（2026-03-01）：采用「本地热记忆 + Memos 冷记忆」分层路由，默认检索只注入 `local_hits + memos_hits.hits` 精简片段以节省 token；配置见 `config/memory-integration.json`，流程见 `scripts/memory-cycle.sh` 与 `docs/memory-integration-deploy.md`。

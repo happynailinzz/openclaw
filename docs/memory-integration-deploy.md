@@ -17,11 +17,18 @@ python3 scripts/memos-client.py search "喜欢吃什么"
 python3 scripts/memory-retrieval-router.py "记忆优化方案"
 ```
 
-## 4. 调用接入建议
-- 回答前：先调用 `memory-retrieval-router.py` 获取候选证据
-- 回答后：将关键结论写入 Memos（`memos-client.py add`）
+## 4. 一键会话循环（推荐）
+```bash
+scripts/memory-cycle.sh pre  "OpenClaw 记忆整合部署"
+scripts/memory-cycle.sh post "已完成分层记忆与混合检索接入"
+```
+
+## 5. 调用接入建议
+- 回答前：调用 `memory-cycle.sh pre`（或 `memory-retrieval-router.py`）
+- 回答后：调用 `memory-cycle.sh post` 写入关键结论
+- 为节省 token：仅注入 `local_hits + memos_hits.hits`，不注入完整原始返回
 - 周期维护：按 `memory/memory-maintenance-sop.md` 执行
 
-## 5. 回滚
+## 6. 回滚
 - 停用 Memos：移除 `config/memos.env` 或将路由脚本中的 memos 调用注释
 - 保留本地记忆：`memory/` + `MEMORY.md` 继续可用

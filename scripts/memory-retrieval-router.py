@@ -74,6 +74,42 @@ def search_memos(query: str, user_id: str, conversation_id: str):
     except Exception:
         return {"ok": False, "error": p.stdout}
 
+
+def compress_memos_hits(memos_result: dict, max_snippets=3, max_chars=500):
+    if not memos_result.get("ok"):
+        return {"ok": False, "error": memos_result.get("error", "memos search failed"), "hits": []}
+
+    raw = memos_result.get("data", {})
+    payload = (((raw.get("response") or {}).get("data") or {}))
+    items = payload.get("memory_detail_list") or []
+
+    ranked = []
+    for m in items:
+        relativity = float(m.get("relativity") or 0)
+        confidence = float(m.get("confidence") or 0)
+        score = relativity * 0.7 + confidence * 0.3
+        ranked.append({
+            "id": m.get("id"),
+            "memory_type": m.get("memory_type"),
+            "conversation_id": m.get("conversation_id"),
+            "score": round(score, 4),
+            "memory_key": (m.get("memory_key") or "")[:120],
+            "memory_value": (m.get("memory_value") or "")[:max_chars],
+            "tags": m.get("tags") or [],
+        })
+
+    ranked.sort(key=lambda x: x["score"], reverse=True)
+    hits = ranked[:max_snippets]
+
+    return {
+        "ok": True,
+        "hits": hits,
+        "meta": {
+            "total": len(items),
+            "returned": len(hits),
+        },
+    }
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: memory-retrieval-router.py <query> [user_id] [conversation_id]")
@@ -88,16 +124,24 @@ def main():
     conv_id = sys.argv[3] if len(sys.argv) > 3 else memos_cfg.get("defaultConversationId", "openclaw-main")
 
     max_local = int(r.get("maxLocalSnippets", 3))
+    max_memos = int(r.get("maxMemosSnippets", 3))
     max_chars = int(r.get("maxSnippetChars", 500))
 
     local_hits = collect_local_snippets(query, max_snippets=max_local, max_chars=max_chars)
     memos_result = search_memos(query, user_id, conv_id)
+    memos_hits = compress_memos_hits(memos_result, max_snippets=max_memos, max_chars=max_chars)
 
     out = {
         "query": query,
         "route": ["local_memory", "memos"],
         "local_hits": local_hits,
-        "memos": memos_result,
+        "memos_hits": memos_hits,
+        "token_saving_hint": {
+            "local_snippets": len(local_hits),
+            "memos_snippets": len(memos_hits.get("hits", [])),
+            "max_snippet_chars": max_chars,
+            "note": "Use local_hits + memos_hits.hits only; avoid injecting full raw memos payload.",
+        },
     }
     print(json.dumps(out, ensure_ascii=False, indent=2))
 
