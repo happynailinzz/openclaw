@@ -48,6 +48,54 @@
     "humanize-zh": {
       "version": "1.0.0",
       "installedAt": 1771753929481
+    },
+    "obsidian": {
+      "version": "1.0.0",
+      "installedAt": 1771892403140
+    },
+    "word-docx": {
+      "version": "1.0.0",
+      "installedAt": 1771892405192
+    },
+    "excel-xlsx": {
+      "version": "1.0.1",
+      "installedAt": 1771892407698
+    },
+    "seo": {
+      "version": "1.0.1",
+      "installedAt": 1771892480156
+    },
+    "theme-factory": {
+      "version": "1.0.0",
+      "installedAt": 1771892535468
+    },
+    "frontend-design-3": {
+      "version": "0.1.0",
+      "installedAt": 1771892547846
+    },
+    "brand-cog": {
+      "version": "1.0.2",
+      "installedAt": 1771892625034
+    },
+    "nblm": {
+      "version": "1.0.1",
+      "installedAt": 1771893543248
+    },
+    "marketing-mode": {
+      "version": "1.0.0",
+      "installedAt": 1771893555226
+    },
+    "canvas-design-2": {
+      "version": "0.1.0",
+      "installedAt": 1771893567467
+    },
+    "superpowers-mode": {
+      "version": "1.0.1",
+      "installedAt": 1771893606609
+    },
+    "notion-api-skill": {
+      "version": "1.0.5",
+      "installedAt": 1771901367684
     }
   }
 }

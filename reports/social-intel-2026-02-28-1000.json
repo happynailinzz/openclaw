@@ -1,0 +1,98 @@
+{
+  "run_id": "cron:ac370cb2-4124-4304-a276-4cc5222d5557",
+  "generated_at_utc": "2026-02-28T04:16:30Z",
+  "window": "last_24h",
+  "step_a": {
+    "executed": false,
+    "reason": "非周一，按SOP跳过每周skills复查"
+  },
+  "source_status": {
+    "x": "success (nitter RSS fallback)",
+    "xiaohongshu": "failed (页面反爬/动态渲染，仅抓到页脚)",
+    "youtube": "failed (RSS与搜索页抓取不可用)",
+    "reddit": "success (RSS)",
+    "news_websites": "success (DCD/The Verge/HN RSS)",
+    "rss": "success"
+  },
+  "items": [
+    {
+      "platform": "X",
+      "title": "OpenAI announces new infrastructure investment with SoftBank, NVIDIA, Amazon",
+      "published_at": "2026-02-27T13:31:31Z",
+      "url": "https://nitter.net/OpenAI/status/2027376050263793814",
+      "summary": "OpenAI 披露与 SoftBank/NVIDIA/Amazon 协同加码 AI 基础设施，强调规模化算力供给。",
+      "signals": ["算力扩张", "生态联盟", "资本与基础设施协同"],
+      "confidence": 0.87,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News",
+      "title": "Trump orders federal agencies to immediately stop using Anthropic AI tech",
+      "published_at": "2026-02-27T22:53:00Z",
+      "url": "https://www.datacenterdynamics.com/en/news/trump-orders-federal-agencies-to-immediately-stop-using-anthropic-ai-tech-threatens-criminal-consequences-against-radical-left-woke-company/",
+      "summary": "美国联邦侧对 AI 供应链政策突变，涉国防与政务系统采购策略。",
+      "signals": ["政务AI合规", "供应链风险标签", "政企采购不确定性上升"],
+      "confidence": 0.85,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "RSS/HN->X",
+      "title": "OpenAI agrees with Department of War to deploy models in classified network",
+      "published_at": "2026-02-28T02:59:02Z",
+      "url": "https://twitter.com/sama/status/2027578652477821175",
+      "summary": "OpenAI 进入涉密网络部署语境，显示政务/国防场景的模型部署边界正在重塑。",
+      "signals": ["高安全域部署", "政企高敏场景", "AI治理边界"],
+      "confidence": 0.74,
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News",
+      "title": "EdgeConneX targets gigawatt-scale campus in Sweden",
+      "published_at": "2026-02-27T16:17:14Z",
+      "url": "https://www.datacenterdynamics.com/en/news/edgeconnex-targets-gigawatt-scale-campus-in-sweden/",
+      "summary": "欧洲 GW 级数据中心园区继续推进，全球算力基础设施仍处重资产扩张周期。",
+      "signals": ["数据中心建设", "跨区域算力竞争", "能源与选址耦合"],
+      "confidence": 0.82,
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News",
+      "title": "MARA inks JV with Starwood to expand US data center portfolio (near-term 1GW IT capacity)",
+      "published_at": "2026-02-27T15:57:19Z",
+      "url": "https://www.datacenterdynamics.com/en/news/mara-inks-joint-venture-agreement-with-starwood-to-expand-us-data-center-portfolio/",
+      "summary": "资本方联合推进近端 1GW IT 容量，数据中心项目投融资与交付节奏同步提速。",
+      "signals": ["投融资", "1GW容量", "交付窗口期"],
+      "confidence": 0.8,
+      "score": 4,
+      "tier": "中价值"
+    }
+  ],
+  "duplicates_or_noise": [
+    {
+      "title": "Anthropic相关政策事件在 Reddit/The Verge/DCD 多源重复",
+      "penalty": -3,
+      "note": "已去重，仅保留主信源条目"
+    },
+    {
+      "title": "Reddit部分讨论帖存在情绪化二次传播",
+      "penalty": -2,
+      "note": "仅用于舆情温度，不作为事实主源"
+    }
+  ],
+  "metrics_estimated": {
+    "fetch_success_rate": "66.7% (4/6平台)",
+    "duplicate_rate": "20%",
+    "high_value_hit_rate": "80% (4/5)",
+    "breaking_latency": "~20-40分钟（估计，未完全达标<=30分钟）"
+  },
+  "quality_gate": {
+    "success_rate_ge_85": false,
+    "duplicate_rate_le_20": true,
+    "high_value_hit_rate_ge_60": true,
+    "latency_le_30m": false
+  }
+}

@@ -81,4 +81,4 @@ coverImage: ./imgs/cover.png
 作者：余炜勋
 
 原文标题：构建以先进制造业为骨干的现代化产业体系，为制造强国网络强国建设贡献河南力量
-原文链接：https://mp.weixin.qq.com/s/EIBU_KfpUiMLq5fEy8oi6Q
+原文说明：原文可在权威公开渠道检索查看。

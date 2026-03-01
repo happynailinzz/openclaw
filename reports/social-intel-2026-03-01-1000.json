@@ -1,0 +1,118 @@
+{
+  "run_id": "cron:ac370cb2-4124-4304-a276-4cc5222d5557",
+  "generated_at_utc": "2026-03-01T02:00:00Z",
+  "window": "last_24h",
+  "step_a": {
+    "executed": false,
+    "reason": "非周一，按SOP跳过每周 skills 可用性复查"
+  },
+  "source_status": {
+    "x": "failed (nitter RSS returned empty)",
+    "xiaohongshu": "failed (动态反爬，仅页脚信息)",
+    "youtube": "failed (RSS/search feed 请求异常)",
+    "reddit": "success (RSS)",
+    "news_websites": "success (Google News RSS + NYT RSS + DCD RSS)",
+    "rss": "success"
+  },
+  "items": [
+    {
+      "platform": "News/RSS",
+      "title": "Trump orders federal agencies to immediately stop using Anthropic AI tech",
+      "published_at": "2026-02-27T22:53:00Z",
+      "url": "https://www.datacenterdynamics.com/en/news/trump-orders-federal-agencies-to-immediately-stop-using-anthropic-ai-tech-threatens-criminal-consequences-against-radical-left-woke-company/",
+      "summary": "联邦层面的AI采购/使用限制升级，直接影响政务与国防场景模型供应链稳定性。",
+      "signals": ["监管动作", "政务采购限制", "国防AI合规冲突"],
+      "confidence": 0.88,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News/RSS",
+      "title": "Pentagon-Anthropic standoff is a decisive moment for AI in war",
+      "published_at": "2026-02-27T21:06:42Z",
+      "url": "https://www.nytimes.com/2026/02/27/technology/defense-department-anthropic-ai-safety.html",
+      "summary": "国防部门与模型厂商在用途边界与安全约束上的冲突公开化，预示后续合同条款与交付验收将趋严。",
+      "signals": ["国防AI治理", "合同条款变化", "模型使用边界"],
+      "confidence": 0.86,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News/RSS",
+      "title": "OpenAI to use 2GW of Trainium on AWS, expand Amazon cloud contract by $100bn",
+      "published_at": "2026-02-27T14:38:00Z",
+      "url": "https://www.datacenterdynamics.com/en/news/openai-to-use-2gw-of-trainium-on-aws-expand-amazon-cloud-contract-by-100bn/",
+      "summary": "大规模算力与云合约锁定，显示模型厂商与云/芯片生态绑定进一步加深，供应链集中度上升。",
+      "signals": ["算力锁定", "云厂商绑定", "供应链集中度"],
+      "confidence": 0.84,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News/RSS",
+      "title": "OpenAI raises $110bn with Amazon/Nvidia/SoftBank",
+      "published_at": "2026-02-27T14:19:00Z",
+      "url": "https://www.datacenterdynamics.com/en/news/openai-raises-110bn-with-50bn-from-amazon-and-30bn-from-both-nvidia-and-softbank/",
+      "summary": "资本与上游算力生态协同强化，头部模型厂商在资金与基础设施上的优势继续扩大。",
+      "signals": ["资本注入", "芯片云协同", "头部集中"],
+      "confidence": 0.83,
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News/RSS",
+      "title": "EdgeConneX targets gigawatt-scale campus in Sweden",
+      "published_at": "2026-02-27T16:17:14Z",
+      "url": "https://www.datacenterdynamics.com/en/news/edgeconnex-targets-gigawatt-scale-campus-in-sweden/",
+      "summary": "欧洲GW级园区扩张延续，长期看会改变跨区域算力与能源配比。",
+      "signals": ["数据中心扩张", "欧洲算力布局", "能源耦合"],
+      "confidence": 0.79,
+      "score": 4,
+      "tier": "中价值"
+    }
+  ],
+  "gov_defense_ai_supply_chain_mapping": [
+    {
+      "policy_action": "美国联邦层面对Anthropic采取立即停用/限制信号",
+      "affected_vendors": ["Anthropic", "OpenAI", "AWS", "NVIDIA", "SoftBank"],
+      "delivery_impact": "政务/国防项目需重审模型白名单与合同条款，交付窗口可能后移1-4周，替代路径倾向多厂商并行与私有化部署",
+      "risk_level": "高",
+      "risk_reason": "政策动作直接作用于采购与生产环境，且短期不可预测性高。"
+    },
+    {
+      "policy_action": "国防场景中模型用途边界（监控/自主武器等）被强监管讨论",
+      "affected_vendors": ["Anthropic", "国防集成商", "政府云服务商"],
+      "delivery_impact": "需求方将增加合规验收与责任条款，项目立项到上线周期拉长，替代路径为可审计模型与细粒度权限架构",
+      "risk_level": "中",
+      "risk_reason": "约束趋严但方向明确，可通过架构和合规设计部分对冲。"
+    }
+  ],
+  "duplicates_or_noise": [
+    {
+      "title": "Anthropic-Pentagon事件在CNBC/PBS/NYT等多源重复",
+      "penalty": -3,
+      "note": "已去重，仅保留权威主源"
+    },
+    {
+      "title": "Reddit中情绪化与营销帖较多",
+      "penalty": -2,
+      "note": "仅保留线索，不作为事实主源"
+    }
+  ],
+  "metrics_estimated": {
+    "fetch_success_rate": "50% (3/6平台)",
+    "duplicate_rate": "18%",
+    "high_value_hit_rate": "80% (4/5)",
+    "breaking_latency": "~20-45分钟（估计）"
+  },
+  "quality_gate": {
+    "success_rate_ge_85": false,
+    "duplicate_rate_le_20": true,
+    "high_value_hit_rate_ge_60": true,
+    "latency_le_30m": false
+  },
+  "fallback_notes": [
+    "主通道不可用时，已按SOP回退到RSS/web_fetch",
+    "单源失败未阻塞全流程，完成结构化与评分输出"
+  ]
+}

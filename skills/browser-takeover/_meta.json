@@ -1,0 +1,6 @@
+{
+  "name": "browser-takeover",
+  "description": "Standard Operating Procedure (SOP) for handling browser automation with seamless fallback to human VNC takeover for complex captchas, anti-bot checks (Cloudflare), and manual QR code logins.",
+  "version": "1.0.0",
+  "author": "OpenClaw"
+}

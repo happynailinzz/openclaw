@@ -1,0 +1,16 @@
+Workspace cleanup report
+timestamp: 2026-02-25T08:56:26+00:00
+mode: dry-run
+workspace: /root/.openclaw/workspace
+include_jsonl: false
+candidate_count: 6
+candidate_total_bytes: 2453498
+candidate_total_human: 2.4MB
+
+Candidates:
+- kasmvncserver_jammy_1.4.0_amd64.deb (2.3MB)
+- huanyao_extracted_cases.json (6.6KB)
+- site_scan_huanyao.json (515B)
+- huanyao_extracted_news.json (819B)
+- reports/healthcheck/security-audit.log (25KB)
+- reports/healthcheck/update-status.log (8.6KB)
