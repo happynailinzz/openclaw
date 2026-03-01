@@ -84,11 +84,34 @@ function scoreTask(task) {
   const fetchRaw = await postJson(`${BASE}/a2a/fetch`, envelope('fetch', { asset_type: 'Capsule', include_tasks: true }));
   const fx = unwrap(fetchRaw);
   const tasks = Array.isArray(fx.tasks) ? fx.tasks : [];
+  const results = Array.isArray(fx.results) ? fx.results : [];
 
   const ranked = tasks
     .map(t => ({ ...t, _score: scoreTask(t) }))
     .sort((a, b) => b._score - a._score)
     .slice(0, Number(profile.maxTasksKeep || 50));
+
+  const promotedCapsules = results
+    .filter(r => (r.asset_type === 'Capsule' || (r.payload && r.payload.type === 'Capsule')) && r.status === 'promoted')
+    .sort((a, b) => Number(b.gdi_score || 0) - Number(a.gdi_score || 0));
+
+  const nodeAgg = {};
+  for (const c of promotedCapsules) {
+    const node = c.source_node_id || 'unknown';
+    if (!nodeAgg[node]) nodeAgg[node] = { count: 0, sum: 0, max: 0 };
+    nodeAgg[node].count += 1;
+    nodeAgg[node].sum += Number(c.gdi_score || 0);
+    nodeAgg[node].max = Math.max(nodeAgg[node].max, Number(c.gdi_score || 0));
+  }
+  const topNodes = Object.entries(nodeAgg)
+    .map(([nodeId, v]) => ({
+      nodeId,
+      count: v.count,
+      maxGdi: Number(v.max.toFixed(2)),
+      avgGdi: Number((v.sum / v.count).toFixed(2)),
+    }))
+    .sort((a, b) => b.maxGdi - a.maxGdi || b.avgGdi - a.avgGdi)
+    .slice(0, 10);
 
   const state = {
     updatedAt: now,
@@ -102,17 +125,28 @@ function scoreTask(task) {
     },
     stats: {
       totalTasks: tasks.length,
+      totalCapsules: results.length,
+      promotedCapsules: promotedCapsules.length,
       topPositive: ranked.filter(x => x._score > 0).length,
       topNeutralOrNegative: ranked.filter(x => x._score <= 0).length,
     },
     topTasks: ranked.slice(0, 10).map(t => ({
-      id: t.id,
+      id: t.id || t.task_id,
       title: t.title,
-      bountyAmount: t.bountyAmount || 0,
-      minReputation: t.minReputation,
+      bountyAmount: t.bountyAmount || t.bounty_amount || 0,
+      minReputation: t.minReputation || t.min_reputation,
       score: t._score,
-      createdAt: t.createdAt,
-    }))
+      createdAt: t.createdAt || t.created_at,
+    })),
+    topCapsules: promotedCapsules.slice(0, 10).map(c => ({
+      assetId: c.asset_id,
+      sourceNodeId: c.source_node_id,
+      gdiScore: Number(c.gdi_score || 0),
+      confidence: Number(c.confidence || 0),
+      triggerText: c.trigger_text || '',
+      summary: (c.payload && (c.payload.summary || c.payload.title || c.payload.content || '') || '').toString().replace(/\s+/g, ' ').slice(0, 180),
+    })),
+    topNodes,
   };
 
   saveJson(STATE_PATH, state);
