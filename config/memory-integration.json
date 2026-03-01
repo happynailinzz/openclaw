@@ -1,0 +1,22 @@
+{
+  "memos": {
+    "baseId": "base3405aab8-7d7b-474d-9806-1b6b82d9560e",
+    "defaultUserId": "dongcheng-laotao",
+    "defaultConversationId": "openclaw-main"
+  },
+  "retrieval": {
+    "maxLocalSnippets": 3,
+    "maxMemosSnippets": 3,
+    "maxSnippetChars": 500,
+    "weights": {
+      "keyword": 0.45,
+      "semantic": 0.35,
+      "metadata": 0.2
+    }
+  },
+  "tokenBudget": {
+    "retrievalContextMax": 1800,
+    "systemContextMax": 1200,
+    "reserveForOutput": 800
+  }
+}
