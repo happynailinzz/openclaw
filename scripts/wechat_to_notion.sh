@@ -49,8 +49,10 @@ else
 fi
 
 echo "[wechat_to_notion] step2 写入 Notion..."
+WECHAT_DS_ID="31170dc2-6079-8003-bc57-000bd143337d"  # 微信公众号文章库
+
 if [[ -n "$PAGE_ID" ]]; then
-  python3 /root/.openclaw/workspace/scripts/wechat_md_to_notion.py --url "$URL" --md "$OUT_MD" --page-id "$PAGE_ID"
+  python3 /root/.openclaw/workspace/scripts/wechat_md_to_notion.py --url "$URL" --md "$OUT_MD" --page-id "$PAGE_ID" --data-source-id "$WECHAT_DS_ID"
 else
-  python3 /root/.openclaw/workspace/scripts/wechat_md_to_notion.py --url "$URL" --md "$OUT_MD"
+  python3 /root/.openclaw/workspace/scripts/wechat_md_to_notion.py --url "$URL" --md "$OUT_MD" --data-source-id "$WECHAT_DS_ID"
 fi

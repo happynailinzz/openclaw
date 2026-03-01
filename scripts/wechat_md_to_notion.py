@@ -105,7 +105,7 @@ def main():
     ap = argparse.ArgumentParser(description="把本地 markdown 正文写入微信公众号文章库（Notion）")
     ap.add_argument("--url", required=True, help="原文链接")
     ap.add_argument("--md", required=True, help="本地 markdown 文件路径")
-    ap.add_argument("--data-source-id", default=DEFAULT_DS_ID)
+    ap.add_argument("--data-source-id", default=DEFAULT_DS_ID, help="默认=微信公众号文章库")
     ap.add_argument("--page-id", default=None, help="已有页面ID（传入则覆盖更新）")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
