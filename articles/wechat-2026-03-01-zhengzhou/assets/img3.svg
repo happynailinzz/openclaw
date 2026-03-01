@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#102443"/><stop offset="100%" stop-color="#1D4D88"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <text x="70" y="105" fill="#E8F4FF" font-size="50" font-family="PingFang SC, Microsoft YaHei" font-weight="700">郑州算力竞争力在“闭环能力”</text>
+  <g transform="translate(90,220)">
+    <rect x="0" y="0" width="220" height="120" rx="14" fill="#7ED1FF"/>
+    <rect x="280" y="0" width="220" height="120" rx="14" fill="#7ED1FF"/>
+    <rect x="560" y="0" width="220" height="120" rx="14" fill="#7ED1FF"/>
+    <rect x="840" y="0" width="220" height="120" rx="14" fill="#7ED1FF"/>
+    <g stroke="#D9F5FF" stroke-width="4" marker-end="url(#arr)">
+      <line x1="220" y1="60" x2="280" y2="60"/>
+      <line x1="500" y1="60" x2="560" y2="60"/>
+      <line x1="780" y1="60" x2="840" y2="60"/>
+    </g>
+  </g>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><polygon points="0 0, 6 3, 0 6" fill="#D9F5FF"/></marker></defs>
+  <g fill="#12385E" font-size="30" font-family="PingFang SC, Microsoft YaHei" font-weight="700" text-anchor="middle">
+    <text x="200" y="295">算力供给</text>
+    <text x="480" y="295">场景落地</text>
+    <text x="760" y="295">产业协同</text>
+    <text x="1040" y="295">持续投资</text>
+  </g>
+</svg>

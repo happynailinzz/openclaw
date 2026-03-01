@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0E2A55"/><stop offset="100%" stop-color="#2A74C9"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <text x="70" y="120" fill="#E8F6FF" font-size="52" font-family="PingFang SC, Microsoft YaHei" font-weight="700">从交通枢纽到数字枢纽</text>
+  <text x="70" y="185" fill="#BFE6FF" font-size="34" font-family="PingFang SC, Microsoft YaHei">郑州算力崛起的底层条件</text>
+  <g fill="#8ED5FF" opacity="0.9">
+    <rect x="100" y="260" width="300" height="300" rx="20"/>
+    <rect x="450" y="260" width="300" height="300" rx="20"/>
+    <rect x="800" y="260" width="300" height="300" rx="20"/>
+  </g>
+  <g fill="#10395F" font-size="30" font-family="PingFang SC, Microsoft YaHei" font-weight="700">
+    <text x="155" y="360">通道能力</text>
+    <text x="138" y="410">交通+网络</text>
+    <text x="505" y="360">制造底盘</text>
+    <text x="505" y="410">配套承接力</text>
+    <text x="855" y="360">政策组织</text>
+    <text x="860" y="410">体系化推进</text>
+  </g>
+</svg>

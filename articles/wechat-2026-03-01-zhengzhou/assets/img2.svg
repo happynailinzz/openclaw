@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0E1D35"/>
+  <text x="70" y="110" fill="#E7F2FF" font-size="52" font-family="PingFang SC, Microsoft YaHei" font-weight="700">约435亿元意味着什么？</text>
+  <text x="70" y="170" fill="#A9D1FF" font-size="30" font-family="PingFang SC, Microsoft YaHei">不是单一企业故事，而是城市级产业信号</text>
+  <g stroke="#5FC7FF" stroke-width="4" fill="none" opacity="0.9">
+    <circle cx="250" cy="380" r="110"/>
+    <circle cx="600" cy="380" r="110"/>
+    <circle cx="950" cy="380" r="110"/>
+    <line x1="360" y1="380" x2="490" y2="380"/>
+    <line x1="710" y1="380" x2="840" y2="380"/>
+  </g>
+  <g fill="#DDF4FF" font-size="30" font-family="PingFang SC, Microsoft YaHei" font-weight="700">
+    <text x="188" y="372">需求验证</text>
+    <text x="176" y="416">规模化订单</text>
+    <text x="538" y="372">链主牵引</text>
+    <text x="525" y="416">带动上下游</text>
+    <text x="885" y="372">城市重估</text>
+    <text x="861" y="416">治理与要素升级</text>
+  </g>
+</svg>
