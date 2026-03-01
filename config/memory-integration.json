@@ -7,12 +7,21 @@
   "retrieval": {
     "maxLocalSnippets": 3,
     "maxMemosSnippets": 3,
+    "maxNotionSnippets": 3,
     "maxSnippetChars": 500,
     "weights": {
       "keyword": 0.45,
       "semantic": 0.35,
       "metadata": 0.2
+    },
+    "routingByTask": {
+      "wechatContent": ["local_memory", "obsidian", "notion_topics", "memos"],
+      "general": ["local_memory", "memos"]
     }
+  },
+  "notion": {
+    "enabled": true,
+    "topicDraftDatabaseName": "文章选题草稿箱"
   },
   "tokenBudget": {
     "retrievalContextMax": 1800,

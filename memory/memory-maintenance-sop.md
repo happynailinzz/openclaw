@@ -14,10 +14,11 @@
 
 ## 记忆分层
 - 热记忆：daily + MEMORY（高相关）
-- 温记忆：Obsidian 知识库
+- 温记忆：Obsidian 知识库 + Notion 文章收集/选题库
 - 冷记忆：Memos 历史碎片
 
 ## 检索路由
 1. 热记忆（本地）
-2. 再查 Memos
-3. 仍不足再外部检索
+2. 公众号任务优先查 Obsidian + Notion「文章选题草稿箱」
+3. 再查 Memos
+4. 仍不足再外部检索

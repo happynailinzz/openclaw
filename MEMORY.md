@@ -28,3 +28,4 @@
 - 用户新增固定作者要求（2026-02-27）：后续公众号文章作者统一使用“余炜勋”。
 - 代理能力进化规则已固化（2026-03-01）：兼容版四条规则见 `/root/.openclaw/workspace/memory/agent-evolution-rules.md`，用于任务内能力沉淀、轻量复盘、反劣化锁与能力树管理。
 - 记忆整合方案已固化（2026-03-01）：采用「本地热记忆 + Memos 冷记忆」分层路由，默认检索只注入 `local_hits + memos_hits.hits` 精简片段以节省 token；配置见 `config/memory-integration.json`，流程见 `scripts/memory-cycle.sh` 与 `docs/memory-integration-deploy.md`。
+- 记忆系统必须并行纳入 Notion 文章收集与选题体系（2026-03-01）：公众号相关任务检索路由需将 Notion「文章选题草稿箱」作为优先来源之一，不可仅依赖本地记忆与 Memos。

@@ -26,7 +26,8 @@ scripts/memory-cycle.sh post "已完成分层记忆与混合检索接入"
 ## 5. 调用接入建议
 - 回答前：调用 `memory-cycle.sh pre`（或 `memory-retrieval-router.py`）
 - 回答后：调用 `memory-cycle.sh post` 写入关键结论
-- 为节省 token：仅注入 `local_hits + memos_hits.hits`，不注入完整原始返回
+- 为节省 token：仅注入精简证据片段，不注入完整原始返回
+- 公众号相关任务：在路由中加入 Notion「文章选题草稿箱」作为优先检索源之一（与 Obsidian 并行）
 - 周期维护：按 `memory/memory-maintenance-sop.md` 执行
 
 ## 6. 回滚
