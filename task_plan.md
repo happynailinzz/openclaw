@@ -6,17 +6,17 @@
 ## Phase 1（P0）配置与安全
 - [x] 配置 `config/memos.env`（base_url + api_key）
 - [x] 保护密钥不入库（`.gitignore`）
-- [ ] 增加 `base_id` 与统一配置文件
+- [x] 增加 `base_id` 与统一配置文件
 
 ## Phase 2（P0）能力落地
-- [ ] 提供 memos 客户端脚本（add/search）
-- [ ] 提供检索路由脚本（热→温→冷 + 混合评分）
-- [ ] 提供 token 预算策略文件
+- [x] 提供 memos 客户端脚本（add/search）
+- [x] 提供检索路由脚本（热→温→冷 + 混合评分）
+- [x] 提供 token 预算策略文件
 
 ## Phase 3（P1）运行规范
-- [ ] 提供记忆维护 SOP（日更/周更）
-- [ ] 提供部署说明（接入点、调用方式、回滚）
-- [ ] 执行一次联调测试（add + search + route）
+- [x] 提供记忆维护 SOP（日更/周更）
+- [x] 提供部署说明（接入点、调用方式、回滚）
+- [x] 执行一次联调测试（add + search + route）
 
 ## 阻塞条件
 - 若 Memos 服务端接口策略变更（header/path），需更新客户端脚本。
