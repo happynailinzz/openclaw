@@ -1,2 +1,12 @@
-# Local secrets
+# Local secrets — 以下文件含敏感信息，禁止提交
 config/memos.env
+config/evomap.env
+.baoyu-skills/.env
+.env
+*.env.local
+
+# 临时文件
+*.bak-*
+*.bak
+articles/*.html
+articles/*.html.bak-*

@@ -1,0 +1,281 @@
+[
+  {
+    "platform": "News2",
+    "title": "Caine: US objective is to keep Iran from projecting power outside own borders",
+    "published_at": "Mon, 02 Mar 2026 17:38:37 +0000",
+    "url": "https://breakingdefense.com/2026/03/caine-us-objective-is-to-keep-iran-from-projecting-power-outside-own-borders/",
+    "summary": "“We&#8217;re not going to go into the exercise of what we will or will not do,” Defense Secretary Pete Hegseth told reporters.",
+    "signals": [
+      "defense"
+    ],
+    "confidence": 0.9,
+    "score": 7
+  },
+  {
+    "platform": "News2",
+    "title": "UK awards Leonardo $1.3B AW149 New Medium Helicopter contract",
+    "published_at": "Mon, 02 Mar 2026 15:28:56 +0000",
+    "url": "https://breakingdefense.com/2026/03/uk-awards-leonardo-1-3b-aw149-new-medium-helicopter-contract/",
+    "summary": "The new AW149 fleet is desperately needed to plug a rotary capability gap left by retirement of the Puma HC2 fleet in March 2025.",
+    "signals": [
+      "defense",
+      "contract"
+    ],
+    "confidence": 0.9,
+    "score": 7
+  },
+  {
+    "platform": "News",
+    "title": "Trump projects war on Iran could last ‘four to five weeks’",
+    "published_at": "Mon, 02 Mar 2026 20:52:43 +0000",
+    "url": "https://www.defensenews.com/news/your-military/2026/03/02/trump-projects-war-on-iran-could-last-four-to-five-weeks/",
+    "summary": "The president estimated the attacks could last four to five weeks but said the U.S. was capable of extending the bombardment far longer.",
+    "signals": [],
+    "confidence": 0.75,
+    "score": 5
+  },
+  {
+    "platform": "News",
+    "title": "UK taps Leonardo for $1.3 billion medium-lift helicopter deal",
+    "published_at": "Mon, 02 Mar 2026 13:20:31 +0000",
+    "url": "https://www.defensenews.com/global/europe/2026/03/02/uk-taps-leonardo-for-13-billion-medium-lift-helicopter-deal/",
+    "summary": "British officials have portrayed the contract as the beginning of a renaissance for British helicopter manufacturing, crewed and uncrewed.",
+    "signals": [
+      "contract"
+    ],
+    "confidence": 0.75,
+    "score": 5
+  },
+  {
+    "platform": "Vendor",
+    "title": "Our agreement with the Department of War",
+    "published_at": "Sat, 28 Feb 2026 12:30:00 GMT",
+    "url": "https://openai.com/index/our-agreement-with-the-department-of-war",
+    "summary": "Details on OpenAI’s contract with the Department of War, outlining safety red lines, legal protections, and how AI systems will be deployed in classified environments.",
+    "signals": [
+      "contract"
+    ],
+    "confidence": 0.75,
+    "score": 5
+  },
+  {
+    "platform": "Vendor",
+    "title": "OpenAI Codex and Figma launch seamless code-to-design experience",
+    "published_at": "Thu, 26 Feb 2026 06:00:00 GMT",
+    "url": "https://openai.com/index/figma-partnership",
+    "summary": "OpenAI and Figma launch a new Codex integration that connects code and design, enabling teams to move between implementation and the Figma canvas to iterate and ship faster.",
+    "signals": [],
+    "confidence": 0.75,
+    "score": 5
+  },
+  {
+    "platform": "News",
+    "title": "Additional troops to deploy to Middle East as Gen. Caine says to expect ‘additional losses’",
+    "published_at": "Mon, 02 Mar 2026 15:46:47 +0000",
+    "url": "https://www.defensenews.com/news/your-military/2026/03/02/additional-troops-to-deploy-to-middle-east-as-gen-caine-says-to-expect-additional-losses/",
+    "summary": "Chairman of the Joint Chiefs of Staff Gen. Dan Caine and Defense Secretary Pete Hegseth spoke to reporters at an on-camera media briefing Monday.",
+    "signals": [
+      "defense"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "News2",
+    "title": "How US cyber operators could take on Iran in cyberspace as Epic Fury plays out",
+    "published_at": "Mon, 02 Mar 2026 22:12:00 +0000",
+    "url": "https://breakingdefense.com/2026/03/how-us-cyber-operators-could-take-on-iran-in-cyberspace-as-epic-fury-plays-out/",
+    "summary": "A former senior cyber commander noted that one of the biggest differences between one-off strikes like Operation Midnight Hammer last June and the current operation is that supporting elements will be working 24/7, focused on targets offens",
+    "signals": [
+      "defense"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "News2",
+    "title": "Austria military’s first satellite will hunt for GPS, Galileo interference",
+    "published_at": "Mon, 02 Mar 2026 21:52:59 +0000",
+    "url": "https://breakingdefense.com/2026/03/austria-militarys-first-satellite-will-hunt-for-gps-galileo-interference/",
+    "summary": "The European Space Agency also is kicking in funds for the BEACONSAT, being developed by Austrian startup GATE Space. ",
+    "signals": [
+      "defense"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "News2",
+    "title": "Macron calls to increase French nuclear arsenal, team with Germany and others on ‘deterrent’",
+    "published_at": "Mon, 02 Mar 2026 20:36:18 +0000",
+    "url": "https://breakingdefense.com/2026/03/macron-calls-to-increase-french-nuclear-arsenal-team-with-germany-and-others-on-deterrent/",
+    "summary": "&#8220;We cannot be satisfied with our current trajectory and I owe the nation the absolute assurance that our nuclear deterrence remains credible,&#8221; French President Emmanuel Macron said.",
+    "signals": [
+      "defense"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "News2",
+    "title": "L3Harris appoints new CFO as firm prepares to spin off missile business",
+    "published_at": "Mon, 02 Mar 2026 18:35:40 +0000",
+    "url": "https://breakingdefense.com/2026/03/l3harris-appoints-new-cfo-as-firm-prepares-to-spin-off-missile-business/",
+    "summary": "Former Peraton CFO Kenneth Sharp will become the L3Harris&#8217;s top finance executive later this month.",
+    "signals": [
+      "defense"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "News2",
+    "title": "Army invites private industry to co-invest in installations, modernization plans",
+    "published_at": "Mon, 02 Mar 2026 16:21:55 +0000",
+    "url": "https://breakingdefense.com/2026/03/army-invites-private-industry-to-co-invest-in-installations-modernization-plans/",
+    "summary": "“We’re not just seeking funding,” said David Fitzgerald, who is performing the duties of the deputy undersecretary of the Army. “We’re seeking creative, out-of-the-box financial and business models that break the mold.&#8221;",
+    "signals": [
+      "defense"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "News2",
+    "title": "Iran conflict expands in Lebanon, Beirut demands Hezbollah ‘hand over its weapons’",
+    "published_at": "Mon, 02 Mar 2026 14:58:22 +0000",
+    "url": "https://breakingdefense.com/2026/03/iran-conflict-expands-in-lebanon-beirut-demands-hezbollah-hand-over-its-weapons/",
+    "summary": "Retired Lebanese armed forces general Maroun Hitti said that Hezbollah’s missiles has “instantly transformed Lebanon from fragile bystander to active battlefield,” describing the situations as “harsh and asymmetric.”",
+    "signals": [
+      "defense"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "Vendor2",
+    "title": "The Nightmare Returns in the Cloud: GeForce NOW Unleashes Capcom’s ‘Resident Evil Requiem’",
+    "published_at": "Thu, 26 Feb 2026 14:00:48 +0000",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-resident-evil-requiem/",
+    "summary": "GeForce NOW’s anniversary celebration reaches a chilling crescendo as Capcom’s Resident Evil Requiem creeps into the cloud — and the horrors look better than ever on a GeForce NOW Ultimate membership. To mark the occasion, a special launch ",
+    "signals": [
+      "cloud"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "Vendor2",
+    "title": "NVIDIA Brings AI-Powered Cybersecurity to World’s Critical Infrastructure",
+    "published_at": "Mon, 23 Feb 2026 16:00:57 +0000",
+    "url": "https://blogs.nvidia.com/blog/ai-cybersecurity-operational-technology-industrial-control-systems/",
+    "summary": "As technologies and systems become more digitalized and connected across the world, operational technology (OT) environments and industrial control systems (ICS) — from energy and manufacturing to transportation and utilities — are increasi",
+    "signals": [
+      "cloud"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "Vendor2",
+    "title": "All About the Games: Play Over 4,500 Titles With GeForce NOW",
+    "published_at": "Thu, 19 Feb 2026 14:00:35 +0000",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-battlefield-season-2/",
+    "summary": "The GeForce NOW anniversary celebration keeps on rolling, and this week is all about the games that make it possible. With more than 4,500 titles supported in the cloud — plus 12 new games this week — there’s always something new to stream,",
+    "signals": [
+      "cloud"
+    ],
+    "confidence": 0.9,
+    "score": 4
+  },
+  {
+    "platform": "Gov",
+    "title": "Joint Interagency Task Force Marks 6 Months With Accelerated Delivery of Counter-UAS Capabilities",
+    "published_at": "Fri, 27 Feb 2026 17:00:02 GMT",
+    "url": "https://www.war.gov/News/News-Stories/Article/Article/4417453/joint-interagency-task-force-marks-6-months-with-accelerated-delivery-of-counte/",
+    "summary": "Joint Interagency Task Force 401 marked six months since its establishment by demonstrating measurable progress in accelerating the delivery of counter-unmanned aircraft system capabilities to the joint force.",
+    "signals": [],
+    "confidence": 0.55,
+    "score": 3
+  },
+  {
+    "platform": "Gov",
+    "title": "Oklahoma Army National Guard Deploys for Fire Suppression Mission",
+    "published_at": "Fri, 27 Feb 2026 15:47:00 GMT",
+    "url": "https://www.war.gov/News/News-Stories/Article/Article/4417061/oklahoma-army-national-guard-deploys-for-fire-suppression-mission/",
+    "summary": "At the request of the Oklahoma Emergency Management Department and with the authorization of Gov. Kevin Stitt, members of the state's Army National Guard responded to wildfires in northwest Oklahoma using UH-60 Black Hawks and ground hand c",
+    "signals": [],
+    "confidence": 0.55,
+    "score": 3
+  },
+  {
+    "platform": "Gov",
+    "title": "Hegseth Says Scouting America Support to Continue Upon Org's Commitment to Drop DEI",
+    "published_at": "Fri, 27 Feb 2026 13:45:00 GMT",
+    "url": "https://www.war.gov/News/News-Stories/Article/Article/4417012/hegseth-says-scouting-america-support-to-continue-upon-orgs-commitment-to-drop/",
+    "summary": "Secretary of War Pete Hegseth announced that the War Department will conditionally continue to provide support to Scouting America following the youth organization's commitment to pull all diversity, equity and inclusion initiatives from it",
+    "signals": [],
+    "confidence": 0.55,
+    "score": 3
+  },
+  {
+    "platform": "News",
+    "title": "Putin’s $2.5 trillion gambit",
+    "published_at": "Tue, 03 Mar 2026 00:00:00 +0000",
+    "url": "https://www.defensenews.com/opinion/2026/03/03/putins-25-trillion-gambit/",
+    "summary": "As Russia’s war in Ukraine enters its fifth year, debates increasingly hinge on a central question: How costly has the war been for Russia itself?",
+    "signals": [],
+    "confidence": 0.75,
+    "score": 2
+  },
+  {
+    "platform": "News",
+    "title": "Six dead, 18 service members injured in Iran operation",
+    "published_at": "Mon, 02 Mar 2026 21:13:28 +0000",
+    "url": "https://www.defensenews.com/news/your-military/2026/03/02/six-dead-18-service-members-injured-in-iran-operation/",
+    "summary": "The number of American personnel killed and injured in Operation Epic Fury rose on Monday.",
+    "signals": [],
+    "confidence": 0.75,
+    "score": 2
+  },
+  {
+    "platform": "News",
+    "title": "Pentagon seeks robot ships to haul supplies to combat zones",
+    "published_at": "Mon, 02 Mar 2026 19:24:05 +0000",
+    "url": "https://www.defensenews.com/industry/techwatch/2026/03/02/pentagon-seeks-robot-ships-to-haul-supplies-to-combat-zones/",
+    "summary": "The U.S. military is looking for autonomous freighters that can transport supplies into dangerous waters, according to a DIU solicitation.",
+    "signals": [],
+    "confidence": 0.75,
+    "score": 2
+  },
+  {
+    "platform": "News",
+    "title": "Macron opens door to deploying French nuclear forces to European allies",
+    "published_at": "Mon, 02 Mar 2026 18:07:48 +0000",
+    "url": "https://www.defensenews.com/global/europe/2026/03/02/macron-opens-door-to-deploying-french-nuclear-assets-to-european-allies/",
+    "summary": "The plan is a “major evolution” of France’s deterrence posture, the president said in a long-awaited speech at the Île Longue naval base in Brittany.",
+    "signals": [],
+    "confidence": 0.75,
+    "score": 2
+  },
+  {
+    "platform": "News",
+    "title": "3 F-15s shot down by Kuwait in friendly fire incident, pilots safe, US says",
+    "published_at": "Mon, 02 Mar 2026 11:57:51 +0000",
+    "url": "https://www.defensenews.com/news/your-military/2026/03/02/3-f-15s-shot-down-by-kuwait-in-friendly-fire-incident-pilots-safe-us-says/",
+    "summary": "\"Kuwait has acknowledged this incident,\" according to U.S. Central Command. All six crew members have been recovered and are in stable condition.",
+    "signals": [],
+    "confidence": 0.75,
+    "score": 2
+  },
+  {
+    "platform": "Vendor",
+    "title": "Joint Statement from OpenAI and Microsoft",
+    "published_at": "Fri, 27 Feb 2026 05:30:00 GMT",
+    "url": "https://openai.com/index/continuing-microsoft-partnership",
+    "summary": "Microsoft and OpenAI continue to work closely across research, engineering, and product development, building on years of deep collaboration and shared success.",
+    "signals": [],
+    "confidence": 0.75,
+    "score": 2
+  }
+]
