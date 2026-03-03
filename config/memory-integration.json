@@ -15,9 +15,18 @@
       "metadata": 0.2
     },
     "routingByTask": {
-      "wechatContent": ["local_memory", "obsidian", "notion_topics", "memos"],
-      "general": ["local_memory", "memos"]
-    }
+      "wechatContent": [
+        "local_memory",
+        "obsidian",
+        "notion_topics",
+        "memos"
+      ],
+      "general": [
+        "local_memory",
+        "memos"
+      ]
+    },
+    "maxQmdSnippets": 3
   },
   "notion": {
     "enabled": true,
