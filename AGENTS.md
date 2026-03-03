@@ -217,9 +217,10 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 更新：2026-03-03
 
 ### 文件读取
-- 大文件（>100行）：先 `read offset=1 limit=30` 看结构，再按需取段，**禁止一次性全读**
+- 大文件（>100行）：**默认分段读**，先 `read offset=1 limit=30` 看结构，再按需取段
+- 调试/审查类任务（排查 bug、全量审计代码）：**可突破分段限制**，直接全读
 - 外部网页：只注入关键段落（<500 chars/条），不整页塞进上下文
-- 日志文件：只取最后 50 行或 grep 关键词，不全读
+- 日志文件：默认只取最后 50 行或 grep 关键词；若问题无法定位再扩展范围
 
 ### 记忆检索
 - 写作/分析任务开始前：**必须先跑** `python3 scripts/memory-retrieval-router.py "<关键词>"` 替代盲目全文搜索
@@ -232,7 +233,7 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 - 多步任务：优先复用 capability-tree 已有路径，不重复造轮子
 
 ### 禁止行为
-- ❌ 不做"以防万全"的全量读取
+- ❌ 不做"以防万全"的无目的全量读取
 - ❌ 不把原始 API 响应整体注入上下文（先压缩再用）
 - ❌ 不在同一 session 里重复读已经读过的完整文件
 
