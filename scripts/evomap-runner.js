@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 /**
- * EvoMap runner: heartbeat + fetch + filter + local report
- * Run once:
- *   node scripts/evomap-runner.js
+ * EvoMap runner v2
+ * 功能：
+ *   1. 心跳保活（节点存活）
+ *   2. 拉取 topCapsules，提取高 GDI 知识点，写入本地 evomap-state.json
+ *   3. 若有高分 Capsule（GDI >= 62），触发写入 capability-tree 候选
+ *   4. 不再查"任务池"（EvoMap 无此功能）
  */
 
 const fs = require('fs');
@@ -11,11 +14,10 @@ const crypto = require('crypto');
 
 const ROOT = process.cwd();
 const ENV_PATH = path.join(ROOT, 'config', 'evomap.env');
-const PROFILE_PATH = path.join(ROOT, 'config', 'evomap-task-profile.json');
 const STATE_DIR = path.join(ROOT, 'memory');
 const STATE_PATH = path.join(STATE_DIR, 'evomap-state.json');
+const CANDIDATES_PATH = path.join(STATE_DIR, 'evomap-evolution-candidates.md');
 
-function ensureDir(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
 function loadJson(p, fallback) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return fallback; }
 }
@@ -39,7 +41,9 @@ function loadEnv(filePath) {
 const fileEnv = loadEnv(ENV_PATH);
 const BASE = fileEnv.EVOMAP_BASE_URL || 'https://evomap.ai';
 const SENDER = fileEnv.EVOMAP_SENDER_ID || `node_${crypto.randomBytes(8).toString('hex')}`;
-const profile = loadJson(PROFILE_PATH, { focusKeywords: [], excludeKeywords: [], minBounty: 0, maxTasksKeep: 50 });
+
+// 心跳限速：每5分钟一次，加 jitter
+const HEARTBEAT_WINDOW_MS = 300000;
 
 function envelope(messageType, payload = {}) {
   return {
@@ -54,104 +58,167 @@ function envelope(messageType, payload = {}) {
 }
 
 async function postJson(url, body) {
-  const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  const r = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
   const txt = await r.text();
   let data; try { data = JSON.parse(txt); } catch { data = { raw: txt }; }
-  if (!r.ok) throw new Error(`HTTP ${r.status}: ${txt.slice(0, 500)}`);
-  return data;
-}
-function unwrap(data) { return data && data.payload ? data.payload : data; }
-
-function scoreTask(task) {
-  const title = (task.title || '').toLowerCase();
-  const signals = (task.signals || '').toLowerCase();
-  const hay = `${title} ${signals}`;
-  let score = 0;
-  for (const k of profile.focusKeywords || []) if (hay.includes(String(k).toLowerCase())) score += 2;
-  for (const k of profile.excludeKeywords || []) if (hay.includes(String(k).toLowerCase())) score -= 5;
-  const bounty = Number(task.bountyAmount || 0);
-  if (bounty >= Number(profile.minBounty || 0)) score += Math.min(5, Math.floor(bounty / 100));
-  return score;
+  return { status: r.status, ok: r.ok, data };
 }
 
-(async () => {
-  ensureDir(STATE_DIR);
-  const now = new Date().toISOString();
+function unwrap(raw) {
+  const d = raw.data || {};
+  return d.payload || d;
+}
 
-  const hbRaw = await postJson(`${BASE}/a2a/heartbeat`, { node_id: SENDER });
-  const hb = unwrap(hbRaw);
+async function doHeartbeat() {
+  const state = loadJson(STATE_PATH, {});
+  const lastHb = state.heartbeat?.lastSentAt ? new Date(state.heartbeat.lastSentAt).getTime() : 0;
+  const now = Date.now();
+  const jitter = Math.floor(Math.random() * 200) + 50;
 
-  const fetchRaw = await postJson(`${BASE}/a2a/fetch`, envelope('fetch', { asset_type: 'Capsule', include_tasks: true }));
-  const fx = unwrap(fetchRaw);
-  const tasks = Array.isArray(fx.tasks) ? fx.tasks : [];
-  const results = Array.isArray(fx.results) ? fx.results : [];
-
-  const ranked = tasks
-    .map(t => ({ ...t, _score: scoreTask(t) }))
-    .sort((a, b) => b._score - a._score)
-    .slice(0, Number(profile.maxTasksKeep || 50));
-
-  const promotedCapsules = results
-    .filter(r => (r.asset_type === 'Capsule' || (r.payload && r.payload.type === 'Capsule')) && r.status === 'promoted')
-    .sort((a, b) => Number(b.gdi_score || 0) - Number(a.gdi_score || 0));
-
-  const nodeAgg = {};
-  for (const c of promotedCapsules) {
-    const node = c.source_node_id || 'unknown';
-    if (!nodeAgg[node]) nodeAgg[node] = { count: 0, sum: 0, max: 0 };
-    nodeAgg[node].count += 1;
-    nodeAgg[node].sum += Number(c.gdi_score || 0);
-    nodeAgg[node].max = Math.max(nodeAgg[node].max, Number(c.gdi_score || 0));
+  if (now - lastHb < HEARTBEAT_WINDOW_MS - 5000) {
+    const waitMs = HEARTBEAT_WINDOW_MS - (now - lastHb);
+    console.log(`[heartbeat] 距上次 ${Math.round((now - lastHb)/1000)}s，限速未到，跳过（还需等 ${Math.round(waitMs/1000)}s）`);
+    return { skipped: true, credit: state.heartbeat?.credit_balance ?? 0 };
   }
-  const topNodes = Object.entries(nodeAgg)
-    .map(([nodeId, v]) => ({
-      nodeId,
-      count: v.count,
-      maxGdi: Number(v.max.toFixed(2)),
-      avgGdi: Number((v.sum / v.count).toFixed(2)),
-    }))
-    .sort((a, b) => b.maxGdi - a.maxGdi || b.avgGdi - a.avgGdi)
-    .slice(0, 10);
 
-  const state = {
-    updatedAt: now,
-    sender_id: SENDER,
-    heartbeat: {
-      status: hb.status,
-      node_status: hb.node_status,
-      survival_status: hb.survival_status,
-      credit_balance: hb.credit_balance,
-      next_heartbeat_ms: hb.next_heartbeat_ms,
-    },
-    stats: {
-      totalTasks: tasks.length,
-      totalCapsules: results.length,
-      promotedCapsules: promotedCapsules.length,
-      topPositive: ranked.filter(x => x._score > 0).length,
-      topNeutralOrNegative: ranked.filter(x => x._score <= 0).length,
-    },
-    topTasks: ranked.slice(0, 10).map(t => ({
-      id: t.id || t.task_id,
-      title: t.title,
-      bountyAmount: t.bountyAmount || t.bounty_amount || 0,
-      minReputation: t.minReputation || t.min_reputation,
-      score: t._score,
-      createdAt: t.createdAt || t.created_at,
-    })),
-    topCapsules: promotedCapsules.slice(0, 10).map(c => ({
+  const res = await postJson(`${BASE}/a2a/heartbeat`, envelope('heartbeat', {
+    capabilities: ['content_writing', 'digital_transformation', 'agent_orchestration', 'system_engineering'],
+    node_type: 'agent',
+  }));
+
+  const p = unwrap(res);
+
+  if (p.error === 'rate_limited') {
+    console.log(`[heartbeat] 限速，${Math.round((p.retry_after_ms || 300000)/1000)}s 后重试`);
+    return { skipped: true, credit: state.heartbeat?.credit_balance ?? 0 };
+  }
+
+  console.log(`[heartbeat] 状态=${p.node_status || 'ok'} credit=${p.credit_balance ?? '?'} survival=${p.survival_status || 'ok'}`);
+  return {
+    skipped: false,
+    lastSentAt: new Date().toISOString(),
+    node_status: p.node_status,
+    survival_status: p.survival_status,
+    credit_balance: p.credit_balance ?? 0,
+    next_heartbeat_ms: p.next_heartbeat_ms ?? HEARTBEAT_WINDOW_MS,
+  };
+}
+
+async function doFetch() {
+  const res = await postJson(`${BASE}/a2a/fetch`, envelope('fetch', {
+    asset_type: 'Capsule',
+    include_tasks: false,  // 任务池不存在，不再请求
+  }));
+
+  const fx = unwrap(res);
+  const capsules = Array.isArray(fx.results) ? fx.results : [];
+  const lessons = Array.isArray(fx.relevant_lessons) ? fx.relevant_lessons : [];
+
+  console.log(`[fetch] capsules=${capsules.length} lessons=${lessons.length} mode=${fx.mode || '?'}`);
+
+  // 高 GDI capsule（>= 62）提取为能力候选
+  const GDI_THRESHOLD = 62;
+  const topCapsules = capsules
+    .filter(c => (c.gdi_score || 0) >= GDI_THRESHOLD)
+    .sort((a, b) => (b.gdi_score || 0) - (a.gdi_score || 0))
+    .slice(0, 10)
+    .map(c => ({
       assetId: c.asset_id,
       sourceNodeId: c.source_node_id,
-      gdiScore: Number(c.gdi_score || 0),
-      confidence: Number(c.confidence || 0),
-      triggerText: c.trigger_text || '',
-      summary: (c.payload && (c.payload.summary || c.payload.title || c.payload.content || '') || '').toString().replace(/\s+/g, ' ').slice(0, 180),
-    })),
-    topNodes,
+      gdiScore: c.gdi_score,
+      confidence: c.confidence,
+      triggerText: c.trigger_text,
+      summary: (c.payload?.summary || c.payload?.content || '').slice(0, 180),
+    }));
+
+  // 节点统计
+  const nodeMap = {};
+  for (const c of capsules) {
+    const nid = c.source_node_id || 'unknown';
+    if (!nodeMap[nid]) nodeMap[nid] = { nodeId: nid, count: 0, maxGdi: 0, avgGdi: 0, gdis: [] };
+    nodeMap[nid].count++;
+    nodeMap[nid].gdis.push(c.gdi_score || 0);
+    if ((c.gdi_score || 0) > nodeMap[nid].maxGdi) nodeMap[nid].maxGdi = c.gdi_score || 0;
+  }
+  const topNodes = Object.values(nodeMap).map(n => ({
+    ...n,
+    avgGdi: n.gdis.length ? Math.round(n.gdis.reduce((a,b)=>a+b,0)/n.gdis.length * 100)/100 : 0,
+    gdis: undefined,
+  })).sort((a,b)=>b.maxGdi-a.maxGdi).slice(0,7);
+
+  return { topCapsules, topNodes, lessonCount: lessons.length,
+    stats: { totalCapsules: capsules.length,
+      promotedCapsules: capsules.filter(c=>c.status==='promoted').length,
+      topPositive: topCapsules.length,
+      topNeutralOrNegative: capsules.filter(c=>(c.gdi_score||0)<GDI_THRESHOLD).length } };
+}
+
+function appendCandidates(topCapsules) {
+  // 把新的高分 capsule 写入候选文件（去重）
+  const existing = fs.existsSync(CANDIDATES_PATH) ? fs.readFileSync(CANDIDATES_PATH,'utf8') : '';
+  const newEntries = topCapsules.filter(c => !existing.includes(c.assetId));
+  if (newEntries.length === 0) return 0;
+
+  const lines = [`\n## 新增候选 ${new Date().toISOString().slice(0,10)}\n`];
+  for (const c of newEntries) {
+    lines.push(`- **GDI ${c.gdiScore}** | ${c.triggerText}`);
+    lines.push(`  摘要: ${c.summary}`);
+    lines.push(`  assetId: \`${c.assetId}\``);
+    lines.push('');
+  }
+  fs.appendFileSync(CANDIDATES_PATH, lines.join('\n'));
+  return newEntries.length;
+}
+
+async function main() {
+  console.log(`[evomap-runner v2] sender=${SENDER} time=${new Date().toISOString()}`);
+
+  const prevState = loadJson(STATE_PATH, {});
+
+  // 1. 心跳
+  const hbResult = await doHeartbeat();
+
+  // 2. 拉取 Capsule（无限速问题，直接拉）
+  let fetchResult = null;
+  try {
+    fetchResult = await doFetch();
+  } catch (e) {
+    console.error('[fetch] 失败:', e.message);
+  }
+
+  // 3. 更新状态
+  const newState = {
+    updatedAt: new Date().toISOString(),
+    sender_id: SENDER,
+    heartbeat: hbResult.skipped
+      ? { ...(prevState.heartbeat || {}), status: 'ok' }
+      : { status: 'ok', ...hbResult },
+    stats: fetchResult?.stats || prevState.stats || {},
+    topTasks: [],  // EvoMap 无任务池，保留空数组保持兼容
+    topCapsules: fetchResult?.topCapsules || prevState.topCapsules || [],
+    topNodes: fetchResult?.topNodes || prevState.topNodes || [],
   };
 
-  saveJson(STATE_PATH, state);
-  console.log(JSON.stringify(state, null, 2));
-})().catch(err => {
-  console.error(err.message || String(err));
-  process.exit(1);
-});
+  saveJson(STATE_PATH, newState);
+
+  // 4. 新增候选写入
+  const newCount = fetchResult ? appendCandidates(fetchResult.topCapsules) : 0;
+
+  // 5. 输出摘要
+  const stats = newState.stats;
+  console.log(`\n[摘要]`);
+  console.log(`  capsules: ${stats.totalCapsules || 0} 总 / GDI≥62: ${stats.topPositive || 0} 条`);
+  console.log(`  新增候选: ${newCount} 条`);
+  console.log(`  credit: ${newState.heartbeat?.credit_balance ?? '?'}`);
+  if (newCount > 0) {
+    console.log(`  ⚡ 有新能力候选，建议进入 B2 评估流程`);
+  } else {
+    console.log(`  无新候选，HEARTBEAT_OK`);
+  }
+}
+
+main().catch(e => { console.error('[fatal]', e.message); process.exit(1); });
