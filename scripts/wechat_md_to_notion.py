@@ -130,9 +130,9 @@ def main():
         }, ensure_ascii=False, indent=2))
         return
 
-    key = os.environ.get("MATON_API_KEY")
+    key = os.environ.get("NOTION_API_KEY") or os.environ.get("MATON_API_KEY")
     if not key:
-        print("ERROR: MATON_API_KEY 未设置", file=sys.stderr)
+        print("ERROR: NOTION_API_KEY 未设置（或 MATON_API_KEY）", file=sys.stderr)
         sys.exit(3)
 
     props = {
