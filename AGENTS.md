@@ -212,6 +212,30 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## Token 节省硬约束（强制执行，不可跳过）
+
+更新：2026-03-03
+
+### 文件读取
+- 大文件（>100行）：先 `read offset=1 limit=30` 看结构，再按需取段，**禁止一次性全读**
+- 外部网页：只注入关键段落（<500 chars/条），不整页塞进上下文
+- 日志文件：只取最后 50 行或 grep 关键词，不全读
+
+### 记忆检索
+- 写作/分析任务开始前：**必须先跑** `python3 scripts/memory-retrieval-router.py "<关键词>"` 替代盲目全文搜索
+- 每次最多注入 3-5 条检索结果，单条 ≤500 chars
+- qmd 搜索：不加 `--collection` 参数，跨集合搜索，取 `--limit 3`
+
+### 工具调用
+- `exec` 命令输出超长时：先 `head -30` 或 `tail -30`，不把 10k 行日志全塞进结果
+- 搜索结果超过 5 条：只处理前 3 条最相关的，其余标注"已截断"
+- 多步任务：优先复用 capability-tree 已有路径，不重复造轮子
+
+### 禁止行为
+- ❌ 不做"以防万全"的全量读取
+- ❌ 不把原始 API 响应整体注入上下文（先压缩再用）
+- ❌ 不在同一 session 里重复读已经读过的完整文件
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
