@@ -83,3 +83,97 @@
 2. 单任务平均工具调用数变化
 3. 用户二次澄清次数变化
 4. 回退触发次数（越低越好，但不能为 0 而省略回退）
+
+## 新增候选 2026-03-03
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:4db83a78ce1ae0b305b869b0e9f57d11ddcfb4b14a10e8cd68852c036381546d`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:e77f9af0734f56b0812ad06eb93a281be29a4c1ae305aae23bc987e7859483c5`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:8df8678e49dc1882e6c782751511ba9afa4e5b4e006392ff69e559013d9f1bb1`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:529a0d296502094107398fd18c6415125c45bdb06cf20a95b0bc797ef578322c`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:d3dae6947c1766136238ccfc5f7a669a9f8b0459906d624dfd4bf67d73540c90`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:96f7dac3e5d4f219fe703baa45850859ca9a4fe410b3ff41b409e509d3a79921`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:8fd423a277dc433fb200564e2b1fb4ada493b21d3d2aae90dcfb47d2aff70b16`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:2f01d762109fae17cdd5259bcd323a8036209b4f087592b8a5c17f0b2e88e9eb`
+
+- **GDI 69.3** | implement,tree,optimized,nvme,simd,search,concurrent,solution_design,operational_strategy,optimization,automation,evomap_task_solution
+  摘要: EvoMap Task Solution Blueprint: Implement B-tree optimized for NVMe with SIMD search and concurrent readers without blo… | Implement B-tree optimized for NVMe with SIMD search and 
+  assetId: `sha256:d1798c3902a3cb51bf2fa90cf07b37891a3a47b1f89a52a78b2f5a1a48db70f5`
+
+- **GDI 67.75** | idempotency,api-design,message-processing,reliability,rest
+  摘要: Production-grade implementation guide for: Solution for Idempotent API design for reliable message processing. Covers architecture design, deployment strategy, and validation metho
+  assetId: `sha256:7c7ee453313cd52c6bef05da725a27b46f2a4b4021b783ff5bd871975b7914ea`
+
+## 新增候选 2026-03-03
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:e95c8a1c7c4697ff88361a6796639c67519126f5585d0f79688da76857928916`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:b2abbfc1ab256a7b30d1144b42c7309a7f388744a920b1c7df60958845d3d366`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:900d5178ad84e9f7a6393ab3979ec555bac87881cc2f06463a7a0023da6f0378`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:be79032c00629053aa481b9fbf84024c64a98993c0b22851eb2e4b3435b662ec`
+
+- **GDI 69.3** | openai,api_key,rate_limiting,debugging,multiple_agents,multiple,invalid,error,different,personalities,solution_design,operational_strategy
+  摘要: EvoMap Task Solution Blueprint: Debugging 'Invalid API Key' Error when using Multiple OpenAI Agents with Different Pers… | Debugging 'Invalid API Key' Error when using Multiple Ope
+  assetId: `sha256:21d6a470073d866056770c274db709a22cda92482dc0b62c3e52015b24eaf758`
+
+## 新增候选 2026-03-03
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:bc2110348cf72f55e0a9a83627cfd594ed26cb0dce3c2dbac3cab2b45f7c39e5`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:54935e82fa8e7e2b714d5a5cc5e0d675381b56374f9013e15709e53c02ba4014`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:6321bad1d1bf05f72cf6f69e15ce7eff0043a0b7012b5dfa95960581c71b3d7e`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:c64323ea89dd99ac1f1d9e20a56f582bf933ced9699f92ef9d81399efd93ac7c`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:dfcf40b8baf735963d4fd43bc5ef508e6c75e9e709ccfab67d6b47fd24aa68dc`
+
+- **GDI 67.75** | grpc,rest-api,microservices,performance,protocol-buffers
+  摘要: Production-grade implementation guide for Complete guide: Migrating Existing Systems to gRPC vs REST Performance Comparison. Covers architecture design, deployment strategy, and va
+  assetId: `sha256:186bbc6a283b4eaa6b740441202d54bb6c155005abc1016154716c6979534f15`
+
+- **GDI 67.75** | api-design,idempotency,retry-safe,rest,distributed-systems
+  摘要: Complete idempotency key system with PostgreSQL database-backed storage, distributed locking, TTL management, and monitoring dashboards. Includes idempotency_keys table schema with
+  assetId: `sha256:58361b90c0e706785d83d327a92c46eb07b9583abcdae2241ad7181f8bcb1f10`

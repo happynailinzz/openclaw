@@ -1,0 +1,46 @@
+[
+  {
+    "platform": "news",
+    "title": "As Trump reins in China tech curbs, Beijing's export controls come of age",
+    "published_at": "2026-02-26T23:02:34Z",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPUHp3LS1JblQ3UG8wc0FCSTZGNVRfb2hEbHhfMjZ1ZGRsZXJOTW9sdENac0JxNHBBZ29Ya1EwRTRyQTREQ1k2ZXRYLVdUVi1ZaGJJN2N4UHlSS2NpSXZIMFVYRU9xRlJYODQ0QWdxeWxVTC1fS2ZkOWhoRXBZMWNMTE53U1pfZDRVMXhtNFVXVGVLdHRnMDZEYkpURWRCRE55R3pmR1NNX0ZPM2pkVEhJ?oc=5",
+    "summary": "政策信号显示美国对华科技限制出现‘收紧/放松’再平衡，同时中国出口管制能力同步增强，双边政策博弈加剧。",
+    "signals": ["出口管制", "对华AI芯片", "政策波动"],
+    "confidence": 0.8,
+    "score": 7,
+    "tier": "high"
+  },
+  {
+    "platform": "news",
+    "title": "Nvidia still hasn't sold its U.S.-approved China AI chips — and it’s worried local AI rivals could take over",
+    "published_at": "2026-02-26T08:23:22Z",
+    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNd2gwUFlrUXF3aEVNUVJPajNpdklUcTNTS09udGJBOWZ5NEJmanlaOXFhbDE5MzdPOFBGZnRMbWpuNndmcXFzNGNOR2ZMRENlNjl0NGpGU09NLTRPamNGZXFmWklCQ1Y1ZkhFaDNmUGJjS2lKYmhCZHgyYlN6WlZBZUhCUG1BYTBuRUhmdnBtNDlTU0NERnfSAZsBQVVfeXFMUEFWRlpaMTZWTVpxU1ZnZEtrLUhxNkk5ZUlyNWhuaW5aUkhHOUlKQjB0VHp1YkVUemxXSGVad1FkZlRBUTJnaV9pczJraVdadmJMSFpVNVhUZ3RybUluRUFLM3V2QkZoU1pMZVRaWFduWUMxa2lZemozOFBYNjJTS2twUkF1Y1NnczRmLUxtN0lPRGZkM0stR2JkekU?oc=5",
+    "summary": "合规可售产品仍难形成有效交付，窗口期被本土替代挤压，供应链替代正在发生。",
+    "signals": ["NVIDIA", "China market", "替代加速"],
+    "confidence": 0.74,
+    "score": 7,
+    "tier": "high"
+  },
+  {
+    "platform": "news",
+    "title": "Nvidia Has Sold Zero H200s to China, Top US Export Enforcer Says",
+    "published_at": "2026-02-24T22:13:25Z",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaTBsYkEyc0JUTlJFT3BHSUJ6UGo4Z3lzbE1vSkxSVWFJQnFmWjdTZXFwd1pTRGc4M1libDlsY2l6TzNvTkpKUTMtTmt3TEdnTGM5QjRYRGVGMnVNNlBQS2VzLTE0cjVtaDBfR2pZckhFXzBLV1NhQ1pTOHNwaFJwbmtCbmhHOEFQakVseUdVVWVDYVl0VlZ2d2t2TGczVUFTOEE4R2lWZWxYUnYyRUd0STBXTFE?oc=5",
+    "summary": "监管执行层确认高端算力芯片对华流通受阻，跨境交付不确定性短期仍高。",
+    "signals": ["H200", "执法信号", "交付受限"],
+    "confidence": 0.72,
+    "score": 7,
+    "tier": "high"
+  },
+  {
+    "platform": "reddit",
+    "title": "Billionaire and Scale AI CEO Alexandr Wang: DeepSeek has about 50,000 NVIDIA H100s...",
+    "published_at": "2025-01-24T15:05:26Z",
+    "url": "https://www.reddit.com/r/singularity/comments/1i8xfm1/billionaire_and_scale_ai_ceo_alexandr_wang/",
+    "summary": "社区侧持续关注‘限制下的实际算力存量’，可作为灰度信号，但时效性和真实性需二次核验。",
+    "signals": ["舆情", "算力存量猜测", "低时效"],
+    "confidence": 0.35,
+    "score": -1,
+    "tier": "low"
+  }
+]
