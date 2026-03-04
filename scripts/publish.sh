@@ -61,15 +61,40 @@ if [ -f "$COVER_IMG" ]; then
 else
   PROMPT="为微信公众号文章《${TITLE}》生成封面图。专业商务风，中国科技感，蓝色调，简洁大气，横版16:9，无文字。"
   RETRY=0
+  GEN_OK=0
+
+  # 主路：本地代理
+  log "尝试主路图片代理（本地 8317）..."
   until OPENAI_BASE_URL="$IMAGE_GEN_BASE_URL" \
         OPENAI_API_KEY="$IMAGE_GEN_API_KEY" \
         OPENAI_IMAGE_MODEL="$IMAGE_GEN_MODEL" \
         npx -y bun "$IMAGE_GEN" --prompt "$PROMPT" --image "$COVER_IMG" --ar 16:9 2>&1; do
     RETRY=$((RETRY+1))
-    [ $RETRY -ge 5 ] && fail "封面图生成失败，已重试 5 次"
-    warn "生成失败（$RETRY/5），60s 后重试..."
+    [ $RETRY -ge 3 ] && break
+    warn "主路失败（$RETRY/3），60s 后重试..."
     sleep 60
   done
+
+  # 检查是否生成成功
+  if [ -f "$COVER_IMG" ]; then
+    GEN_OK=1
+  else
+    # 备用路：SmartAPI（python3 脚本，chat completions 接口）
+    warn "主路失败，切换备用 API（SmartAPI）..."
+    RETRY=0
+    until IMAGE_GEN_BACKUP_BASE_URL="$IMAGE_GEN_BACKUP_BASE_URL" \
+          IMAGE_GEN_BACKUP_API_KEY="$IMAGE_GEN_BACKUP_API_KEY" \
+          IMAGE_GEN_BACKUP_MODEL="$IMAGE_GEN_BACKUP_MODEL" \
+          python3 "$WORKSPACE/scripts/smartapi-image-gen.py" "$PROMPT" "$COVER_IMG" 2>&1; do
+      RETRY=$((RETRY+1))
+      [ $RETRY -ge 3 ] && fail "封面图生成失败，主路+备用均已重试 3 次"
+      warn "备用路失败（$RETRY/3），60s 后重试..."
+      sleep 60
+    done
+    [ -f "$COVER_IMG" ] && GEN_OK=1
+  fi
+
+  [ $GEN_OK -eq 0 ] && fail "封面图生成失败"
   ok "封面图：$(basename "$COVER_IMG")"
 fi
 
