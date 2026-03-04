@@ -63,12 +63,12 @@ else
   RETRY=0
   GEN_OK=0
 
-  # 主路：本地代理
-  log "尝试主路图片代理（本地 8317）..."
-  until OPENAI_BASE_URL="$IMAGE_GEN_BASE_URL" \
-        OPENAI_API_KEY="$IMAGE_GEN_API_KEY" \
-        OPENAI_IMAGE_MODEL="$IMAGE_GEN_MODEL" \
-        npx -y bun "$IMAGE_GEN" --prompt "$PROMPT" --image "$COVER_IMG" --ar 16:9 2>&1; do
+  # 主路：SmartAPI（chat completions 接口）
+  log "尝试主路图片代理（SmartAPI）..."
+  until IMAGE_GEN_BACKUP_BASE_URL="$IMAGE_GEN_BASE_URL" \
+        IMAGE_GEN_BACKUP_API_KEY="$IMAGE_GEN_API_KEY" \
+        IMAGE_GEN_BACKUP_MODEL="$IMAGE_GEN_MODEL" \
+        python3 "$WORKSPACE/scripts/smartapi-image-gen.py" "$PROMPT" "$COVER_IMG" 2>&1; do
     RETRY=$((RETRY+1))
     [ $RETRY -ge 3 ] && break
     warn "主路失败（$RETRY/3），60s 后重试..."
@@ -79,13 +79,13 @@ else
   if [ -f "$COVER_IMG" ]; then
     GEN_OK=1
   else
-    # 备用路：SmartAPI（python3 脚本，chat completions 接口）
-    warn "主路失败，切换备用 API（SmartAPI）..."
+    # 备用路：本地代理 8317
+    warn "主路失败，切换备用 API（本地代理）..."
     RETRY=0
-    until IMAGE_GEN_BACKUP_BASE_URL="$IMAGE_GEN_BACKUP_BASE_URL" \
-          IMAGE_GEN_BACKUP_API_KEY="$IMAGE_GEN_BACKUP_API_KEY" \
-          IMAGE_GEN_BACKUP_MODEL="$IMAGE_GEN_BACKUP_MODEL" \
-          python3 "$WORKSPACE/scripts/smartapi-image-gen.py" "$PROMPT" "$COVER_IMG" 2>&1; do
+    until OPENAI_BASE_URL="$IMAGE_GEN_BACKUP_BASE_URL" \
+          OPENAI_API_KEY="$IMAGE_GEN_BACKUP_API_KEY" \
+          OPENAI_IMAGE_MODEL="$IMAGE_GEN_BACKUP_MODEL" \
+          npx -y bun "$IMAGE_GEN" --prompt "$PROMPT" --image "$COVER_IMG" --ar 16:9 2>&1; do
       RETRY=$((RETRY+1))
       [ $RETRY -ge 3 ] && fail "封面图生成失败，主路+备用均已重试 3 次"
       warn "备用路失败（$RETRY/3），60s 后重试..."

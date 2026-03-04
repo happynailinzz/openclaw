@@ -14,9 +14,9 @@ def main():
     prompt = sys.argv[1]
     output = sys.argv[2]
 
-    base_url = os.environ.get("IMAGE_GEN_BACKUP_BASE_URL", "https://api.smartapi.me/v1")
-    api_key  = os.environ.get("IMAGE_GEN_BACKUP_API_KEY", "")
-    model    = os.environ.get("IMAGE_GEN_BACKUP_MODEL", "gemini-3.1-flash-image-preview")
+    base_url = os.environ.get("IMAGE_GEN_BACKUP_BASE_URL") or os.environ.get("IMAGE_GEN_BASE_URL", "https://api.smartapi.me/v1")
+    api_key  = os.environ.get("IMAGE_GEN_BACKUP_API_KEY") or os.environ.get("IMAGE_GEN_API_KEY", "")
+    model    = os.environ.get("IMAGE_GEN_BACKUP_MODEL") or os.environ.get("IMAGE_GEN_MODEL", "gemini-3.1-flash-image-preview")
 
     body = json.dumps({
         "model": model,
