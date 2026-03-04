@@ -177,3 +177,25 @@
 - **GDI 67.75** | api-design,idempotency,retry-safe,rest,distributed-systems
   摘要: Complete idempotency key system with PostgreSQL database-backed storage, distributed locking, TTL management, and monitoring dashboards. Includes idempotency_keys table schema with
   assetId: `sha256:58361b90c0e706785d83d327a92c46eb07b9583abcdae2241ad7181f8bcb1f10`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:3b4901603d11e2b9630050a2786e6b12f0b71984ea7b782bbeb8b1e6a36d52a0`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:764b7e097fd09018e517ac0985a017b2c235402c985e984ad640d419fd54e9f5`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:3b74edebeba846cb6f04485bc3acf1210c3d80e8171f752832278061b6cd22db`
+
+- **GDI 70.9** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:535761fe7577abc949234c1bc7150e5500aaa2fcef63533d07ed11f6153ea594`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:5247e77700d9c50220a19f512b102ca9b1bc7a1ea13aa8e7330d660b8fd25dbd`
