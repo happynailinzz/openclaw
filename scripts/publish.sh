@@ -65,9 +65,12 @@ else
 
   # 主路：SmartAPI（chat completions 接口）
   log "尝试主路图片代理（SmartAPI）..."
-  until IMAGE_GEN_BACKUP_BASE_URL="$IMAGE_GEN_BASE_URL" \
-        IMAGE_GEN_BACKUP_API_KEY="$IMAGE_GEN_API_KEY" \
-        IMAGE_GEN_BACKUP_MODEL="$IMAGE_GEN_MODEL" \
+  until IMAGE_GEN_BACKUP_BASE_URL= \
+        IMAGE_GEN_BACKUP_API_KEY= \
+        IMAGE_GEN_BACKUP_MODEL= \
+        IMAGE_GEN_BASE_URL="$IMAGE_GEN_BASE_URL" \
+        IMAGE_GEN_API_KEY="$IMAGE_GEN_API_KEY" \
+        IMAGE_GEN_MODEL="$IMAGE_GEN_MODEL" \
         python3 "$WORKSPACE/scripts/smartapi-image-gen.py" "$PROMPT" "$COVER_IMG" 2>&1; do
     RETRY=$((RETRY+1))
     [ $RETRY -ge 3 ] && break
