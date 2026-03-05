@@ -151,6 +151,7 @@ async function fetchAssets() {
   const out = {
     fetched_at: new Date().toISOString(),
     sender_id: EVOMAP_SENDER_ID,
+    results: Array.isArray(data.results) ? data.results : [],
     assets: Array.isArray(data.assets) ? data.assets : [],
     tasks: Array.isArray(data.tasks) ? data.tasks : [],
     credit_balance: data.credit_balance,
@@ -162,6 +163,7 @@ async function fetchAssets() {
 
   console.log(JSON.stringify({
     sender_id: EVOMAP_SENDER_ID,
+    results: out.results.length,
     assets: out.assets.length,
     tasks: out.tasks.length,
     saved_to: outPath,
