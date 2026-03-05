@@ -8,22 +8,29 @@ import sys
 import urllib.parse
 import urllib.request
 
+from http_stable import request_json
+
 DEFAULT_DS_ID = "31170dc2-6079-8003-bc57-000bd143337d"  # 微信公众号文章库
 NOTION_VERSION = "2025-09-03"
 NOTION_BASE = "https://gateway.maton.ai/notion/v1"
 
 
 def notion_request(method, path, key, payload=None, timeout=60):
-    data = None
-    if payload is not None:
-        data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = urllib.request.Request(f"{NOTION_BASE}{path}", data=data, method=method)
-    req.add_header("Authorization", f"Bearer {key}")
-    req.add_header("Notion-Version", NOTION_VERSION)
-    if payload is not None:
-        req.add_header("Content-Type", "application/json")
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.load(r)
+    out, _trace = request_json(
+        method,
+        f"{NOTION_BASE}{path}",
+        headers={
+            "Authorization": f"Bearer {key}",
+            "Notion-Version": NOTION_VERSION,
+        },
+        payload=payload,
+        timeout=timeout,
+        retries=3,
+        backoff_base_s=0.8,
+        backoff_max_s=10.0,
+        jitter_s=0.3,
+    )
+    return out
 
 
 def http_get(url, timeout=60):

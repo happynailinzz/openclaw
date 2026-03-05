@@ -4,6 +4,8 @@ import os
 import sys
 import urllib.request
 import urllib.error
+
+from http_stable import request_json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,18 +30,20 @@ def load_cfg(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 def req_json(url: str, token: str, payload: dict):
-    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = urllib.request.Request(
+    out, _trace = request_json(
+        "POST",
         url,
-        data=data,
-        method="POST",
         headers={
-            "Content-Type": "application/json",
             "Authorization": f"Token {token}",
         },
+        payload=payload,
+        timeout=30,
+        retries=3,
+        backoff_base_s=0.8,
+        backoff_max_s=8.0,
+        jitter_s=0.3,
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode("utf-8", "ignore"))
+    return out
 
 def main():
     if len(sys.argv) < 2 or sys.argv[1] not in {"add", "search"}:
