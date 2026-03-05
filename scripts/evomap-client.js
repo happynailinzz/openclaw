@@ -49,19 +49,40 @@ function envelope(messageType, payload = {}) {
   };
 }
 
-async function postJson(url, body) {
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  const text = await res.text();
-  let data;
-  try { data = JSON.parse(text); } catch { data = { raw: text }; }
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status}: ${JSON.stringify(data)}`);
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function postJson(url, body, { retries = 5 } = {}) {
+  const headers = { 'Content-Type': 'application/json' };
+  const secret = fileEnv.EVOMAP_NODE_SECRET || process.env.EVOMAP_NODE_SECRET;
+  if (secret) headers.Authorization = `Bearer ${secret}`;
+
+  let lastErr;
+  for (let i = 0; i <= retries; i++) {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body),
+    });
+    const text = await res.text();
+    let data;
+    try { data = JSON.parse(text); } catch { data = { raw: text }; }
+
+    if (res.ok) return data;
+
+    // Nginx 429 returns HTML body; treat as retryable.
+    const retryable = res.status === 429 || res.status >= 500;
+    lastErr = new Error(`HTTP ${res.status}: ${JSON.stringify(data)}`);
+
+    if (!retryable || i === retries) break;
+
+    const base = Math.min(8000, 600 * (2 ** i));
+    const jitter = Math.floor(Math.random() * 250);
+    await sleep(base + jitter);
   }
-  return data;
+
+  throw lastErr;
 }
 
 function unwrapPayload(data) {
@@ -79,7 +100,8 @@ async function hello() {
   };
   const raw = await postJson(`${EVOMAP_BASE_URL}/a2a/hello`, envelope('hello', payload));
   const data = unwrapPayload(raw);
-  console.log(JSON.stringify({
+
+  const out = {
     sender_id: EVOMAP_SENDER_ID,
     your_node_id: data.your_node_id,
     status: data.status,
@@ -89,6 +111,23 @@ async function hello() {
     survival_status: data.survival_status,
     heartbeat_interval_ms: data.heartbeat_interval_ms,
     heartbeat_endpoint: data.heartbeat_endpoint,
+    node_secret: data.node_secret,
+    recommended_assets: data.recommended_assets,
+  };
+
+  const outPath = path.resolve(process.cwd(), 'memory', `evomap-hello-${Date.now()}.json`);
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
+
+  console.log(JSON.stringify({
+    sender_id: EVOMAP_SENDER_ID,
+    your_node_id: data.your_node_id,
+    status: data.status,
+    credit_balance: data.credit_balance,
+    survival_status: data.survival_status,
+    saved_to: outPath,
+    recommended_assets: Array.isArray(data.recommended_assets) ? data.recommended_assets.length : 0,
+    node_secret_present: !!data.node_secret,
   }, null, 2));
 }
 
@@ -108,10 +147,24 @@ async function fetchAssets() {
     include_tasks: true,
   }));
   const data = unwrapPayload(raw);
+
+  const out = {
+    fetched_at: new Date().toISOString(),
+    sender_id: EVOMAP_SENDER_ID,
+    assets: Array.isArray(data.assets) ? data.assets : [],
+    tasks: Array.isArray(data.tasks) ? data.tasks : [],
+    credit_balance: data.credit_balance,
+  };
+
+  const outPath = path.resolve(process.cwd(), 'memory', `evomap-fetch-${Date.now()}.json`);
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
+
   console.log(JSON.stringify({
     sender_id: EVOMAP_SENDER_ID,
-    assets: Array.isArray(data.assets) ? data.assets.length : 0,
-    tasks: Array.isArray(data.tasks) ? data.tasks.length : 0,
+    assets: out.assets.length,
+    tasks: out.tasks.length,
+    saved_to: outPath,
   }, null, 2));
 }
 
