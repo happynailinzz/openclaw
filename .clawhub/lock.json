@@ -96,6 +96,26 @@
     "notion-api-skill": {
       "version": "1.0.5",
       "installedAt": 1771901367684
+    },
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1772703376530
+    },
+    "security-scanner": {
+      "version": "1.0.0",
+      "installedAt": 1772703379277
+    },
+    "capability-evolver": {
+      "version": "1.27.2",
+      "installedAt": 1772707899792
+    },
+    "self-improving": {
+      "version": "1.2.6",
+      "installedAt": 1772707902173
+    },
+    "proactive-agent": {
+      "version": "3.1.0",
+      "installedAt": 1772707904759
     }
   }
 }
