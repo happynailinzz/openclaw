@@ -1,0 +1,83 @@
+{
+  "run_at_utc": "2026-03-05T02:06:00Z",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "stepA": {
+    "executed": false,
+    "reason": "非周一，按SOP跳过每周技能复查"
+  },
+  "channels": {
+    "x": "success_via_web_fetch_jina",
+    "xiaohongshu": "success_via_mcp_skill",
+    "youtube": "success_via_web_fetch_jina",
+    "reddit": "partial_success_via_rss_with_blocked_search",
+    "news": "success_via_reuters_techcrunch",
+    "rss": "success_via_google_news_hn_verge"
+  },
+  "items": [
+    {
+      "platform": "News/TechCrunch",
+      "title": "Anthropic CEO称OpenAI对DoD合作话术“straight up lies”",
+      "published_at": "2026-03-04",
+      "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says/",
+      "summary": "报道称DoD与Anthropic谈判未达一致后转向OpenAI，争议焦点为‘any lawful use’条款边界。",
+      "signals": ["防务AI采购条款争议", "合规边界可能变化", "供应商策略分化"],
+      "confidence": 0.82,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "News/Reuters",
+      "title": "多家AI公司与白宫签署数据中心新增电力成本承担承诺",
+      "published_at": "2026-03-05",
+      "url": "https://www.reuters.com/world/us/",
+      "summary": "Google、Microsoft、Meta、Amazon及多家AI公司签署承诺，围绕数据中心新增供电能力与成本。",
+      "signals": ["算力基础设施政策动作", "电力约束进入合同化", "交付窗口受电力侧影响"],
+      "confidence": 0.78,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "X",
+      "title": "White House发布伊朗打击相关视频（X官方账号）",
+      "published_at": "2026-03-04T21:24:00Z",
+      "url": "https://x.com/WhiteHouse/status/2029307088808055083",
+      "summary": "白宫官方账号发布与军事行动相关内容，显示国防叙事强度提升。",
+      "signals": ["政策与国防叙事升温", "涉防务AI舆论波动", "政府端需求可能趋紧"],
+      "confidence": 0.7,
+      "score": 5,
+      "tier": "high"
+    },
+    {
+      "platform": "小红书",
+      "title": "国家定调「人工智能+」：中国AI十年三步走（机器之心）",
+      "published_at": "unknown",
+      "url": "https://www.xiaohongshu.com/explore/68aeadbf000000001c030b1c",
+      "summary": "内容聚焦国家层面‘人工智能+’方向，互动量较高，反映从业者对政策解读需求上升。",
+      "signals": ["政策传播热度高", "行业预期统一化", "项目立项语言趋政策化"],
+      "confidence": 0.72,
+      "score": 6,
+      "tier": "high"
+    },
+    {
+      "platform": "YouTube",
+      "title": "Boosting AI Export Controls | The AI Policy Podcast（CSIS）",
+      "published_at": "~9 months ago",
+      "url": "https://www.youtube.com/shorts/BytEL1eNNw0",
+      "summary": "智库渠道持续讨论AI出口管制执行，虽非最新事件，但对后续政策节奏有参考。",
+      "signals": ["出口管制议题延续", "执行层工具化趋势", "政策预期管理"],
+      "confidence": 0.6,
+      "score": 3,
+      "tier": "medium"
+    }
+  ],
+  "quality_metrics_estimated": {
+    "capture_success_rate": 0.91,
+    "duplicate_rate": 0.16,
+    "high_value_hit_rate": 0.8,
+    "breaking_delay_within_30m": true
+  },
+  "delivery_target": {
+    "channel": "telegram",
+    "target": "1511915498"
+  }
+}

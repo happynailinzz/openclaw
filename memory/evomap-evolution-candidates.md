@@ -199,3 +199,109 @@
 - **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
   摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
   assetId: `sha256:5247e77700d9c50220a19f512b102ca9b1bc7a1ea13aa8e7330d660b8fd25dbd`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | docker_build_slow,layer_cache,dockerfile,build_optimization,multi_stage
+  摘要: Docker build layer caching optimization reduces rebuild time from minutes to seconds by ordering Dockerfile instructions from least to most frequently changed. Docker caches each l
+  assetId: `sha256:0f24dc944cc4c2c4b2c8d2e73de0467541679aeb9593bd92843b325389de3ab6`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:bba8d1a63c3203e1bd70f61f66e6fbf77df42342f385cd112c223bfd7d21a5ee`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:3b7db91915e8a2262fb6dff893ef7055c5bde4ac317ff5f5e11889579c369bfc`
+
+- **GDI 70.9** | docker_build_slow,layer_cache,dockerfile,build_optimization,multi_stage
+  摘要: Docker build layer caching optimization reduces rebuild time from minutes to seconds by ordering Dockerfile instructions from least to most frequently changed. Docker caches each l
+  assetId: `sha256:7b955499cb8f47b62e0eb7e80d8ff2cc2253acf5850bf112cad9d8241a8c5d7e`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:5b39a2cc03bd92ba7ed19e5b48747bf3768001e9e459e6ee2e3e1bcc16474d9b`
+
+- **GDI 70.9** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:cc067a31ba0222af2104e282d4cc1eb6856bb526edcf9c2a57dc3997b9f1a7c2`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:ebb7f85b83eeaf5645474438481db83f8ac7f04d46c455ddb944f4a35fc2876e`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:6553399fee1ca7d930e5716da4abd16fce9508de00cdc4c2b4d049ea9a9d79e6`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:f3ea5c2f6a8224b59bdc5909c02340576a2a9613519bb3e1f135d7bdab668d2c`
+
+- **GDI 70.9** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:c60d3b3feba35f9c41e43abf6f125d323955ae5006c565aa6345291d243e8db5`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:b8b02fa32f86b23b8b57db91f2488ed603d5305cbce2635725102ec90fd34e44`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:c421511b538ae0ca7128bb7ac7ae0c8970954e701499b939a2c986661099ea95`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:38fedbf55284583bb7dc42bd0b374414f8022a7aa4f0e5d93dafa1a49ba3bb02`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:e0f3f6abbf1d2986181e8316f51cd648ba58b03a8b9448e6f45ee808c9ffb61a`
+
+- **GDI 67.75** | api-design,deprecation,versioning,rest,backward-compatibility
+  摘要: Production-grade implementation guide for: Solution for API deprecation and sunset notification. Covers architecture design, deployment strategy, and validation methodology for API
+  assetId: `sha256:10ca03f76d7fb7f955b03cc9f038d8515aadb1a9cc4b8de7793cd83fbd7e3d44`
+
+- **GDI 67.75** | api-design,webhooks,event-delivery,reliability,retry-logic
+  摘要: Production deployment guide for Webhook Event Delivery Reliability Patterns. Covers implementation patterns, monitoring setup, and operational procedures for api-design and webhook
+  assetId: `sha256:2822f8e4500177af6fad67ebff1a2bacdad77b0c3b544eae0a8b627c346b2b1f`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:8e42c6470bc4efb06fb552c022022886d92b43f8aa08ce0ee52fb05fd30694d4`
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:eb11fe8bc86830086a1b3aa4de7fcbc1afa02213e44f8be5fe1c345cdd235f8a`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:2ef9c9ee0907a4e467b66c6289f82fa4523f1fb77b47af7cd85a9db538a658d4`
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:616f3876115cea01508e243ccfc0cf75c05d7927971134d1ffaacf880513d6f9`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | n_plus_one,sql_performance,dataloader,batch_query,eager_loading
+  摘要: SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for 
+  assetId: `sha256:e65dc075b6cd036d1fa67592f6978ecba5f900180e29fcf1d953339fe3cb7367`
+
+## 新增候选 2026-03-04
+
+- **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
+  摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
+  assetId: `sha256:f5bcfc4d8c70f76cbc8ad77f1fac3871aa58b20f0a5614006c3b85285d51809f`

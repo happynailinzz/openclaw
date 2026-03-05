@@ -20,6 +20,7 @@ WORKSPACE="/root/.openclaw/workspace"
 ENV_FILE="$WORKSPACE/.baoyu-skills/.env"
 IMGS_DIR="$WORKSPACE/articles/imgs"
 IMAGE_GEN="$HOME/.agents/skills/baoyu-image-gen/scripts/main.ts"
+MD_TO_HTML="$HOME/.agents/skills/baoyu-markdown-to-html/scripts/main.ts"
 WECHAT_API="$HOME/.agents/skills/baoyu-post-to-wechat/scripts/wechat-api.ts"
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'
@@ -40,7 +41,7 @@ set -a; source "$ENV_FILE" 2>/dev/null || warn ".env 加载失败，尝试继续
 # ── 读取 frontmatter ──────────────────────────────────────────
 TITLE=$(grep '^title:' "$MD_FILE" | head -1 | sed 's/^title: *//;s/^"//;s/"$//')
 AUTHOR=$(grep '^author:' "$MD_FILE" | head -1 | sed 's/^author: *//;s/^"//;s/"$//')
-SUMMARY=$(grep '^description:' "$MD_FILE" | head -1 | sed 's/^description: *//;s/^"//;s/"$//')
+SUMMARY=$(grep '^description:' "$MD_FILE" | head -1 | sed 's/^description: *//;s/^"//;s/"$//' || true)
 SLUG=$(basename "$MD_FILE" .md)
 AUTHOR="${AUTHOR:-余炜勋}"
 [ -z "$TITLE" ] && fail "frontmatter 缺少 title 字段"
@@ -101,11 +102,23 @@ else
   ok "封面图：$(basename "$COVER_IMG")"
 fi
 
-# ── Step 2：上传微信草稿箱 ────────────────────────────────────
-log "Step 2/3  上传微信草稿箱..."
+# ── Step 2：独立精排 HTML + 上传微信草稿箱 ───────────────────
+log "Step 2/3  独立精排 HTML + 上传微信草稿箱..."
 cd "$WORKSPACE"
 
-WECHAT_OUT=$(npx -y bun "$WECHAT_API" "$MD_FILE" --author "$AUTHOR" --cover "$COVER_IMG" 2>&1)
+HTML_THEME="${HTML_THEME:-grace}"
+log "Markdown → HTML（theme=$HTML_THEME）..."
+HTML_OUT=$(npx -y bun "$MD_TO_HTML" "$MD_FILE" --theme "$HTML_THEME" 2>&1)
+echo "$HTML_OUT"
+
+HTML_FILE="${MD_FILE%.md}.html"
+[ -f "$HTML_FILE" ] || fail "HTML 生成失败：$HTML_FILE 不存在"
+ok "HTML 已生成：$(basename "$HTML_FILE")"
+
+WECHAT_CMD=(npx -y bun "$WECHAT_API" "$HTML_FILE" --title "$TITLE" --author "$AUTHOR" --cover "$COVER_IMG")
+[ -n "${SUMMARY:-}" ] && WECHAT_CMD+=(--summary "$SUMMARY")
+
+WECHAT_OUT=$("${WECHAT_CMD[@]}" 2>&1)
 echo "$WECHAT_OUT"
 
 MEDIA_ID=$(echo "$WECHAT_OUT" | grep -oP '(?i)media_id["\s:=]+\K[A-Za-z0-9_\-]+' | head -1)

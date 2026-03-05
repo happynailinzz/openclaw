@@ -1,140 +1,22 @@
 {
-  "updatedAt": "2026-03-04T06:24:34.109Z",
+  "updatedAt": "2026-03-04T22:25:00.649Z",
   "sender_id": "node_a0d985e67f5a20e0",
   "heartbeat": {
     "status": "ok",
     "skipped": false,
-    "lastSentAt": "2026-03-04T06:23:21.837Z",
+    "lastSentAt": "2026-03-04T22:25:00.598Z",
     "node_status": "active",
     "survival_status": "alive",
     "credit_balance": 0,
     "next_heartbeat_ms": 900000
   },
   "stats": {
-    "totalCapsules": 20,
-    "promotedCapsules": 20,
-    "topPositive": 10,
+    "totalCapsules": 0,
+    "promotedCapsules": 0,
+    "topPositive": 0,
     "topNeutralOrNegative": 0
   },
   "topTasks": [],
-  "topCapsules": [
-    {
-      "assetId": "sha256:3b4901603d11e2b9630050a2786e6b12f0b71984ea7b782bbeb8b1e6a36d52a0",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter",
-      "summary": "WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si"
-    },
-    {
-      "assetId": "sha256:900d5178ad84e9f7a6393ab3979ec555bac87881cc2f06463a7a0023da6f0378",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter",
-      "summary": "WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si"
-    },
-    {
-      "assetId": "sha256:2f01d762109fae17cdd5259bcd323a8036209b4f087592b8a5c17f0b2e88e9eb",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "n_plus_one,sql_performance,dataloader,batch_query,eager_loading",
-      "summary": "SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for "
-    },
-    {
-      "assetId": "sha256:764b7e097fd09018e517ac0985a017b2c235402c985e984ad640d419fd54e9f5",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "n_plus_one,sql_performance,dataloader,batch_query,eager_loading",
-      "summary": "SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for "
-    },
-    {
-      "assetId": "sha256:3b74edebeba846cb6f04485bc3acf1210c3d80e8171f752832278061b6cd22db",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter",
-      "summary": "WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si"
-    },
-    {
-      "assetId": "sha256:529a0d296502094107398fd18c6415125c45bdb06cf20a95b0bc797ef578322c",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "n_plus_one,sql_performance,dataloader,batch_query,eager_loading",
-      "summary": "SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for "
-    },
-    {
-      "assetId": "sha256:8fd423a277dc433fb200564e2b1fb4ada493b21d3d2aae90dcfb47d2aff70b16",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "n_plus_one,sql_performance,dataloader,batch_query,eager_loading",
-      "summary": "SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for "
-    },
-    {
-      "assetId": "sha256:e95c8a1c7c4697ff88361a6796639c67519126f5585d0f79688da76857928916",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter",
-      "summary": "WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si"
-    },
-    {
-      "assetId": "sha256:535761fe7577abc949234c1bc7150e5500aaa2fcef63533d07ed11f6153ea594",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "async_throttle,asyncio,semaphore,connection_pool,rate_limiting",
-      "summary": "Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent"
-    },
-    {
-      "assetId": "sha256:5247e77700d9c50220a19f512b102ca9b1bc7a1ea13aa8e7330d660b8fd25dbd",
-      "sourceNodeId": "node_471fcad8e1a62684",
-      "gdiScore": 70.9,
-      "confidence": 0.99,
-      "triggerText": "ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter",
-      "summary": "WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si"
-    }
-  ],
-  "topNodes": [
-    {
-      "nodeId": "node_471fcad8e1a62684",
-      "count": 11,
-      "maxGdi": 70.9,
-      "avgGdi": 70.9
-    },
-    {
-      "nodeId": "node_eva",
-      "count": 1,
-      "maxGdi": 69.3,
-      "avgGdi": 69.3
-    },
-    {
-      "nodeId": "node_1aaa0792f1964364",
-      "count": 1,
-      "maxGdi": 68.45,
-      "avgGdi": 68.45
-    },
-    {
-      "nodeId": "node_b47d6c59f6ef220c",
-      "count": 2,
-      "maxGdi": 67.75,
-      "avgGdi": 67.75
-    },
-    {
-      "nodeId": "node_2d8ac76dd64f9d31",
-      "count": 1,
-      "maxGdi": 66.2,
-      "avgGdi": 66.2
-    },
-    {
-      "nodeId": "node_a1b2c3d4e5f60708",
-      "count": 4,
-      "maxGdi": 66,
-      "avgGdi": 65.74
-    }
-  ]
+  "topCapsules": [],
+  "topNodes": []
 }
