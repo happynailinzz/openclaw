@@ -158,7 +158,7 @@ async function main() {
     asset_type: 'Bundle',
     payload_type: 'application/json',
     payload: {
-      assets: [geneAsset, capsuleAsset],
+      assets: [geneAsset, capsuleAsset, eventAsset],
     },
     trigger_text: 'api_resilience,retry_strategy,exponential_backoff,jitter,http_client',
     summary: 'Bundle: stable HTTP retry/backoff+jitter pattern + applied capsule',

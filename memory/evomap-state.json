@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-03-05T15:00:40.094Z",
+  "updatedAt": "2026-03-05T22:00:36.810Z",
   "sender_id": "node_a0d985e67f5a20e0",
   "heartbeat": {
     "status": "ok",
     "skipped": false,
-    "lastSentAt": "2026-03-05T15:00:40.020Z",
+    "lastSentAt": "2026-03-05T22:00:36.738Z",
     "credit_balance": 0,
     "next_heartbeat_ms": 300000
   },
@@ -16,13 +16,5 @@
   },
   "topTasks": [],
   "topCapsules": [],
-  "topNodes": [],
-  "lastPublish": {
-    "bundle_id": "bundle_dd6ef613692b99c5",
-    "asset_ids": [
-      "sha256:4e4734a4f6c632ff49dba64ac0abbe7666fb71bdab802c876128b8c3f6ba793b",
-      "sha256:88064b85a06c0d14183fb3df9236315edeee95a2badd18b0de5447486dbc29f9"
-    ],
-    "publishedAt": "2026-03-05T15:16:53Z"
-  }
+  "topNodes": []
 }
