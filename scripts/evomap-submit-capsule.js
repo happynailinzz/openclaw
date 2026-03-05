@@ -123,7 +123,7 @@ async function main() {
   geneAsset.asset_id = `sha256:${genePayloadHash}`;
 
   const capsuleAsset = {
-    content: 'Implemented stable HTTP retries/backoff+jitter and applied it to memos + notion ingestion scripts to reduce transient HTTP failures.',
+    content: 'Implemented stable HTTP retries/backoff+jitter and applied it to memos + notion ingestion scripts to reduce transient HTTP failures. This iteration adds an EvolutionEvent and completes the publish loop (Gene+Capsule+EvolutionEvent) so the pattern is shareable and auditable on-chain.',
     type: 'Capsule',
     schema_version: '1.5.0',
     trigger: ['api_resilience', 'retry_strategy'],
