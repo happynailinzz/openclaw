@@ -14,6 +14,8 @@ from __future__ import annotations
 import json
 import urllib.parse
 import urllib.request
+
+from http_stable import request_text
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -56,9 +58,17 @@ BRANCH_TO_WUXING = {
 def fetch_weather_wttr(city: str) -> dict:
     q = urllib.parse.quote(city)
     url = f"https://wttr.in/{q}?format=j1"
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=12) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    raw, _trace = request_text(
+        "GET",
+        url,
+        headers={"User-Agent": "Mozilla/5.0"},
+        timeout=12,
+        retries=2,
+        backoff_base_s=0.6,
+        backoff_max_s=4.0,
+        jitter_s=0.25,
+    )
+    return json.loads(raw)
 
 
 def _om_desc(code: int) -> str:
@@ -98,9 +108,17 @@ def fetch_weather_open_meteo_zhengzhou() -> dict:
         "&timezone=Asia%2FShanghai"
         "&forecast_days=1"
     )
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=12) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    raw, _trace = request_text(
+        "GET",
+        url,
+        headers={"User-Agent": "Mozilla/5.0"},
+        timeout=12,
+        retries=2,
+        backoff_base_s=0.6,
+        backoff_max_s=4.0,
+        jitter_s=0.25,
+    )
+    return json.loads(raw)
 
 
 def weather_summary(city: str) -> tuple[str, str]:

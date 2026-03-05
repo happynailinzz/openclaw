@@ -38,6 +38,62 @@ def _sleep(backoff_s: float, jitter_s: float) -> float:
     return t
 
 
+def request_text(
+    method: str,
+    url: str,
+    headers: Optional[Dict[str, str]] = None,
+    data: Optional[bytes] = None,
+    timeout: int = 30,
+    retries: int = 3,
+    backoff_base_s: float = 0.6,
+    backoff_max_s: float = 8.0,
+    jitter_s: float = 0.25,
+) -> Tuple[str, HttpTrace]:
+    req = urllib.request.Request(url, data=data, method=method.upper(), headers=dict(headers or {}))
+
+    attempts = 0
+    slept = 0.0
+    last_err = ""
+    last_status: Optional[int] = None
+
+    for i in range(retries + 1):
+        attempts = i + 1
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                raw = resp.read().decode("utf-8", "ignore")
+                return raw, HttpTrace(attempts=attempts, sleep_s=slept, last_error="", last_status=resp.status)
+        except urllib.error.HTTPError as e:
+            last_status = getattr(e, "code", None)
+            try:
+                body = e.read().decode("utf-8", "ignore")
+            except Exception:
+                body = ""
+            last_err = f"HTTP {last_status}: {body[:200]}".strip()
+            if last_status is not None and _is_retryable_http(int(last_status)) and i < retries:
+                backoff = min(backoff_max_s, backoff_base_s * (2**i))
+                slept += _sleep(backoff, jitter_s)
+                continue
+            break
+        except Exception as e:
+            last_err = str(e)
+            if i < retries:
+                backoff = min(backoff_max_s, backoff_base_s * (2**i))
+                slept += _sleep(backoff, jitter_s)
+                continue
+            break
+
+    raise RuntimeError(json.dumps({
+        "ok": False,
+        "url": url,
+        "trace": {
+            "attempts": attempts,
+            "sleep_s": round(slept, 3),
+            "last_status": last_status,
+            "last_error": last_err,
+        },
+    }, ensure_ascii=False))
+
+
 def request_json(
     method: str,
     url: str,

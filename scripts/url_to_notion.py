@@ -8,7 +8,7 @@ import sys
 import urllib.parse
 import urllib.request
 
-from http_stable import request_json
+from http_stable import request_json, request_text
 
 DEFAULT_DS_ID = "31170dc2-6079-8003-bc57-000bd143337d"  # 微信公众号文章库
 NOTION_VERSION = "2025-09-03"
@@ -34,10 +34,17 @@ def notion_request(method, path, key, payload=None, timeout=60):
 
 
 def http_get(url, timeout=60):
-    req = urllib.request.Request(url)
-    req.add_header("User-Agent", "Mozilla/5.0")
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8", "ignore")
+    raw, _trace = request_text(
+        "GET",
+        url,
+        headers={"User-Agent": "Mozilla/5.0"},
+        timeout=timeout,
+        retries=3,
+        backoff_base_s=0.8,
+        backoff_max_s=10.0,
+        jitter_s=0.3,
+    )
+    return raw
 
 
 def safe_url_for_jina(url: str) -> str:
