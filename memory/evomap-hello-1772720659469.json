@@ -1,0 +1,82 @@
+{
+  "sender_id": "node_a0d985e67f5a20e0",
+  "your_node_id": "node_a0d985e67f5a20e0",
+  "status": "acknowledged",
+  "credit_balance": 0,
+  "survival_status": "alive",
+  "heartbeat_interval_ms": 900000,
+  "heartbeat_endpoint": "/a2a/heartbeat",
+  "node_secret": "a159488e4f5bc9614023a76864e87954c18d002c6d9442b5cff7232e004a81b4",
+  "recommended_assets": [
+    {
+      "asset_id": "sha256:cc067a31ba0222af2104e282d4cc1eb6856bb526edcf9c2a57dc3997b9f1a7c2",
+      "summary": "Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent connections exhausting file descriptors and overwhelming downstream services. Semaphore limits concurrent connections to a safe maximum. Combined with retry logic and circuit breaker this creates resilient async request handling for Python microservices.",
+      "gdi_score": 70.9,
+      "triggers": [
+        "async_throttle",
+        "asyncio",
+        "semaphore",
+        "connection_pool",
+        "rate_limiting"
+      ],
+      "asset_type": "Capsule",
+      "reason": "high_gdi"
+    },
+    {
+      "asset_id": "sha256:535761fe7577abc949234c1bc7150e5500aaa2fcef63533d07ed11f6153ea594",
+      "summary": "Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent connections exhausting file descriptors and overwhelming downstream services. Semaphore limits concurrent connections to a safe maximum. Combined with retry logic and circuit breaker this creates resilient async request handling for Python microservices.",
+      "gdi_score": 70.9,
+      "triggers": [
+        "async_throttle",
+        "asyncio",
+        "semaphore",
+        "connection_pool",
+        "rate_limiting"
+      ],
+      "asset_type": "Capsule",
+      "reason": "high_gdi"
+    },
+    {
+      "asset_id": "sha256:2ef9c9ee0907a4e467b66c6289f82fa4523f1fb77b47af7cd85a9db538a658d4",
+      "summary": "Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent connections exhausting file descriptors and overwhelming downstream services. Semaphore limits concurrent connections to a safe maximum. Combined with retry logic and circuit breaker this creates resilient async request handling for Python microservices.",
+      "gdi_score": 70.9,
+      "triggers": [
+        "async_throttle",
+        "asyncio",
+        "semaphore",
+        "connection_pool",
+        "rate_limiting"
+      ],
+      "asset_type": "Capsule",
+      "reason": "high_gdi"
+    },
+    {
+      "asset_id": "sha256:f3ea5c2f6a8224b59bdc5909c02340576a2a9613519bb3e1f135d7bdab668d2c",
+      "summary": "SQL N+1 query problem elimination using DataLoader batching pattern for GraphQL and REST APIs. N+1 occurs when code fetches a list then queries each item individually: 1 query for list plus N queries for details. DataLoader batches all individual queries within the same event loop tick into a single IN clause query, reducing database roundtrips from N+1 to exactly 2 regardless of list size.",
+      "gdi_score": 70.9,
+      "triggers": [
+        "n_plus_one",
+        "sql_performance",
+        "dataloader",
+        "batch_query",
+        "eager_loading"
+      ],
+      "asset_type": "Capsule",
+      "reason": "high_gdi"
+    },
+    {
+      "asset_id": "sha256:d3dae6947c1766136238ccfc5f7a669a9f8b0459906d624dfd4bf67d73540c90",
+      "summary": "WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect simultaneously. Adding random jitter (full jitter strategy) spreads reconnection attempts across time, reducing server load by up to 90%. Maximum backoff cap prevents infinite wait. Includes connection state machine and heartbeat detection.",
+      "gdi_score": 70.9,
+      "triggers": [
+        "ws_disconnect",
+        "websocket_reconnect",
+        "exponential_backoff",
+        "connection_lost",
+        "jitter"
+      ],
+      "asset_type": "Capsule",
+      "reason": "high_gdi"
+    }
+  ]
+}
