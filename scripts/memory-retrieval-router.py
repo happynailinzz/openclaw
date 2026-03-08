@@ -70,7 +70,7 @@ def search_qmd(query: str, max_snippets=3, max_chars=600):
     """跨所有 qmd collection 检索（obsidian + articles + memory）"""
     try:
         p = subprocess.run(
-            ["qmd", "search", query, "--limit", str(max_snippets)],
+            ["qmd", "search", query, "-n", str(max_snippets)],
             capture_output=True, text=True, timeout=15
         )
         if p.returncode != 0 or not p.stdout.strip():
@@ -83,20 +83,21 @@ def search_qmd(query: str, max_snippets=3, max_chars=600):
             if line.startswith("qmd://"):
                 if current:
                     hits.append(current)
-                parts = line.split(" ", 2)
-                current = {"source": parts[0], "score_raw": parts[1] if len(parts) > 1 else ""}
-                current["snippet"] = ""
-            elif line.startswith("Title:"):
+                header = line
+                source = header.split(" #", 1)[0].strip()
+                current = {"source": source, "raw_header": header, "snippet": ""}
+            elif current and line.startswith("Title:"):
                 current["title"] = line[6:].strip()
-            elif line.startswith("Score:"):
+            elif current and line.startswith("Score:"):
                 current["score"] = line[6:].strip()
-            elif line.startswith("Context:"):
+            elif current and line.startswith("Context:"):
                 current["context"] = line[8:].strip()
-            elif line.startswith("@@ ") or (current and "snippet" in current and line.strip()):
-                if not line.startswith("@@"):
-                    current["snippet"] = (current.get("snippet", "") + "\n" + line).strip()
-                    if len(current["snippet"]) > max_chars:
-                        current["snippet"] = current["snippet"][:max_chars]
+            elif current and line.startswith("@@ "):
+                continue
+            elif current and line.strip():
+                current["snippet"] = (current.get("snippet", "") + "\n" + line).strip()
+                if len(current["snippet"]) > max_chars:
+                    current["snippet"] = current["snippet"][:max_chars]
         if current:
             hits.append(current)
 
