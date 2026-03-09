@@ -167,7 +167,17 @@ HTML_FILE="${MD_FILE%.md}.html"
 [ -f "$HTML_FILE" ] || fail "HTML 生成失败：$HTML_FILE 不存在"
 ok "HTML 已生成：$(basename "$HTML_FILE")"
 
-WECHAT_CMD=(npx -y bun "$WECHAT_API" "$HTML_FILE" --title "$TITLE" --author "$AUTHOR" --cover "$COVER_IMG")
+REFINED_HTML_FILE="${MD_FILE%.md}-wechat-refined.html"
+REFINED_SUBTITLE="${REFINED_SUBTITLE:-}"
+python3 "$WORKSPACE/scripts/refine_wechat_html.py" "$HTML_FILE" \
+  --output "$REFINED_HTML_FILE" \
+  --title "$TITLE" \
+  --author "$AUTHOR" \
+  --subtitle "$REFINED_SUBTITLE"
+[ -f "$REFINED_HTML_FILE" ] || fail "Refined HTML 生成失败：$REFINED_HTML_FILE 不存在"
+ok "Refined HTML 已生成：$(basename "$REFINED_HTML_FILE")"
+
+WECHAT_CMD=(npx -y bun "$WECHAT_API" "$REFINED_HTML_FILE" --title "$TITLE" --author "$AUTHOR" --cover "$COVER_IMG")
 [ -n "${SUMMARY:-}" ] && WECHAT_CMD+=(--summary "$SUMMARY")
 
 WECHAT_OUT=$("${WECHAT_CMD[@]}" 2>&1)

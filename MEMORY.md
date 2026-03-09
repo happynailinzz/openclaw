@@ -30,3 +30,8 @@
 - 代理能力进化规则已固化（2026-03-01）：兼容版四条规则见 `/root/.openclaw/workspace/memory/agent-evolution-rules.md`，用于任务内能力沉淀、轻量复盘、反劣化锁与能力树管理。
 - 记忆整合方案已固化（2026-03-01）：采用「本地热记忆 + Memos 冷记忆」分层路由，默认检索只注入 `local_hits + memos_hits.hits` 精简片段以节省 token；配置见 `config/memory-integration.json`，流程见 `scripts/memory-cycle.sh` 与 `docs/memory-integration-deploy.md`。
 - 记忆系统必须并行纳入 Notion 文章收集与选题体系（2026-03-01）：公众号相关任务检索路由需将 Notion「文章选题草稿箱」作为优先来源之一，不可仅依赖本地记忆与 Memos。
+- 用户新增工作结论（2026-03-09）：公众号正式发布主链应以 `scripts/publish.sh` 为准，但快反文章默认走 `--fast` 模式；`--fast` 必须直接跳过自动生图，优先使用 `--cover`、现成封面或默认占位图，避免 SmartAPI 图片生成阻塞整条发布链。
+- 用户新增内容样式要求（2026-03-09）：公众号文章排版不要泛卡片/杂志风；更偏好参考《工信部在“部长通道”释放明确信号：2026年，AI进入制造业将从概念推进转向场景落地》的公众号版式（居中下划线主标题、蓝色副标题/作者、蓝底白字二级标题、左侧蓝线引用块）；后续文章默认沿用该风格并优先直接输出 refined wechat HTML，且必须避免出现单独的“。”或零碎残句单独占一行。
+- 用户新增配图风格要求（2026-03-09）：《从3个信号看，河南电力数字化的项目窗口已经打开》及同类稿件的配图默认不走“杂志风”，改为“电力系统信息图 / 产业决策可视化 / 监管科技感”；强调深蓝背景、节点网络、能量流、电网拓扑、平台界面与基础设施系统感。
+- 用户新增运维结论（2026-03-09）：Cron 应做分层治理；测试残留任务应及时删除/停用，真正需要看到的任务统一明确投递到 Telegram `1511915498`，避免 `delivery.mode=none` 或 `channel=last` 导致“任务跑了但用户没收到”的假完成。
+- 已完成 cron 第一轮与第二轮整改（2026-03-09）：删除 `test:lianghui-henan-industries:now`，停用 `test:lianghui-henan-industries:next-minute`，并将 `digest:overseas-cn-news:0800`、`digest:overseas-cn-news:1400`、`monitor:github-updates:0900`、`digest:equity-tracks:1600`、`report:ai-infra-capital-weekly:mon1005` 统一改为明确投递到 Telegram `1511915498`。
