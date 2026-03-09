@@ -1,0 +1,31 @@
+{
+  "browserFetch": [
+    {
+      "host": "m.jyt.henan.gov.cn",
+      "mode": "browser_cdp",
+      "notes": "Browser-visible while direct HTTP fetch returns 403 on this server."
+    }
+  ],
+  "fallbackOnly": [
+    {
+      "host": "www.henan.gov.cn",
+      "mode": "fallback_only",
+      "notes": "Direct fetch and real browser both currently hit 403; do not hard retry."
+    },
+    {
+      "host": "fgw.henan.gov.cn",
+      "mode": "fallback_only",
+      "notes": "Direct fetch and real browser both currently hit 403; do not hard retry."
+    }
+  ],
+  "fallbackRules": {
+    "www.henan.gov.cn": {
+      "strategy": ["keep_original_url", "record_title_if_known", "search_official_reposts", "search_authoritative_media_reposts", "mark_pending_fulltext"],
+      "statusLabel": "原站403，待补链"
+    },
+    "fgw.henan.gov.cn": {
+      "strategy": ["keep_original_url", "record_title_if_known", "search_official_reposts", "search_authoritative_media_reposts", "mark_pending_fulltext"],
+      "statusLabel": "原站403，待补链"
+    }
+  }
+}
