@@ -31,12 +31,41 @@ warn() { echo -e "${YELLOW}⚠️  $1${NC}"; }
 fail() { echo -e "${RED}❌ $1${NC}"; exit 1; }
 
 # ── 入参与环境 ────────────────────────────────────────────────
-MD_FILE="${1:-}"
-[ -z "$MD_FILE" ] && fail "用法：bash scripts/publish.sh articles/your-article.md"
+FAST_MODE=0
+MANUAL_COVER=""
+MD_FILE=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --fast)
+      FAST_MODE=1
+      shift
+      ;;
+    --cover)
+      MANUAL_COVER="${2:-}"
+      shift 2
+      ;;
+    -h|--help)
+      echo "用法：bash scripts/publish.sh <markdown文件路径> [--fast] [--cover <path>]"
+      exit 0
+      ;;
+    *)
+      if [[ -z "$MD_FILE" ]]; then
+        MD_FILE="$1"
+        shift
+      else
+        fail "未知参数：$1"
+      fi
+      ;;
+  esac
+done
+
+[ -z "$MD_FILE" ] && fail "用法：bash scripts/publish.sh articles/your-article.md [--fast] [--cover <path>]"
 [ -f "$MD_FILE" ] || fail "文件不存在：$MD_FILE"
 MD_FILE="$(cd "$(dirname "$MD_FILE")" && pwd)/$(basename "$MD_FILE")"
 
 set -a; source "$ENV_FILE" 2>/dev/null || warn ".env 加载失败，尝试继续"; set +a
+DEFAULT_COVER="${COVER_FALLBACK:-$WORKSPACE/articles/imgs/cover-2026-03-02-河南源网荷储数字化.png}"
 
 # ── 读取 frontmatter ──────────────────────────────────────────
 TITLE=$(grep '^title:' "$MD_FILE" | head -1 | sed 's/^title: *//;s/^"//;s/"$//')
@@ -52,55 +81,78 @@ echo -e "   文章：$TITLE"
 echo -e "   作者：$AUTHOR"
 echo ""
 
-# ── Step 1：生成封面图 ────────────────────────────────────────
-log "Step 1/3  生成封面图..."
+# ── Step 1：解析 / 生成 / 回退封面图 ─────────────────────────
+log "Step 1/3  处理封面图..."
 COVER_IMG="$IMGS_DIR/cover-${SLUG}.png"
 mkdir -p "$IMGS_DIR"
 
-if [ -f "$COVER_IMG" ]; then
-  warn "封面图已存在，跳过：$(basename "$COVER_IMG")"
+if [[ -n "$MANUAL_COVER" ]]; then
+  [[ -f "$MANUAL_COVER" ]] || fail "手动封面不存在：$MANUAL_COVER"
+  COVER_IMG="$MANUAL_COVER"
+  ok "使用手动封面：$(basename "$COVER_IMG")"
+elif [[ -f "$COVER_IMG" ]]; then
+  warn "封面图已存在，直接使用：$(basename "$COVER_IMG")"
 else
-  PROMPT="为微信公众号文章《${TITLE}》生成封面图。专业商务风，中国科技感，蓝色调，简洁大气，横版16:9，无文字。"
-  RETRY=0
-  GEN_OK=0
-
-  # 主路：SmartAPI（chat completions 接口）
-  log "尝试主路图片代理（SmartAPI）..."
-  until IMAGE_GEN_BACKUP_BASE_URL= \
-        IMAGE_GEN_BACKUP_API_KEY= \
-        IMAGE_GEN_BACKUP_MODEL= \
-        IMAGE_GEN_BASE_URL="$IMAGE_GEN_BASE_URL" \
-        IMAGE_GEN_API_KEY="$IMAGE_GEN_API_KEY" \
-        IMAGE_GEN_MODEL="$IMAGE_GEN_MODEL" \
-        python3 "$WORKSPACE/scripts/smartapi-image-gen.py" "$PROMPT" "$COVER_IMG" 2>&1; do
-    RETRY=$((RETRY+1))
-    [ $RETRY -ge 3 ] && break
-    warn "主路失败（$RETRY/3），60s 后重试..."
-    sleep 60
-  done
-
-  # 检查是否生成成功
-  if [ -f "$COVER_IMG" ]; then
-    GEN_OK=1
+  if [[ "$FAST_MODE" -eq 1 ]]; then
+    log "快发模式已开启：直接跳过自动生图，优先走占位封面"
+    if [[ -f "$DEFAULT_COVER" ]]; then
+      COVER_IMG="$DEFAULT_COVER"
+      warn "快发模式：已使用默认占位封面：$(basename "$COVER_IMG")"
+    else
+      fail "快发模式下未找到默认占位封面：$DEFAULT_COVER"
+    fi
   else
-    # 备用路：本地代理 8317
-    warn "主路失败，切换备用 API（本地代理）..."
+    PROMPT="为微信公众号文章《${TITLE}》生成封面图。专业商务风，中国科技感，蓝色调，简洁大气，横版16:9，无文字。"
     RETRY=0
-    until OPENAI_BASE_URL="$IMAGE_GEN_BACKUP_BASE_URL" \
-          OPENAI_API_KEY="$IMAGE_GEN_BACKUP_API_KEY" \
-          OPENAI_IMAGE_MODEL="$IMAGE_GEN_BACKUP_MODEL" \
-          npx -y bun "$IMAGE_GEN" --prompt "$PROMPT" --image "$COVER_IMG" --ar 16:9 2>&1; do
-      RETRY=$((RETRY+1))
-      [ $RETRY -ge 3 ] && fail "封面图生成失败，主路+备用均已重试 3 次"
-      warn "备用路失败（$RETRY/3），60s 后重试..."
-      sleep 60
-    done
-    [ -f "$COVER_IMG" ] && GEN_OK=1
-  fi
+    GEN_OK=0
+    MAX_RETRY=1
+    SLEEP_SECONDS=8
 
-  [ $GEN_OK -eq 0 ] && fail "封面图生成失败"
-  ok "封面图：$(basename "$COVER_IMG")"
+    log "尝试主路图片代理（SmartAPI）..."
+    until IMAGE_GEN_BACKUP_BASE_URL= \
+          IMAGE_GEN_BACKUP_API_KEY= \
+          IMAGE_GEN_BACKUP_MODEL= \
+          IMAGE_GEN_BASE_URL="$IMAGE_GEN_BASE_URL" \
+          IMAGE_GEN_API_KEY="$IMAGE_GEN_API_KEY" \
+          IMAGE_GEN_MODEL="$IMAGE_GEN_MODEL" \
+          python3 "$WORKSPACE/scripts/smartapi-image-gen.py" "$PROMPT" "$COVER_IMG" 2>&1; do
+      RETRY=$((RETRY+1))
+      [ $RETRY -ge $MAX_RETRY ] && break
+      warn "主路失败（$RETRY/$MAX_RETRY），${SLEEP_SECONDS}s 后重试..."
+      sleep "$SLEEP_SECONDS"
+    done
+
+    if [[ -f "$COVER_IMG" ]]; then
+      GEN_OK=1
+    else
+      warn "主路失败，切换备用 API（本地代理）..."
+      RETRY=0
+      until OPENAI_BASE_URL="$IMAGE_GEN_BACKUP_BASE_URL" \
+            OPENAI_API_KEY="$IMAGE_GEN_BACKUP_API_KEY" \
+            OPENAI_IMAGE_MODEL="$IMAGE_GEN_BACKUP_MODEL" \
+            npx -y bun "$IMAGE_GEN" --prompt "$PROMPT" --image "$COVER_IMG" --ar 16:9 2>&1; do
+        RETRY=$((RETRY+1))
+        [ $RETRY -ge $MAX_RETRY ] && break
+        warn "备用路失败（$RETRY/$MAX_RETRY），${SLEEP_SECONDS}s 后重试..."
+        sleep "$SLEEP_SECONDS"
+      done
+      [[ -f "$COVER_IMG" ]] && GEN_OK=1
+    fi
+
+    if [[ $GEN_OK -eq 1 ]]; then
+      ok "封面图：$(basename "$COVER_IMG")"
+    else
+      if [[ -f "$DEFAULT_COVER" ]]; then
+        COVER_IMG="$DEFAULT_COVER"
+        warn "封面生成失败，已回退到占位封面：$(basename "$COVER_IMG")"
+      else
+        fail "封面生成失败，且无可用占位封面：$DEFAULT_COVER"
+      fi
+    fi
+  fi
 fi
+
+[[ -f "$COVER_IMG" ]] || fail "最终封面不可用：$COVER_IMG"
 
 # ── Step 2：独立精排 HTML + 上传微信草稿箱 ───────────────────
 log "Step 2/3  独立精排 HTML + 上传微信草稿箱..."
