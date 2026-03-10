@@ -1,0 +1,44 @@
+Workspace cleanup report
+timestamp: 2026-03-09T08:30:01+00:00
+mode: dry-run
+workspace: /root/.openclaw/workspace
+include_jsonl: false
+candidate_count: 34
+candidate_total_bytes: 2890681
+candidate_total_human: 2.8MB
+
+Candidates:
+- kasmvncserver_jammy_1.4.0_amd64.deb (2.3MB)
+- tmp/wechat-zhengzhou-v2/article.html.bak-20260301102246 (9.5KB)
+- tmp/wechat-zhengzhou-v2/article.html.bak-20260301102942 (9.0KB)
+- huanyao_extracted_cases.json (6.6KB)
+- site_scan_huanyao.json (515B)
+- huanyao_extracted_news.json (819B)
+- post-to-wechat/2026-03-06/henan-ai-digital-report-signal.html.bak-20260306100217 (12KB)
+- post-to-wechat/2026-03-06/data-governance-institutionalization.html.bak-20260306041609 (27KB)
+- post-to-wechat/2026-03-06/compute-network-national-coordination.html.bak-20260306080957 (17KB)
+- post-to-wechat/2026-03-07/government-project-governance-ai.html.bak-20260307125645 (19KB)
+- post-to-wechat/2026-03-07/zhengzhou-digital-upgrade-logic.html.bak-20260307091022 (16KB)
+- post-to-wechat/2026-03-08/ai-plus-manufacturing-must-answer.html.bak-20260308014449 (20KB)
+- articles/2026-03-04-信创2.0-河南企业切入路径.html.bak-20260304040731 (19KB)
+- articles/2026-03-02-河南源网荷储数字化.html.bak-20260303103446 (17KB)
+- articles/2026-03-05-河南十五五规划-数智强省.html.bak-20260305015514 (12KB)
+- articles/2026-02-ai-observation/2026-02-ai-domestic.html.bak-20260227134303 (12KB)
+- articles/2026-02-ai-observation/2026-02-ai-overseas.html.bak-20260227134254 (11KB)
+- articles/2026-02-28-mine-intelligent.html.bak-20260228055053 (21KB)
+- articles/2026-03-02-河南源网荷储数字化.html.bak-20260303103245 (17KB)
+- articles/2026-03-01-liuning-ai/article-sanitized.html.bak-20260301013619 (9.5KB)
+- articles/2026-03-02-河南源网荷储数字化.html.bak-20260302131912 (16KB)
+- articles/2026-03-05-河南十五五规划-数智强省.html.bak-20260305020802 (14KB)
+- articles/2026-03-09-河南电力数字化项目窗口已经打开.html.bak-20260309055320 (6.7KB)
+- articles/2026-03-05-河南十五五规划-数智强省.html.bak-20260305020851 (12KB)
+- articles/2026-03-05-河南十五五规划-数智强省.html.bak-20260305021058 (12KB)
+- articles/2026-03-02-矿山智能化中原机会.html.bak-20260302004849 (11KB)
+- articles/2026-03-04-信创2.0-河南企业切入路径.html.bak-20260304031756 (18KB)
+- articles/2026-03-04-信创2.0-河南企业切入路径.html.bak-20260304031827 (19KB)
+- articles/2026-02-27-zhengqi-key/article.html.bak-20260227132152 (12KB)
+- articles/2026-03-05-河南十五五规划-数智强省.html.bak-20260305020633 (8.4KB)
+- articles/2026-03-05-河南十五五规划-数智强省.html.bak-20260305021029 (12KB)
+- reports/cleanup/cron-weekly.log (127B)
+- reports/healthcheck/security-audit.log (46KB)
+- reports/healthcheck/update-status.log (37KB)

@@ -1,0 +1,92 @@
+{
+  "run_at_utc": "2026-03-10T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "pipeline": {
+    "stepA_weekly_skill_check": {
+      "executed": false,
+      "reason": "仅周一强制执行；本次为周二",
+      "snapshot": {
+        "xiaohongshu": "available",
+        "reddit": "missing",
+        "youtube": "missing"
+      }
+    },
+    "stepB_primary_fetch": "web_fetch / RSS",
+    "stepC_fallback": [
+      "web_search(Brave) -> missing_brave_api_key",
+      "X RSS mirrors (nitter/xcancel) -> failed",
+      "YouTube feed -> failed",
+      "Xiaohongshu explore -> dynamic page, no usable content"
+    ]
+  },
+  "items": [
+    {
+      "platform": "新闻网站",
+      "title": "Anthropic sues Trump administration over Pentagon blacklist",
+      "published_at": "2026-03-09T00:00:00Z",
+      "url": "https://www.cnbc.com/2026/03/09/anthropic-trump-claude-ai-supply-chain-risk.html",
+      "summary": "Anthropic 起诉美国政府，要求撤销国防部将其列为‘供应链风险’的决定；文中称该决定已导致联邦合同取消及商业合作受损。",
+      "signals": [
+        "政策动作：国防部供应链风险认定",
+        "采购限制：防务供应商需证明未使用 Claude",
+        "交付影响：联邦项目与承包链短期重排"
+      ],
+      "confidence": 0.86,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Reddit",
+      "title": "Anthropic sues Trump administration over Pentagon blacklist",
+      "published_at": "2026-03-09T15:51:27Z",
+      "url": "https://www.reddit.com/r/artificial/comments/1rp3vku/anthropic_sues_trump_administration_over_pentagon/",
+      "summary": "r/artificial 热帖转引 CNBC 同题报道，显示该事件在开发者社区扩散。",
+      "signals": [
+        "舆情放大：政策事件跨入开发者社区",
+        "来源重复：与 CNBC 原文高度重复"
+      ],
+      "confidence": 0.58,
+      "score": 1,
+      "tier": "低价值"
+    },
+    {
+      "platform": "新闻/智库",
+      "title": "China wants an AI-powered military built with Nvidia chips, and that’s a problem",
+      "published_at": "2025-12-03T00:00:00Z",
+      "url": "https://cset.georgetown.edu/article/china-wants-an-ai-powered-military-built-with-nvidia-chips-and-thats-a-problem/",
+      "summary": "CSET 文章聚焦中国军事 AI 与 Nvidia 芯片依赖关系，为后续出口管制与替代链评估提供背景框架。",
+      "signals": [
+        "政策关联：出口管制/军民融合",
+        "厂商影响：Nvidia 及上游算力供应链",
+        "交付影响：受限算力下的替代路线讨论"
+      ],
+      "confidence": 0.63,
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Google News RSS",
+      "title": "Pentagon Bans Anthropic's Claude as Iran Usage Triggers Risk Label",
+      "published_at": "2026-03-07T00:45:00Z",
+      "url": "https://news.google.com/rss/search?q=AI+export+controls+defense+procurement&hl=en-US&gl=US&ceid=US:en",
+      "summary": "Google News 聚合出现‘五角大楼禁用 Claude’相关条目，侧面验证该议题仍在发酵，但原站可信度需二次核验。",
+      "signals": [
+        "事件持续发酵",
+        "来源可信度参差，需要二次核验"
+      ],
+      "confidence": 0.47,
+      "score": 2,
+      "tier": "中价值"
+    }
+  ],
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 3,
+    "success_rate": 0.5,
+    "duplication_rate": 0.25,
+    "high_value_hit_rate": 0.5,
+    "latency_minutes": 0
+  },
+  "status": "partial_degraded"
+}
