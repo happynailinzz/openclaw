@@ -38,6 +38,8 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ## Internal Defaults / Policies
 
 - Web search default: use `tavily-search` first.
+- On this server, if no first-class Tavily tool is exposed in the current runtime, fall back to the local Tavily skill script instead of `web_search`.
+- Search order on this server: local knowledge / memory -> `tavily-search` -> `web_fetch` / browser for targeted follow-up.
 - Do not recommend or use Brave search unless the user explicitly asks for Brave.
 
 ---

@@ -37,3 +37,4 @@
 - 已完成 cron 第一轮与第二轮整改（2026-03-09）：删除 `test:lianghui-henan-industries:now`，停用 `test:lianghui-henan-industries:next-minute`，并将 `digest:overseas-cn-news:0800`、`digest:overseas-cn-news:1400`、`monitor:github-updates:0900`、`digest:equity-tracks:1600`、`report:ai-infra-capital-weekly:mon1005` 统一改为明确投递到 Telegram `1511915498`。
 - 用户补充校正（2026-03-10）：教育数字化 / 产教融合 / 职业教育 / 数字人才培养，不是孤立新增方向，而应严格挂回其既有的寰曜数能业务版图与优先行业航道中理解；后续相关内容与项目判断应继续服从“政企数字化转型 + 智能升级”总框架，以及既有三条优先航道中的“智慧教育与产教融合”主线。写法上应重点落在“人才供给体系重构、校企协同、实训能力、能力评估与区域人才供给”，而不是泛泛写“AI课堂”。
 - 运维修复结论补充（2026-03-10）：`message send` 的 poll 误判在 OpenClaw 2026.3.8 更新后会因 bundle 文件名变化而复发；需要按当前版本实际 `dist/*` bundle 全量补丁并重启后验证，文本与附件发送链路都要单独回归。
+- 服务器搜索规则补充（2026-03-10）：在这台服务器上，后续搜索任务默认主路由切到 Tavily；执行顺序为“本地知识库 / 记忆 -> Tavily skill 脚本 -> web_fetch / browser 定点补充”。Brave 不再作为默认搜索链路，除非用户明确指定 Brave。
