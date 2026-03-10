@@ -1,27 +1,24 @@
-# OpenClaw 记忆整合部署计划（v1）
+# OpenClaw 校友群分享内容计划
 
 ## 目标
-将「分层架构 + 混合检索 + Memos + 本地记忆 + Token预算」完整落地为可执行配置与脚本。
+为东城老饕准备一份面向“有一定技术基础的新手”的 OpenClaw 分享 Markdown 文档，覆盖部署、配置、skills/plugins、能力、优化、可用性/安全性/稳定性，以及踩坑经验。
 
-## Phase 1（P0）配置与安全
-- [x] 配置 `config/memos.env`（base_url + api_key）
-- [x] 保护密钥不入库（`.gitignore`）
-- [x] 增加 `base_id` 与统一配置文件
+## 受众
+- 有一定 IT 基础
+- 对 AI Agent / 自动化 / 自托管感兴趣
+- 愿意自己折腾安装部署，但不一定熟悉 OpenClaw 细节
 
-## Phase 2（P0）能力落地
-- [x] 提供 memos 客户端脚本（add/search）
-- [x] 提供检索路由脚本（热→温→冷 + 混合评分）
-- [x] 提供 token 预算策略文件
+## 输出物
+- 一份可直接拿去改 PPT 或演讲稿的 Markdown 文档
 
-## Phase 3（P1）运行规范
-- [x] 提供记忆维护 SOP（日更/周更）
-- [x] 提供部署说明（接入点、调用方式、回滚）
-- [x] 执行一次联调测试（add + search + route）
+## 阶段
+- [complete] 1. 查本地 OpenClaw 文档与当前工作区沉淀
+- [complete] 2. 提炼两套推荐部署配置
+- [complete] 3. 梳理插件、skills、功能与优化项
+- [complete] 4. 输出结构化 Markdown 文档
+- [complete] 5. 复查是否适合分享场景
 
-## 阻塞条件
-- 若 Memos 服务端接口策略变更（header/path），需更新客户端脚本。
-
-## 输出
-- 可运行脚本 + 配置文件 + 策略文档
-- 验证结果与下一步优化点
-- Git 提交记录
+## 注意事项
+- 优先查本地 docs
+- 不臆造 OpenClaw 命令与架构
+- 内容既要能讲清楚，也要保留踩坑经验和判断
