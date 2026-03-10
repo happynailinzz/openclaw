@@ -35,3 +35,5 @@
 - 用户新增配图风格要求（2026-03-09）：《从3个信号看，河南电力数字化的项目窗口已经打开》及同类稿件的配图默认不走“杂志风”，改为“电力系统信息图 / 产业决策可视化 / 监管科技感”；强调深蓝背景、节点网络、能量流、电网拓扑、平台界面与基础设施系统感。
 - 用户新增运维结论（2026-03-09）：Cron 应做分层治理；测试残留任务应及时删除/停用，真正需要看到的任务统一明确投递到 Telegram `1511915498`，避免 `delivery.mode=none` 或 `channel=last` 导致“任务跑了但用户没收到”的假完成。
 - 已完成 cron 第一轮与第二轮整改（2026-03-09）：删除 `test:lianghui-henan-industries:now`，停用 `test:lianghui-henan-industries:next-minute`，并将 `digest:overseas-cn-news:0800`、`digest:overseas-cn-news:1400`、`monitor:github-updates:0900`、`digest:equity-tracks:1600`、`report:ai-infra-capital-weekly:mon1005` 统一改为明确投递到 Telegram `1511915498`。
+- 用户新增内容方向确认（2026-03-10）：教育数字化 / 产教融合 / 职业教育 / 数字人才培养已明确纳入优先选题方向，写法上应重点落在“人才供给体系重构、校企协同、实训能力、能力评估与区域人才供给”，而不是泛泛写“AI课堂”。
+- 运维修复结论补充（2026-03-10）：`message send` 的 poll 误判在 OpenClaw 2026.3.8 更新后会因 bundle 文件名变化而复发；需要按当前版本实际 `dist/*` bundle 全量补丁并重启后验证，文本与附件发送链路都要单独回归。
