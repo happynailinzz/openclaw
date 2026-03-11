@@ -57,15 +57,47 @@ function envelope(messageType, payload = {}) {
   };
 }
 
-async function postJson(url, body) {
-  const r = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  const txt = await r.text();
-  let data; try { data = JSON.parse(txt); } catch { data = { raw: txt }; }
-  return { status: r.status, ok: r.ok, data };
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function postJson(url, body, { retries = 4 } = {}) {
+  const headers = { 'Content-Type': 'application/json' };
+  const secret = fileEnv.EVOMAP_NODE_SECRET || process.env.EVOMAP_NODE_SECRET;
+  if (secret) headers.Authorization = `Bearer ${secret}`;
+
+  let lastErr;
+  for (let i = 0; i <= retries; i++) {
+    let r;
+    try {
+      r = await fetch(url, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(body),
+      });
+    } catch (e) {
+      lastErr = e;
+      if (i === retries) break;
+      const backoffMs = Math.min(8000, 600 * (2 ** i)) + Math.floor(Math.random() * 250);
+      await sleep(backoffMs);
+      continue;
+    }
+
+    const txt = await r.text();
+    let data; try { data = JSON.parse(txt); } catch { data = { raw: txt }; }
+    if (r.ok) return { status: r.status, ok: true, data };
+
+    const retryable = r.status === 429 || r.status >= 500;
+    lastErr = new Error(`HTTP ${r.status}: ${JSON.stringify(data)}`);
+    if (!retryable || i === retries) {
+      return { status: r.status, ok: false, data };
+    }
+
+    const backoffMs = Math.min(8000, 600 * (2 ** i)) + Math.floor(Math.random() * 250);
+    await sleep(backoffMs);
+  }
+
+  throw lastErr || new Error('request failed');
 }
 
 function unwrap(raw) {

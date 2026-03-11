@@ -13,8 +13,18 @@ if [ ! -f "$MEM_FILE" ]; then
   exit 0
 fi
 
-# 提取今日记忆的关键内容（取前 1000 字）
-SUMMARY=$(head -c 1000 "$MEM_FILE" | tr '\n' ' ' | sed 's/  */ /g')
+# 提取今日记忆的关键内容（按字符截断，避免多字节字符被截断导致乱码）
+SUMMARY=$(MEM_FILE="$MEM_FILE" python3 - <<'PY'
+import os
+from pathlib import Path
+p = Path(os.environ["MEM_FILE"])
+text = p.read_text(encoding="utf-8", errors="replace")
+summary = text[:1000].replace("\n", " ")
+while "  " in summary:
+    summary = summary.replace("  ", " ")
+print(summary.strip())
+PY
+)
 
 if [ -z "$SUMMARY" ]; then
   echo "记忆文件为空，跳过"

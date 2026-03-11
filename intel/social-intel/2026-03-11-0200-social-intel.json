@@ -1,0 +1,91 @@
+{
+  "run_at_utc": "2026-03-11T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "pipeline": {
+    "stepA_weekly_skill_check": {
+      "executed": false,
+      "reason": "仅周一执行；本次为周三",
+      "snapshot": {
+        "xiaohongshu": "missing_local_skill_or_blocked",
+        "reddit": "via_rss_available",
+        "youtube": "web_fetch_search_unstructured"
+      }
+    },
+    "stepB_primary_fetch": "web_fetch / RSS",
+    "stepC_fallback": [
+      "web_search(Brave) -> missing_brave_api_key",
+      "X mirrors(nitter/xcancel) -> empty/403",
+      "YouTube feeds -> 400, fallback search page unstructured",
+      "Xiaohongshu search -> dynamic page only footer"
+    ]
+  },
+  "items": [
+    {
+      "platform": "新闻网站",
+      "title": "Anthropic sues Trump administration over Pentagon blacklist",
+      "published_at": "2026-03-09T00:00:00Z",
+      "url": "https://www.cnbc.com/2026/03/09/anthropic-trump-claude-ai-supply-chain-risk.html",
+      "summary": "Anthropic 起诉美国政府，要求撤销国防部‘供应链风险’认定；该认定已触发联邦及承包商层面的使用限制与合同风险。",
+      "signals": [
+        "政策动作：五角大楼供应链风险标签",
+        "采购限制：承包商需避免使用 Claude",
+        "交付影响：在执行联邦项目需快速替代模型栈"
+      ],
+      "confidence": 0.9,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Anthropic sues US government for calling it a risk",
+      "published_at": "2026-03-09T21:33:05Z",
+      "url": "https://www.bbc.com/news/articles/cq571w5vllxo",
+      "summary": "BBC 交叉验证同一事件，补充了‘限制用于自主武器/大规模监控’的争议背景与行政范围。",
+      "signals": [
+        "政策动作：行政层面停用导向",
+        "厂商影响：Anthropic 政府与商业合同预期受损"
+      ],
+      "confidence": 0.85,
+      "score": 6,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Reddit",
+      "title": "Anthropic Accuses Chinese AI Labs of Using 24,000 Fake Accounts to Exploit Claude Model",
+      "published_at": "2026-03-08T15:01:23Z",
+      "url": "https://www.reddit.com/r/kainjoo/comments/1ro70bq/anthropic_accuses_chinese_ai_labs_of_using_24000/",
+      "summary": "社区帖称 DeepSeek、Moonshot、MiniMax 涉及大规模账号与蒸馏获取能力，反映产业对模型泄漏与出口管制联动的关注。",
+      "signals": [
+        "厂商影响：中美模型厂商对抗叙事增强",
+        "交付影响：企业在跨境模型调用与数据边界上趋严"
+      ],
+      "confidence": 0.55,
+      "score": 2,
+      "tier": "中价值"
+    },
+    {
+      "platform": "RSS/Google News",
+      "title": "U.S. Expands AI Chip Export Controls to Allies",
+      "published_at": "2026-03-06T03:05:40Z",
+      "url": "https://news.google.com/rss/search?q=AI+export+controls+government+procurement+restrictions&hl=en-US&gl=US&ceid=US:en",
+      "summary": "Google News RSS 出现相关标题，提示管制外溢风险上升，但原始来源需二次核验。",
+      "signals": [
+        "政策动作：出口管制扩围信号",
+        "交付影响：芯片/算力采购可能再收缩"
+      ],
+      "confidence": 0.45,
+      "score": 1,
+      "tier": "低价值"
+    }
+  ],
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 3,
+    "success_rate": 0.5,
+    "duplication_rate": 0.25,
+    "high_value_hit_rate": 0.67,
+    "latency_minutes": 0
+  },
+  "status": "partial_degraded"
+}

@@ -280,3 +280,45 @@ OpenClaw update status
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.7
 
+===== 2026-03-10T04:00:18Z =====
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+OpenClaw update status
+
+┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item     │ Value                                                                                                    │
+├──────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Install  │ pnpm                                                                                                     │
+│ Channel  │ stable (default)                                                                                         │
+│ Update   │ pnpm · npm latest 2026.3.8                                                                               │
+└──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+Summary: install=unknown; channel=unknown; latest=unknown
+
+===== 2026-03-10T04:00:46Z =====
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - channels.telegram.groupPolicy is "allowlist" but groupAllowFrom (and  │
+│    allowFrom) is empty — all group messages will be silently dropped.    │
+│    Add sender IDs to channels.telegram.groupAllowFrom or                 │
+│    channels.telegram.allowFrom, or set groupPolicy to "open".            │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+OpenClaw update status
+
+┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item     │ Value                                                                                                    │
+├──────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Install  │ pnpm                                                                                                     │
+│ Channel  │ stable (default)                                                                                         │
+│ Update   │ pnpm · npm latest 2026.3.8                                                                               │
+└──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.8
+
