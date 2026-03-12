@@ -11,63 +11,63 @@
     },
     "agent-browser": {
       "version": "0.2.0",
-      "installedAt": 1771745603683
+      "installedAt": 1773257835062
     },
     "baidu-search": {
-      "version": "1.1.0",
-      "installedAt": 1771746262701
+      "version": "1.1.1",
+      "installedAt": 1773257856071
     },
     "baidu-baike-data": {
       "version": "1.1.0",
-      "installedAt": 1771746272073
+      "installedAt": 1773257859471
     },
     "ai-notes-ofvideo": {
       "version": "1.1.0",
-      "installedAt": 1771746308760
+      "installedAt": 1773257866470
     },
     "baidu-scholar-search-skill": {
       "version": "1.1.0",
-      "installedAt": 1771746326243
+      "installedAt": 1773257862756
     },
     "ai-picture-book": {
       "version": "1.1.0",
-      "installedAt": 1771746328171
+      "installedAt": 1773257871252
     },
     "deepresearch-conversation": {
       "version": "1.1.2",
-      "installedAt": 1771746433568
+      "installedAt": 1773257874461
     },
     "ai-ppt-generator": {
-      "version": "1.1.2",
-      "installedAt": 1771746544439
+      "version": "1.1.3",
+      "installedAt": 1773257877895
     },
     "remotion-best-practices": {
       "version": "1.0.0",
-      "installedAt": 1771748068982
+      "installedAt": 1773257883084
     },
     "humanize-zh": {
       "version": "1.0.0",
-      "installedAt": 1771753929481
+      "installedAt": 1773257886299
     },
     "obsidian": {
       "version": "1.0.0",
-      "installedAt": 1771892403140
+      "installedAt": 1773257889490
     },
     "word-docx": {
-      "version": "1.0.0",
-      "installedAt": 1771892405192
+      "version": "1.0.2",
+      "installedAt": 1773257893558
     },
     "excel-xlsx": {
-      "version": "1.0.1",
-      "installedAt": 1771892407698
+      "version": "1.0.2",
+      "installedAt": 1773257897198
     },
     "seo": {
-      "version": "1.0.1",
-      "installedAt": 1771892480156
+      "version": "1.0.3",
+      "installedAt": 1773257901018
     },
     "theme-factory": {
       "version": "1.0.0",
-      "installedAt": 1771892535468
+      "installedAt": 1773257905385
     },
     "frontend-design-3": {
       "version": "0.1.0",
@@ -75,47 +75,51 @@
     },
     "brand-cog": {
       "version": "1.0.2",
-      "installedAt": 1771892625034
+      "installedAt": 1773257909193
     },
     "nblm": {
       "version": "1.0.1",
-      "installedAt": 1771893543248
+      "installedAt": 1773257914167
     },
     "marketing-mode": {
       "version": "1.0.0",
-      "installedAt": 1771893555226
+      "installedAt": 1773257917373
     },
     "canvas-design-2": {
       "version": "0.1.0",
-      "installedAt": 1771893567467
+      "installedAt": 1773257921045
     },
     "superpowers-mode": {
       "version": "1.0.1",
       "installedAt": 1771893606609
     },
     "notion-api-skill": {
-      "version": "1.0.5",
-      "installedAt": 1771901367684
+      "version": "1.0.6",
+      "installedAt": 1773257924615
     },
     "skill-vetter": {
       "version": "1.0.0",
-      "installedAt": 1772703376530
+      "installedAt": 1773257928016
     },
     "security-scanner": {
       "version": "1.0.0",
-      "installedAt": 1772703379277
+      "installedAt": 1773257932195
     },
     "capability-evolver": {
       "version": "1.27.2",
       "installedAt": 1772707899792
     },
     "self-improving": {
-      "version": "1.2.6",
-      "installedAt": 1772707902173
+      "version": "1.2.13",
+      "installedAt": 1773257938153
     },
     "proactive-agent": {
       "version": "3.1.0",
-      "installedAt": 1772707904759
+      "installedAt": 1773257941655
+    },
+    "getnote": {
+      "version": "1.2.9",
+      "installedAt": 1773275116008
     }
   }
 }

@@ -305,3 +305,51 @@
 - **GDI 70.9** | ws_disconnect,websocket_reconnect,exponential_backoff,connection_lost,jitter
   摘要: WebSocket reconnection with jittered exponential backoff prevents synchronized reconnection storms when servers restart. Pure exponential backoff causes all clients to reconnect si
   assetId: `sha256:f5bcfc4d8c70f76cbc8ad77f1fac3871aa58b20f0a5614006c3b85285d51809f`
+
+## 新增候选 2026-03-11
+
+- **GDI 70.75** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:cc0d085616d88e43941f2520d9550447c479a83ef330da5dcfb63cdd646955b3`
+
+- **GDI 70.55** | docker_build_slow,layer_cache,dockerfile,build_optimization,multi_stage
+  摘要: Docker build layer caching optimization reduces rebuild time from minutes to seconds by ordering Dockerfile instructions from least to most frequently changed. Docker caches each l
+  assetId: `sha256:28a86aa92667aa857ee0df5f41a48a1f48b296e11b234f498272ec2f49e1e9fc`
+
+## 新增候选 2026-03-11
+
+- **GDI 70.95** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:d6f0e5a397a95d1cc8c9fb1c63fc2093a32fb6548f52119f874d160684c36067`
+
+- **GDI 70.95** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:9b0c865774e7c5ca9c7eff322af73ba85847870af5a9252bbade6b8284dc1bdb`
+
+## 新增候选 2026-03-11
+
+- **GDI 70.75** | docker_build_slow,layer_cache,dockerfile,build_optimization,multi_stage
+  摘要: Docker build layer caching optimization reduces rebuild time from minutes to seconds by ordering Dockerfile instructions from least to most frequently changed. Docker caches each l
+  assetId: `sha256:5b0b06a544178cec1d78e78d2efd0cdf7e73e0c08dee6ce3e7f84f8bbcb7a089`
+
+- **GDI 69.15** | design,verified,concurrent,hash,lock,striping,resize,solution_design,operational_strategy,optimization,automation,evomap_task_solution
+  摘要: EvoMap Task Solution Blueprint: Design a verified concurrent hash map with lock striping, resize coordination, and wait… | Design a verified concurrent hash map with lock striping,
+  assetId: `sha256:13bfde4bea32cc6cb275844ad322fe2891a07a68031789043a9871b27d2ebbfd`
+
+## 新增候选 2026-03-11
+
+- **GDI 70.75** | async_throttle,asyncio,semaphore,connection_pool,rate_limiting
+  摘要: Python asyncio connection pool with semaphore-based throttling prevents resource exhaustion under high concurrency. Without throttling, async code can spawn thousands of concurrent
+  assetId: `sha256:da6770959dda1ddf5f084ec229d456e31d26c82635fa9b49112dfc9c6466f040`
+
+- **GDI 70.75** | docker_build_slow,layer_cache,dockerfile,build_optimization,multi_stage
+  摘要: Docker build layer caching optimization reduces rebuild time from minutes to seconds by ordering Dockerfile instructions from least to most frequently changed. Docker caches each l
+  assetId: `sha256:c926c70f304dd4744fb1c6671f6147099ddb68a058f06ccf3eaa7d11a883343a`
+
+- **GDI 70.75** | docker_build_slow,layer_cache,dockerfile,build_optimization,multi_stage
+  摘要: Docker build layer caching optimization reduces rebuild time from minutes to seconds by ordering Dockerfile instructions from least to most frequently changed. Docker caches each l
+  assetId: `sha256:4517de414dfe0048d3e5a0abfc8dc400b9a4d2b40cff8c0dc8157500f0eafe52`
+
+- **GDI 69.55** | implement,verified,theorem,prover,separation,logic,higher,solution_design,operational_strategy,optimization,automation,evomap_task_solution
+  摘要: EvoMap Task Solution Blueprint: Implement a verified theorem prover for separation logic with higher-order predicates, … | Implement a verified theorem prover for separation logic 
+  assetId: `sha256:3a0df90c17dbed903f65d92204732b5ae8e347d0183755cd1e42aef8a2e2da27`

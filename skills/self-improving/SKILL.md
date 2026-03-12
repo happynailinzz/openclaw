@@ -1,11 +1,11 @@
 ---
-name: Self-Improving Agent (With Self-Reflection)
+name: Self-Improving Agent (Proactive + Self-Reflection)
 slug: self-improving
-version: 1.2.6
+version: 1.2.13
 homepage: https://clawic.com/skills/self-improving
-description: Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use before starting work and after responding to the user.
-changelog: "Added a SOUL.md setup snippet to reinforce pre-task review and post-response learning compounding."
-metadata: {"clawdbot":{"emoji":"🧠","requires":{"bins":[]},"os":["linux","darwin","win32"],"configPaths":["~/self-improving/"]}}
+description: "Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use when (1) a command, tool, API, or operation fails; (2) the user corrects you or rejects your work; (3) you realize your knowledge is outdated or incorrect; (4) you discover a better approach; (5) the user explicitly installs or references the skill for the current task."
+changelog: "Aligns heartbeat installation with the standard workspace setup so recurring maintenance is added alongside the existing self-improving routing."
+metadata: {"clawdbot":{"emoji":"🧠","requires":{"bins":[]},"os":["linux","darwin","win32"],"configPaths":["~/self-improving/"],"configPaths.optional":["./AGENTS.md","./SOUL.md","./HEARTBEAT.md"]}}
 ---
 
 ## When to Use
@@ -15,11 +15,13 @@ User corrects you or points out mistakes. You complete significant work and want
 ## Architecture
 
 Memory lives in `~/self-improving/` with tiered structure. If `~/self-improving/` does not exist, run `setup.md`.
+Workspace setup should add the standard self-improving steering to the workspace AGENTS, SOUL, and `HEARTBEAT.md` files, with recurring maintenance routed through `heartbeat-rules.md`.
 
 ```
 ~/self-improving/
 ├── memory.md          # HOT: ≤100 lines, always loaded
 ├── index.md           # Topic index with line counts
+├── heartbeat-state.md # Heartbeat state: last run, reviewed change, action notes
 ├── projects/          # Per-project learnings
 ├── domains/           # Domain-specific (code, writing, comms)
 ├── archive/           # COLD: decayed patterns
@@ -31,12 +33,16 @@ Memory lives in `~/self-improving/` with tiered structure. If `~/self-improving/
 | Topic | File |
 |-------|------|
 | Setup guide | `setup.md` |
+| Heartbeat state template | `heartbeat-state.md` |
 | Memory template | `memory-template.md` |
+| Workspace heartbeat snippet | `HEARTBEAT.md` |
+| Heartbeat rules | `heartbeat-rules.md` |
 | Learning mechanics | `learning.md` |
 | Security boundaries | `boundaries.md` |
 | Scaling rules | `scaling.md` |
 | Memory operations | `operations.md` |
 | Self-reflection log | `reflections.md` |
+| OpenClaw HEARTBEAT seed | `openclaw-heartbeat.md` |
 
 ## Detection Triggers
 
@@ -194,6 +200,7 @@ If context limit hit:
 This skill ONLY:
 - Learns from user corrections and self-reflection
 - Stores preferences in local files (`~/self-improving/`)
+- Maintains heartbeat state in `~/self-improving/heartbeat-state.md` when the workspace integrates heartbeat
 - Reads its own memory files on activation
 
 This skill NEVER:
@@ -201,6 +208,7 @@ This skill NEVER:
 - Makes network requests
 - Reads files outside `~/self-improving/`
 - Infers preferences from silence or observation
+- Deletes or blindly rewrites self-improving memory during heartbeat cleanup
 - Modifies its own SKILL.md
 
 ## Related Skills
