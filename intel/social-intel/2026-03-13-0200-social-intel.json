@@ -1,0 +1,119 @@
+{
+  "run_at_utc": "2026-03-13T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "pipeline": {
+    "stepA_weekly_skill_check": {
+      "executed": false,
+      "reason": "仅周一执行；本次为周五",
+      "skills_snapshot": {
+        "xiaohongshu": "技能文档可用；网页直抓受动态渲染与反爬限制，建议走MCP登录态",
+        "reddit": "RSS可用；站内直连存在风控，建议RSS+搜索混合",
+        "youtube": "官方search feed出现400；可由新闻RSS/site检索兜底",
+        "alternatives": ["tavily-search", "web_fetch", "browser"]
+      }
+    },
+    "stepB_primary_fetch": "优先 skill/API，实际可用主通道为 tavily-search + web_fetch(RSS/新闻)",
+    "stepC_fallback": [
+      "X: 站内接口不稳 -> site:x.com + 新闻聚合兜底",
+      "小红书: 动态页面不可解析 -> 记录失败并不阻塞",
+      "YouTube: 官方search feed 400 -> 由新闻源/站内检索替代",
+      "Reddit: 直连不稳 -> Reddit RSS + 站内搜索替代"
+    ]
+  },
+  "items": [
+    {
+      "platform": "新闻网站",
+      "title": "US mulls new rules for AI chip exports, including requiring US investments by foreign firms",
+      "published_at": "2026-03-05T00:00:00Z",
+      "url": "https://www.reuters.com/world/us-mulls-new-rules-ai-chip-exports-including-requiring-investments-by-foreign-2026-03-05/",
+      "summary": "路透称美方讨论AI芯片出口新规，可能将大规模出口与在美投资/安全承诺绑定。",
+      "signals": ["政策动作", "出口管制", "算力供应链"],
+      "confidence": 0.9,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Defense contractors, like Lockheed, seen removing Anthropic's AI after Trump ban",
+      "published_at": "2026-03-04T00:00:00Z",
+      "url": "https://www.reuters.com/sustainability/society-equity/defense-contractors-like-lockheed-seen-removing-anthropics-ai-after-trump-ban-2026-03-04/",
+      "summary": "路透称国防承包商预计按要求清退Anthropic相关能力，模型供应链与合同执行面临重配。",
+      "signals": ["政策动作", "采购限制", "模型厂商影响"],
+      "confidence": 0.88,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Amazon says Anthropic’s Claude still OK for AWS customers to use outside defense work",
+      "published_at": "2026-03-06T00:00:00Z",
+      "url": "https://www.cnbc.com/2026/03/06/amazon-aws-anthropic-claude-pentagon-blacklist.html",
+      "summary": "CNBC称AWS继续提供Claude给非国防工作负载，国防相关场景需切换替代方案。",
+      "signals": ["厂商应对", "云平台影响", "替代路径"],
+      "confidence": 0.82,
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Reddit",
+      "title": "Pentagon, Claude and the military use",
+      "published_at": "2026-03-13T00:00:00Z",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1recva7/pentagon_claude_and_the_military_use/",
+      "summary": "社区持续讨论五角大楼与Claude使用边界，反映生态侧对供给稳定性与合规可执行性的担忧。",
+      "signals": ["舆情升温", "采购不确定性"],
+      "confidence": 0.55,
+      "score": 2,
+      "tier": "中价值"
+    },
+    {
+      "platform": "YouTube",
+      "title": "China’s DeepSeek AI Fuels Military Ambitions | U.S. Raises Alarm Over PLA’s AI Push",
+      "published_at": "2026-03-13T00:00:00Z",
+      "url": "https://www.youtube.com/watch?v=BjoOpVmA_1U",
+      "summary": "视频舆情聚焦中美AI军用能力竞争，作为情绪信号可参考，事实需二次核验。",
+      "signals": ["国防AI舆情", "地缘风险"],
+      "confidence": 0.42,
+      "score": 1,
+      "tier": "低价值"
+    },
+    {
+      "platform": "X",
+      "title": "TRUMP PLANS U.S. CONTROL OVER GLOBAL AI CHIP SALES（聚合转引）",
+      "published_at": "2026-03-05T17:35:12Z",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9DVTBOd1ZaYzY4dm02OVZZSldRMVZ2R01YN2w3cTBOSWVaZF9YNGs5N0w3WXZZV096STlYSFVOT3VQTy1FbDQxWG9lYy1wVWM2RFVBN0xLRHNSeFlVRVE?oc=5",
+      "summary": "X侧传播与新闻口径同向，说明出口管制预期已扩散至市场层面。",
+      "signals": ["社媒扩散", "政策预期"],
+      "confidence": 0.5,
+      "score": 2,
+      "tier": "中价值"
+    },
+    {
+      "platform": "小红书",
+      "title": "AI供应链主题抓取失败（动态渲染/登录态限制）",
+      "published_at": null,
+      "url": "https://www.xiaohongshu.com/explore",
+      "summary": "公开页仅拿到壳页面，未提取到可用内容；已记录失败并进入回退。",
+      "signals": ["数据源可用性下降"],
+      "confidence": 0.95,
+      "score": 0,
+      "tier": "低价值"
+    }
+  ],
+  "fallback_failures": [
+    "小红书公开页动态渲染，未获取结果",
+    "YouTube官方search feed返回400",
+    "Reddit部分页面存在风控，改用RSS",
+    "X直连稳定性不足，改走聚合/搜索"
+  ],
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.17,
+    "high_value_hit_rate": 0.60,
+    "latency_minutes": 0
+  },
+  "status": "partial_success"
+}
