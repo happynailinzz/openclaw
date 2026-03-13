@@ -11,7 +11,9 @@ from getnote_daily_sync import READONLY_NAMES, WORKSPACE, derive_tags, load_getn
 
 IMPORT_STATE_PATH = WORKSPACE / 'memory' / 'getnote-bulk-import-state.json'
 IMPORT_REPORT_DIR = WORKSPACE / 'reports' / 'getnote-bulk-import'
-ALLOWED_DIR_PREFIXES = ('articles/', 'docs/', 'intel/', 'tmp/', 'memory/')
+PRIORITY_PREFIXES = ('articles/',)
+SECONDARY_PREFIXES = ('docs/', 'intel/')
+TERTIARY_PREFIXES = ('memory/', 'tmp/')
 EXTRA_ALLOWED = {
     'article.md', 'findings.md', 'progress.md', 'task_plan.md', 'wechat_article.md', '河南省各地级市2026年重点工作部署汇总.md'
 }
@@ -33,15 +35,25 @@ def save_import_state(state):
     IMPORT_STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n')
 
 
+def classify_priority(path_str: str):
+    if path_str in EXTRA_ALLOWED:
+        return 0
+    if path_str.startswith(PRIORITY_PREFIXES):
+        return 1
+    if path_str.startswith(SECONDARY_PREFIXES):
+        return 2
+    if path_str.startswith(TERTIARY_PREFIXES):
+        return 3
+    return None
+
+
 def should_import(p: pathlib.Path) -> bool:
     rp = relpath(p)
     if p.name in READONLY_NAMES:
         return False
-    if rp in EXTRA_ALLOWED:
-        return True
     if rp.startswith(SKIP_MEMORY_PREFIXES):
         return False
-    return rp.startswith(ALLOWED_DIR_PREFIXES)
+    return classify_priority(rp) is not None
 
 
 def list_candidates():
@@ -49,7 +61,7 @@ def list_candidates():
     for p in WORKSPACE.rglob('*.md'):
         if p.is_file() and should_import(p):
             files.append(p)
-    return sorted(files)
+    return sorted(files, key=lambda p: (classify_priority(relpath(p)), relpath(p)))
 
 
 def checksum(text: str) -> str:
