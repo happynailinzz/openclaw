@@ -1,0 +1,14 @@
+{
+  "imported": {
+    "article.md": "eb4223601b584d528472cf5089b6927505af068a",
+    "findings.md": "13e1393ca07437a9d422daa5a0a07a89cb26bd15",
+    "progress.md": "85dd349aa5dd1bb5465655a71a9a8e5b3ab67aed",
+    "task_plan.md": "1665200d5e88834cb402995c9009d2cce5d0207f"
+  },
+  "lastRunAt": "2026-03-13T03:17:29Z",
+  "lastImported": [
+    "findings.md",
+    "progress.md",
+    "task_plan.md"
+  ]
+}

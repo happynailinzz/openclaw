@@ -1,0 +1,147 @@
+{
+  "run_at_utc": "2026-03-14T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "pipeline": {
+    "stepA_weekly_skill_check": {
+      "executed": false,
+      "reason": "仅周一执行；本次为周六",
+      "skills_snapshot": {
+        "xiaohongshu": "网页公开抓取受动态渲染/登录态限制，需MCP或登录态技能",
+        "reddit": "RSS可用，站内搜索直连可用但噪音较高",
+        "youtube": "视频页可取标题，搜索页噪音高，建议优先频道/关键词RSS",
+        "alternatives": ["web_fetch", "Google News RSS", "历史归档比对"]
+      }
+    },
+    "stepB_primary_fetch": "主通道优先 web_fetch + RSS；X/小红书走回退链路",
+    "stepC_fallback": [
+      "X: x.com搜索页失败 -> Google News RSS(site:x.com)回退",
+      "小红书: 搜索页仅返回壳/备案页 -> 记录失败不阻塞",
+      "YouTube: 搜索页结构噪音 -> 指定视频页回退",
+      "Reddit: search.rss噪音高 -> 指定主题帖.rss回退"
+    ]
+  },
+  "items": [
+    {
+      "platform": "新闻网站",
+      "title": "US mulls new rules for AI chip exports, including requiring US investments by foreign firms",
+      "published_at": "2026-03-05T00:00:00Z",
+      "url": "https://www.reuters.com/world/us-mulls-new-rules-ai-chip-exports-including-requiring-investments-by-foreign-2026-03-05/",
+      "summary": "路透披露美方讨论AI芯片出口新框架：大规模出口可能绑定在美投资或政府级安全承诺。",
+      "signals": ["监管/出口管制", "算力供应链约束", "跨境交付条件收紧"],
+      "confidence": 0.9,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Defense contractors, like Lockheed, seen removing Anthropic's AI after Trump ban",
+      "published_at": "2026-03-04T00:00:00Z",
+      "url": "https://www.reuters.com/sustainability/society-equity/defense-contractors-like-lockheed-seen-removing-anthropics-ai-after-trump-ban-2026-03-04/",
+      "summary": "美防务承包商预期清退Anthropic相关能力，反映采购限制可快速传导到交付链。",
+      "signals": ["采购限制", "模型厂商受影响", "国防交付重配"],
+      "confidence": 0.88,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Amazon says Anthropic’s Claude still OK for AWS customers to use outside defense work",
+      "published_at": "2026-03-06T00:00:00Z",
+      "url": "https://www.cnbc.com/2026/03/06/amazon-aws-anthropic-claude-pentagon-blacklist.html",
+      "summary": "AWS/微软/谷歌均给出“国防外可用、国防内迁移替代”口径，形成分场景交付。",
+      "signals": ["云厂商应对", "替代路径", "项目切换窗口"],
+      "confidence": 0.82,
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "X",
+      "title": "x.com相关讨论被Google News RSS收录：Anthropic-DoW冲突与AI芯片新规扩散",
+      "published_at": "2026-03-11T19:00:52Z",
+      "url": "https://news.google.com/rss/search?q=site:x.com+AI+chip+export+controls&hl=en-US&gl=US&ceid=US:en",
+      "summary": "X侧舆情已扩散到聚合媒体源，政策争议外溢到行业预期层面。",
+      "signals": ["社媒扩散", "政策预期传导"],
+      "confidence": 0.56,
+      "score": 2,
+      "tier": "中价值"
+    },
+    {
+      "platform": "Reddit",
+      "title": "Pentagon, Claude and the military use",
+      "published_at": "2026-02-25T13:13:54Z",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1recva7/pentagon_claude_and_the_military_use/",
+      "summary": "社区讨论聚焦“军用场景强制放开模型约束”的合规与治理争议，可作风险温度计。",
+      "signals": ["社区风险感知", "治理争议", "军用AI舆情"],
+      "confidence": 0.58,
+      "score": 2,
+      "tier": "中价值"
+    },
+    {
+      "platform": "YouTube",
+      "title": "China’s DeepSeek AI Fuels Military Ambitions | U.S. Raises Alarm Over PLA’s AI Push",
+      "published_at": null,
+      "url": "https://www.youtube.com/watch?v=BjoOpVmA_1U",
+      "summary": "视频侧延续地缘与军工AI叙事，情绪信号强，事实密度一般，需二次核验。",
+      "signals": ["地缘舆情", "军工AI叙事"],
+      "confidence": 0.42,
+      "score": 1,
+      "tier": "低价值"
+    },
+    {
+      "platform": "小红书",
+      "title": "AI 算力 出口 管制（抓取失败）",
+      "published_at": null,
+      "url": "https://www.xiaohongshu.com/search_result?keyword=AI%20%E7%AE%97%E5%8A%9B%20%E5%87%BA%E5%8F%A3%20%E7%AE%A1%E5%88%B6",
+      "summary": "仅返回备案/壳页面，未提取到有效帖子；需登录态技能补齐。",
+      "signals": ["数据源可用性下降", "回退触发"],
+      "confidence": 0.95,
+      "score": 0,
+      "tier": "低价值"
+    },
+    {
+      "platform": "RSS",
+      "title": "Capability Architecture for AI-Native Engineering",
+      "published_at": "2026-03-13T11:33:01Z",
+      "url": "https://feeds.feedburner.com/oreilly/radar/atom",
+      "summary": "行业方法论信号：AI工程规范化加速，但与政务/国防供应链主题相关性中等偏低。",
+      "signals": ["行业方法论", "工程化趋势"],
+      "confidence": 0.67,
+      "score": 1,
+      "tier": "低价值"
+    }
+  ],
+  "gov_defense_supply_chain_mapping": [
+    {
+      "policy_action": "拟议AI芯片出口新规（许可+在美投资/安全承诺）",
+      "affected_vendors": ["Nvidia", "AMD", "海外主权买方", "美国云厂商"],
+      "delivery_impact": "跨境大单交付前置更多合规条件，窗口拉长；可行替代为先走云服务额度、分批交付与本地合规架构。",
+      "risk_level": "高",
+      "risk_reason": "直接作用于高端算力供给与项目排期，短期不确定性大。"
+    },
+    {
+      "policy_action": "国防体系对Anthropic相关能力施加禁用/清退要求",
+      "affected_vendors": ["Anthropic", "Lockheed Martin及防务承包商", "AWS/Azure/GCP生态"],
+      "delivery_impact": "军工项目出现模型替换与再验证成本，影响里程碑与验收节奏；替代路径为国防场景切换到已批准模型栈。",
+      "risk_level": "高",
+      "risk_reason": "政策口径已进入合同与供应链执行层。"
+    },
+    {
+      "policy_action": "云厂商发布“国防外可用、国防内迁移”分层口径",
+      "affected_vendors": ["AWS", "Microsoft", "Google", "集成服务商"],
+      "delivery_impact": "商用项目连续性可维持，国防项目需做模型路由与责任边界重构。",
+      "risk_level": "中",
+      "risk_reason": "有替代方案但迁移与合规验证带来额外周期。"
+    }
+  ],
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5.2,
+    "success_rate": 0.867,
+    "duplication_rate": 0.18,
+    "high_value_hit_rate": 0.625,
+    "latency_minutes": 0
+  },
+  "status": "success_with_degradation"
+}

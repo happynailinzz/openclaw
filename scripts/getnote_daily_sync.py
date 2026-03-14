@@ -69,11 +69,11 @@ def slugify(name):
 
 
 def derive_tags(text):
-    tags = {'OpenClaw'}
+    tags = ['OpenClaw']
     for tag, needles in TOPIC_RULES:
-        if any(n in text for n in needles):
-            tags.add(tag)
-    return sorted(tags)
+        if any(n in text for n in needles) and tag not in tags:
+            tags.append(tag)
+    return tags[:4]
 
 
 def list_markdown_outputs(day):
