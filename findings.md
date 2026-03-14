@@ -1,8 +1,6 @@
-# Findings
+# findings.md
 
-## 2026-03-10
-- OpenClaw 分享文档的核心定位：不要讲成“AI 聊天工具”，而要讲成“可自托管的 Agent 基础设施”。
-- 部署建议明确分两套：本地 macOS + 国产模型；海外服务器 + 国外模型中转。
-- 本地文档可支撑的真实经验点包括：生产化 SOP、记忆整合、cron 规则、脚本化发布、巡检与恢复。
-- CLI 侧可用于分享演示的命令包括：`openclaw status`、`openclaw skills`、`openclaw plugins`、`openclaw security audit`。
-- 当前工作区已经沉淀出可讲的优化案例：memory 分层、cron/heartbeat 分工、publish 脚本、HTML refined 后处理、systemd/loopback/环境变量治理。
+## 2026-03-14
+- 用户确认专题方向，并要求补充“省政府+各地市政府2026重点工作任务计划安排”。
+- 已确认需以“项目机会解读”服务后续内容策划。
+- 当前将按“省级总盘+18地市摘要”方式整理，并映射到：数字化转型、算力与数据中心、AI应用、信创、源网荷储、教育/产教融合。
