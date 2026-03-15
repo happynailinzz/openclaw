@@ -1,0 +1,74 @@
+{
+  "run_at": "2026-03-15T02:00:00Z",
+  "topic": "social-intel-sop",
+  "items": [
+    {
+      "platform": "news",
+      "title": "US mulls new rules for AI chip exports, including requiring US investments by foreign firms - Reuters",
+      "published_at": "Thu, 05 Mar 2026 08:00:00 GMT",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbHlIa3ZDZ0wxc19tUmxrb1l4aml2UEI2S3MtV1RrMWxJV3FsS2ZuMk9oQk9Ed1YyTGZBWlRIU0lFQkxkbmNFbFpOblk0LUo0X2JReEdDdkEyVzFYc0VqOWtfUmhIb2JYbjc4VmtxY1NoTU1jRk5RRUE1Q1NkSGhUZVVmdW9qVzBnYnNOZzVoV21rbFpheFVPMVRLenVVRzVILWU5ZWNGTnhZMGk5anRNTDdnbHRTV1FDOW9j?oc=5",
+      "summary": "报道美国正酝酿新的 AI 芯片出口规则，并可能把外资企业在美投资要求与出口许可挂钩。",
+      "signals": ["政策动作", "出口管制", "芯片供应链"],
+      "confidence": "high"
+    },
+    {
+      "platform": "news",
+      "title": "U.S. Expands AI Chip Export Controls to Allies - 조선일보",
+      "published_at": "Fri, 06 Mar 2026 08:00:00 GMT",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRndlWFFBX29KckMtRWFvd0pwMmhJUWRKVUc5dVRFaUxJcy0xWnNZd3V0U19OVWJUX1pTV0JMOUJ0eV93d0tXOVZlR20wd3UtdGh2NE9xb0VkcW1FUzY5MDljWC1BZmlqSG9YeXhfSHk4M0VlQWhEbVo0ZGNvVlR2WlZKUENfS1Ay?oc=5",
+      "summary": "消息称美国对盟友相关 AI 芯片流转的限制框架进一步收紧，可能影响跨境交付节奏。",
+      "signals": ["政策动作", "盟友管制", "跨境交付"],
+      "confidence": "medium"
+    },
+    {
+      "platform": "x",
+      "title": "The US Built a Wall Around NVIDIA’s Best Chips... ByteDance Found a ‘Secret Door’ in Malaysia - x.com",
+      "published_at": "Fri, 13 Mar 2026 14:08:50 GMT",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB0eGptZkRfSWRiT1dwNFp2Zk5UaHVFUERyVDhFdUE4aEF5UWRLaWtuaTQ3V1NQQ0x5N3NZSHJlbGRzYW1wdGlDczlubjRjcDBDQ1MyYVlTUzhfRVBmaEdYejN0QmhqRjNLTkk0?oc=5",
+      "summary": "X 讨论称部分高端 GPU 可通过第三地云合作路径间接获取，提示规则执行与供应链绕行风险。",
+      "signals": ["厂商影响", "云路径", "规则执行差"],
+      "confidence": "medium"
+    },
+    {
+      "platform": "rss",
+      "title": "Chip industry hit by Nexperia export ban - Sourceability",
+      "published_at": "Mon, 09 Mar 2026 07:00:00 GMT",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNV2pFTmhLSTlpVG50WU9wSHJaU3V6aUUwbGdjZE9BSzJKYUlRSVRZVGpoSjFuZ2doa0RtNUg0Unhqd2VHX3VxTTh6VlJTNmFkRTl0SjJDSGo1bHRHWHRhS3ZGQl9EX1ZXOVJaaG5JRWdoSHAtUVFkb2JoNXBEMW5pWjBDZG1VRzh2YTJHUjVfVFROS2J5aVFEbkhBcw?oc=5",
+      "summary": "Nexperia 相关出口禁令冲击被关注，反映中游器件与整机交付链条的连锁不确定性。",
+      "signals": ["厂商影响", "器件供给", "交付窗口"],
+      "confidence": "medium"
+    },
+    {
+      "platform": "youtube",
+      "title": "Defense Sec. Hegseth and Gen. Dan Caine hold a Pentagon briefing - YouTube",
+      "published_at": "Fri, 13 Mar 2026 12:55:57 GMT",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE42UjN5Y3JVSkV1dUVzOFMydGxUYlBaeWtULVVqYU5EcTB6RjFCT2NKeFFmUlMyd3BOWmNnaEc3TVllYkdibWxaZ3hnQU5XT0xNRDRMWHRn?oc=5",
+      "summary": "五角大楼公开沟通军事与技术议题，属于国防政策语境的信号源，可用于观察采购与部署口径变化。",
+      "signals": ["国防政策语境", "公开口径", "趋势跟踪"],
+      "confidence": "medium"
+    },
+    {
+      "platform": "reddit",
+      "title": "Reddit direct RSS blocked; fallback via Google News index (policy/export-control threads)",
+      "published_at": "2026-03-15T02:00:00Z",
+      "url": "https://news.google.com/rss/search?q=site%3Areddit.com%2Fr+AI+export+controls+procurement&hl=en-US&gl=US&ceid=US:en",
+      "summary": "Reddit 原生 RSS 被 403 阻断，本次通过聚合索引获取替代线索，信噪比较高但可用。",
+      "signals": ["失败回退", "聚合替代"],
+      "confidence": "low"
+    },
+    {
+      "platform": "xiaohongshu",
+      "title": "XHS direct capture unavailable; fallback via Google News index",
+      "published_at": "2026-03-15T02:00:00Z",
+      "url": "https://news.google.com/rss/search?q=site%3Axiaohongshu.com+%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD+%E7%9B%91%E7%AE%A1+%E7%A6%81%E4%BB%A4+%E9%87%87%E8%B4%AD+%E9%99%90%E5%88%B6&hl=en-US&gl=US&ceid=US:en",
+      "summary": "小红书侧本次未拿到高相关结构化条目，先保留索引入口，后续建议接入 xiaohongshu 专用 skill。",
+      "signals": ["失败回退", "待接入专用技能"],
+      "confidence": "low"
+    }
+  ],
+  "quality": {
+    "capture_success_rate_est": 0.89,
+    "duplicate_rate_est": 0.09,
+    "high_value_hit_rate_est": 0.62
+  }
+}
