@@ -1,0 +1,125 @@
+{
+  "run_at_utc": "2026-03-16T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "pipeline": {
+    "stepA_weekly_skill_check": {
+      "executed": true,
+      "reason": "周一执行",
+      "skills_snapshot": {
+        "xiaohongshu": "未安装专用 skill；网页抓取仅返回备案页，需登录态/MCP",
+        "reddit": "search.rss 可用",
+        "youtube": "YouTube 搜索 RSS 400；需频道级 RSS 或专用 skill",
+        "alternatives": ["web_fetch", "Google News RSS", "站点级回退检索"]
+      }
+    },
+    "stepB_primary_fetch": "主通道 web_fetch + RSS",
+    "stepC_fallback": [
+      "X: 站内抓取受限 -> Google News RSS(site:x.com)回退",
+      "小红书: 仅备案壳页 -> 记录失败不阻塞",
+      "YouTube: search feed 400 -> Google News RSS(site:youtube.com)回退",
+      "Reddit: search.rss可用"
+    ]
+  },
+  "items": [
+    {
+      "platform": "新闻网站",
+      "title": "US Commerce Department withdraws planned rule on AI chip exports",
+      "published_at": "2026-03-13T21:41:12Z",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQRThuSC0xOThBSkZibWpSTnp4VlIwaFh2el9saXFhUTZMZHpLR1VMdW9xd0VKZFVtSWlNcXppemJJZGI0ZFNBY2pYOUF3UF9RMkNSTnQ4eERRTGUzX0xpYWJ2MkQ2OERoWWlrN1BqclJfRWRpQXhPLW1HMjhySHZTa0N4YmxVVS1aamFpSmFNZ1dBZnFrU0pLS0tJaWtkUnRuYjlhLXAzeThBdG9jRlpjUGVMX3plc3RiaWdSamZiVTY3Nmc?oc=5",
+      "summary": "路透信号显示美国商务部撤回一版AI芯片出口规则，短期释放政策再校准信号。",
+      "signals": ["出口管制", "政策调整", "算力供应链窗口变化"],
+      "confidence": 0.9,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Pentagon opens door to exempt Anthropic use beyond 6-month ramp-down, memo says",
+      "published_at": "2026-03-11T22:30:02Z",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMk9LVjBNZFZ3eG92d0JQczFaZU1uTmZMdVBXNXdsNHVYSVhsQWxxU1ZEZjVHUXU2WFd5d181YkhhTlVuckdEeUxJNEpzUzF3Y1A4TzlzaGNiM2taeFZfdm1FSWk1VGZmNV9JUUVxdXNha08zRmNkbmtFNF9sNm9iRm1MOW1KT0w5ZUVWVGdIcTg3eWplZS1XZGRWN1NaTEw4MVRITDlacHJMMGdiMFM3MXl4X2JJNjRQSlFtRQ?oc=5",
+      "summary": "五角大楼存在豁免窗口，说明‘一刀切禁用’转向‘分场景管控’。",
+      "signals": ["采购限制", "模型豁免", "国防交付分层"],
+      "confidence": 0.88,
+      "score": 6,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Reddit",
+      "title": "Anduril CEO Luckey says Pentagon should have been \"more forceful\" against Anthropic",
+      "published_at": "2026-03-16T01:47:34Z",
+      "url": "https://www.reddit.com/r/singularity/comments/1ruwhxw/anduril_ceo_luckey_says_pentagon_should_have_been/",
+      "summary": "产业与舆论侧对国防采购限制讨论升温，映射承包商与模型厂商关系紧张。",
+      "signals": ["承包商舆情", "采购立场分化", "政策外溢"],
+      "confidence": 0.62,
+      "score": 3,
+      "tier": "中价值"
+    },
+    {
+      "platform": "X",
+      "title": "site:x.com feed shows renewed discussion on DoD-Anthropic and AI export controls",
+      "published_at": "2026-03-11T19:00:52Z",
+      "url": "https://news.google.com/rss/search?q=site%3Ax.com+AI+chip+export+controls&hl=en-US&gl=US&ceid=US%3Aen",
+      "summary": "X侧讨论热度上行，但原帖可信度与事实密度参差，需二次核验。",
+      "signals": ["社媒扩散", "风险叙事放大"],
+      "confidence": 0.55,
+      "score": 2,
+      "tier": "中价值"
+    },
+    {
+      "platform": "小红书",
+      "title": "AI 芯片 出口管制（抓取失败）",
+      "published_at": null,
+      "url": "https://www.xiaohongshu.com/search_result?keyword=AI%20%E8%8A%AF%E7%89%87%20%E5%87%BA%E5%8F%A3%E7%AE%A1%E5%88%B6",
+      "summary": "仅返回备案信息，未提取到帖子内容。",
+      "signals": ["源可用性下降", "需登录态/MCP"],
+      "confidence": 0.95,
+      "score": 0,
+      "tier": "低价值"
+    },
+    {
+      "platform": "RSS",
+      "title": "The Verge RSS sampled as generic tech stream (not policy-specific)",
+      "published_at": "2026-03-15T20:35:03Z",
+      "url": "https://www.theverge.com/rss/index.xml",
+      "summary": "RSS链路可用，但本轮命中政务/国防供应链相关度较低。",
+      "signals": ["RSS可用性", "主题相关性偏低"],
+      "confidence": 0.72,
+      "score": 1,
+      "tier": "低价值"
+    }
+  ],
+  "gov_defense_supply_chain_mapping": [
+    {
+      "policy_action": "美国商务部撤回一版AI芯片出口规则（后续或重拟）",
+      "affected_vendors": ["NVIDIA", "AMD", "跨境云/算力买方", "系统集成商"],
+      "delivery_impact": "短期形成‘窗口期+不确定并存’；已签跨境项目可争取推进，但需预置合规替代路径。",
+      "risk_level": "中",
+      "risk_reason": "约束暂缓但政策方向未反转，后续再收紧概率仍在。"
+    },
+    {
+      "policy_action": "五角大楼对Anthropic相关使用从全面收缩转向可豁免",
+      "affected_vendors": ["Anthropic", "防务承包商", "AWS/Azure/GCP承载方"],
+      "delivery_impact": "国防项目从强制替换转为分场景审批，交付计划可局部修复但验证成本仍高。",
+      "risk_level": "中",
+      "risk_reason": "存在豁免降低中断风险，但审批不确定性仍影响里程碑。"
+    },
+    {
+      "policy_action": "承包商/社媒舆论推动更强硬或更宽松两极叙事",
+      "affected_vendors": ["Anduril等承包商", "模型供应商", "政企采购方"],
+      "delivery_impact": "采购口径波动可能传导到招标条款，需强化合同中的模型可替换条款。",
+      "risk_level": "中",
+      "risk_reason": "主要是预期管理风险，尚未形成统一硬性新规。"
+    }
+  ],
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5.0,
+    "success_rate": 0.833,
+    "duplication_rate": 0.17,
+    "high_value_hit_rate": 0.60,
+    "latency_minutes": 0
+  },
+  "status": "partial_success_with_degradation"
+}
