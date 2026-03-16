@@ -6,12 +6,15 @@
     "task_plan.md": "f654c39ba93f765f24aff272c7daa08eaf3c5954",
     "wechat_article.md": "a88fdaea45f05a8d9dc294d5f1d5eb09c59c8f7e",
     "河南省各地级市2026年重点工作部署汇总.md": "30e7ea4b7929f2a602a2dd3921d287a8b8c95e8f",
-    "articles/2026-02-23-落地顺序-公众号稿.md": "62bfc11e3bba8dea701de0905222cbe08ad2791c"
+    "articles/2026-02-23-落地顺序-公众号稿.md": "62bfc11e3bba8dea701de0905222cbe08ad2791c",
+    "articles/2026-02-24-国企信创-算力数据流程-去AI味版.md": "22f43752356b996ffd4b65658f572b686d6c35ec",
+    "articles/2026-02-24-河南AI产业协同-项目对接期-快反稿.md": "4cbd101b112a2ac30388d8fc751892022cd6d3cf",
+    "articles/2026-02-24-河南工业数智化-先场景后平台-配套稿.md": "d65109eea9af7ff42e47965accc12111d8b0da32"
   },
-  "lastRunAt": "2026-03-15T03:17:28Z",
+  "lastRunAt": "2026-03-16T03:17:27Z",
   "lastImported": [
-    "findings.md",
-    "progress.md",
-    "task_plan.md"
+    "articles/2026-02-24-国企信创-算力数据流程-去AI味版.md",
+    "articles/2026-02-24-河南AI产业协同-项目对接期-快反稿.md",
+    "articles/2026-02-24-河南工业数智化-先场景后平台-配套稿.md"
   ]
 }
