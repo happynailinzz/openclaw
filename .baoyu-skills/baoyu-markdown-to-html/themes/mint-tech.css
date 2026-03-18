@@ -1,0 +1,190 @@
+/* 薄荷绿风格 - 科技干货型
+ * 特点：核心薄荷绿、顶部绿标签、数字大号薄荷绿、重点块浅绿底+左侧绿竖线、黄色底纹强调
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+  --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-body: 16px;
+  --line-height: 1.75;
+  --theme-color: #14b8a6;
+  --theme-color-dark: #0d9488;
+  --bg-light: #f0fdfa;
+  --text-main: #374151;
+  --text-dark: #111827;
+  --accent-yellow: #fde68a;
+  --color-bg: #ffffff;
+  --spacing-paragraph: 1em;
+  --spacing-section: 1.8em;
+}
+
+/* 全局 */
+body {
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-body) !important;
+  line-height: var(--line-height) !important;
+  color: var(--text-main) !important;
+  background-color: var(--color-bg) !important;
+  padding: 20px 24px !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* 顶部绿色标签 - 用属性选择器匹配 */
+div[id="output"] > section > blockquote:first-child {
+  display: none;
+}
+
+/* 主标题 - 找第一个 h1 */
+.h1:first-child {
+  display: none;
+}
+
+/* 作者名 - 从 blockquote 里提取 */
+.blockquote .p:first-child {
+  display: none;
+}
+
+/* 大数字标题样式 - 针对 h2.h2 */
+.h2 {
+  display: flex !important;
+  align-items: baseline !important;
+  margin-top: var(--spacing-section) !important;
+  margin-bottom: 16px !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: var(--text-dark) !important;
+}
+
+.h2::before {
+  content: '' !important;
+  display: none !important;
+}
+
+/* 在 h2 前面加数字 */
+.h2::after {
+  content: attr(data-heading) !important;
+  display: inline-block !important;
+  font-size: 28px !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: 900 !important;
+  color: var(--theme-color) !important;
+  margin-right: 10px !important;
+  opacity: 0.8 !important;
+  line-height: 1 !important;
+}
+
+/* 段落 */
+.p {
+  margin: 0 0 var(--spacing-paragraph) 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  color: var(--text-main) !important;
+  font-size: var(--font-size-body) !important;
+  line-height: var(--line-height) !important;
+}
+
+/* 强调 */
+.p strong, .p b, strong, b {
+  font-weight: 600 !important;
+  color: var(--theme-color) !important;
+}
+
+/* 引用块 */
+.blockquote {
+  border-left: 2px solid var(--theme-color) !important;
+  padding-left: 15px !important;
+  color: #6b7280 !important;
+  font-size: 14px !important;
+  margin: 16px 0 !important;
+  background-color: var(--bg-light) !important;
+  padding: 14px 16px !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+/* 列表 */
+.ul, .ol {
+  margin: 0 0 var(--spacing-paragraph) 0 !important;
+  padding-left: 1.5em !important;
+}
+
+.listitem {
+  margin-bottom: 0.5em !important;
+  color: var(--text-main) !important;
+}
+
+/* 链接 */
+a {
+  color: var(--theme-color) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent !important;
+}
+
+/* 代码 */
+.codespan {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace !important;
+  font-size: 14px !important;
+  background-color: var(--bg-light) !important;
+  padding: 2px 6px !important;
+  border-radius: 3px !important;
+  color: var(--theme-color) !important;
+}
+
+/* 图片 */
+.img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 1.5em auto !important;
+  border-radius: 0 !important;
+}
+
+/* 分割线 */
+.hr {
+  border: none !important;
+  height: 1px !important;
+  background: #e0e0e0 !important;
+  margin: 2em 0 !important;
+}
+
+/* 表格 */
+.table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1.2em 0 !important;
+  font-size: 14px !important;
+}
+
+.table th, .table td {
+  border: 1px solid #e5e7eb !important;
+  padding: 10px 12px !important;
+  text-align: left !important;
+}
+
+.table th {
+  background-color: var(--bg-light) !important;
+  font-weight: 600 !important;
+}
+
+/* 微信适配 */
+.weixin-tip {
+  display: none !important;
+}
+
+/* 响应式 */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 16px 20px !important;
+    font-size: 15px !important;
+  }
+  
+  .h2 {
+    font-size: 17px !important;
+  }
+  
+  .h2::after {
+    font-size: 24px !important;
+  }
+}

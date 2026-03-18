@@ -120,6 +120,18 @@
     "getnote": {
       "version": "1.2.9",
       "installedAt": 1773275116008
+    },
+    "multi-search-engine": {
+      "version": "2.0.1",
+      "installedAt": 1773744465646
+    },
+    "cn-web-search": {
+      "version": "0.9.0",
+      "installedAt": 1773744468499
+    },
+    "ddg-web-search": {
+      "version": "1.0.0",
+      "installedAt": 1773744470914
     }
   }
 }

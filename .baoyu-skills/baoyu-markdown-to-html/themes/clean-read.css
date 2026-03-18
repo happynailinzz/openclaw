@@ -1,0 +1,240 @@
+/* 干净阅读型主题 - 仿傅盛公众号风格
+ * 特点：主标题无下划线、作者居右浅蓝、二级标题编号浅蓝、强调用蓝色+高亮块、全宽配图无边框
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+  --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-size-body: 16px;
+  --line-height: 1.75;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-primary: #5B8FF9;
+  --color-primary-dark: #3D76DD;
+  --color-bg: #ffffff;
+  --color-highlight: #FFF9E6;
+  --color-highlight-gray: #F5F5F5;
+  --spacing-paragraph: 1.2em;
+  --spacing-section: 2em;
+}
+
+/* 全局 */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  padding: 20px 24px;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 主标题 */
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0 0 8px 0;
+  padding: 0;
+  line-height: 1.4;
+  position: relative;
+}
+
+/* 主标题上方装饰线 */
+h1::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  margin: 0 auto 16px auto;
+}
+
+/* 作者名 */
+.author {
+  text-align: right;
+  font-size: 13px;
+  color: var(--color-primary);
+  margin: 0 0 24px 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+/* 二级标题（章节标题） */
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: var(--spacing-section) 0 16px 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+/* 二级标题编号样式 */
+h2::before {
+  content: '';
+}
+
+/* 三级标题 */
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 1.5em 0 0.8em 0;
+  padding: 0;
+}
+
+/* 段落 */
+p {
+  margin: 0 0 var(--spacing-paragraph) 0;
+  padding: 0;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* 强调：蓝色文字 */
+strong, b {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+/* 强调：高亮块 */
+mark {
+  background-color: var(--color-highlight);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--color-text);
+}
+
+/* 引用块 */
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 16px;
+  background-color: var(--color-highlight-gray);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 6px 6px 0;
+  color: var(--color-text-light);
+  font-size: 15px;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* 列表 */
+ul, ol {
+  margin: 0 0 var(--spacing-paragraph) 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+  color: var(--color-text);
+}
+
+/* 链接 */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+/* 图片 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* 图片说明 */
+figcaption {
+  font-size: 13px;
+  color: var(--color-text-light);
+  text-align: center;
+  margin: -1em 0 1.5em 0;
+  padding: 0;
+}
+
+/* 分割线 */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+  margin: 2em 0;
+}
+
+/* 代码 */
+code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-size: 14px;
+  background-color: var(--color-highlight-gray);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #e54040;
+}
+
+pre {
+  background-color: #f7f7f7;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.2em 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: #333;
+}
+
+/* 表格 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid #e0e0e0;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+/* 微信适配 */
+.weixin-tip {
+  display: none;
+}
+
+/* 响应式 */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 22px;
+  }
+  
+  h2 {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,251 @@
+/* 产品大峡谷风格 - 科技专业型
+ * 特点：主标题上方浅灰装饰线、作者居右深灰、二级标题数字在深蓝圆圈里、强调深蓝加粗、引用块灰底深蓝竖线
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+  --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-size-body: 16px;
+  --line-height: 1.7;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-primary: #0F4C81;
+  --color-primary-light: #1a6cb8;
+  --color-bg: #ffffff;
+  --color-bg-gray: #f5f5f5;
+  --color-border: #e0e0e0;
+  --spacing-paragraph: 1em;
+  --spacing-section: 1.8em;
+}
+
+/* 全局 */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  padding: 20px 24px;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 主标题 */
+h1 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0 0 6px 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+/* 主标题上方浅灰装饰线 */
+h1::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #cccccc;
+  margin: 0 auto 14px auto;
+}
+
+/* 作者名 - 深灰色，居右 */
+.author {
+  text-align: right;
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin: 0 0 28px 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+/* 二级标题 - 数字在深蓝圆圈里 */
+h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: var(--spacing-section) 0 14px 0;
+  padding: 0;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 数字圆圈 */
+h2 .number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 三级标题 */
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 1.4em 0 0.8em 0;
+  padding: 0;
+}
+
+/* 段落 */
+p {
+  margin: 0 0 var(--spacing-paragraph) 0;
+  padding: 0;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* 强调：深蓝加粗 */
+strong, b {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* 引用块 - 灰色背景+深蓝竖线 */
+blockquote {
+  margin: 1.2em 0;
+  padding: 14px 16px;
+  background-color: var(--color-bg-gray);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 6px 6px 0;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* 列表 */
+ul, ol {
+  margin: 0 0 var(--spacing-paragraph) 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+  color: var(--color-text);
+}
+
+/* 链接 */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+/* 图片 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* 图片说明 */
+figcaption {
+  font-size: 13px;
+  color: var(--color-text-light);
+  text-align: center;
+  margin: -1em 0 1.5em 0;
+  padding: 0;
+}
+
+/* 分割线 */
+hr {
+  border: none;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 2em 0;
+}
+
+/* 代码 */
+code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-size: 14px;
+  background-color: var(--color-bg-gray);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #e54040;
+}
+
+pre {
+  background-color: #f7f7f7;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.2em 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  color: #333;
+}
+
+/* 表格 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid var(--color-border);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-bg-gray);
+  font-weight: 600;
+}
+
+/* 微信适配 */
+.weixin-tip {
+  display: none;
+}
+
+/* 响应式 */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 22px;
+  }
+  
+  h2 {
+    font-size: 16px;
+  }
+  
+  h2 .number {
+    min-width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+}
