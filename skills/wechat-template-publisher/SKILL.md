@@ -11,9 +11,38 @@ Use this skill when the user wants `markdown -> fixed template HTML -> WeChat dr
 
 `baoyu-markdown-to-html` is good for general conversion, but it cannot reliably recreate sample layouts that depend on custom HTML structure. This skill owns the HTML skeleton directly.
 
-Current supported template:
+## Available Templates
 
-- `mint-tech` - mint-green tech article layout with top tag, big numbered sections, highlight boxes, and quote blocks
+| Name | Description | Status |
+|------|-------------|--------|
+| `mint-tech` | 薄荷绿科技风：纯色背景、左侧色条、数字章节、圆角卡片 | ✅ Stable |
+| `product-canyon` | 产品大峡谷风：深蓝主色、浅灰背景、白字强调 | ✅ Stable |
+| `warm-story` | 暖色品牌故事风：红色竖线章节、黄色Q&A框、居中标题、分割线 | ✅ Stable |
+
+## WeChat Compatibility Rules (IMPORTANT)
+
+After testing, WeChat draft box **only reliably preserves**:
+
+- ✅ Pure solid background colors (`background:#f0fdfa`)
+- ✅ Border colors and widths (`border:1px solid #d8f4ef`)
+- ✅ Border radius (`border-radius:12px`)
+- ✅ Padding and margin
+- ✅ Text colors (`color:#14b8a6`)
+- ✅ Left border strips (`border-left:4px solid #14b8a6`)
+- ✅ Basic flex layouts (limited)
+- ✅ Tables with borders and cell background
+- ✅ Inline `<strong>`, `<code>`, `<a>`
+
+**Do NOT use** (will be stripped):
+
+- ❌ CSS `<style>` blocks and class selectors
+- ❌ Gradients (`linear-gradient(...)`)
+- ❌ Box shadows (`box-shadow`)
+- ❌ Complex pseudo-elements (`::before`, `::after`)
+- ❌ CSS custom properties (`var(--...)`)
+- ❌ Advanced flex/grid layouts
+
+**Rule**: All styles must be inline `style="..."` on elements. No external CSS.
 
 ## Scripts
 
@@ -23,25 +52,31 @@ Use these scripts from this skill directory:
 
 ## Usage
 
-Render only:
+Render only (default template is `mint-tech`):
+
+```bash
+bun scripts/publish.ts article.md
+```
+
+Specify template:
 
 ```bash
 bun scripts/publish.ts article.md --template mint-tech
 ```
 
-Render and publish:
+Render and publish to WeChat draft:
 
 ```bash
-bun scripts/publish.ts article.md --template mint-tech --publish --cover cover.png
+bun scripts/publish.ts article.md --publish --cover cover.png
 ```
 
 Optional flags:
 
-- `--template <name>` default: `mint-tech`
+- `--template <name>` template name (default: `mint-tech`)
 - `--output <path>` custom html output path
-- `--tag <text>` top tag text
+- `--tag <text>` top tag text (shown at article top)
 - `--author <name>` override author, default `余炜勋`
-- `--cover <path>` cover image for WeChat publish
+- `--cover <path>` cover image for WeChat publish (required with `--publish`)
 - `--publish` publish generated html to WeChat draft
 
 ## Markdown Conventions
