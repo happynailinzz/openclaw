@@ -1,0 +1,129 @@
+{
+  "run_at_utc": "2026-03-20T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "stepA_weekly_skill_check": {
+    "executed": false,
+    "reason": "非周一，按SOP跳过周检",
+    "availability_snapshot": {
+      "x": "无稳定专用API/MCP，本次走Google News RSS(site:x.com)回退",
+      "xiaohongshu": "web_fetch仅返回备案壳页，正文抓取失败",
+      "youtube": "YouTube search feed异常，走Google News RSS(site:youtube.com)回退",
+      "reddit": "search.rss可用",
+      "news_sites": "Google News RSS可用",
+      "rss": "通用RSS链路可用"
+    }
+  },
+  "items": [
+    {
+      "platform": "新闻网站",
+      "title": "US charges 3 tied to Super Micro Computer with helping smuggle billions of dollars of AI chips to China",
+      "published_at": "2026-03-19T22:13:04Z",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZEFLYkdreFlDTjNjdVdvUjdwRnA3eWtxa3hXZTdIMW1WQUJ3VXVNaDY1emJFTEd2cXVaLWlJWG50cklxYW1YdDRpSVRfWkJJVXlNS01EWmoxaWZVaURhNmN6akRIYWtaWVg0TDZnMVNqNUtWUXpmbDI0cFItUERPbmtTVzcwdGtUTi1yTHJfdFE1Ui1CUGlOb1ZNazV6SDh4OGhGNw?oc=5",
+      "summary": "美方对高端AI芯片绕道流转加码执法，显示出口管制执行从规则转向‘执法落地’。",
+      "signals": ["出口管制执法", "芯片走私", "供应链合规风险"],
+      "confidence": 0.9,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Nvidia restarting manufacturing of China AI chip variant, CEO says",
+      "published_at": "2026-03-18T04:35:20Z",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVWg5Ql96YWdIZWdneXBuU2tsS2FKb0FJQUkxSVVBeVVianU5bnhrRnZYTmZiaGxWbTZZOTB0T0t6ZUowRkEyMU50ZWQ2UUNPeG1PTE1DZ1c0QVh5T2tOWTA1WUlMcUNCV01tNTVZeGt2cEpiVzJFb2ZkcjMzT3p1NnJRTWtjU0NhUWhjZFFhdjliOXB6ODVxUF8teFBmOGZkSXNKSHhjWHJxejlTXzJTbXpVOUFDenAtRi0wYg?oc=5",
+      "summary": "头部厂商继续推出合规变体，说明‘限制-适配-再供货’成为常态路径。",
+      "signals": ["合规替代芯片", "供货再平衡", "窗口期交付"],
+      "confidence": 0.88,
+      "score": 6,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Pentagon responds to Anthropic suit arguing the company is a 'substantial risk' to national security",
+      "published_at": "2026-03-18T02:33:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdUlVbnZoNEZQRUFFWndxTFQxTUU0cE9WZmh3blBvSXZoaTJPTGs0WVVZZ0dXSzJONHJJRHpuV1p0MXBjWTlRT21QVk5WS1hvci1abzdiUHJwVFJod2xJck1LT3VoVllrVlN4VWYyX19zM1BlbGdDTDFpaGxybzRWNmpSOGZlelFtTHp4Q1IyTXdZZjVHSjVObzBBZEh6YmVjS2FQSGFfVjE?oc=5",
+      "summary": "国防采购端对模型供应商的风险定义趋严，合同条款与准入门槛仍在波动。",
+      "signals": ["采购限制", "模型供应商准入", "国防合规"],
+      "confidence": 0.85,
+      "score": 6,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Reddit",
+      "title": "AI export controls chip（search.rss结果有效但含较多噪音社区项）",
+      "published_at": "2026-03-20T02:01:33Z",
+      "url": "https://www.reddit.com/search.rss?q=AI%20export%20controls%20chip&sort=new",
+      "summary": "Reddit通道可用，但与主题强相关内容占比一般，需二次筛选。",
+      "signals": ["社区舆情", "噪音较高"],
+      "confidence": 0.62,
+      "score": 2,
+      "tier": "中价值"
+    },
+    {
+      "platform": "YouTube",
+      "title": "THE NVIDIA AI GPU BLACK MARKET | Investigating Smuggling, Corruption, & Governments",
+      "published_at": "2025-08-17T21:50:40Z",
+      "url": "https://news.google.com/rss/search?q=site:youtube.com+AI+export+controls+chips&hl=en-US&gl=US&ceid=US:en",
+      "summary": "视频侧可抓取，但本轮命中以解读/观点为主，时效与信噪比较弱。",
+      "signals": ["解读内容", "跨平台扩散"],
+      "confidence": 0.56,
+      "score": 1,
+      "tier": "低价值"
+    },
+    {
+      "platform": "X",
+      "title": "site:x.com AI export controls Pentagon（可抓取但混入账号页）",
+      "published_at": "2026-03-20T02:01:33Z",
+      "url": "https://news.google.com/rss/search?q=site:x.com+AI+export+controls+Pentagon&hl=en-US&gl=US&ceid=US:en",
+      "summary": "X通道可回退抓取，但出现大量账号页与低信息密度条目。",
+      "signals": ["舆情扩散", "噪音偏高"],
+      "confidence": 0.55,
+      "score": 1,
+      "tier": "低价值"
+    },
+    {
+      "platform": "小红书",
+      "title": "AI 出口管制（抓取失败）",
+      "published_at": null,
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%AE%97%E5%8A%9B%20%E5%87%BA%E5%8F%A3%E7%AE%A1%E5%88%B6",
+      "summary": "仅返回备案信息，未提取到帖子正文。",
+      "signals": ["源可用性下降", "需登录态/MCP"],
+      "confidence": 0.95,
+      "score": 0,
+      "tier": "低价值"
+    }
+  ],
+  "gov_defense_supply_chain_mapping": [
+    {
+      "policy_action": "美方对AI芯片绕道流转发起刑事指控（执法加强）",
+      "affected_vendors": ["Super Micro相关链路", "NVIDIA生态渠道商", "跨境云与集成商"],
+      "delivery_impact": "跨境交付审计与来源证明要求提高，项目周期可能拉长1-2个审批环。",
+      "risk_level": "高",
+      "risk_reason": "从政策约束升级为执法动作，违规成本显著提高。"
+    },
+    {
+      "policy_action": "美军采购体系对模型供应商风险认定趋严（Anthropic争议延续）",
+      "affected_vendors": ["Anthropic", "其他模型厂商", "防务承包商"],
+      "delivery_impact": "合同条款与可用模型白名单可能频繁调整，需保留替换预案。",
+      "risk_level": "中",
+      "risk_reason": "规则边界仍在动态解释，但尚未全面一刀切。"
+    },
+    {
+      "policy_action": "受限市场下的合规变体芯片持续推进（NVIDIA China variant）",
+      "affected_vendors": ["NVIDIA", "中国云厂商", "下游行业集成商"],
+      "delivery_impact": "短期可恢复部分供给，但性能/配额/合规条件限制会影响方案设计。",
+      "risk_level": "中",
+      "risk_reason": "可供货不等于可稳定交付，受政策二次调整影响大。"
+    }
+  ],
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.16,
+    "high_value_hit_rate": 0.60,
+    "latency_minutes": 0
+  },
+  "status": "partial_success_with_degradation"
+}
