@@ -18,12 +18,15 @@
     "articles/2026-02-27-ai-retreat/article-final.md": "b366e0d6da1a8aaad32e47ee39df827c903b28d3",
     "articles/2026-02-27-zhengqi-key/article.md": "95edce0b86b42daac767d20ed5a67162f41aff05",
     "articles/2026-02-27-zhengqi-yanshou/article.md": "6adc9caf72e157651d538c0c1d05fef994a5401c",
-    "articles/2026-02-28-mine-intelligent.md": "e77d68641d4b56ecabd73ca0254c5b552f0ce672"
+    "articles/2026-02-28-mine-intelligent.md": "e77d68641d4b56ecabd73ca0254c5b552f0ce672",
+    "articles/2026-02-ai-observation/2026-02-ai-domestic.md": "9e55b8457627e3cc4c39c67b9798fb1ea19028b0",
+    "articles/2026-02-ai-observation/2026-02-ai-overseas.md": "e34bd10837e1029d9021a09129fe3cd007e2d253",
+    "articles/2026-03-01-liuning-ai/article-sanitized.md": "a30c7a78427ebb365b965a2e8c69d2ba9a6fc17a"
   },
-  "lastRunAt": "2026-03-19T03:17:28Z",
+  "lastRunAt": "2026-03-20T03:17:26Z",
   "lastImported": [
-    "articles/2026-02-27-zhengqi-key/article.md",
-    "articles/2026-02-27-zhengqi-yanshou/article.md",
-    "articles/2026-02-28-mine-intelligent.md"
+    "articles/2026-02-ai-observation/2026-02-ai-domestic.md",
+    "articles/2026-02-ai-observation/2026-02-ai-overseas.md",
+    "articles/2026-03-01-liuning-ai/article-sanitized.md"
   ]
 }
