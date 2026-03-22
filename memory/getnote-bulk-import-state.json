@@ -21,12 +21,15 @@
     "articles/2026-02-28-mine-intelligent.md": "e77d68641d4b56ecabd73ca0254c5b552f0ce672",
     "articles/2026-02-ai-observation/2026-02-ai-domestic.md": "9e55b8457627e3cc4c39c67b9798fb1ea19028b0",
     "articles/2026-02-ai-observation/2026-02-ai-overseas.md": "e34bd10837e1029d9021a09129fe3cd007e2d253",
-    "articles/2026-03-01-liuning-ai/article-sanitized.md": "a30c7a78427ebb365b965a2e8c69d2ba9a6fc17a"
+    "articles/2026-03-01-liuning-ai/article-sanitized.md": "a30c7a78427ebb365b965a2e8c69d2ba9a6fc17a",
+    "articles/2026-03-01-liuning-ai/article.md": "67b70d0dfd985cc9e3e61473272fe35f4a848c8e",
+    "articles/2026-03-02-河南源网荷储数字化.md": "f7b6b7d2615291f16de6ee754114518516c2e860",
+    "articles/2026-03-02-矿山智能化中原机会.md": "8f1f661e1fb7a4765888d9b93a659604ac8533e6"
   },
-  "lastRunAt": "2026-03-20T03:17:26Z",
+  "lastRunAt": "2026-03-21T03:17:29Z",
   "lastImported": [
-    "articles/2026-02-ai-observation/2026-02-ai-domestic.md",
-    "articles/2026-02-ai-observation/2026-02-ai-overseas.md",
-    "articles/2026-03-01-liuning-ai/article-sanitized.md"
+    "articles/2026-03-01-liuning-ai/article.md",
+    "articles/2026-03-02-河南源网荷储数字化.md",
+    "articles/2026-03-02-矿山智能化中原机会.md"
   ]
 }
