@@ -105,13 +105,9 @@
       "version": "1.0.0",
       "installedAt": 1773257932195
     },
-    "capability-evolver": {
-      "version": "1.27.2",
-      "installedAt": 1772707899792
-    },
     "self-improving": {
-      "version": "1.2.13",
-      "installedAt": 1773257938153
+      "version": "1.2.16",
+      "installedAt": 1774164744940
     },
     "proactive-agent": {
       "version": "3.1.0",
@@ -121,17 +117,25 @@
       "version": "1.2.9",
       "installedAt": 1773275116008
     },
-    "multi-search-engine": {
-      "version": "2.0.1",
-      "installedAt": 1773744465646
-    },
-    "cn-web-search": {
-      "version": "0.9.0",
-      "installedAt": 1773744468499
-    },
     "ddg-web-search": {
       "version": "1.0.0",
       "installedAt": 1773744470914
+    },
+    "agent-autonomy-kit": {
+      "version": "1.0.0",
+      "installedAt": 1774163574543
+    },
+    "proactive-agent-lite": {
+      "version": "1.0.0",
+      "installedAt": 1774163577169
+    },
+    "cn-web-search": {
+      "version": "2.0.0",
+      "installedAt": 1774173159428
+    },
+    "multi-search-engine": {
+      "version": "2.0.1",
+      "installedAt": 1774173167861
     }
   }
 }
