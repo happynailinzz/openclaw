@@ -136,6 +136,10 @@
     "multi-search-engine": {
       "version": "2.0.1",
       "installedAt": 1774173167861
+    },
+    "openai-whisper": {
+      "version": "1.0.0",
+      "installedAt": 1774267585935
     }
   }
 }

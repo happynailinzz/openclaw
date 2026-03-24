@@ -1,0 +1,91 @@
+{
+  "run_at_utc": "2026-03-24T02:00:00Z",
+  "run_type": "cron:social-intel-sop",
+  "stepA_skill_check": {
+    "is_monday": false,
+    "executed": false,
+    "note": "按SOP仅周一执行，本次为周二跳过。",
+    "available_or_alternatives": {
+      "xiaohongshu": "未发现同名一线skill；采用web_fetch+Google News site回退",
+      "reddit": "无专用skill；采用Reddit RSS(web_fetch)",
+      "youtube": "无专用skill；采用Google News site:youtube 回退"
+    }
+  },
+  "items": [
+    {
+      "platform": "News",
+      "title": "The AI Race: How Trump's Nuanced Chip Export Policy Bolsters U.S. Dominance and Slows China's AI Ecosystem",
+      "published_at": "2026-03-23T04:47:51Z",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRmZTalpHUVFWdDhXY3ViSXc5NzhnbURpMnAxMXJXZFdVWm5pME1JQVVCUUNNMm5vblA3QWNiSUF6cEFJQW5DbnBVa1RLQWFHUmpHWjBOZW1BN2dSSlhoc2dSRjJYSE9HbnJYU0tha0hmQTNXRzhGTUZGS0N5cmEyeVd3c2NNSUE2X0ZB?oc=5",
+      "summary": "美国对AI芯片出口政策出现结构性微调，被解读为在维持技术优势与可执行性之间寻找平衡，直接影响中美AI算力可得性预期。",
+      "signals": ["出口管制", "AI芯片", "中美供应链"],
+      "confidence": 0.74,
+      "score": 6,
+      "value_tier": "high"
+    },
+    {
+      "platform": "News",
+      "title": "Exposure of Major Chinese-Linked Chip Smuggling Operations Shows Limits of Industry Self-Policing",
+      "published_at": "2026-03-20T23:46:12Z",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPY0JYSzdnVk5TSUhrNEhuMWVsVXVmV1pBd2V5Rzhzemw1VWRCS1oyMjJvZzduSHh3WHVIUzUyTUVINlJpNTVnTzJrV3JZT2xlc1BLM1JLV29QNHlKNU96ZDZGTjE3Zl9aQnB5cm9JVWEyR29fN0w2dHRHZmVha0FMeERiaWRHTHE1bExKM21jcW9kdy1qaEhvQTlNRjZrclpxdVRCZzVMd0VqdkFpYjBpLWhBMVFQR2RyTWhNSFFaRGlrWm9mWldyeGg2VnZQUkZPaVVVaA?oc=5",
+      "summary": "涉华芯片走私案例被集中披露，显示仅靠企业自律难以覆盖灰色流通链路，监管执行与供应链审计压力上升。",
+      "signals": ["执法加强", "走私链路", "供应链合规"],
+      "confidence": 0.77,
+      "score": 7,
+      "value_tier": "high"
+    },
+    {
+      "platform": "News",
+      "title": "Pentagon Warns Anthropic Could 'Subvert' Defense AI Systems",
+      "published_at": "2026-03-19T22:19:01Z",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOOC05Y1RpTUJ4YlVqMVFEckx1TE1kd3FwSGZ2QmNCY2t3eThCREtJcVVOZUZXdkVKazZqS0hpWnJqYnZBYzRiT0U4bm5ySllfYTBMbGh6T29DY0gtekx3OTRBalNIa284QXhsRzl5NjJlRXl6b18tWEtDQW4xZS1EOGFRSDdQRTFseHYybVg0MzJ6LU1Sd25TdVU0SF9xdw?oc=5",
+      "summary": "美防务语境中出现对前沿模型可控性/可验证性的审慎表态，意味着模型准入与供应商评测门槛可能继续抬升。",
+      "signals": ["防务AI风险审查", "供应商门槛", "模型治理"],
+      "confidence": 0.68,
+      "score": 5,
+      "value_tier": "high"
+    },
+    {
+      "platform": "Defense News RSS",
+      "title": "Army Aviation Takes Major Leap With Delivery of First Autonomous-Ready Black Hawk",
+      "published_at": "2026-03-20T17:37:00Z",
+      "url": "https://www.war.gov/News/News-Stories/Article/Article/4439807/army-aviation-takes-major-leap-with-delivery-of-first-autonomous-ready-black-ha/",
+      "summary": "美军交付“可自主/可有人驾驶”黑鹰改型，表明军方将自治能力纳入平台级交付路线，拉动传感器、计算与系统集成需求。",
+      "signals": ["军工交付", "自主系统", "平台改造"],
+      "confidence": 0.71,
+      "score": 4,
+      "value_tier": "medium"
+    },
+    {
+      "platform": "Reddit/LocalLLaMA",
+      "title": "Delta-KV for llama.cpp: near-lossless 4-bit KV cache compression",
+      "published_at": "2026-03-24T02:00:44Z",
+      "url": "https://www.reddit.com/r/LocalLLaMA/new/.rss",
+      "summary": "社区提出KV缓存差分压缩思路，若工程化成熟将改善同等硬件下推理效率，但短期对政企交付仍属技术储备信号。",
+      "signals": ["推理优化", "开源趋势"],
+      "confidence": 0.55,
+      "score": 2,
+      "value_tier": "medium"
+    },
+    {
+      "platform": "RSS/O'Reilly Radar",
+      "title": "The Mythical Agent-Month",
+      "published_at": "2026-03-23T11:15:59Z",
+      "url": "https://www.oreilly.com/radar/the-mythical-agent-month/",
+      "summary": "讨论多智能体开发效率与治理成本，偏方法论，对当前政务/国防供应链决策影响有限。",
+      "signals": ["组织效率", "工程方法"],
+      "confidence": 0.63,
+      "score": 1,
+      "value_tier": "low"
+    }
+  ],
+  "source_health": {
+    "x": "受登录墙与检索限制影响，采用Google News site:x.com回退，低置信补位",
+    "xiaohongshu": "web_fetch命中页面壳层/备案信息，实质内容抓取失败",
+    "youtube": "直抓结果页噪音高，采用Google News site:youtube.com回退",
+    "reddit": "RSS通道可用",
+    "news_sites": "Google News RSS可用",
+    "rss": "Defense RSS/O'Reilly RSS可用",
+    "browser_fallback": "不可用（browser tool超时）"
+  }
+}
