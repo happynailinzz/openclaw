@@ -1,0 +1,125 @@
+{
+  "run_at_utc": "2026-03-25T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "stepA_skill_check": {
+    "is_monday": false,
+    "executed": false,
+    "note": "非周一，按SOP跳过每周技能复查。"
+  },
+  "stepB_primary_fetch_order": [
+    "API/MCP skill",
+    "专用脚本",
+    "web_fetch",
+    "browser兜底"
+  ],
+  "stepC_fallback": [
+    "X: 直连受限，回退到 Google News RSS(site:x.com)",
+    "小红书: 页面仅壳层/备案信息，记录失败但不中断",
+    "YouTube: 直连search feed质量差，回退 Google News RSS(site:youtube.com)",
+    "Reddit: search.rss可用",
+    "Browser fallback: 当前环境不可用（超时）"
+  ],
+  "items": [
+    {
+      "platform": "新闻网站",
+      "title": "US Commerce Department withdraws planned rule on AI chip exports",
+      "published_at": "2026-03-13T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQRThuSC0xOThBSkZibWpSTnp4VlIwaFh2el9saXFhUTZMZHpLR1VMdW9xd0VKZFVtSWlNcXppemJJZGI0ZFNBY2pYOUF3UF9RMkNSTnQ4eERRTGUzX0xpYWJ2MkQ2OERoWWlrN1BqclJfRWRpQXhPLW1HMjhySHZTa0N4YmxVVS1aamFpSmFNZ1dBZnFrU0pLS0tJaWtkUnRuYjlhLXAzeThBdG9jRlpjUGVMX3plc3RiaWdSamZiVTY3Nmc?oc=5",
+      "summary": "美国商务部撤回AI芯片出口规则草案，显示政策工具仍在重估，对跨境算力交付窗口产生短期松动信号。",
+      "signals": ["出口管制", "政策调整", "算力供应链"],
+      "confidence": 0.90,
+      "score": 7,
+      "value_tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "Anthropic has strong case against Pentagon blacklisting, legal experts say",
+      "published_at": "2026-03-11T07:00:00Z",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNanJBcXJZaDFCamRUMjFHSWYtb25wYlE2dXlsU09UX1ZYb1hEcUU1V3dGc0tUMDFmVnJpNE1wU0xnSUhfSTJSRDctRmV6UmZhejFxRDgxMy1fd3RuRUdlZW04NldSQkVlM2JXVFBzTk93VzVLZ1BWekpmR2NkV1RONmU4dHMwbENScVkwYjVGVWR1UHd4NFVJdXpneWVRMTV3UGw2TXYtRWExa2Qwa0l4ZGtjSTNpdHNhX2prVUNJODI3R0pITnBkMA?oc=5",
+      "summary": "五角大楼相关黑名单措施面临司法不确定性，国防AI采购边界可能阶段性摆动。",
+      "signals": ["采购限制", "司法不确定性", "防务AI准入"],
+      "confidence": 0.88,
+      "score": 6,
+      "value_tier": "高价值"
+    },
+    {
+      "platform": "新闻网站",
+      "title": "US senators want to suspend Nvidia AI chip export licenses to China and its intermediaries",
+      "published_at": "2026-03-24T13:58:59Z",
+      "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxOMVVya2docXRleEI2bkxkYnN5M1VpOUY1LUxiT21Ra0FzTENjZkRSRWJoNmRpWU0wM1c2NW5ZMjF2NncxNThRMHhYYTh1WllUdU5mX2JMd2E1YWRTVUgxRmtZYUtSQ01TSlRqR1NNYzZEbnJGeGs2cUJZRjAzUkhzb1dFNHhYNjBRRHVHeUNFSlI5elNFSkprZ3liUmRkRzBpUno1WEliUGlObWNqMC1vUFphamlnZTBQdVJCS2twNF9UcGt1ZVJtUFhlczhyZGZ6MXdRNHRlTUUwdTRTZ3RvQm82d200VmgtYWhnTWZRR2JQdk5OS2Q3YWpGMGJYaDdDbnpHUmpCNEg2UkpBR2ZxZ3p1NW1tTnRSb3JNclZ0TFhvMjk5andMVnNzZWlGSVM4MDg0QTVQVDc4c1Q3QzV2TWc3cXR5Ti14VVhfMlNpek1LdWZGYm9qdC1YbFRvWHRJVndROVVCUWhmakJCWUR3?oc=5",
+      "summary": "美参议员要求暂停英伟达对华及中间地许可，显示出口执法正向“供应链绕行”场景收紧。",
+      "signals": ["出口执法收紧", "芯片许可", "中间地转运风险"],
+      "confidence": 0.82,
+      "score": 7,
+      "value_tier": "高价值"
+    },
+    {
+      "platform": "Reddit",
+      "title": "Super Micro Co-founder charged with diverting $2.5 billion in Nvidia AI chips to China in violation of export laws",
+      "published_at": "2026-03-20T05:28:49Z",
+      "url": "https://www.reddit.com/r/geopolitics/comments/1rynrzc/super_micro_cofounder_charged_with_diverting_25/",
+      "summary": "社区高讨论度事件指向绕行链路刑事化，强化了“合规证明+物流可追踪”的交付门槛。",
+      "signals": ["走私链路", "刑事执法", "供应链审计"],
+      "confidence": 0.68,
+      "score": 4,
+      "value_tier": "中价值"
+    },
+    {
+      "platform": "X",
+      "title": "x.com feed shows policy discussion surge around AI export controls and defense procurement",
+      "published_at": "2026-03-24T20:10:55Z",
+      "url": "https://news.google.com/rss/search?q=site%3Ax.com+AI+export+controls+defense&hl=en-US&gl=US&ceid=US:en",
+      "summary": "X侧政策舆情热度上升，但原帖质量分层明显，适合作为早期信号而非单点证据。",
+      "signals": ["舆情升温", "政策争议", "早期信号"],
+      "confidence": 0.52,
+      "score": 2,
+      "value_tier": "中价值"
+    },
+    {
+      "platform": "小红书",
+      "title": "AI 芯片 出口管制（抓取失败）",
+      "published_at": null,
+      "url": "https://www.xiaohongshu.com/search_result?keyword=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%20%E8%8A%AF%E7%89%87%20%E5%87%BA%E5%8F%A3%E7%AE%A1%E5%88%B6",
+      "summary": "仅返回备案/壳层内容，未提取到可用帖子正文。",
+      "signals": ["平台反爬限制", "需登录态或MCP"],
+      "confidence": 0.95,
+      "score": 0,
+      "value_tier": "低价值"
+    }
+  ],
+  "gov_defense_supply_chain_mapping": [
+    {
+      "policy_action": "美国商务部撤回AI芯片出口规则草案（后续可能重拟）",
+      "affected_vendors": ["NVIDIA", "AMD", "跨境云服务商", "系统集成商"],
+      "delivery_impact": "短期窗口改善，但中期政策仍可能再收紧，需并行准备合规与替代算力。",
+      "risk_level": "中",
+      "risk_reason": "政策暂缓≠政策反转，重拟不确定性仍高。"
+    },
+    {
+      "policy_action": "美国国会推动暂停对华AI芯片许可并关注中间地绕行",
+      "affected_vendors": ["NVIDIA", "渠道商", "境外数据中心运营方"],
+      "delivery_impact": "跨境交付链条需增加可追溯证明，项目周期与审批时延上升。",
+      "risk_level": "高",
+      "risk_reason": "监管焦点从“是否出口”升级到“如何绕行”，执行面更硬。"
+    },
+    {
+      "policy_action": "五角大楼相关黑名单措施进入司法博弈",
+      "affected_vendors": ["Anthropic", "模型厂商", "防务承包商", "云平台"],
+      "delivery_impact": "国防项目模型选型与采购条款可能频繁调整，需合同中预设替代模型路径。",
+      "risk_level": "中",
+      "risk_reason": "法律结果未定，采购口径短期波动。"
+    }
+  ],
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.16,
+    "high_value_hit_rate": 0.60,
+    "latency_minutes": 0,
+    "meets_threshold": false
+  },
+  "status": "partial_success_with_degradation"
+}
