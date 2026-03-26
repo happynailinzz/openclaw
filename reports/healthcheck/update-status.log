@@ -524,3 +524,17 @@ OpenClaw update status
 Update available (npm 2026.3.23-2). Run: openclaw update
 Summary: install=pnpm, channel=stable, latest=npm 2026.3.23-2 (update available)
 
+===== 2026-03-25T04:00:22Z =====
+OpenClaw update status
+
+┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item     │ Value                                                                                                     │
+├──────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Install  │ pnpm                                                                                                      │
+│ Channel  │ stable (default)                                                                                          │
+│ Update   │ available · pnpm · npm update 2026.3.23-2                                                                 │
+└──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Update available (npm 2026.3.23-2). Run: openclaw update
+
+install=│ Install  │ pnpm                                                                                                      │; channel=│ Channel  │ stable (default)                                                                                          │; latest=Update available (npm 2026.3.23-2). Run: openclaw update

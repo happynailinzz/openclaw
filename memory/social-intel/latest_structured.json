@@ -1,128 +1,17 @@
 {
-  "run_at_utc": "2026-03-23T02:00:00Z",
+  "run_at_utc": "2026-03-26T02:00:00Z",
   "task": "monitor:social-intel-sop:1000",
   "sop": "社交平台情报抓取 SOP（OpenClaw版）",
   "topic": "政务/国防 AI 供应链波动映射",
-  "items": [
-    {
-      "platform": "新闻网站",
-      "title": "US Commerce Department withdraws planned rule on AI chip exports",
-      "published_at": "2026-03-13",
-      "url": "https://www.reuters.com/business/us-commerce-department-withdraws-planned-rule-ai-chip-exports-government-website-2026-03-13/",
-      "summary": "美国商务部撤回AI芯片出口规则草案，政策进入再校准窗口。",
-      "signals": ["出口管制", "AI芯片", "政策变动"],
-      "confidence": 0.90,
-      "score": 7,
-      "tier": "高价值"
-    },
-    {
-      "platform": "新闻网站",
-      "title": "US charges 3 tied to Super Micro Computer with helping smuggle billions of dollars of AI chips to China",
-      "published_at": "2026-03-19",
-      "url": "https://www.reuters.com/world/us-charges-three-people-with-conspiring-divert-ai-tech-china-2026-03-19/",
-      "summary": "美国起诉涉AI芯片走私链条人员，执法强度上行。",
-      "signals": ["执法", "走私", "供应链风控"],
-      "confidence": 0.89,
-      "score": 7,
-      "tier": "高价值"
-    },
-    {
-      "platform": "新闻网站",
-      "title": "Exclusive: Nvidia preparing Groq chips that can be sold in Chinese market, sources say",
-      "published_at": "2026-03-17",
-      "url": "https://www.reuters.com/world/china/nvidia-preparing-groq-chips-that-can-be-sold-chinese-market-sources-say-2026-03-17/",
-      "summary": "厂商推进合规改型芯片，说明“限制-适配-再供给”路径持续。",
-      "signals": ["芯片替代", "合规产品", "对华供给"],
-      "confidence": 0.87,
-      "score": 6,
-      "tier": "高价值"
-    },
-    {
-      "platform": "Reddit",
-      "title": "Daily Discussion Friday 2026-03-13 (r/AMD_Stock)",
-      "published_at": "2026-03-13",
-      "url": "https://www.reddit.com/r/AMD_Stock/comments/1rsd4o9/daily_discussion_friday_20260313/",
-      "summary": "投资者侧持续跟踪AI芯片出口草案与产业链风险传导。",
-      "signals": ["市场情绪", "出口草案", "产业链预期"],
-      "confidence": 0.62,
-      "score": 3,
-      "tier": "中价值"
-    },
-    {
-      "platform": "YouTube",
-      "title": "Optimizing U.S. Export Controls for Critical and Emerging Technologies",
-      "published_at": null,
-      "url": "https://www.youtube.com/watch?v=VLB84OD-3nI",
-      "summary": "CSIS持续讨论出口管制框架优化，对政策方向有参考价值。",
-      "signals": ["智库观点", "出口管制", "政策预期"],
-      "confidence": 0.64,
-      "score": 3,
-      "tier": "中价值"
-    },
-    {
-      "platform": "X",
-      "title": "Ryan Fedasiuk Highlights（AI/出口管制相关讨论）",
-      "published_at": null,
-      "url": "https://x.com/RyanFedasiuk/highlights",
-      "summary": "X侧政策讨论热度高，但观点分化与噪音并存。",
-      "signals": ["舆情扩散", "政策解读", "军工AI"],
-      "confidence": 0.55,
-      "score": 2,
-      "tier": "中价值"
-    },
-    {
-      "platform": "小红书",
-      "title": "AI出口管制检索（有效正文不足）",
-      "published_at": null,
-      "url": "https://www.xiaohongshu.com/search_result?keyword=AI%20%E5%87%BA%E5%8F%A3%E7%AE%A1%E5%88%B6",
-      "summary": "检索页可访问，但本轮未获得高置信正文情报。",
-      "signals": ["平台可达", "正文缺失"],
-      "confidence": 0.95,
-      "score": 0,
-      "tier": "低价值"
-    },
-    {
-      "platform": "RSS",
-      "title": "Google News RSS: AI chip export controls (7d)",
-      "published_at": "2026-03-23",
-      "url": "https://news.google.com/rss/search?q=AI+chip+export+controls+when:7d&hl=en-US&gl=US&ceid=US:en",
-      "summary": "近7天持续出现出口管制与地缘风险相关新闻聚合。",
-      "signals": ["新闻聚合", "趋势验证"],
-      "confidence": 0.76,
-      "score": 3,
-      "tier": "中价值"
-    }
-  ],
-  "gov_defense_supply_chain_mapping": [
-    {
-      "policy_action": "美国商务部撤回AI芯片出口规则草案（后续可能重拟）",
-      "affected_vendors": ["NVIDIA", "AMD", "跨境云服务商", "系统集成商"],
-      "delivery_impact": "短期交付窗口改善，但中期合规收紧预期仍在，需并行准备国产/区域替代方案。",
-      "risk_level": "中",
-      "risk_reason": "政策暂缓不等于政策反转。"
-    },
-    {
-      "policy_action": "美方对AI芯片走私链条起诉，执法趋严",
-      "affected_vendors": ["服务器厂商", "GPU渠道商", "海外数据中心运营方"],
-      "delivery_impact": "终端用途审计和跨境合规证明要求上升，交付周期可能拉长。",
-      "risk_level": "中高",
-      "risk_reason": "执法加码会快速传导到采购和验收环节。"
-    },
-    {
-      "policy_action": "厂商推出合规改型芯片以维持特定市场供给",
-      "affected_vendors": ["NVIDIA", "本地云厂商", "行业集成商"],
-      "delivery_impact": "可形成替代路径，但性能/可用性与交付窗口存在不确定。",
-      "risk_level": "中",
-      "risk_reason": "替代可行但能力边界与供货节奏不稳定。"
-    }
-  ],
+  "archive": "intel/social-intel/2026-03-26-0200-social-intel.json",
+  "status": "partial_success_with_degradation",
   "metrics_estimated": {
     "source_targets": 6,
-    "source_success": 6,
-    "success_rate": 0.88,
-    "duplication_rate": 0.19,
-    "high_value_hit_rate": 0.63,
-    "latency_minutes": 0
-  },
-  "status": "success_with_degradation"
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.17,
+    "high_value_hit_rate": 0.60,
+    "latency_minutes": 0,
+    "meets_threshold": false
+  }
 }
