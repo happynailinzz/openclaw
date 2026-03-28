@@ -140,6 +140,10 @@
     "openai-whisper": {
       "version": "1.0.0",
       "installedAt": 1774267585935
+    },
+    "scrapling-web-scraper": {
+      "version": "1.0.0",
+      "installedAt": 1774692117785
     }
   }
 }
