@@ -1,0 +1,123 @@
+{
+  "run_at": "2026-03-28T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "stepA_weekly_skill_check": {
+    "executed": false,
+    "reason": "今天是周六（UTC），按SOP仅周一执行",
+    "skills_check": {
+      "xiaohongshu": "未发现可用专用skill（本地仅有baidu-search/jina-reader可替代）",
+      "reddit": "未发现专用skill，已走RSS+web_fetch",
+      "youtube": "未发现专用skill，已尝试feed/API回退"
+    }
+  },
+  "pipeline_status": {
+    "x": "失败（web_search缺API key；browser不可用；nitter RSS空返回）",
+    "xiaohongshu": "失败（web_fetch仅返回站点页脚，无正文）",
+    "youtube": "失败（官方feed 400；替代API不可用）",
+    "reddit": "成功（RSS可用）",
+    "news_sites": "成功（Google News RSS + 站点正文抽取）",
+    "rss": "成功（Google News/Reddit RSS）"
+  },
+  "items": [
+    {
+      "platform": "News",
+      "title": "Co-founder of tech company charged with diverting $2.5 billion in Nvidia AI chips to China in violation of export laws",
+      "published_at": "2026-03-20",
+      "url": "https://edition.cnn.com/2026/03/19/politics/super-micro-computer-founder-charged-ai-chips-china",
+      "summary": "Super Micro联合创始人等被控将大量搭载Nvidia AI芯片服务器违规转运至中国，体现执法端对AI芯片流向的高压态势。",
+      "signals": ["export-control-enforcement", "ai-chip-smuggling", "nvidia", "china"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News",
+      "title": "US must suspend Nvidia AI chip exports to China, senators say",
+      "published_at": "2026-03-24",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOcW1iYnprdVZrWFNJS0hDdzRmdTlCdGdpUWFkSHNtTGlkSURvamI0Mi1xTzAzbGVmQjhBSTNSakNqN2Y5RVJ2YVBZcGRHWVZDa3dzeGRkZ3ZucEJILWpRSngyeE9BY3A1U282U1lSOG1sOGN3ajdudkh5U1U2dm8zRm00NEY?oc=5",
+      "summary": "美参议员呼吁暂停对华及相关中间地AI芯片出口许可，政策端存在进一步收紧预期。",
+      "signals": ["policy-action", "license-suspension", "nvidia", "export-control"],
+      "confidence": "中",
+      "score": 6,
+      "tier": "高价值"
+    },
+    {
+      "platform": "News/ThinkTank",
+      "title": "China’s Localization Drive in Semiconductors Gains Impetus from Allied Chip Export Controls",
+      "published_at": "2026-03-24",
+      "url": "https://www.csis.org/analysis/chinas-localization-drive-semiconductors-gains-impetus-allied-chip-export-controls",
+      "summary": "CSIS指出盟友协同出口管制虽限制短期能力，但正在加速中国半导体本土化替代与采购协同。",
+      "signals": ["localization", "supply-chain-substitution", "allied-controls", "semiconductor"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "China Gov/Industry",
+      "title": "订单增速创下历史新高！北京亦庄信创企业三大维度全面提速冲刺新开局",
+      "published_at": "2026-03-24",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTUE3SlVaT1Vxazg0aTBNQU8yMm5yeVZReUljeTFuZDhFd0s3WFdrcHMwS1ZDVmV6MUdZakZWM09sMnhNT3lPZ21BLUNQYnhrMDd2aGVrU0JjdkFPanRxQWoySWhDWmNYWlllc1Z1ZTQ3TmRJaEVsNTRNcXZBTFYwMEp5Q0JsSjZ1ejB0R2IwUXYtdFk?oc=5",
+      "summary": "地方信创企业订单增速显著，政务与产业侧需求仍在扩张，但偏区域产业信号。",
+      "signals": ["xinchuang", "gov-industry-demand", "regional-signal"],
+      "confidence": "中",
+      "score": 4,
+      "tier": "中价值"
+    },
+    {
+      "platform": "China Gov Procurement",
+      "title": "全栈自主可控，优刻得双项入围上海市政府框架协议采购名单",
+      "published_at": "2026-03-25",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0wNWhheVVxU0xra3VqR1JfU1h4VWx2N3l1azBkb0R4eVVLLTFueUxQYS1lX04zMm5MdFM2RlRHVFFlNkI2ZGwxOXJJVHdNNldnWWlIQzRMMjRzVWJlWDVtcWt6c0dwajBSQU1Ram9DekIyeXg4MllzZFdWcXlsdw?oc=5",
+      "summary": "地方政府框架采购名单变动，显示政务云/信创供应商结构持续重排。",
+      "signals": ["gov-procurement", "vendor-list", "xinchuang", "cloud"],
+      "confidence": "中",
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Reddit",
+      "title": "Super Micro Co-founder charged with diverting $2.5 billion in Nvidia AI chips to China in violation of export laws",
+      "published_at": "2026-03-20",
+      "url": "https://www.reddit.com/r/geopolitics/comments/1rynrzc/super_micro_cofounder_charged_with_diverting_25/",
+      "summary": "与CNN同源事件的二次传播，作为舆情扩散信号保留。",
+      "signals": ["duplicate", "social-amplification", "geopolitics"],
+      "confidence": "中",
+      "score": 1,
+      "tier": "低价值"
+    }
+  ],
+  "mapping": {
+    "theme": "政务/国防 AI 供应链波动映射",
+    "policy_actions": [
+      "执法：美国起诉涉AI芯片违规转运链路（CNN）",
+      "立法/监管：美国议员推动暂停对华相关AI芯片出口许可（FT转引）",
+      "采购：地方政府框架采购名单更新，供应商准入结构变化（中国地方政采信号）"
+    ],
+    "vendor_impact": [
+      "模型/算力链：Nvidia及服务器集成链路面临更强审查",
+      "云与集成商：政务采购名单变动提升本地化厂商机会窗口",
+      "跨境中间商：中转地与再出口节点合规成本上升"
+    ],
+    "delivery_impact": [
+      "交付窗口：跨境GPU与高端服务器交付周期不确定性上升",
+      "项目风险：国防/政务涉外算力项目的许可与审计风险抬升",
+      "替代路径：国产化替代+本地云资源池+多供应商架构"
+    ],
+    "risk_level": {
+      "level": "高",
+      "reason": "政策收紧信号与执法落地同时出现，且已影响芯片、服务器、采购三层链路。"
+    }
+  },
+  "quality": {
+    "capture_success_rate": "50%（3/6主源成功）",
+    "duplication_rate": "17%",
+    "high_value_hit_rate": "67%（4/6）",
+    "breaking_delay_minutes": 0,
+    "met_standard": false,
+    "gap": [
+      "成功率未达>=85%",
+      "X/小红书/YouTube链路本轮失败"
+    ]
+  }
+}
