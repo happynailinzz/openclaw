@@ -1,16 +1,20 @@
 {
   "lastChecks": {
     "evomap": 1773999377,
-    "ai_hotspots": 1774629120,
-    "gov_digital": 1774629120,
-    "overseas_news": 1774650720,
-    "task_progress": 1774650720,
-    "henan_state_owned": 1774629120
+    "ai_hotspots": 1774726500,
+    "gov_digital": 1774726500,
+    "overseas_news": 1774726500,
+    "task_progress": 1774726500,
+    "henan_state_owned": 1774726500
   },
   "lastAlerts": {
     "task_blocked_monitor_lianghui_henan_industries": 1773999377,
     "task_progress_monitor_0830_model_switched_ok": 1774602060,
     "task_progress_monitor_1730_completed_ok": 1774607520,
-    "overseas_news_new_batch": 1774650720
+    "overseas_news_new_batch": 1774726500,
+    "task_progress_morning_batch_completed": 1774688460,
+    "task_progress_monitor_0830_scrapling_gray_ok": 1774694100,
+    "task_progress_1400_1600_delivered": 1774715700,
+    "task_progress_monitor_1730_delivered": 1774726500
   }
 }

@@ -1,0 +1,69 @@
+{
+  "run_at_utc": "2026-03-29T02:00:00Z",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "items": [
+    {
+      "platform": "News/RSS",
+      "title": "China’s Localization Drive in Semiconductors Gains Impetus from Allied Chip Export Controls",
+      "published_at": "2026-03-24T20:38:00Z",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNXNzbHRYUmVEM1dKejE1Zmtva3E1ZW9iSzNqREo0MjZFWnpDbXg3NmhxV3lDeGFXUlp2VjBTdU1LV0QyZmN1UjhHREpnUW9mRFpXQS1TR1dBRW03XzA1NVFpTWlTR1J4WjhrQXZpMG1Ia0hNb1M3VXBzeUctelFqbkN0blIxM3lwVXVVQWlFWGt6NGNfREpXZHg2QVlvYUFDTW94THFmd1BJQlgwMEpmb05B?oc=5",
+      "summary": "盟友协同出口管制持续生效，正在倒逼中国半导体本地化提速，供应链分叉趋势加剧。",
+      "signals": ["export_control", "semiconductor_localization", "supply_chain_fragmentation"],
+      "confidence": 0.78,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "News网站（PBS/AP）",
+      "title": "AP report: Hegseth warns Anthropic to let the military use company's AI tech as it sees fit",
+      "published_at": "2026-02-24T00:00:00Z",
+      "url": "https://www.pbs.org/newshour/world/ap-report-hegseth-warns-anthropic-to-let-the-military-use-companys-ai-tech-as-it-sees-fit",
+      "summary": "美国防部门要求AI厂商放开军用使用边界，并提及合同与供应链风险施压工具。",
+      "signals": ["defense_procurement", "ai_governance_boundary", "vendor_policy_pressure"],
+      "confidence": 0.86,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "YouTube",
+      "title": "Improving Export Controls Enforcement Using Data Science and Artificial Intelligence",
+      "published_at": null,
+      "url": "https://www.youtube.com/watch?v=3cUQ6bMRO7A",
+      "summary": "智库公开讨论用数据科学和AI增强出口管制执法，显示政策执行数字化趋势。",
+      "signals": ["export_control_enforcement", "ai_for_compliance", "policy_execution"],
+      "confidence": 0.71,
+      "score": 5,
+      "tier": "high"
+    },
+    {
+      "platform": "Reddit",
+      "title": "[D] Litellm supply chain attack and what it means for api key management",
+      "published_at": "2026-03-28T15:07:16Z",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1s62taq/d_litellm_supply_chain_attack_and_what_it_means/",
+      "summary": "开发者社区关注AI中间件供应链攻击，对企业API密钥治理与依赖审计提出现实风险。",
+      "signals": ["software_supply_chain", "api_key_risk", "community_incident"],
+      "confidence": 0.62,
+      "score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "YouTube",
+      "title": "US to restrict exporting powerful AI computer chips to 'foreign powers'",
+      "published_at": null,
+      "url": "https://www.youtube.com/watch?v=KkUePz7a4eU",
+      "summary": "媒体持续跟进AI高性能芯片出口限制议题，反映政策外溢与舆论热度延续。",
+      "signals": ["chip_export_restriction", "media_signal", "policy_heat"],
+      "confidence": 0.58,
+      "score": 3,
+      "tier": "medium"
+    }
+  ],
+  "channels": {
+    "x": "failed",
+    "xiaohongshu": "failed",
+    "youtube": "ok",
+    "reddit": "ok",
+    "news": "ok",
+    "rss": "ok"
+  }
+}
