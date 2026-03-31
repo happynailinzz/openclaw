@@ -51,12 +51,15 @@
     "articles/diaodu-center-governance.md": "eee3cbefab9537f2d82de32beba7c4ed410e77bd",
     "articles/openclaw-showcase.md": "42b547ddaf596222e7f1f1f940c6078878b2c144",
     "articles/河南十五五规划-数智强省-草稿.md": "a78e6ab43b7df65630b151e7dbc37b80ea11fc5b",
-    "articles/选题-河南人工智能+行动.md": "ae9542f8508292041a80714e511368611d578541"
+    "articles/选题-河南人工智能+行动.md": "ae9542f8508292041a80714e511368611d578541",
+    "articles/2026-03-ai-observation/2026-03-ai-domestic.md": "12d5764ccdd157081ef94af9dbd68eaeb1f2051c",
+    "articles/2026-03-ai-observation/2026-03-ai-monthly-merged-formatted.md": "86065dde508841ee0f53cef586d23395abe98a61",
+    "articles/2026-03-ai-observation/2026-03-ai-monthly-merged.md": "ba6efabe29dd3f5126ec6274f9df713b37c06e5b"
   },
-  "lastRunAt": "2026-03-30T03:17:28Z",
+  "lastRunAt": "2026-03-31T03:17:28Z",
   "lastImported": [
-    "articles/openclaw-showcase.md",
-    "articles/河南十五五规划-数智强省-草稿.md",
-    "articles/选题-河南人工智能+行动.md"
+    "articles/2026-03-ai-observation/2026-03-ai-domestic.md",
+    "articles/2026-03-ai-observation/2026-03-ai-monthly-merged-formatted.md",
+    "articles/2026-03-ai-observation/2026-03-ai-monthly-merged.md"
   ]
 }
