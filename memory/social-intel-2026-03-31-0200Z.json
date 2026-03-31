@@ -1,0 +1,57 @@
+[
+  {
+    "platform": "news+rss",
+    "title": "Pentagon CIO outlines strategy to build tech/cyber warfighting advantage",
+    "published_at": "2026-03-27T19:17:54Z",
+    "url": "https://www.war.gov/News/News-Stories/Article/Article/4446227/pentagons-new-chief-information-officer-details-strategy-to-develop-tech-cyber/",
+    "summary": "US defense leadership公开强调以技术与网络能力形成作战优势，指向后续采购重心向数字基础设施、网络安全与AI能力倾斜。",
+    "signals": ["defense procurement signal", "AI/cyber capability prioritization", "government demand-side shift"],
+    "confidence": 0.74,
+    "score": 7,
+    "tier": "high"
+  },
+  {
+    "platform": "news+rss",
+    "title": "Ukraine drone industry seeks export acceleration amid Iran conflict pressure",
+    "published_at": "2026-03-30T16:13:42Z",
+    "url": "https://www.defensenews.com/industry/techwatch/2026/03/30/ukraines-drone-masters-eye-iran-war-to-kickstart-export-ambitions/",
+    "summary": "乌克兰无人机企业与政府推动对中东出口合作框架，显示防务AI/无人系统供应链正在区域重排。",
+    "signals": ["defense AI supply chain reallocation", "export channel opening", "delivery window compression"],
+    "confidence": 0.76,
+    "score": 7,
+    "tier": "high"
+  },
+  {
+    "platform": "news",
+    "title": "USTR says WTO role limited; US to seek arrangements with like-minded countries",
+    "published_at": "2026-03-31T00:00:00Z",
+    "url": "https://www.reuters.com/world/",
+    "summary": "美国贸易政策信号偏向小多边/同盟内安排，可能加速关键技术与AI相关供应链的阵营化。",
+    "signals": ["policy fragmentation", "trade regime shift", "potential export/procurement spillover"],
+    "confidence": 0.58,
+    "score": 5,
+    "tier": "high"
+  },
+  {
+    "platform": "rss/news",
+    "title": "OpenAI patched ChatGPT DNS side-channel data leak issue",
+    "published_at": "2026-03-30T19:36:29Z",
+    "url": "https://go.theregister.com/feed/www.theregister.com/2026/03/30/openai_chatgpt_dns_data_snuggling_flaw/",
+    "summary": "AI服务供应侧出现安全通道风险并被修复，提示政企项目需提高模型服务侧安全审计与网络隔离要求。",
+    "signals": ["AI service security risk", "compliance pressure likely up", "vendor risk scoring update needed"],
+    "confidence": 0.67,
+    "score": 4,
+    "tier": "medium"
+  },
+  {
+    "platform": "reddit/rss",
+    "title": "Community signal: Micron reportedly planning HBM-style GDDR stack for accelerators",
+    "published_at": "2026-03-31T02:01:37Z",
+    "url": "https://www.reddit.com/r/singularity/comments/1s85k3l/micron_reportedly_planning_hbmstyle_gddr_stack/",
+    "summary": "社区层面的芯片封装/显存路线讨论升温，作为算力成本与可得性先行信号可跟踪，但需主流媒体二次确认。",
+    "signals": ["chip supply chain watchpoint", "memory architecture trend", "unverified community source"],
+    "confidence": 0.39,
+    "score": 2,
+    "tier": "medium"
+  }
+]
