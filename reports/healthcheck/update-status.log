@@ -624,3 +624,14 @@ Summary: install=unknown; channel=unknown; latest=unknown
 
 Summary: install=pnpm; channel=stable (default); latest=npm 2026.3.28 (update available)
 
+===== 2026-03-31T13:43:47Z =====
+OpenClaw update status
+
+┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item     │ Value                                                                                                     │
+├──────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Install  │ pnpm                                                                                                      │
+│ Channel  │ stable (default)                                                                                          │
+│ Update   │ pnpm · up to date · npm latest 2026.3.28                                                                  │
+└──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+install=unknown; channel=unknown; latest=unknown
