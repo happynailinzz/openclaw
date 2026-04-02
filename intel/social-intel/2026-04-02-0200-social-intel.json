@@ -1,0 +1,90 @@
+{
+  "run_at": "2026-04-02T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "stepA_weekly_skill_check": {
+    "executed": false,
+    "reason": "2026-04-02 is Thursday, not Monday"
+  },
+  "sources": {
+    "X": {"status": "failed", "method": ["web_search", "browser"], "note": "search result quality poor; browser unavailable"},
+    "xiaohongshu": {"status": "failed", "method": ["web_search", "browser"], "note": "no relevant result from search; browser unavailable"},
+    "YouTube": {"status": "partial", "method": ["web_search", "web_fetch"], "note": "title-level result only, no useful transcript/body"},
+    "Reddit": {"status": "partial", "method": ["web_search", "web_fetch"], "note": "search results available; direct fetch blocked/403"},
+    "News": {"status": "success", "method": ["web_search", "web_fetch"]},
+    "RSS": {"status": "success", "method": ["web_fetch"]}
+  },
+  "items": [
+    {
+      "platform": "News",
+      "title": "US Commerce Department withdraws planned rule on AI chip exports",
+      "published_at": "2026-03-13",
+      "url": "https://www.reuters.com/business/us-commerce-department-withdraws-planned-rule-ai-chip-exports-government-website-2026-03-13/",
+      "summary": "美国商务部撤回拟议中的AI芯片出口规则，但披露出的草案显示，大批量芯片出口可能被附加数据中心投资和政府级安全承诺条件，说明政策方向仍是‘放松旧框架、改成更强条件控制’。",
+      "signals": ["export-control", "licensing", "AI chip", "policy volatility"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "News/Legal",
+      "title": "Trade rules: Trump Administration revises export restrictions on advanced semiconductors while levying additional tariffs",
+      "published_at": "2026-03-13",
+      "url": "https://www.reuters.com/legal/legalindustry/trade-rules-trump-administration-revises-export-restrictions-advanced--pracin-2026-03-13/",
+      "summary": "美国BIS将部分对华先进AI芯片出口许可从‘推定拒绝’改为‘个案审查’，同时叠加25%关税与回美安全测试要求，形成新的合规闸门。",
+      "signals": ["BIS", "tariff", "case-by-case", "China", "AI semiconductor"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "News/Defense",
+      "title": "AI contract restrictions could threaten military missions, US official says",
+      "published_at": "2026-03-03",
+      "url": "https://www.reuters.com/business/ai-contract-restrictions-could-threaten-military-missions-us-official-says-2026-03-03/",
+      "summary": "五角大楼官员公开称，部分商业AI合同内置的用途限制可能在战时任务中导致模型中途停摆，AI供应商条款正被直接视为国防交付风险。",
+      "signals": ["Pentagon", "AI contract", "military mission", "vendor risk"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "News/Geopolitics",
+      "title": "As Trump reins in China tech curbs, Beijing's export controls come of age",
+      "published_at": "2026-02-26",
+      "url": "https://www.reuters.com/world/china/trump-reins-china-tech-curbs-beijings-export-controls-come-age-2026-02-26/",
+      "summary": "中国稀土等出口管制执行体系显著强化，合规咨询激增；美方部分技术管制边际回调，但实质上双方都在把关键材料/芯片/技术变成谈判筹码。",
+      "signals": ["China export control", "rare earth", "compliance", "supply chain leverage"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "RSS/Cyber",
+      "title": "China-Linked Red Menshen Uses Stealthy BPFDoor Implants to Spy via Telecom Networks",
+      "published_at": "2026-03-26",
+      "url": "https://thehackernews.com/2026/03/china-linked-red-menshen-uses-stealthy.html",
+      "summary": "面向电信网络的长期潜伏活动说明，政企AI与数据基础设施不仅有采购/合规风险，还有运营侧的隐蔽渗透风险。",
+      "signals": ["telecom", "espionage", "critical infrastructure", "BPFDoor"],
+      "confidence": "中",
+      "score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "YouTube",
+      "title": "Morning Market Brief | Mar 6, 2026 | Energy shocks meet the AI boom",
+      "published_at": "2026-03-06",
+      "url": "https://www.youtube.com/watch?v=ndGhYoJi4YI",
+      "summary": "仅拿到标题级线索，内容不足，不纳入核心发现。",
+      "signals": ["video", "title-only"],
+      "confidence": "低",
+      "score": 0,
+      "tier": "low"
+    }
+  ],
+  "quality": {
+    "capture_success_rate_est": 0.67,
+    "duplication_rate_est": 0.17,
+    "high_value_hit_rate_est": 0.67,
+    "latency_minutes_est": 0
+  }
+}

@@ -1,5 +1,6 @@
 # progress.md
 
-## 2026-03-14 13:52 UTC
-- 创建规划文件：task_plan.md / findings.md / progress.md
-- 下一步：启动省级与18地市公开信息抓取与结构化归纳
+## 2026-04-02 02:00 UTC
+- 已读取 planning-with-files skill。
+- 已读取历史 social-intel 样例与生产化 SOP。
+- 准备进入多源抓取。
