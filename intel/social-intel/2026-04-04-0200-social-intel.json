@@ -1,0 +1,123 @@
+{
+  "run_at": "2026-04-04T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "stepA_weekly_skill_check": {
+    "executed": false,
+    "reason": "2026-04-04 is Saturday, not Monday"
+  },
+  "sources": {
+    "X": {"status": "partial", "method": ["web_search"], "note": "used as sentiment/propagation signal only"},
+    "xiaohongshu": {"status": "failed", "method": ["web_search"], "note": "results dominated by jobs/policy pages/noise"},
+    "YouTube": {"status": "partial", "method": ["web_search"], "note": "mostly title-level macro videos, weak direct relevance"},
+    "Reddit": {"status": "partial", "method": ["web_search"], "note": "weak relevance, used as auxiliary only"},
+    "News": {"status": "success", "method": ["web_search", "web_fetch"]},
+    "RSS": {"status": "success", "method": ["web_search", "web_fetch"]}
+  },
+  "items": [
+    {
+      "platform": "News/Defense",
+      "title": "AI contract restrictions could threaten military missions, US official says",
+      "published_at": "2026-03-03",
+      "url": "https://www.reuters.com/business/ai-contract-restrictions-could-threaten-military-missions-us-official-says-2026-03-03/",
+      "summary": "Pentagon 官员称，部分商业 AI 合同内置限制可能在作战过程中令模型中途停摆，直接威胁军事任务连续性。",
+      "signals": ["Pentagon", "AI contract", "military mission", "operational continuity"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "News/Defense",
+      "title": "Pentagon designates Anthropic a supply chain risk",
+      "published_at": "2026-03-05",
+      "url": "https://www.reuters.com/technology/pentagon-informed-anthropic-it-is-supply-chain-risk-official-says-2026-03-05/",
+      "summary": "Pentagon 正式将 Anthropic 列为 supply-chain risk，立即限制其技术用于 Pentagon 合同，承包商不得继续在美军项目中使用 Claude。",
+      "signals": ["supply-chain risk", "Anthropic", "contractor restriction", "vendor exclusion"],
+      "confidence": "高",
+      "score": 9,
+      "tier": "high"
+    },
+    {
+      "platform": "News/Defense",
+      "title": "Pentagon asks defense contractors about reliance on Anthropic's AI services, source says",
+      "published_at": "2026-02-25",
+      "url": "https://www.reuters.com/business/aerospace-defense/pentagon-asks-boeing-lockheed-martin-about-their-exposure-anthropic-axios-2026-02-25/",
+      "summary": "Pentagon 已要求洛马、波音等评估对 Anthropic 的依赖程度，说明风险标签发布前，供应链排查和替换预案已启动。",
+      "signals": ["Lockheed", "Boeing", "dependency review", "pre-ban assessment"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "News/Defense",
+      "title": "Defense contractors, like Lockheed, seen removing Anthropic's AI after Trump ban",
+      "published_at": "2026-03-04",
+      "url": "https://www.reuters.com/sustainability/society-equity/defense-contractors-like-lockheed-seen-removing-anthropics-ai-after-trump-ban-2026-03-04/",
+      "summary": "承包商预计会快速清退 Anthropic 工具；洛马已表态配合，且过渡期约六个月，意味着存量项目将面临切换与交付重排。",
+      "signals": ["Lockheed", "vendor switch", "phase-out", "delivery disruption"],
+      "confidence": "高",
+      "score": 8,
+      "tier": "high"
+    },
+    {
+      "platform": "RSS/Legal",
+      "title": "CMMC for AI? Defense Policy Law Imposes AI Security Framework and Requirements on Contractors",
+      "published_at": "2026-01",
+      "url": "https://www.governmentcontractslegalforum.com/2026/01/articles/ai/cmmc-for-ai-defense-policy-law-imposes-ai-security-framework-and-requirements-on-contractors/",
+      "summary": "FY2026 NDAA 要求 DoD 为 AI/ML 建立安全框架，并并入 DFARS/CMMC，未来承包商需对数据投毒、对抗篡改、数据暴露等风险承担更强合规义务。",
+      "signals": ["NDAA", "DFARS", "CMMC", "AI security framework"],
+      "confidence": "高",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "X",
+      "title": "Military AI / Anthropic supply-chain-risk discussion spreading on X",
+      "published_at": "2026-03",
+      "url": "https://x.com/PoliMarketer/status/2032339624631132625",
+      "summary": "X 上围绕 Pentagon、Anthropic、Maven/Claude 的讨论继续扩散，说明该事件已从政策/采购层溢出到行业舆情层。",
+      "signals": ["social spread", "military AI", "public narrative"],
+      "confidence": "中",
+      "score": 3,
+      "tier": "medium"
+    },
+    {
+      "platform": "YouTube",
+      "title": "AI, supply chains, and trade resets: The global economy in 2026",
+      "published_at": "2026",
+      "url": "https://www.youtube.com/watch?v=zZHN0-ZNe_4",
+      "summary": "偏宏观经济与供应链讨论，和本轮政务/国防 AI 供应链主题相关性较弱，仅保留为外围背景信号。",
+      "signals": ["macro", "title-only", "weak relevance"],
+      "confidence": "低",
+      "score": 0,
+      "tier": "low"
+    }
+  ],
+  "gov_defense_ai_supply_chain_mapping": {
+    "policy_actions": [
+      "2026-02-25：Pentagon 要求主要承包商评估对 Anthropic 的依赖程度。",
+      "2026-03-03：Pentagon 官员公开批评商业 AI 合同限制可能威胁军事任务连续性。",
+      "2026-03-05：Pentagon 正式将 Anthropic 列为 supply-chain risk，限制其技术用于 Pentagon 合同。",
+      "2026-01/FY2026：NDAA 要求建立 AI/ML 安全框架并纳入 DFARS/CMMC。"
+    ],
+    "vendor_impact": [
+      "模型厂商：Anthropic 直接受限；OpenAI 等替代供应商受益于切换窗口。",
+      "承包商/集成商：Lockheed、Boeing 等需评估现有依赖并重构供应商组合。",
+      "云/平台侧：托管 Claude 的平台可继续服务非 Pentagon 客户，但国防链路需隔离。"
+    ],
+    "delivery_impact": [
+      "短期：项目需排查现网模型依赖，存在临时中断与审批延后。",
+      "中期：六个月左右的切换/清退期将推高集成、验证、再认证成本。",
+      "替代路径：切换到政策兼容供应商；在架构上做模型可插拔与供应商解耦；提前补 AI 安全合规文档。"
+    ],
+    "risk_level": {
+      "level": "高",
+      "reason": "政策动作已从口头争议升级到正式风险标签与承包商执行层，直接影响供应商准入和项目交付节奏。"
+    }
+  },
+  "quality": {
+    "capture_success_rate_est": 0.83,
+    "duplication_rate_est": 0.17,
+    "high_value_hit_rate_est": 0.71,
+    "latency_minutes_est": 0
+  }
+}

@@ -1,23 +1,21 @@
-# 任务计划：社交平台情报抓取 SOP（OpenClaw版）
+# task_plan.md
 
-## 目标
-执行一次完整的多平台情报抓取与筛选流程，输出固定格式简报，并完成本地留痕与可检索归档。
+## Goal
+按《社交平台情报抓取 SOP（OpenClaw版）》完成一次完整情报抓取，覆盖 X / 小红书 / YouTube / Reddit / 新闻网站 / RSS，产出可检索、可评分、可复盘、可推送的简报，并写入本地留痕。
 
-## 阶段
-- [complete] Phase 1: 检查技能/通道可用性（Step A，因非周一按SOP跳过周检）
-- [complete] Phase 2: 多源抓取与失败回退（Step B/C）
-- [complete] Phase 3: 结构化整理与价值评分（Step D/E）
-- [complete] Phase 4: 分发与沉淀（Step F，本地留痕与归档完成；Telegram 由本次返回摘要承载）
-- [complete] Phase 5: 生成固定格式简报
+## Phases
+- [complete] Phase 1: 建立抓取计划与来源清单
+- [complete] Phase 2: 多源抓取与失败回退
+- [complete] Phase 3: 结构化整理、评分、去重
+- [complete] Phase 4: 写入本地归档与输出简报
 
-## 约束
+## Constraints
+- 本次时间：2026-04-04 02:00 UTC（周六），Step A 每周复查仅周一执行，本次跳过
 - 单源失败不阻塞全流程
-- 输出必须包含：platform/title/published_at/url/summary/signals/confidence
-- 单列“政务/国防 AI 供应链波动映射”
-- 质量指标需估计成功率、重复率、高价值命中率
+- 输出必须包含固定栏目与质量指标
 
-## 错误记录
-| 阶段 | 问题 | 处理 |
-|---|---|---|
-| Phase 2 | 小红书搜索结果以服务市场/招聘噪音为主，未形成有效情报 | 记录为单源失效，不阻塞整体流程 |
-| Phase 4 | edit 工具参数模式冲突 | 改为直接 write 覆盖计划文件 |
+## Errors Encountered
+| Error | Attempt | Resolution |
+|---|---:|---|
+| planning-with-files 路径先读错 | 1 | 改读 ~/.agents/skills/planning-with-files/SKILL.md |
+| edit 工具多次因混用参数报错 | 1 | 改用 write 直接覆盖 findings/progress/task_plan |
