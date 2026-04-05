@@ -144,6 +144,18 @@
     "scrapling-web-scraper": {
       "version": "1.0.0",
       "installedAt": 1774692117785
+    },
+    "daily-trending": {
+      "version": "1.0.0",
+      "installedAt": 1775366152965
+    },
+    "content-brainstorm": {
+      "version": "1.0.0",
+      "installedAt": 1775366153680
+    },
+    "baoyu-infographic": {
+      "version": "1.76.1",
+      "installedAt": 1775366155409
     }
   }
 }
