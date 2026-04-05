@@ -1,0 +1,129 @@
+{
+  "run_at_utc": "2026-04-05T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "status": "partial_success_with_degradation",
+  "step_a": {
+    "executed": false,
+    "reason": "今天是周日，按SOP跳过每周一技能复查"
+  },
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.18,
+    "high_value_hit_rate": 0.67,
+    "latency_minutes": 0,
+    "meets_threshold": false
+  },
+  "sources": {
+    "x": "search-only",
+    "xiaohongshu": "failed_or_low_signal",
+    "youtube": "metadata_only",
+    "reddit": "search-only",
+    "news": "confirmed",
+    "rss": "partial"
+  },
+  "items": [
+    {
+      "platform": "news",
+      "title": "美国考虑以对美投资/安全承诺作为大规模AI芯片出口条件",
+      "published_at": "2026-03-05",
+      "url": "https://www.reuters.com/world/us-mulls-new-rules-ai-chip-exports-including-requiring-investments-by-foreign-2026-03-05/",
+      "summary": "Reuters称美国在研究新的AI芯片出口框架，200,000片及以上的大单可能附带对美投资或安全承诺，意味着出口许可和地缘谈判进一步绑定。",
+      "signals": ["出口许可附带投资条件", "盟友/伙伴国也可能纳入更严格分层管理", "大规模集群建设审批门槛抬升"],
+      "confidence": 0.9,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "MATCH法案拟进一步限制对华AI芯片制造设备与相关服务",
+      "published_at": "2026-04-03",
+      "url": "https://www.nbcnews.com/tech/tech-news/senate-bill-ban-sale-key-ai-chipmaking-machines-china-rcna265186",
+      "summary": "美国两党议员提出MATCH Act，拟扩大禁止向中国出售先进半导体制造设备的范围，并推动盟友同步收紧。",
+      "signals": ["设备层限制加强", "从成品芯片延伸到制造设备与服务", "中国本土AI供应链建设承压"],
+      "confidence": 0.87,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "特朗普政府已把部分先进AI半导体出口审查从“推定拒绝”改为“个案审查”",
+      "published_at": "2026-01-15",
+      "url": "https://www.pillsburylaw.com/en/news-and-insights/trump-advanced-ai-semiconductors-actions.html",
+      "summary": "Pillsbury解读显示，美国对部分先进AI芯片对华出口改为case-by-case review，同时叠加半导体及设备关税工具，政策呈现“放松出口+强化杠杆”双轨特征。",
+      "signals": ["政策方向摇摆", "芯片与关税联动", "供货窗口更依赖行政裁量"],
+      "confidence": 0.8,
+      "score": 5,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "中国军工关联高校采购到含受限AI芯片的服务器，引发美方追加收紧呼声",
+      "published_at": "2026-03-27",
+      "url": "https://www.reuters.com/world/china/chinese-universities-with-military-links-bought-super-micro-servers-with-2026-03-27/",
+      "summary": "Reuters披露中国含军方关联高校采购含受限AI芯片服务器后，美国参议员要求审视对华及经东南亚中介转运的先进Nvidia芯片与服务器许可。",
+      "signals": ["军民两用敏感度上升", "转运通道被盯上", "东南亚中介路径风险上升"],
+      "confidence": 0.86,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "reddit",
+      "title": "Reddit/CredibleDefense持续讨论出口管制对军工技术追赶的实际效果",
+      "published_at": "2026-04-01",
+      "url": "https://www.reddit.com/r/CredibleDefense/comments/1o178no/how_russia_recovered_dara_massicot/",
+      "summary": "社区舆论把AI/双用途技术出口管制视为长期竞争工具而非一次性封锁，更多聚焦‘拖慢而非阻断’。",
+      "signals": ["舆论预期偏长期拉锯", "对盟友协同执行要求升高"],
+      "confidence": 0.45,
+      "score": 1,
+      "tier": "low"
+    },
+    {
+      "platform": "youtube",
+      "title": "YouTube上‘Export controls for AI: Will they work?’持续被引用为政策解释入口",
+      "published_at": "unknown",
+      "url": "https://www.youtube.com/watch?v=ySzHGHI4yHU",
+      "summary": "视频本身未抓到正文，但仍被搜索命中，说明市场/政策受众持续关注AI出口管制有效性与副作用。",
+      "signals": ["解释型内容热度延续", "更偏认知讨论而非新事件"],
+      "confidence": 0.3,
+      "score": 0,
+      "tier": "low"
+    },
+    {
+      "platform": "x",
+      "title": "X上围绕路透与政策博弈的二次传播集中在‘规则反复’与‘替代路径’",
+      "published_at": "2026-03 to 2026-04",
+      "url": "https://x.com/CNAStech",
+      "summary": "X平台主要是对Reuters/政策解读的二次放大，焦点在于H200/先进GPU许可、收入分成、以及中方替代芯片路线。",
+      "signals": ["社交放大强", "原始增量有限", "适合作为温度计不适合作为唯一依据"],
+      "confidence": 0.35,
+      "score": 0,
+      "tier": "low"
+    }
+  ],
+  "supply_chain_mapping": [
+    {
+      "policy": "美方研究将大规模AI芯片出口与对美投资/安全承诺绑定",
+      "vendors": ["NVIDIA", "AMD", "海外主权AI项目/云厂商"],
+      "delivery_impact": "超大集群项目审批周期拉长，订单不再只是商业采购，需附带地缘与投资交换条件。",
+      "risk_level": "high",
+      "reason": "直接改变大单交付前提，影响窗口和预算确定性。"
+    },
+    {
+      "policy": "MATCH Act拟收紧先进半导体制造设备及相关服务对华出口",
+      "vendors": ["Applied Materials", "Lam Research", "KLA", "ASML协同生态", "中国晶圆/设备链"],
+      "delivery_impact": "先进制程扩产、维修保养与备件支持风险上升，国产替代节奏被迫提前。",
+      "risk_level": "high",
+      "reason": "从芯片端打到设备端，影响更深更长。"
+    },
+    {
+      "policy": "军工关联采购触发美国对转运与中介渠道更严审视",
+      "vendors": ["Super Micro", "NVIDIA", "东南亚服务器分销/集成商"],
+      "delivery_impact": "东南亚转运、代采、灰色中介路径的不确定性快速上升，项目交付要准备合规审计与备选BOM。",
+      "risk_level": "medium",
+      "reason": "不是全面封死，但中介链条会更脆。"
+    }
+  ]
+}

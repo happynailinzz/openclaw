@@ -1,0 +1,1 @@
+2026-04-05 02:00 UTC social intel：partial_success_with_degradation；success_rate=83.3%，dup=18%，high_value=67%，latency<=30m。主线：美方正把AI芯片出口、设备限制、军方关联采购审查三件事并成一条供应链压力链；最大新增不是单条禁令，而是“许可条件化 + 设备层加码 + 转运链穿透审查”。小红书本轮无有效增量，YouTube仅抓到元数据，未影响主结论。
