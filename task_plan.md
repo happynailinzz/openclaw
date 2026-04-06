@@ -1,22 +1,23 @@
 # task_plan.md
 
 ## Goal
-执行一轮升级版【河南六大重点领域项目机会监控】，按固定搜索路由完成“发现层→确认层”，输出可转化项目机会简报。
+按《社交平台情报抓取 SOP（OpenClaw版）》执行一次完整流程，产出 2026-04-06 02:00 UTC 的社交情报简报，并完成本地留痕与归档。
 
 ## Phases
-- [complete] Phase 1: 读取上下文与确定搜索脚本/路由
-- [complete] Phase 2: 发现层搜索（Tavily → cn-web-search → baidu-search → multi-search-engine）
-- [complete] Phase 3: 确认层抓取（web_fetch / Jina / Scrapling）
-- [complete] Phase 4: 去重、筛选高价值线索、生成简报
+- [complete] Phase 1: 检查 SOP / 技能可用性 / 制定抓取策略
+- [complete] Phase 2: 多平台抓取与失败回退
+- [complete] Phase 3: 结构化整理、评分、去重
+- [complete] Phase 4: 写入归档与 memory 留痕
+- [complete] Phase 5: 输出固定格式简报
+
+## Constraints
+- 输出字段固定：platform/title/published_at/url/summary/signals/confidence
+- 必须单列：政务/国防 AI 供应链波动映射
+- 单源失败不阻塞全流程
+- 输出 plain text
 
 ## Errors Encountered
 | Error | Attempt | Resolution |
 |---|---:|---|
-| `/root/.openclaw/workspace/skills/planning-with-files/SKILL.md` 不存在 | 1 | 改读 `/root/.agents/skills/planning-with-files/SKILL.md` |
-| `memory/2026-04-05.md` 不存在 | 1 | 仅读取 2026-04-04 与 MEMORY.md |
-| 河南省政府/省发改委关键原文 403 | 1-4 | web_fetch / Jina / Scrapling basic / stealth 均失败，改用多源交叉确认并标记“原站受限待补” |
-
-## Notes
-- 严格区分发现层与确认层，不直接用搜索摘要当结论。
-- 源头优先 A/B 类，C 类仅作线索。 
-- 宁缺毋滥。每条最终结论必须带链接与状态。 
+| memory/2026-04-06.md 不存在 | 1 | 视为当天尚未留痕，后续创建 |
+| edit 工具参数冲突 | 1 | 改用 write 全量覆盖 task_plan.md |

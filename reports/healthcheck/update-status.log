@@ -677,3 +677,17 @@ OpenClaw update status
 Update available (npm 2026.4.2). Run: openclaw update
 Summary: │ Install │ pnpm │; │ Channel │ stable (default) │; │ Update │ available · pnpm · npm update 2026.4.2 │
 
+===== 2026-04-05T04:01:06Z =====
+OpenClaw update status
+
+┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item     │ Value                                                                                                     │
+├──────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Install  │ pnpm                                                                                                      │
+│ Channel  │ stable (default)                                                                                          │
+│ Update   │ available · pnpm · npm update 2026.4.2                                                                    │
+└──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Update available (npm 2026.4.2). Run: openclaw update
+Summary: install=unknown; channel=unknown; latest=unknown
+
