@@ -1,9 +1,9 @@
 {
   "imported": {
     "article.md": "eb4223601b584d528472cf5089b6927505af068a",
-    "findings.md": "8e91848c86194b79af42bbe53c7e8ae69e9a1f0d",
-    "progress.md": "5caf813ce78b7dfd340ffa1249456d5ea5c4b2fd",
-    "task_plan.md": "f654c39ba93f765f24aff272c7daa08eaf3c5954",
+    "findings.md": "ac56bab7a6c702a1663a86d11d73ffc38f328cf5",
+    "progress.md": "874935e022d0518c8e4cb8a1bde56a341a389a3d",
+    "task_plan.md": "4fd7962e04cb7f534989ad59b31f7de0dc0846d0",
     "wechat_article.md": "a88fdaea45f05a8d9dc294d5f1d5eb09c59c8f7e",
     "河南省各地级市2026年重点工作部署汇总.md": "30e7ea4b7929f2a602a2dd3921d287a8b8c95e8f",
     "articles/2026-02-23-落地顺序-公众号稿.md": "62bfc11e3bba8dea701de0905222cbe08ad2791c",
@@ -56,10 +56,10 @@
     "articles/2026-03-ai-observation/2026-03-ai-monthly-merged-formatted.md": "86065dde508841ee0f53cef586d23395abe98a61",
     "articles/2026-03-ai-observation/2026-03-ai-monthly-merged.md": "ba6efabe29dd3f5126ec6274f9df713b37c06e5b"
   },
-  "lastRunAt": "2026-03-31T03:17:28Z",
+  "lastRunAt": "2026-04-06T03:19:37Z",
   "lastImported": [
-    "articles/2026-03-ai-observation/2026-03-ai-domestic.md",
-    "articles/2026-03-ai-observation/2026-03-ai-monthly-merged-formatted.md",
-    "articles/2026-03-ai-observation/2026-03-ai-monthly-merged.md"
+    "findings.md",
+    "progress.md",
+    "task_plan.md"
   ]
 }

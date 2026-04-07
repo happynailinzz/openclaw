@@ -1,23 +1,24 @@
-# task_plan.md
+# 社交平台情报抓取任务计划
 
-## Goal
-按《社交平台情报抓取 SOP（OpenClaw版）》执行一次完整流程，产出 2026-04-06 02:00 UTC 的社交情报简报，并完成本地留痕与归档。
+- 任务：执行一次《社交平台情报抓取 SOP（OpenClaw版）》完整流程
+- 时间：2026-04-07 02:00 UTC
+- 状态：complete
 
-## Phases
-- [complete] Phase 1: 检查 SOP / 技能可用性 / 制定抓取策略
-- [complete] Phase 2: 多平台抓取与失败回退
-- [complete] Phase 3: 结构化整理、评分、去重
-- [complete] Phase 4: 写入归档与 memory 留痕
-- [complete] Phase 5: 输出固定格式简报
+## 阶段
+- [x] A. 周期性 skills 可用性检查判断：本次非周一，按 SOP 跳过周检，仅记录现有通道可用性
+- [x] B. 主通道抓取：X / Reddit / YouTube / 新闻网站 / RSS / 小红书
+- [x] C. 失败回退：小红书、RSS 未获稳定有效结果，已回退到新闻网站 / 搜索结果，不阻塞流程
+- [x] D. 结构化整理字段
+- [x] E. 价值评分与分层
+- [x] F. 本地留痕与可检索归档
 
-## Constraints
-- 输出字段固定：platform/title/published_at/url/summary/signals/confidence
-- 必须单列：政务/国防 AI 供应链波动映射
-- 单源失败不阻塞全流程
-- 输出 plain text
-
-## Errors Encountered
-| Error | Attempt | Resolution |
+## 错误记录
+| 错误 | 尝试 | 处理 |
 |---|---:|---|
-| memory/2026-04-06.md 不存在 | 1 | 视为当天尚未留痕，后续创建 |
-| edit 工具参数冲突 | 1 | 改用 write 全量覆盖 task_plan.md |
+| 小红书检索 0 命中 | 1 | 记录为单源失败，不阻塞全流程 |
+| RSS 未拿到稳定 feed | 1 | 用新闻站点与 Reuters/法律解读替代 |
+| YouTube 结果噪音偏高 | 1 | 仅作为低优先级观察，不纳入核心高价值结论 |
+
+## 结论
+- 本轮最值得盯的是：美国政府 AI 采购条款收紧、AI 芯片出口规则重写、国会推动更严半导体设备出口限制、中国对双用途物项的出口控制外溢。
+- 这几件事会直接影响政企 AI 项目的芯片供给、模型选型、合规条款和交付窗口。

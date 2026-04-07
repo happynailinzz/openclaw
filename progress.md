@@ -1,5 +1,7 @@
-# progress.md
+# Progress
 
-- 2026-04-06 02:00 UTC：开始执行 social-intel-sop cron。
-- 已完成：SOP 检索、周一技能可用性检查、初始新闻/X/YouTube/Reddit 搜索。
-- 待完成：补充高可信来源抓取、评分分层、归档、memory 留痕、输出简报。
+- 02:00 UTC 收到 cron 任务，按 SOP 执行。
+- 已完成跨平台搜索：X / 小红书 / YouTube / Reddit / 新闻 / RSS。
+- 已抓取并复核核心来源：JD Supra、Nextgov、NBC News、National Law Review、Astute Group、Reuters 搜索结果。
+- 已完成价值评分、去重、政务/国防 AI 供应链波动映射。
+- 已生成可检索归档与 memory 留痕。
