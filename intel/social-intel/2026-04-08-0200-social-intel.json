@@ -1,0 +1,91 @@
+{
+  "run_at_utc": "2026-04-08T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "status": "partial_success_with_degradation",
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.17,
+    "high_value_hit_rate": 0.67,
+    "latency_minutes": 0,
+    "meets_threshold": false
+  },
+  "source_status": {
+    "x": "success_via_search_snippet",
+    "xiaohongshu": "failed_primary_fallback_noise",
+    "youtube": "partial_title_level",
+    "reddit": "partial_search_level_fetch_failed",
+    "news": "success",
+    "rss": "failed_502"
+  },
+  "items": [
+    {
+      "platform": "news",
+      "title": "Trade and industry groups warn of risks in GSA’s draft AI procurement guidance",
+      "published_at": "2026-04-03",
+      "url": "https://www.nextgov.com/acquisition/2026/04/trade-and-industry-groups-warn-risks-gsas-draft-ai-procurement-guidance/412614/",
+      "summary": "GSA 草案拟扩大政府对 AI 的 lawful use、输入数据和定制开发成果的权利，并限制外国产 AI 进入政府工作流。",
+      "signals": ["政务采购条款收紧", "模型厂商政府用途边界冲突", "人工干预与审计条款前置"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Chinese universities with military links bought Super Micro servers with restricted AI chips",
+      "published_at": "2026-03-27",
+      "url": "https://www.reuters.com/world/china/chinese-universities-with-military-links-bought-super-micro-servers-with-2026-03-27/",
+      "summary": "与军方有关联的中国高校采购到搭载受限英伟达芯片的服务器，触发美国参议员要求暂停部分 AI 芯片与服务器出口许可。",
+      "signals": ["军民融合采购穿透", "服务器链路执法趋严", "东南亚转运与许可风险上升"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Senate bill would ban sale of key AI chipmaking machines to China",
+      "published_at": "2026-04",
+      "url": "https://www.nbcnews.com/tech/tech-news/senate-bill-ban-sale-key-ai-chipmaking-machines-china-rcna265186",
+      "summary": "MATCH Act 拟扩大对华先进半导体制造设备及相关服务的限制，目标是压缩中国构建本土 AI 芯片供应链的能力。",
+      "signals": ["上游设备进一步收紧", "盟友协同限制", "高端训练算力供给窗口受压"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "China Imposes Escalated Export Controls on Dual-Use Items to Japan",
+      "published_at": "2026-02-13",
+      "url": "https://natlawreview.com/article/china-imposes-escalated-export-controls-dual-use-items-japan",
+      "summary": "中国对日双用途物项出口控制由单品类限制转向 end-use/end-user 控制，影响半导体、稀土、传感器与国防链条。",
+      "signals": ["双用途出口管制升级", "对日供应链再评估", "材料与部件替代需求上升"],
+      "confidence": "medium_high",
+      "score": 5,
+      "tier": "high"
+    },
+    {
+      "platform": "reddit",
+      "title": "Anthropic says it will challenge Pentagon's supply chain risk designation",
+      "published_at": "2026-04",
+      "url": "https://www.reddit.com/r/news/comments/1rgqs0g/anthropic_says_it_will_challenge_pentagons_supply/",
+      "summary": "Reddit 舆情聚焦 Pentagon 将 Anthropic 视为供应链风险后的争议，反映行业对模型厂商政府合作边界的敏感度。",
+      "signals": ["舆情升温", "政府用途与模型价值观冲突", "承包商选型顾虑上升"],
+      "confidence": "medium",
+      "score": 3,
+      "tier": "medium"
+    },
+    {
+      "platform": "youtube",
+      "title": "Nvidia, AMD to Resume China Chips Sales | Balance of Power",
+      "published_at": "2026-04",
+      "url": "https://www.youtube.com/watch?v=yY0HZ5BjeDI",
+      "summary": "视频层面对中美 AI 芯片出口控制和恢复销售的政策摇摆进行讨论，可作为市场预期辅助信号。",
+      "signals": ["市场预期波动", "出口许可口径不稳", "视频源仅辅助"],
+      "confidence": "low_medium",
+      "score": 2,
+      "tier": "medium"
+    }
+  ]
+}

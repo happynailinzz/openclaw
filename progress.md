@@ -1,7 +1,8 @@
-# Progress
+# progress.md
 
-- 02:00 UTC 收到 cron 任务，按 SOP 执行。
-- 已完成跨平台搜索：X / 小红书 / YouTube / Reddit / 新闻 / RSS。
-- 已抓取并复核核心来源：JD Supra、Nextgov、NBC News、National Law Review、Astute Group、Reuters 搜索结果。
-- 已完成价值评分、去重、政务/国防 AI 供应链波动映射。
-- 已生成可检索归档与 memory 留痕。
+## 2026-04-08 02:00Z
+- 初始化 planning-with-files 三件套。
+- 已读取上一轮 2026-04-07 社交情报简报样式，准备按同口径产出本轮版本。
+- 通过 web_search/web_fetch 执行多源抓取：新闻站、Reddit、YouTube、X、小红书、RSS。
+- 完成结构化归档到 intel/social-intel/2026-04-08-0200-social-intel.json。
+- 完成 memory 留痕与 latest_brief/latest_structured 更新。
