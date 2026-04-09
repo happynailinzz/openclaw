@@ -1,23 +1,25 @@
 # task_plan.md
 
-## Goal
-按《社交平台情报抓取 SOP（OpenClaw版）》执行一次完整社交情报抓取，覆盖 X / 小红书 / YouTube / Reddit / 新闻网站 / RSS，完成结构化归档、评分筛噪、简报输出与本地留痕。
+## 任务
+执行一次《社交平台情报抓取 SOP（OpenClaw版）》完整流程，输出 2026-04-09 10:00 社交情报简报，并完成本地留痕与可检索归档。
 
-## Phases
-- [complete] 1. 读取 SOP / 既有产物 / 建立执行框架
-- [complete] 2. 多源抓取（按优先级与失败回退）
-- [complete] 3. 结构化整理、评分、去重、分层
-- [complete] 4. 生成简报、归档、memory 留痕
+## 阶段
+- [complete] 1. 读取已有 SOP / 历史样本 / 约束
+- [complete] 2. 多渠道抓取（X / 小红书 / YouTube / Reddit / 新闻 / RSS）
+- [complete] 3. 回退、去重、评分、分层
+- [complete] 4. 生成简报 + 本地归档 + memory 留痕
 
-## Constraints
-- 今天是周三，Step A（每周一 skills 复查）本次跳过。
-- 单源失败不阻塞全流程。
-- 输出固定格式，含新增一级主题“政务/国防 AI 供应链波动映射”。
+## 约束
+- Step A 仅周一执行技能复查；今天是周四，跳过。
+- 主链路优先：API/MCP skill -> 专用脚本 -> web_fetch -> browser。
+- 单源失败不得阻塞全流程。
+- 输出字段固定：platform/title/published_at/url/summary/signals/confidence。
+- 必须单列【政务/国防 AI 供应链波动映射】。
+- 质量目标：成功率>=85%，重复率<=20%，高价值命中率>=60%（估计）。
 
-## Errors Encountered
-| Error | Attempt | Resolution |
+## 错误记录
+| 错误 | 尝试 | 处理 |
 |---|---:|---|
-| planning-with-files 初始路径误判 | 1 | 改读 /root/.agents/skills/planning-with-files/SKILL.md |
-| Reddit 正文抓取失败（403） | 1 | 降级为搜索结果级舆情源，不纳入硬结论 |
-| RSS 抓取失败（502） | 1 | 记为单源失败，不阻塞全流程 |
-| 小红书搜索高噪音 | 1 | 标记失败并剔除核心结论，避免污染结果 |
+| memory/2026-04-08.md 与 2026-04-09.md 不存在 | 1 | 继续使用现有历史情报与归档样本，不阻塞 |
+| planning-with-files 路径初次猜错 | 1 | 改读 /root/.agents/skills/planning-with-files/SKILL.md |
+| edit 工具单次更新参数校验失败 | 1 | 改用 write 直接覆盖规划文件 |

@@ -147,7 +147,7 @@
     },
     "daily-trending": {
       "version": "1.0.0",
-      "installedAt": 1775366152965
+      "installedAt": 1775649511663
     },
     "content-brainstorm": {
       "version": "1.0.0",
@@ -156,6 +156,30 @@
     "baoyu-infographic": {
       "version": "1.76.1",
       "installedAt": 1775366155409
+    },
+    "news-summary": {
+      "version": "1.0.1",
+      "installedAt": 1775649514522
+    },
+    "ai-news-zh": {
+      "version": "1.0.0",
+      "installedAt": 1775649517947
+    },
+    "ai-news-research": {
+      "version": "1.0.0",
+      "installedAt": 1775649521714
+    },
+    "market-news": {
+      "version": "1.0.0",
+      "installedAt": 1775649526722
+    },
+    "news-aggregator": {
+      "version": "1.0.3",
+      "installedAt": 1775649530186
+    },
+    "hot-news-aggregator": {
+      "version": "1.0.0",
+      "installedAt": 1775649533131
     }
   }
 }

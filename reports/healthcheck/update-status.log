@@ -718,3 +718,4 @@ OpenClaw update status
 
 Update available (npm 2026.4.5). Run: openclaw update
 Summary: channel=stable
+summary: install=pnpm; channel=stable (default); latest=2026.4.5

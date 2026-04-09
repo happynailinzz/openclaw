@@ -1,0 +1,91 @@
+{
+  "run_at_utc": "2026-04-09T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "status": "partial_success_with_degradation",
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.18,
+    "high_value_hit_rate": 0.67,
+    "latency_minutes": 0,
+    "meets_threshold": false
+  },
+  "source_status": {
+    "x": "success_via_search_snippet",
+    "xiaohongshu": "failed_primary_fallback_noise",
+    "youtube": "success_title_level",
+    "reddit": "success_search_level",
+    "news": "success",
+    "rss": "success"
+  },
+  "items": [
+    {
+      "platform": "news",
+      "title": "US court declines to block Pentagon's Anthropic blacklisting for now",
+      "published_at": "2026-04-08",
+      "url": "https://www.reuters.com/world/us-court-declines-block-pentagons-anthropic-blacklisting-now-2026-04-08/",
+      "summary": "美国法院暂未阻止 Pentagon 对 Anthropic 的 blacklist 延续，说明模型厂商在国防采购链中的合规争议仍在发酵，承包商替换压力继续存在。",
+      "signals": ["Pentagon", "blacklisting", "government procurement", "delivery risk"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Trade and industry groups warn of risks in GSA's draft AI procurement guidance",
+      "published_at": "2026-04-03",
+      "url": "https://www.nextgov.com/acquisition/2026/04/trade-and-industry-groups-warn-risks-gsas-draft-ai-procurement-guidance/412614/",
+      "summary": "GSA 草案拟扩大政府对 AI 输入、输出与定制成果的权利，并限制外国产 AI 进入政府工作流，直接影响政府项目交付边界与商业化条款。",
+      "signals": ["GSA", "AI procurement", "foreign AI ban", "contract rights"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Chinese universities with military links bought Super Micro servers with restricted AI chips",
+      "published_at": "2026-03-27",
+      "url": "https://www.reuters.com/world/china/chinese-universities-with-military-links-bought-super-micro-servers-with-2026-03-27/",
+      "summary": "与军方有关联的中国高校采购到搭载受限 AI 芯片的服务器，推动美国议员要求暂停更多 AI 芯片与服务器出口许可。",
+      "signals": ["chip diversion", "server supply chain", "export license risk", "PLA-linked procurement"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "rss/news",
+      "title": "US senators want to suspend Nvidia AI chip export licenses to China and intermediaries",
+      "published_at": "2026-04",
+      "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxOMVVya2docXRleEI2bkxkYnN5M1VpOUY1LUxiT21Ra0FzTENjZkRSRWJoNmRpWU0wM1c2NW5ZMjF2NncxNThRMHhYYTh1WllUdU5mX2JMd2E1YWRTVUgxRmtZYUtSQ01TSlRqR1NNYzZEbnJGeGs2cUJZRjAzUkhzb1dFNHhYNjBRRHVHeUNFSlI5elNFSkprZ3liUmRkRzBpUno1WEliUGlObWNqMC1vUFphamlnZTBQdVJCS2twNF9UcGt1ZVJtUFhlczhyZGZ6MXdRNHRlTUUwdTRTZ3RvQm82d200VmgtYWhnTWZRR2JQdk5OS2Q3YWpGMGJYaDdDbnpHUmpCNEg2UkpBR2ZxZ3p1NW1tTnRSb3JNclZ0TFhvMjk5andMVnNzZWlGSVM4MDg0QTVQVDc4c1Q3QzV2TWc3cXR5Ti14VVhfMlNpek1LdWZGYm9qdC1YbFRvWHRJVndROVVCUWhmakJCWUR3?oc=5",
+      "summary": "两党参议员推动收紧对华及经第三国中转的 Nvidia AI 芯片出口许可，显示执法从厂商直销向转运链条穿透。",
+      "signals": ["senate pressure", "Nvidia", "intermediaries", "export-control tightening"],
+      "confidence": "medium_high",
+      "score": 6,
+      "tier": "high"
+    },
+    {
+      "platform": "reddit",
+      "title": "US Treasury is terminating all use of Anthropic",
+      "published_at": "2026-04",
+      "url": "https://www.reddit.com/r/singularity/comments/1riyzc1/us_treasury_is_terminating_all_use_of_anthropic/",
+      "summary": "Reddit 舆情显示 Anthropic 在政府体系内的风险标签已外溢到其他部门认知，属于扩散信号，不作为硬事实单独采信。",
+      "signals": ["sentiment", "spillover", "government adoption risk"],
+      "confidence": "medium",
+      "score": 3,
+      "tier": "medium"
+    },
+    {
+      "platform": "youtube",
+      "title": "Anthropic CEO responds to Trump's comments, Pentagon's position",
+      "published_at": "2026-04",
+      "url": "https://www.youtube.com/watch?v=C7StaQUWTwc",
+      "summary": "视频层面开始集中讨论 Pentagon 与 Anthropic 的冲突及其对承包商业务的影响，可作为市场预期辅助信号。",
+      "signals": ["media amplification", "contractor concern", "auxiliary signal"],
+      "confidence": "low_medium",
+      "score": 2,
+      "tier": "medium"
+    }
+  ]
+}

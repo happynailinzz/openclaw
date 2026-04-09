@@ -1,8 +1,8 @@
 # progress.md
 
-## 2026-04-08 02:00Z
-- 初始化 planning-with-files 三件套。
-- 已读取上一轮 2026-04-07 社交情报简报样式，准备按同口径产出本轮版本。
-- 通过 web_search/web_fetch 执行多源抓取：新闻站、Reddit、YouTube、X、小红书、RSS。
-- 完成结构化归档到 intel/social-intel/2026-04-08-0200-social-intel.json。
-- 完成 memory 留痕与 latest_brief/latest_structured 更新。
+- 2026-04-09 02:00 UTC：收到 cron 任务，开始执行 social-intel SOP。
+- 已读取：HEARTBEAT.md、OpenClaw 生产化 SOP、2026-04-08 social-intel.json、2026-04-04 social-intel.md、planning-with-files SKILL。
+- 已完成多源抓取、回退、评分与归档。
+- 归档文件：intel/social-intel/2026-04-09-0200-social-intel.json
+- memory 留痕：memory/social-intel/2026-04-09-0200-social-intel-report.md
+- 主要问题：小红书检索结果持续偏招聘/协议噪音，拖低整体成功率至 83.3%。
