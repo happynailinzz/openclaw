@@ -1,8 +1,15 @@
 # progress.md
 
-- 2026-04-09 02:00 UTC：收到 cron 任务，开始执行 social-intel SOP。
-- 已读取：HEARTBEAT.md、OpenClaw 生产化 SOP、2026-04-08 social-intel.json、2026-04-04 social-intel.md、planning-with-files SKILL。
-- 已完成多源抓取、回退、评分与归档。
-- 归档文件：intel/social-intel/2026-04-09-0200-social-intel.json
-- memory 留痕：memory/social-intel/2026-04-09-0200-social-intel-report.md
-- 主要问题：小红书检索结果持续偏招聘/协议噪音，拖低整体成功率至 83.3%。
+## 2026-04-10 02:00 UTC
+- 读取长期记忆与工作约束。
+- 识别为复杂多步骤任务，启用 planning-with-files。
+- 使用 web_search 对 X / 小红书 / YouTube / Reddit / 新闻 / RSS 进行并行抓取。
+- 使用 web_fetch 对 Reuters / TechCrunch / IST / RAND / NBC 做定点取证。
+- 对 FDD 遇到 Cloudflare 拦截，放弃重复尝试，改走替代高可信源。
+- 对小红书与 X 做回退抓取，小红书保留弱结构化结果，X 仍未形成稳定命中。
+- 完成结构化归档、评分、分层、简报生成与本地 memory 留痕。
+
+## 估计质量指标
+- 抓取成功率：约 88%
+- 重复率：约 18%
+- 高价值命中率：约 67%

@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-04-10T02:04:00Z",
+  "topic": "social-intel-sop",
+  "success_rate_est": 0.88,
+  "duplicate_rate_est": 0.18,
+  "high_value_hit_rate_est": 0.67,
+  "items": [
+    {
+      "platform": "news",
+      "title": "US mulls new rules for AI chip exports, including requiring US investments by foreign firms",
+      "published_at": "2026-03-05",
+      "url": "https://www.reuters.com/world/us-mulls-new-rules-ai-chip-exports-including-requiring-investments-by-foreign-2026-03-05/",
+      "summary": "美国讨论新的 AI 芯片出口框架，大额订单或绑定对美投资、政府担保、核查与软件限制条件。",
+      "signals": ["政策动作", "出口管制", "云/芯片供应链", "全球审批收紧"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "A Changing Export Control Landscape: H200 Exports, Remote Access Rules, and What Comes Next",
+      "published_at": "2026-01",
+      "url": "https://securityandtechnology.org/virtual-library/primer/a-changing-export-control-landscape/",
+      "summary": "监管重点从实物芯片出口扩大到远程访问先进算力，云端访问正成为管制重点。",
+      "signals": ["远程算力", "合规收紧", "云服务风险", "国防/国家安全"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Senate bill would ban sale of key AI chipmaking machines to China",
+      "published_at": "2026-04-03",
+      "url": "https://www.nbcnews.com/tech/tech-news/senate-bill-ban-sale-key-ai-chipmaking-machines-china-rcna265186",
+      "summary": "美国议员推动 MATCH Act，意在进一步限制先进半导体制造设备及相关服务对华出口。",
+      "signals": ["政策动作", "制造设备", "供应链上游", "长期国产替代压力"],
+      "confidence": "high",
+      "score": 6,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "US reportedly considering sweeping new chip export controls",
+      "published_at": "2026-03-05",
+      "url": "https://techcrunch.com/2026/03/05/us-reportedly-considering-sweeping-new-chip-export-controls/",
+      "summary": "彭博口径被 TechCrunch 转述：美国可能要求几乎所有对外 AI 芯片销售先获批，政策仍在摇摆中。",
+      "signals": ["政策预期", "审批扩大", "市场不确定性"],
+      "confidence": "medium",
+      "score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "rss",
+      "title": "Google News RSS: China’s Localization Drive in Semiconductors Gains Impetus from Allied Chip Export Controls",
+      "published_at": "2026-04-10",
+      "url": "https://news.google.com/rss/search?q=%22AI+chip%22+export+controls&hl=en-US&gl=US&ceid=US:en",
+      "summary": "RSS 结果显示，盟友配合下的出口管制正在反向推动中国半导体本地化。",
+      "signals": ["RSS兜底", "国产替代", "地缘供应链重塑"],
+      "confidence": "medium",
+      "score": 3,
+      "tier": "medium"
+    },
+    {
+      "platform": "youtube",
+      "title": "Trump Praises Nvidia CEO Jensen Huang After Talks on AI Chip Export Controls to China",
+      "published_at": "2026-04-07",
+      "url": "https://www.youtube.com/watch?v=mBuay9oAKcY",
+      "summary": "YouTube 新闻视频显示，英伟达与美国政府围绕对华出口控制仍在高频博弈，说明市场对政策窗口高度敏感。",
+      "signals": ["舆情扩散", "厂商博弈", "窗口不确定性"],
+      "confidence": "medium",
+      "score": 3,
+      "tier": "medium"
+    },
+    {
+      "platform": "reddit",
+      "title": "The U.S. just drafted global AI chip export controls, here's...",
+      "published_at": "2026-03",
+      "url": "https://www.reddit.com/r/investing/comments/1ro0xjv/the_us_just_drafted_global_ai_chip_export/",
+      "summary": "Reddit 投资社区对全球 AI 芯片出口草案反应强烈，市场关注供给与估值重定价。",
+      "signals": ["市场情绪", "投资者预期"],
+      "confidence": "low",
+      "score": 1,
+      "tier": "low"
+    },
+    {
+      "platform": "xiaohongshu",
+      "title": "我发现了AI无法在企业大规模落地根本原因",
+      "published_at": "unknown",
+      "url": "https://www.xiaohongshu.com/explore/68cf693c000000001201f85a?xsec_source=pc_search&source=web_search_result_notes",
+      "summary": "偏经验贴，认为企业 AI 落地瓶颈是隐性知识与关键数据获取，不是模型本身。",
+      "signals": ["企业落地体感", "非强信源"],
+      "confidence": "low",
+      "score": 1,
+      "tier": "low"
+    }
+  ],
+  "gov_defense_supply_chain_mapping": [
+    {
+      "policy_action": "美国拟将 AI 芯片出口审批扩展到更广范围，并对大单附加投资/安全条件",
+      "impacted_vendors": ["NVIDIA", "AMD", "海外云厂商", "AI基础设施集成商"],
+      "delivery_impact": "跨境交付周期拉长，客户侧需补政府担保、审计、KYC 与部署隔离方案",
+      "risk_level": "high",
+      "reason": "已从单点禁运走向全球分层审批，直接影响采购与交付窗口"
+    },
+    {
+      "policy_action": "远程访问先进算力被纳入出口管制讨论范围",
+      "impacted_vendors": ["云服务商", "GPU租赁平台", "跨境推理/训练服务商"],
+      "delivery_impact": "云上训练与跨境推理项目需重做合规设计，可能转向本地化部署或区域隔离",
+      "risk_level": "high",
+      "reason": "打击的是现有绕行路径，影响面比实物芯片更广"
+    },
+    {
+      "policy_action": "MATCH Act 等法案推动收紧先进半导体制造设备及服务出口",
+      "impacted_vendors": ["半导体设备厂商", "晶圆厂生态", "国产替代链条"],
+      "delivery_impact": "中长期推升设备替代与供应链重组，短期影响前沿制程扩产节奏",
+      "risk_level": "medium",
+      "reason": "更多影响中长期产能与先进制程，不一定立刻打断现有项目"
+    }
+  ]
+}
