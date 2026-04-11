@@ -1,0 +1,80 @@
+{
+  "run_at_utc": "2026-04-11T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "status": "partial_success_with_degradation",
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.16,
+    "high_value_hit_rate": 0.64,
+    "latency_minutes": 0,
+    "meets_threshold": false
+  },
+  "source_status": {
+    "x": "partial_success_search_level_unverified",
+    "xiaohongshu": "failed_primary_fallback_noise",
+    "youtube": "success_title_level_low_value",
+    "reddit": "success_search_level_low_confidence",
+    "news": "success",
+    "rss": "success_via_search_aggregation"
+  },
+  "items": [
+    {
+      "platform": "news",
+      "title": "US targets Chinese chipmaking with proposed export restrictions on ASML and others",
+      "published_at": "2026-04-03",
+      "url": "https://www.reuters.com/world/china/us-targets-chinese-chipmaking-with-proposed-export-restrictions-asml-others-2026-04-03/",
+      "summary": "美国跨党派议员提出 MATCH Act，拟进一步限制对华芯片制造设备出口，并扩大到设备维护服务，说明限制正从芯片本体继续外溢到制造与运维环节。",
+      "signals": ["export control", "ASML", "chipmaking equipment", "servicing restrictions"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Trade and industry groups warn of risks in GSA’s draft AI procurement guidance",
+      "published_at": "2026-04-03",
+      "url": "https://www.nextgov.com/acquisition/2026/04/trade-and-industry-groups-warn-risks-gsas-draft-ai-procurement-guidance/412614/",
+      "summary": "GSA 草案拟强化政府对 AI 输入数据和定制成果的权利，并允许‘任何合法政府目的’使用，直接推高模型厂商、承包商和集成商在政务/国防项目中的合同边界与合规风险。",
+      "signals": ["GSA", "AI procurement", "government rights", "contract risk"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Chinese universities with military links bought Super Micro servers with restricted AI chips",
+      "published_at": "2026-03-27",
+      "url": "https://www.reuters.com/world/china/chinese-universities-with-military-links-bought-super-micro-servers-with-2026-03-27/",
+      "summary": "与军方有关联的中国高校采购到搭载受限 Nvidia 芯片的服务器，强化了美国对转运、代采与服务器封装链条的执法动机。",
+      "signals": ["PLA-linked procurement", "Super Micro", "restricted Nvidia chips", "transshipment risk"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "US mulls new rules for AI chip exports, including requiring US investments by foreign firms",
+      "published_at": "2026-03-05",
+      "url": "https://www.reuters.com/world/us-mulls-new-rules-ai-chip-exports-including-requiring-investments-by-foreign-2026-03-05/",
+      "summary": "美国考虑把大规模 AI 芯片出口与海外国家对美数据中心投资或安全承诺绑定，意味着交付资格越来越和地缘安全安排绑定，而非单纯商业采购。",
+      "signals": ["AI chip exports", "foreign investment", "security guarantees", "delivery gatekeeping"],
+      "confidence": "high",
+      "score": 6,
+      "tier": "high"
+    },
+    {
+      "platform": "reddit",
+      "title": "Pentagon/Anthropic dispute continues to spill into public discussion",
+      "published_at": "2026-04",
+      "url": "https://www.reddit.com/r/1102/comments/1sbsdi7/no_you_dont_have_to_stop_using_claude_the/",
+      "summary": "Reddit 讨论显示 Pentagon 与 Anthropic 冲突正在外溢为‘AI 供应商可否被政府强制扩展用途’的采购争议，但仅可作为市场情绪辅助信号。",
+      "signals": ["public sentiment", "procurement dispute", "vendor risk spillover"],
+      "confidence": "low_medium",
+      "score": 2,
+      "tier": "medium"
+    }
+  ]
+}
