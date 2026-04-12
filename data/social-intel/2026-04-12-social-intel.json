@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-04-12T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "stepA_weekly_skill_check": {
+    "executed": false,
+    "reason": "非周一，按SOP跳过每周技能复查"
+  },
+  "source_status": {
+    "x": "fallback_via_news_search_only",
+    "xiaohongshu": "failed_or_low_signal_noise",
+    "youtube": "fallback_via_news_or_public_video_signal",
+    "reddit": "low_signal_search_rss_available_but_noisy",
+    "news": "success",
+    "rss": "success"
+  },
+  "items": [
+    {
+      "platform": "news",
+      "title": "AI Chip Export Drive Stalls Inside Commerce Department",
+      "published_at": "2026-04-10",
+      "url": "https://news.google.com/rss/search?q=%22AI+chip%22+export+controls&hl=en-US&gl=US&ceid=US:en",
+      "summary": "美国商务系统内部对更激进AI芯片出口推进出现停滞，说明政策并非单向收紧，而是进入博弈与重写阶段。",
+      "signals": ["export control", "policy stall", "licensing uncertainty"],
+      "confidence": "medium",
+      "score": 5,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "US mulls new rules for AI chip exports, including requiring US investments by foreign firms",
+      "published_at": "2026-03-05",
+      "url": "https://www.reuters.com/world/us-mulls-new-rules-ai-chip-exports-including-requiring-investments-by-foreign-2026-03-05/",
+      "summary": "美国考虑把大规模AI芯片出口与对美投资、担保和安全承诺绑定，交付资格越来越受地缘安全安排影响。",
+      "signals": ["policy action", "AI chip exports", "investment condition", "delivery gatekeeping"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "A Changing Export Control Landscape: H200 Exports, Remote Access Rules, and What Comes Next",
+      "published_at": "2026-01",
+      "url": "https://securityandtechnology.org/virtual-library/primer/a-changing-export-control-landscape/",
+      "summary": "监管重点正从实物芯片出口扩展到远程访问先进算力，云端训练与推理合规压力上升。",
+      "signals": ["remote access", "advanced compute", "cloud compliance"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "US targets Chinese chipmaking with proposed export restrictions on ASML and others",
+      "published_at": "2026-04-03",
+      "url": "https://www.reuters.com/world/china/us-targets-chinese-chipmaking-with-proposed-export-restrictions-asml-others-2026-04-03/",
+      "summary": "美国跨党派推动MATCH Act类收紧，限制正从AI芯片成品外溢到制造设备与维护服务。",
+      "signals": ["MATCH Act", "ASML", "equipment servicing", "upstream supply chain"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "reddit",
+      "title": "Reddit export-controls search stream",
+      "published_at": "2026-04-12",
+      "url": "https://www.reddit.com/search.rss?q=%22AI%20chip%22%20export%20controls&sort=new",
+      "summary": "Reddit链路可访问，但本轮结果以社区/版块噪音为主，未形成高价值新增，仅保留为辅助情绪信号。",
+      "signals": ["public sentiment", "noise", "low-confidence"],
+      "confidence": "low",
+      "score": 0,
+      "tier": "low"
+    },
+    {
+      "platform": "xiaohongshu",
+      "title": "小红书相关检索",
+      "published_at": null,
+      "url": "https://www.xiaohongshu.com/",
+      "summary": "本轮未获得稳定正文级有效情报，仍以壳页/商业噪音为主，按SOP记录失败回退。",
+      "signals": ["source degraded", "login wall", "noise"],
+      "confidence": "medium",
+      "score": 0,
+      "tier": "low"
+    }
+  ],
+  "gov_defense_supply_chain_mapping": [
+    {
+      "policy_action": "美国拟扩大AI芯片出口审批，并对大额订单附加投资/安全条件",
+      "affected_vendors": ["NVIDIA", "AMD", "海外云厂商", "AI基础设施集成商"],
+      "delivery_impact": "跨境项目审批链拉长，客户侧需补KYC、审计、部署隔离和担保材料。",
+      "risk_level": "high",
+      "reason": "直接影响采购许可与交付窗口，不是边缘变量。"
+    },
+    {
+      "policy_action": "远程访问先进算力被纳入出口管制与合规框架",
+      "affected_vendors": ["云服务商", "GPU租赁平台", "跨境训练/推理服务商"],
+      "delivery_impact": "依赖海外云算力的方案可能被迫转向本地化、专有云或区域隔离部署。",
+      "risk_level": "high",
+      "reason": "堵的是绕开实物出口的主路径，覆盖面更广。"
+    },
+    {
+      "policy_action": "MATCH Act类设备与维护限制继续推进",
+      "affected_vendors": ["ASML等设备链", "晶圆厂生态", "国产替代厂商"],
+      "delivery_impact": "短期影响先进制程扩产与服务保障，中长期加速替代BOM和供应链重组。",
+      "risk_level": "medium",
+      "reason": "更偏中长期产能与路线变动，未必立刻打断所有现有项目。"
+    }
+  ],
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.833,
+    "duplication_rate": 0.18,
+    "high_value_hit_rate": 0.67,
+    "latency_minutes": 0,
+    "meets_threshold": false
+  },
+  "distribution_note": "应推送到Telegram情报接收端；本次按运行说明仅返回摘要，不额外主动发送。"
+}

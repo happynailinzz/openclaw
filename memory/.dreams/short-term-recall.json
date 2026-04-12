@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-12T02:00:38.144Z",
+  "entries": {
+    "memory:memory/2026-03-11.md:1:11": {
+      "key": "memory:memory/2026-03-11.md:1:11",
+      "path": "memory/2026-03-11.md",
+      "startLine": 1,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "## 2026-03-11 - 已按用户要求新增 OpenClaw 模型 provider `astron`，模型为 `astron/astron-code-latest`，别名设为 `astroncode`；通过 `gateway config.patch` 写入 `/root/.openclaw/openclaw.json` 并触发网关重启生效。 - 用户当前在推进公众号文章《AI 众生相--OpenClaw 热度下的国内厂商图谱》，要求基于厂商已落实动作证据写作，不接受空泛推演；文章已压到更适合公众号观点稿的版本，待继续审稿/出 refined HTML。 - 本次会话中确认：用户希望\"改完直接发到聊天里给他审\"，不要只说文件已更新。 - 完成 OpenClaw 热度系列三篇公众号文章，均已发布到微信草稿箱 + Notion： 1. 《AI 众生相——OpenClaw 热度下的国内厂商图谱》（media_id: 8gRyeWzNxD0B0xYzMKllW9tJJEWBWNkbkaYuM2qgcYaTXgJzNjgnWiuRqJxruhnq） 2. 《OpenClaw 爆火之后，哪些人在真正开始赚钱》（media_id: 8gRyeWzNxD0B0xYzMKllW4P2H-E9EQ3JkHTOqGFxf3tZgqvnxV83rsuok81nUplq） 3. 《OpenClaw 爆火之后，地方政府、园区和更多厂商在忙什么》（media_id: 8gRyeWzNxD0B0xYzMKllW9FX0JmBGJTcKjZVZZjQjYAVorTDzRhj2WMe-brW",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9178605396431686,
+      "maxScore": 0.9178605396431686,
+      "firstRecalledAt": "2026-04-12T00:39:41.374Z",
+      "lastRecalledAt": "2026-04-12T00:39:41.374Z",
+      "queryHashes": [
+        "e51282ad9ed2"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "gateway",
+        "网关",
+        "astron/astron-code-latest",
+        "config.patch",
+        "openclaw/openclaw.json",
+        "待继续审稿/出",
+        "media-id",
+        "用户"
+      ]
+    },
+    "memory:memory/2026-03-27.md:25:55": {
+      "key": "memory:memory/2026-03-27.md:25:55",
+      "path": "memory/2026-03-27.md",
+      "startLine": 25,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "将 08:30 任务切换到其他模型（如 `cpa/gpt-5.3-codex` 或 `smartapi/gpt-5.4`）以避免 502 问题。 --- ## 关联任务 - Cron Job ID: `9a2ca43e-0efd-4702-a487-99d245c6e16e`（河南六大领域项目机会监控，08:30） - 下午 17:30 任务正常：`2c767058-03e8-49ad-8669-23bbe53f9203` ### 修复执行（2026-03-27 01:48） **操作**：应用户要求，将 08:30 任务模型从 AIcat/gpt-5.4 切换到 astron/astron-code-latest **触发**：手动重跑验证（runId: manual:9a2ca43e-0efd-4702-a487-99d245c6e16e:1774576223701:3） **状态**：✅ 成功 **验证结果（2026-03-27 01:50）**： - 模型：astron/astron-code-latest - 状态：ok - 投递：delivered: true - 耗时：168秒 - 产出：4条今日最重要新增 1. 豫能控股94亿收购京津冀算力资产（豫能控股+河南投资集团） 2. 郑州航空港\"人工智能之城\"蓝图，万P智算中心已上线 3. 河南第十一批源网荷储一体化项目：44个/451.43MW 4. 郑东新区新型智慧城市运行中心启动政府采购 **结论**：模型切换验证成功，明天 08:30 继续使用 astroncode ## 202",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9114993626405835,
+      "maxScore": 0.9114993626405835,
+      "firstRecalledAt": "2026-04-12T00:39:41.374Z",
+      "lastRecalledAt": "2026-04-12T00:39:41.374Z",
+      "queryHashes": [
+        "e51282ad9ed2"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "gpt",
+        "cpa/gpt-5.3-codex",
+        "smartapi/gpt-5.4",
+        "aicat/gpt-5.4",
+        "astron/astron-code-latest",
+        "44个/451.43mw",
+        "任务",
+        "切换"
+      ]
+    },
+    "memory:memory/2026-03-23.md:1:2": {
+      "key": "memory:memory/2026-03-23.md:1:2",
+      "path": "memory/2026-03-23.md",
+      "startLine": 1,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "- [02:00 UTC] 执行 cron `monitor:social-intel-sop:1000`：按《社交平台情报抓取 SOP（OpenClaw版）》完成 A~F 全流程；周一已执行 skills 复查。产出：`memory/social-intel/2026-03-23-0200-social-intel-report.md`、`memory/social-intel/latest_structured.json`、`memory/social-intel/2026-03-23-0200-social-intel-archive.jsonl`。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9160573036101135,
+      "maxScore": 0.9160573036101135,
+      "firstRecalledAt": "2026-04-12T02:00:38.144Z",
+      "lastRecalledAt": "2026-04-12T02:00:38.144Z",
+      "queryHashes": [
+        "ddf78be41965"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "social-intel-sop",
+        "utc",
+        "执行",
+        "cron",
+        "monitor:social",
+        "intel",
+        "sop",
+        "社交"
+      ]
+    },
+    "memory:memory/2026-04-02.md:1:8": {
+      "key": "memory:memory/2026-04-02.md:1:8",
+      "path": "memory/2026-04-02.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "## 2026-04-02 02:00 UTC - 执行一次 `monitor:social-intel-sop:1000` 社交情报抓取。 - 周四，按SOP跳过每周技能复查。 - 本轮高价值发现集中在：美国AI芯片出口规则撤回但改为更强条件控制；先进半导体出口审查+关税联动；五角大楼将商业AI合同限制视为任务级风险；中国出口管制执行体系强化。 - 平台可用性：News/RSS 成功；Reddit/YouTube 部分成功；X/XHS 失败；browser 当前不可用（超时）。 - 结构化归档：`intel/social-intel/2026-04-02-0200-social-intel.json` - 报告归档：`memory/social-intel/2026-04-02-0200-social-intel-report.md`",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9147015700407938,
+      "maxScore": 0.9147015700407938,
+      "firstRecalledAt": "2026-04-12T02:00:38.144Z",
+      "lastRecalledAt": "2026-04-12T02:00:38.144Z",
+      "queryHashes": [
+        "ddf78be41965"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "social-intel-sop",
+        "news/rss",
+        "reddit/youtube",
+        "x/xhs",
+        "utc",
+        "执行",
+        "一次",
+        "monitor:social"
+      ]
+    },
+    "memory:memory/2026-03-24.md:1:7": {
+      "key": "memory:memory/2026-03-24.md:1:7",
+      "path": "memory/2026-03-24.md",
+      "startLine": 1,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "# 2026-03-24 - 02:00 UTC 执行 cron:social-intel-sop（monitor:social-intel-sop:1000）一次完整流程。 - 结果归档：`intel/social-intel/2026-03-24-0200-social-intel.json`。 - 通道可用性：News RSS / Reddit RSS / 通用RSS 可用；X 与小红书直抓受登录墙/动态页限制，采用回退策略；browser 工具超时不可用。 - 本次高价值命中：3 条（出口管制、芯片走私执法、防务AI供应商审查）。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9141798120473569,
+      "maxScore": 0.9141798120473569,
+      "firstRecalledAt": "2026-04-12T02:00:38.144Z",
+      "lastRecalledAt": "2026-04-12T02:00:38.144Z",
+      "queryHashes": [
+        "ddf78be41965"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "social-intel-sop",
+        "与小红书直抓受登录墙/动态页限制",
+        "utc",
+        "执行",
+        "cron:social",
+        "intel",
+        "sop",
+        "monitor:social"
+      ]
+    },
+    "memory:memory/2026-03-26.md:1:8": {
+      "key": "memory:memory/2026-03-26.md:1:8",
+      "path": "memory/2026-03-26.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "- 02:00 UTC 执行 cron「monitor:social-intel-sop:1000」完整流程（按SOP降级完成）。 - Step A：非周一，跳过每周 skills 复查。 - Step B/C：X/YouTube 走 Google News RSS 回退；Reddit 与新闻RSS可用；小红书正文抓取失败；browser 兜底超时不可用。 - 新增一级主题「政务/国防 AI 供应链波动映射」已单列（政策-厂商-交付-风险）。 - 结构化归档：`intel/social-intel/2026-03-26-0200-social-intel.json` - 报告留痕：`memory/social-intel/2026-03-26-0200-social-intel-report.md` - 质量指标（估计）：成功率83.3%，重复率17%，高价值命中率60%，延迟0分钟。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9116177684210451,
+      "maxScore": 0.9116177684210451,
+      "firstRecalledAt": "2026-04-12T02:00:38.144Z",
+      "lastRecalledAt": "2026-04-12T02:00:38.144Z",
+      "queryHashes": [
+        "ddf78be41965"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "social-intel-sop",
+        "b/c",
+        "x/youtube",
+        "政务/国防",
+        "政策-厂商-交付-风险",
+        "成功率83.3",
+        "utc",
+        "执行"
+      ]
+    }
+  }
+}
