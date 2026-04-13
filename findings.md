@@ -1,13 +1,9 @@
-# findings.md
+# Findings
 
-## Session
-- 时间：2026-04-13 02:00 UTC
-- 任务：社交平台情报抓取 SOP（周一批次）
-
-## Findings
-
-- 周一 Step A 已执行：agent-reach doctor 显示 GitHub / YouTube / RSS / 网页读取 / 全网语义搜索可用；X 未配置 Cookie；Reddit 缺代理；小红书 MCP 已连接配置但当前服务离线且未登录。
-- 本轮直接社交平台抓取失败较多：X 缺 auth_token / ct0，Reddit 返回 403，小红书 MCP 18060 连接拒绝，YouTube 搜索因缺 JS runtime 仅降级可用。
-- 有效高价值情报主要来自 Defense One、PBS/AP、Google News RSS、Defense One RSS。
-- 可确认的强信号集中在：1）CIA 把 AI coworker / AI agents 纳入分析工作流；2）国防采购正直接挤压模型厂商的安全边界；3）出口管制继续从实体芯片外溢到云端算力访问与远程租赁；4）采购合同正成为军用 AI 治理工具本身。
-- 本轮归档文件：`data/social-intel/2026-04-13-social-intel.json`。
+## 规划任务：五阶段路线图与执行清单
+- 用户当前真正需要的不是再加功能，而是按业务阶段编排能力：认知获客、内容转化、线索变项目、品牌势能、系统化与护城河。
+- 适合优先补强的能力不是平均铺开，而应分三梯队推进：
+  1) 写作风格、选题规划、热点异常值识别、项目机会映射；
+  2) refined HTML、图表/配图证据化、长文拆矩阵；
+  3) 项目管理、知识流转、skill/SOP评估与创造。
+- 已将上述判断落为两份文档，后续可继续扩成战略图或执行路线表。

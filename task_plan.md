@@ -1,33 +1,21 @@
-# task_plan.md
+# 规划任务（2026-04-13）
 
-## Goal
-执行一次《社交平台情报抓取 SOP（OpenClaw版）》完整流程，覆盖 X / 小红书 / YouTube / Reddit / 新闻网站 / RSS，并输出可评分、可归档、可复盘的 10:00 社交情报简报。
+## 目标
+产出两份可直接执行的规划文档：
+1. 《东城老饕内容-交付五阶段路线图》
+2. 《当前最该补强的10个能力模块执行清单》
 
-## Phases
-- [complete] P1 准备：读取约束、确认是否周一、建立计划文件
-- [complete] P2 Step A：skills 发现与可用性检查
-- [complete] P3 Step B/C：多源抓取与失败回退
-- [complete] P4 Step D/E：结构化整理、评分、去重、分层
-- [complete] P5 Step F：本地归档、memory 留痕、生成摘要
+## 阶段
+- [complete] 1. 梳理用户当前业务主线与能力阶段
+- [complete] 2. 形成五阶段路线图
+- [complete] 3. 形成10个能力模块执行清单
+- [pending] 4. 记录进度并提交 workspace 变更
 
-## Scoring Rule
-- 命中核心关键词 +2
-- 高可信源 +2
-- 业务直接相关 +3
-- 营销噪音 -2
-- 重复内容 -3
+## 约束
+- 不空谈概念，要转成可执行框架
+- 内容必须贴合用户当前业务：政企数字化、AI应用落地、算力/能源、教育、AI内容工业化、河南项目机会
+- 输出要能直接作为后续执行参照
 
-## Quality Targets
-- 成功率 >=85%
-- 重复率 <=20%
-- 高价值命中率 >=60%
-- 突发延迟 <=30 分钟
-
-## Errors Encountered
-| Error | Attempt | Resolution |
-|---|---:|---|
-| X bird 缺少 Cookie 凭证 | 1 | 记为 direct fail，未阻塞流程，改走新闻/RSS 回退 |
-| Reddit 搜索 403 | 1 | 记为 IP/反爬受限，未阻塞流程 |
-| 小红书 MCP 18060 连接拒绝 | 1 | 记为服务离线，未阻塞流程 |
-| web_fetch 访问 s.jina.ai 返回 401 | 1 | 放弃该回退链路，改用 Google News RSS + 定点正文抓取 |
-| YouTube yt-dlp 缺少 JS runtime | 1 | 记为 degraded，未纳入核心发现 |
+## 已完成文件
+- /root/.openclaw/workspace/docs/东城老饕内容-交付五阶段路线图.md
+- /root/.openclaw/workspace/docs/当前最该补强的10个能力模块执行清单.md
