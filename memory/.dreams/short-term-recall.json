@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-12T02:00:38.144Z",
+  "updatedAt": "2026-04-13T00:55:59.987Z",
   "entries": {
     "memory:memory/2026-03-11.md:1:11": {
       "key": "memory:memory/2026-03-11.md:1:11",
@@ -186,6 +186,99 @@
         "成功率83.3",
         "utc",
         "执行"
+      ]
+    },
+    "memory:memory/2026-03-08.md:22:26": {
+      "key": "memory:memory/2026-03-08.md:22:26",
+      "path": "memory/2026-03-08.md",
+      "startLine": 22,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "- 教育部转载新华社快讯明确提出：深化拓展“人工智能+”，推广智能终端与智能体，推动重点行业 AI 商业化规模化应用，实施超大规模智算集群、算电协同、全国一体化算力监测调度，建设高质量数据集。 - 河南省政府门户当前直抓返回 403，说明省级本地站点抓取链路仍不稳定；郑州市政府首页可达，但首页提取信息有限。 - 结论：这次补跑能确认国家层面对算力、数据、AI 应用的政策信号持续增强，但“河南/郑州本地新增落地信号”本轮抓取不足，后续仍需通过更稳的搜索源或专用脚本补齐。 - 用户明确反馈：这轮情报质量不如前几轮，后续需把“两会×河南×产业监控”从“新闻监控”升级为“项目机会监控”，重点优化源头分级、检索词拆分、项目价值打分与变化检测。 - `openclaw cron list` 在当前环境出现“结果已返回但 CLI 看起来仍在卡住”的假阻塞现象；已新增 `scripts/cron-list-safe.sh` 用超时包裹并优先输出已捕获结果，作为临时稳定查看方案。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9090813116347439,
+      "maxScore": 0.9090813116347439,
+      "firstRecalledAt": "2026-04-12T08:33:38.424Z",
+      "lastRecalledAt": "2026-04-12T08:33:38.424Z",
+      "queryHashes": [
+        "c4ceb83a7d2f"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "河南/郑州本地新增落地信号",
+        "scripts/cron-list-safe.sh",
+        "教育部",
+        "转载",
+        "新华社",
+        "明确",
+        "提出",
+        "深化"
+      ]
+    },
+    "memory:memory/2026-03-08.md:25:29": {
+      "key": "memory:memory/2026-03-08.md:25:29",
+      "path": "memory/2026-03-08.md",
+      "startLine": 25,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "- 用户明确反馈：这轮情报质量不如前几轮，后续需把“两会×河南×产业监控”从“新闻监控”升级为“项目机会监控”，重点优化源头分级、检索词拆分、项目价值打分与变化检测。 - `openclaw cron list` 在当前环境出现“结果已返回但 CLI 看起来仍在卡住”的假阻塞现象；已新增 `scripts/cron-list-safe.sh` 用超时包裹并优先输出已捕获结果，作为临时稳定查看方案。 - 已完成“河南关键源站可达性排查”：`henan.gov.cn`、`fgw.henan.gov.cn`、`m.jyt.henan.gov.cn` 当前服务器出口直抓均为 403；`hca.miit.gov.cn`、`henb.nea.gov.cn`、`www.zzu.edu.cn`、`www.gov.cn` 可稳定直抓。已新增 `docs/henan-source-reachability-and-fallbacks.md` 与 `scripts/check-henan-sources.sh`，用于后续监控源分层与 fallback 策略。 - 已手动恢复虚拟桌面与有头 Chrome：`Xvfb :1` + Puppeteer Chrome + `--remote-debugging-port=9222`；验证结果为：`m.jyt.henan.gov.cn` 可通过浏览器代抓链路打开，`henan.gov.cn` / `fgw.henan.gov.cn` 在真实浏览器下仍返回 403。 - 已正式落地两类规则：`m.jyt.henan.gov.cn` 接入浏览器代抓（`script",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9268452883758515,
+      "maxScore": 0.9268452883758515,
+      "firstRecalledAt": "2026-04-13T00:55:59.987Z",
+      "lastRecalledAt": "2026-04-13T00:55:59.987Z",
+      "queryHashes": [
+        "3e64fb387c70"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "scripts/cron-list-safe.sh",
+        "henan.gov.cn",
+        "fgw.henan.gov.cn",
+        "m.jyt.henan.gov.cn",
+        "hca.miit.gov.cn",
+        "henb.nea.gov.cn",
+        "www.zzu.edu.cn",
+        "www.gov.cn"
+      ]
+    },
+    "memory:memory/2026-03-08.md:28:32": {
+      "key": "memory:memory/2026-03-08.md:28:32",
+      "path": "memory/2026-03-08.md",
+      "startLine": 28,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "- 已手动恢复虚拟桌面与有头 Chrome：`Xvfb :1` + Puppeteer Chrome + `--remote-debugging-port=9222`；验证结果为：`m.jyt.henan.gov.cn` 可通过浏览器代抓链路打开，`henan.gov.cn` / `fgw.henan.gov.cn` 在真实浏览器下仍返回 403。 - 已正式落地两类规则：`m.jyt.henan.gov.cn` 接入浏览器代抓（`scripts/henan-browser-fetch.py` + `config/henan-source-routing.json`），`henan.gov.cn` / `fgw.henan.gov.cn` 接入 fallback 占位规则（状态：`原站403，待补链`）。 - 为提高重启后恢复性，新增 `scripts/start-headed-browser.sh` 作为虚拟桌面 + headed Chrome + CDP(`9222`) 一键恢复脚本；同时将 `x2n` / `u2n` 从 `.bashrc` alias 固化为 `/usr/local/bin` 全局命令，避免非交互 shell 下不可见。 - 已按新方案升级定时任务 `monitor:lianghui-henan-industries:0830` / `monitor:lianghui-henan-industries:1730`：将 Baidu skill 明确下沉为“发现层”，新增 A/B/C 源分层、`m.jyt` 浏览器代抓、`henan.gov.cn`/`fgw",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9267114768018707,
+      "maxScore": 0.9267114768018707,
+      "firstRecalledAt": "2026-04-13T00:55:59.987Z",
+      "lastRecalledAt": "2026-04-13T00:55:59.987Z",
+      "queryHashes": [
+        "3e64fb387c70"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "remote-debugging-port",
+        "m.jyt.henan.gov.cn",
+        "henan.gov.cn",
+        "fgw.henan.gov.cn",
+        "scripts/henan-browser-fetch.py",
+        "config/henan-source-routing.json",
+        "scripts/start-headed-browser.sh",
+        "usr/local/bin"
       ]
     }
   }

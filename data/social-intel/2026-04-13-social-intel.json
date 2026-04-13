@@ -1,0 +1,66 @@
+{
+  "run_at": "2026-04-13T02:00:00Z",
+  "topic": "social-intel-sop",
+  "is_monday": true,
+  "platform_status": {
+    "x": {"direct": "failed", "fallback": "not_recovered", "reason": "bird 缺少 auth_token / ct0"},
+    "xiaohongshu": {"direct": "failed", "fallback": "not_recovered", "reason": "xiaohongshu MCP 18060 离线/未登录"},
+    "youtube": {"direct": "degraded", "fallback": "partial", "reason": "yt-dlp 缺少 JS runtime，搜索结果未稳定产出"},
+    "reddit": {"direct": "failed", "fallback": "not_recovered", "reason": "403 / 服务器 IP 受限"},
+    "news_sites": {"direct": "ok", "fallback": "ok"},
+    "rss": {"direct": "ok", "fallback": "ok"}
+  },
+  "items": [
+    {
+      "platform": "news/rss",
+      "title": "CIA employees will get AI 'coworkers'—and eventually run teams of AI agents, deputy says",
+      "published_at": "2026-04-09",
+      "url": "https://www.defenseone.com/technology/2026/04/cia-ai-coworkers-agents/412746/",
+      "summary": "Defense One 报道称，CIA 计划将 AI coworker 嵌入分析平台，先承担草拟判断、编辑与趋势分诊，后续演进为由人员管理 AI agents 的混合编组。",
+      "signals": ["gov-ai-adoption", "intelligence-workflow", "operational-scaling"],
+      "confidence": 0.88,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "AP report: Hegseth warns Anthropic to let the military use company's AI tech as it sees fit",
+      "published_at": "2026-02-24",
+      "url": "https://www.pbs.org/newshour/world/ap-report-hegseth-warns-anthropic-to-let-the-military-use-companys-ai-tech-as-it-sees-fit",
+      "summary": "AP/PBS 报道称，五角大楼要求 Anthropic 放开其 AI 技术的军用边界，否则可能面临合同取消、供应链风险认定，甚至动用 DPA 的压力。这反映出国防采购与模型安全边界的直接冲突。",
+      "signals": ["procurement-pressure", "vendor-risk", "defense-ai-governance"],
+      "confidence": 0.9,
+      "score": 9,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "U.S. House passes bill to stop Chinese companies from accessing export-controlled American AI chips using offshore rental loophole",
+      "published_at": "2026-01-13",
+      "url": "https://news.google.com/rss/articles/CBMikANBVV95cUxPZmVjc19wamdyT0FjNW9BNVJsZkprODhWZG5paExmbU9lMGJmNGN5Tnh6UzJVaTdTUUczWE5RZU9fSkV5bUtYY3lENnVFN3RVWDR2MUpWWmt0d1cweGFReF9GWWdHNkczYmh2U0pFQUlDYXE5TDZYUnl0dmQtZzFXdm9uUGQ0UkN6RGNodU84UFVVMVI1TjNZN09nLTdUY1pNT0RXZExHcnY4UkgtM3d2cldzeThNTFhFR0FoYkdNb1hpQ09QbWVzM0pDVjljekFWTGhZdTBkTDcySHNfeXNidDhFY3RUamRiWWw1NkFTcnhhaGRNalNlS0ZSY0ZTNWhEWFFsaTFyM2g4SklpVXhfNEk5djFhaTB4N1d2V3Zid2ZqR2RPck0tWFJDRllvUEJQTE92NkdjVDI0N3NEUnRXcEVCWGM1ZnBjRWdoT2tFejJyZjNYcWk3QWFsLUIzWVNuSFAtcWpkakhyaHpXVXJSb3d2Yk9CUlVZZzZNTVMyUzFGcXM0V0piUktWdlhoUUZI?oc=5",
+      "summary": "国会推进封堵境外云租赁/远程访问高级 AI 芯片漏洞，意味着出口管制将继续从实体货物流向云端算力访问与服务交付。",
+      "signals": ["export-controls", "cloud-loophole-closure", "remote-compute-compliance"],
+      "confidence": 0.8,
+      "score": 8,
+      "tier": "high"
+    },
+    {
+      "platform": "rss/news",
+      "title": "Military AI Policy by Contract: The Limits of Procurement as Governance",
+      "published_at": "2026-03-10",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQcWs2cm91dDIybXp2OUl6ejhMQmRhZ0Vfay1weW1mWC1qaGNuN1J3aTZhRG9pSnlkUm5yMnV3S24yNm9lNUlWWFc1NXBhQ0x5SVBWNk5USVlCNzZVbGdEYUtRa3J0cDU4d0JidGVncDRNYzBQWWFpSnFJZVpSeV9PcTFOYV9HMzNDLUlad1c5WmpGc0hBQXBUTjRZLWNiUkNrYms4OGdGMThSRk5v?oc=5",
+      "summary": "Lawfare 讨论用采购条款来治理军用 AI 的边界与局限，说明后续模型厂商与政府客户之间，合规条款本身会成为供应链约束变量。",
+      "signals": ["contract-governance", "procurement-policy", "vendor-compliance"],
+      "confidence": 0.72,
+      "score": 5,
+      "tier": "high"
+    }
+  ],
+  "quality": {
+    "success_rate_est": 0.5,
+    "duplicate_rate_est": 0.12,
+    "high_value_hit_rate_est": 0.75,
+    "latency_minutes": 0,
+    "note": "本轮直接社交源可用性偏差，主要由新闻/RSS 回填有效情报。"
+  }
+}
