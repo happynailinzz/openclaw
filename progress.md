@@ -1,11 +1,7 @@
 # Progress
 
-- 2026-04-13：根据用户“都做”的要求，已落地六份规划/试跑文件：
-  - docs/东城老饕内容-交付五阶段路线图.md
-  - docs/当前最该补强的10个能力模块执行清单.md
-  - docs/写作风格引擎规则表.md
-  - docs/项目机会映射模板.md
-  - docs/公众号写作流试跑版 SOP.md
-  - docs/河南项目简报映射试跑版 SOP.md
-- 已将本次规划任务的核心判断同步写入 findings.md。
-- 下一步：如用户继续推进，最合适的是拿一篇真实公众号稿和一轮真实河南项目简报做试跑验证。
+- 2026-04-15 05:17 UTC 初始化 planning files。
+- 已确认：今天是周三，按SOP跳过每周技能复查（Step A）。
+- 已完成主通道抓取：news/rss 稳定；Reddit 有结果但噪音高；YouTube 直 feed 失败后改用 news fallback；X 仅搜索回退；小红书无有效结果。
+- 已完成结构化归档：`intel/social-intel/2026-04-15-0517-social-intel.json`。
+- 已完成报告沉淀：`memory/social-intel/2026-04-15-0517-social-intel-report.md`。

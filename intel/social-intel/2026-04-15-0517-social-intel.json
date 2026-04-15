@@ -1,0 +1,91 @@
+{
+  "run_at_utc": "2026-04-15T05:17:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "topic": "政务/国防 AI 供应链波动映射",
+  "status": "partial_success_with_degradation",
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 5,
+    "success_rate": 0.85,
+    "duplication_rate": 0.18,
+    "high_value_hit_rate": 0.67,
+    "latency_minutes": 0,
+    "meets_threshold": true
+  },
+  "source_status": {
+    "x": "success_via_search_fallback_low_confidence",
+    "xiaohongshu": "failed_primary_and_fallback_noise",
+    "youtube": "success_via_news_fallback",
+    "reddit": "success_via_rss_low_value",
+    "news": "success",
+    "rss": "success"
+  },
+  "items": [
+    {
+      "platform": "news",
+      "title": "Trade and industry groups warn of risks in GSA’s draft AI procurement guidance",
+      "published_at": "2026-04-03",
+      "url": "https://www.nextgov.com/acquisition/2026/04/trade-and-industry-groups-warn-risks-gsas-draft-ai-procurement-guidance/412614/",
+      "summary": "GSA 拟把政府对 AI 工具的使用权、输入数据和定制成果权利进一步扩张到‘任何合法政府目的’，正在把模型厂商、云商和集成商的合同边界风险前置化。",
+      "signals": ["GSA", "AI procurement", "government rights", "contract risk"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Pentagon’s ouster of Anthropic opens doors for small AI rivals",
+      "published_at": "2026-04-09",
+      "url": "https://www.defensenews.com/pentagon/2026/04/09/pentagons-ouster-of-anthropic-opens-doors-for-small-ai-rivals/",
+      "summary": "Pentagon 将 Anthropic 视作供应链风险后，明显转向多供应商策略，Smack、EdgeRunner 等小型防务 AI 厂商获得更快签约与推进窗口。",
+      "signals": ["Pentagon", "supply-chain risk", "vendor diversification", "defense AI"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Technology Restrictions Have Become a Central Instrument of Economic Statecraft",
+      "published_at": "2026-04-13",
+      "url": "https://www.techpolicy.press/technology-restrictions-have-become-a-central-instrument-of-economic-statecraft/",
+      "summary": "美国对华技术限制已从简单禁运演化为国会、白宫与产业三方博弈，出口许可、关税、审查和国内产能扶持同步联动，说明供应链波动将持续而非一次性事件。",
+      "signals": ["economic statecraft", "export controls", "Congress vs White House", "supply chain"],
+      "confidence": "medium_high",
+      "score": 5,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "AI Chip Export Drive Stalls Inside Commerce Department",
+      "published_at": "2026-04-10",
+      "url": "https://www.ttnews.com/articles/ai-chip-export-drive-stalls-commerce",
+      "summary": "美国商务系统内部对 AI 芯片出口进一步收紧存在推进阻力，但这更像节奏分歧而非方向逆转，企业端仍需按更严限制准备替代链路。",
+      "signals": ["Commerce Department", "AI chip export", "policy friction"],
+      "confidence": "medium",
+      "score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "youtube",
+      "title": "Concerns Raised Over $92 Million Nvidia AI Chip Smuggle to China",
+      "published_at": "2026-04-14",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ZQkVFY2kyTjdGTU5wa1BtWE9iRS14Q1hXTGpWbXhZUWxCeE5EazV0REEzaGpxMEZBdHhVc2I3SThTSTNNRXVnZ3RKQUdjOENNUUg3WUd3?oc=5",
+      "summary": "视频渠道持续放大‘AI 芯片转运/走私’议题，虽然信度不如一线新闻，但与防务和出口执法口径一致，可作为舆情增强信号。",
+      "signals": ["Nvidia", "chip smuggle", "China", "enforcement narrative"],
+      "confidence": "low_medium",
+      "score": 2,
+      "tier": "medium"
+    },
+    {
+      "platform": "reddit",
+      "title": "AI procurement / defense discussion RSS",
+      "published_at": "2026-04-15",
+      "url": "https://www.reddit.com/search.rss?q=%22AI%20procurement%22%20defense&sort=new",
+      "summary": "Reddit 侧未出现高质量一手情报，更多是政府合同自动化、投机和概念炒作内容，噪音偏高，仅保留为低置信辅助信号。",
+      "signals": ["market chatter", "procurement tooling", "noise"],
+      "confidence": "low",
+      "score": 0,
+      "tier": "low"
+    }
+  ]
+}
