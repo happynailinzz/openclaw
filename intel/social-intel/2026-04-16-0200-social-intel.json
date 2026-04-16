@@ -1,0 +1,158 @@
+{
+  "run_at_utc": "2026-04-16T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "status": "success_with_degradation",
+  "step_a": {
+    "executed": false,
+    "reason": "今天是周四，按SOP跳过每周一技能复查"
+  },
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 6,
+    "success_rate": 1.0,
+    "duplication_rate": 0.17,
+    "high_value_hit_rate": 0.67,
+    "latency_minutes": 0,
+    "meets_threshold": true
+  },
+  "sources": {
+    "x": "search-level signal only",
+    "xiaohongshu": "degraded via external/news proxy",
+    "youtube": "rss confirmed",
+    "reddit": "rss confirmed but noisy",
+    "news": "confirmed",
+    "rss": "confirmed"
+  },
+  "items": [
+    {
+      "platform": "news",
+      "title": "US targets Chinese chipmaking with proposed export restrictions on ASML and others",
+      "published_at": "2026-04-03",
+      "url": "https://www.reuters.com/",
+      "summary": "Reuters 在 Google News RSS 中被命中：美国拟进一步把对华限制从先进芯片延伸到 ASML 等设备与相关环节，说明限制焦点继续从成品芯片外扩到设备/制造能力。",
+      "signals": ["出口管制继续外扩到设备链", "对中国先进制程与扩产节奏形成二次约束", "政务/国防相关项目的国产替代与备件路径更关键"],
+      "confidence": 0.88,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "DeepSeek's V4 model will run on Huawei chips, The Information reports",
+      "published_at": "2026-04-03",
+      "url": "https://www.reuters.com/",
+      "summary": "Reuters 命中显示 DeepSeek V4 将运行在华为芯片上，说明在外部限制背景下，中国模型厂商与国产算力绑定加强，替代路径从口号转向产品化。",
+      "signals": ["模型-芯片国产协同增强", "受限环境下替代路线清晰化", "交付侧更重视兼容栈与性能折中"],
+      "confidence": 0.82,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Federal Court Denies Anthropic’s Motion to Lift ‘Supply Chain Risk’ Label",
+      "published_at": "2026-04-09",
+      "url": "https://www.nytimes.com/",
+      "summary": "Google News RSS 命中纽约时报：法院未支持 Anthropic 移除“供应链风险”标签，意味着政府/国防采购中，对模型厂商的供应链可追溯与风险分级正在制度化。",
+      "signals": ["政府采购标签化风险上升", "国防/政府项目将更看重供应链审查", "单一大模型厂商依赖风险被显性化"],
+      "confidence": 0.78,
+      "score": 6,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Newsom orders government to consider AI harm in contract rules",
+      "published_at": "2026-04-03",
+      "url": "https://www.washingtonpost.com/",
+      "summary": "Google News RSS 命中华邮：加州政府要求在合同规则中考虑 AI 风险，说明政府采购条款开始从“能不能买”转向“如何定义责任、伤害与审查”。",
+      "signals": ["政府合同条款重写", "供应商需要补齐合规与责任说明", "政企采购周期可能拉长"],
+      "confidence": 0.76,
+      "score": 5,
+      "tier": "high"
+    },
+    {
+      "platform": "rss",
+      "title": "We’re only seeing the tip of the chip-smuggling iceberg",
+      "published_at": "2026-04-15",
+      "url": "https://www.fdd.org/",
+      "summary": "Google News RSS 命中 FDD：芯片走私与转运问题仍在发酵，执法叙事可能继续推动更细颗粒度的追踪、许可和终端审查。",
+      "signals": ["走私/转运执法叙事升温", "东南亚等中介路径风险抬升", "终端用途与去向审查更严格"],
+      "confidence": 0.67,
+      "score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "youtube",
+      "title": "Anthropic’s New AI Solves Problems…By Cheating",
+      "published_at": "2026-04-14T14:50:00Z",
+      "url": "https://www.youtube.com/watch?v=Ersv1ogj7Jo",
+      "summary": "Two Minute Papers 最新视频聚焦 Anthropic 模型在复杂任务中出现“作弊”式行为，侧面说明政府/企业在采购 agentic AI 时会更关注可验证性、审计与真实任务鲁棒性。",
+      "signals": ["模型可靠性讨论升温", "agent 交付验收门槛抬高", "适合作为交付风险佐证，不适合作为政策唯一依据"],
+      "confidence": 0.55,
+      "score": 3,
+      "tier": "medium"
+    },
+    {
+      "platform": "reddit",
+      "title": "Best Local LLMs - Apr 2026",
+      "published_at": "2026-04-13T21:00:57Z",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sknx6n/best_local_llms_apr_2026/",
+      "summary": "LocalLLaMA 热门帖持续围绕 Qwen、Gemma、GLM、Minimax 等开源/本地模型展开，显示替代闭源/受限供应商的工程兴趣仍强，但更多是温度计，不是硬情报。",
+      "signals": ["本地替代路线关注度高", "社区对开放权重和私有部署需求上升", "噪音较高"],
+      "confidence": 0.46,
+      "score": 1,
+      "tier": "low"
+    },
+    {
+      "platform": "x",
+      "title": "X 平台本轮未抓到强新增一手事件，更多是对政策/研究文章的二次传播",
+      "published_at": "2026-04-16",
+      "url": "https://x.com/",
+      "summary": "通过外部搜索兜底仅拿到弱相关账号页，说明 X 本轮更适合做传播温度参考，不适合作为独立证据源。",
+      "signals": ["新增价值低", "二次传播多于原始披露", "本轮降级为弱信号"],
+      "confidence": 0.22,
+      "score": -1,
+      "tier": "low"
+    },
+    {
+      "platform": "xiaohongshu",
+      "title": "小红书本轮未获得高可信一手情报，降级为外部聚合观察",
+      "published_at": "2026-04-16",
+      "url": "https://news.google.com/",
+      "summary": "通过 Google 新闻兜底，仅看到行业大会/平台专家分享类结果，没有形成对政务/国防 AI 供应链的直接增量。",
+      "signals": ["平台存在讨论但多为泛行业内容", "缺少高可信一手政策/交付信号", "本轮视为低价值观察"],
+      "confidence": 0.2,
+      "score": -1,
+      "tier": "low"
+    }
+  ],
+  "supply_chain_mapping": [
+    {
+      "policy": "美方拟进一步把对华限制从先进 AI 芯片扩展到 ASML 等设备与相关出口限制",
+      "vendors": ["ASML", "Applied Materials", "Lam Research", "KLA", "中国晶圆与设备链"],
+      "delivery_impact": "先进制程扩产、维护、备件与后续升级的不确定性上升，国产替代与项目预案必须前置。",
+      "risk_level": "high",
+      "reason": "从芯片端打到设备端，影响更深且持续时间更长。"
+    },
+    {
+      "policy": "政府/国防采购对模型厂商加注‘供应链风险’标签与司法背书",
+      "vendors": ["Anthropic", "OpenAI", "政府采购集成商", "云厂商"],
+      "delivery_impact": "合同审查更看重可追溯、可替代、地域部署与分级授权，单一厂商依赖型方案更难过审。",
+      "risk_level": "high",
+      "reason": "直接改变政府采购中的准入与责任分配。"
+    },
+    {
+      "policy": "地方政府合同规则开始要求考虑 AI 伤害与责任",
+      "vendors": ["模型厂商", "SaaS 厂商", "系统集成商", "政务项目总包方"],
+      "delivery_impact": "采购周期拉长，投标与验收材料要增加风险评估、审计、回退与人工兜底机制。",
+      "risk_level": "medium",
+      "reason": "不一定立刻卡死项目，但会抬高进入门槛与交付成本。"
+    },
+    {
+      "policy": "受外部限制影响，中国模型厂商加速与国产芯片协同",
+      "vendors": ["DeepSeek", "Huawei", "中国本土算力生态", "集成商"],
+      "delivery_impact": "替代路径更清晰，但性能、工具链兼容、生态成熟度仍决定落地窗口。",
+      "risk_level": "medium",
+      "reason": "有替代，不等于无风险，主要风险在性能折中和交付栈重构。"
+    }
+  ]
+}

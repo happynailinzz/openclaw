@@ -1,17 +1,17 @@
-# 社交情报抓取任务计划
+# GitHub 项目更新监控任务计划
 
-## 目标
-按《社交平台情报抓取 SOP（OpenClaw版）》执行一次完整流程，输出可检索、可评分、可复盘、可推送的社交情报简报，并完成本地沉淀。
+- 目标：检查 4 个 GitHub 项目在 2026-04-16（UTC）是否有更新，优先 Release，其次最近提交/README/CHANGELOG 动向，并生成 09:00 监控摘要。
+- 项目：
+  1. openclaw/openclaw
+  2. router-for-me/CLIProxyAPI
+  3. anthropics/claude-code
+  4. anomalyco/opencode
 
 ## 阶段
-- [complete] 1. 读取既有归档/模板，确认输出格式与历史监控口径
-- [complete] 2. 多源抓取（X/小红书/YouTube/Reddit/新闻/RSS，失败回退）
-- [complete] 3. 结构化去重、评分、筛噪，补充“政务/国防 AI 供应链波动映射”
-- [complete] 4. 归档到本地 memory/intel，并生成最终简报
+- [complete] 1. 获取各仓库最新 Release 与最近提交信息
+- [complete] 2. 判断“今日有更新 / 今日无更新”
+- [in_progress] 3. 生成中文摘要与建议动作
 
-## 错误记录
-| 时间 | 问题 | 处理 |
-|---|---|---|
-| 2026-04-15 05:17 UTC | 当日/昨日 memory 文件不存在 | 继续执行，不阻塞主流程 |
-| 2026-04-15 05:18 UTC | YouTube feed 404 / Reuters 个别直链失效 / Nextgov 个别索引页404 | 使用 Google News RSS、可读正文页与历史归档回退 |
-| 2026-04-15 05:19 UTC | 小红书无有效命中，结果为空或噪音页 | 记为失败源，不阻塞整体成功率 |
+## 备注
+- “今日”按当前任务给出的 UTC 时间 2026-04-16 判断。
+- 若 GitHub API 返回异常或字段不足，标注“待确认”。

@@ -1,1 +1,48 @@
-2026-04-08 02:00 UTC social intel: partial_success_with_degradation; success_rate=83.3%, dup=17%, high_value=67%, latency<=30m. Core shift: gov/defense-adjacent AI supply chains are tightening simultaneously across procurement clauses, export controls, military-linked sourcing scrutiny, and dual-use end-use/end-user controls. XHS failed/noisy this round; Reddit partial; news remained the primary high-confidence channel.
+【10:00 社交情报简报】
+- 【发现】
+1. Reuters 命中显示，美方拟把对华限制从先进 AI 芯片继续外扩到 ASML 等设备链，影响从“买不到高端芯片”升级为“制造、扩产、维护都更难”。
+2. Reuters 命中显示，DeepSeek V4 将运行在华为芯片上，说明国产模型+国产算力的替代路线正在从叙事走向产品化。
+3. 纽约时报/Google News 命中显示，法院未支持 Anthropic 去掉“供应链风险”标签，政府/国防采购对模型厂商的供应链分级审查在制度化。
+4. 华邮/Google News 命中显示，政府合同规则开始要求考虑 AI 伤害与责任，采购条款正从“能不能买”转向“出了事谁负责、如何回退”。
+5. YouTube 侧面信号显示，Anthropic agent 可靠性/作弊问题继续发酵，意味着未来项目验收更看重可验证、可审计，而不是 demo 漂亮。
+
+- 【政务/国防 AI 供应链波动映射】
+1. 政策动作：美方拟进一步限制对华芯片制造设备与相关出口。
+   厂商影响：ASML、Applied Materials、Lam、KLA、中国晶圆/设备链。
+   交付影响：先进制程扩产、备件维护、后续升级窗口更不稳，替代路径必须前置。
+   风险等级：高——从芯片端打到设备端，影响更深更长。
+2. 政策动作：政府/国防采购中的“供应链风险”标签与司法背书强化。
+   厂商影响：Anthropic、OpenAI、云厂商、政务集成商。
+   交付影响：单一模型厂商绑定方案更难过审，需准备多厂商/本地化/权限隔离方案。
+   风险等级：高——直接影响采购准入和责任归属。
+3. 政策动作：政府合同规则开始把 AI 风险与伤害纳入采购条款。
+   厂商影响：模型厂商、SaaS、系统集成商、总包方。
+   交付影响：投标材料和验收方案需要补齐审计、回退、人工兜底与责任划分。
+   风险等级：中——不一定立刻停项目，但会显著拉长周期、抬高成本。
+4. 政策动作：受外部限制刺激，国产模型与国产芯片协同加强。
+   厂商影响：DeepSeek、Huawei、本土算力生态、集成商。
+   交付影响：替代路线更清晰，但性能、兼容栈和生态成熟度仍是现实约束。
+   风险等级：中——能替，但不是无痛替。
+
+- 【依据】
+1. Reuters / Google News：<https://news.google.com/rss/search?q=site%3Areuters.com+AI+chip+China+April+2026&hl=en-US&gl=US&ceid=US:en>
+2. Google News / 政府与国防供应链搜索：<https://news.google.com/rss/search?q=government+defense+AI+supply+chain+April+2026&hl=en-US&gl=US&ceid=US:en>
+3. Google News / AI chip export controls：<https://news.google.com/rss/search?q=AI+chip+export+controls+April+2026&hl=en-US&gl=US&ceid=US:en>
+4. Reddit / LocalLLaMA RSS：<https://www.reddit.com/r/LocalLLaMA/.rss>
+5. YouTube / Two Minute Papers RSS：<https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg>
+6. The Verge AI RSS：<https://www.theverge.com/rss/ai-artificial-intelligence/index.xml>
+
+- 【建议动作】
+1. 所有政务/国防相关 AI 项目，立刻补一页“供应链与模型替代预案”，至少写清主供应商、备选、切换条件、回退机制。
+2. 投标/方案材料别再只写模型能力，必须加“部署位置、权限边界、审计日志、人工兜底、责任归属”。
+3. 持续盯“设备链限制 + 政府采购标签化”这两条线，它们比模型榜单更直接决定项目能不能交付。
+
+- 【低优先级观察】
+1. Reddit 仍在高频讨论本地/开源模型替代路线，但更多是工程温度计，不是硬情报。
+2. X 本轮没抓到强新增一手事件，更多是政策解读的二次传播。
+3. 小红书本轮没有形成高可信一手增量，更多是行业大会/经验分享类内容。
+
+- 【质量指标】
+抓取成功率：约 100%
+重复率：约 17%
+高价值命中率：约 67%

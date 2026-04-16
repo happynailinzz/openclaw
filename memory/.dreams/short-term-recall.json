@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-15T05:17:55.835Z",
+  "updatedAt": "2026-04-16T00:30:26.340Z",
   "entries": {
     "memory:memory/2026-03-11.md:1:11": {
       "key": "memory:memory/2026-03-11.md:1:11",
@@ -232,21 +232,24 @@
       "endLine": 29,
       "source": "memory",
       "snippet": "- 用户明确反馈：这轮情报质量不如前几轮，后续需把“两会×河南×产业监控”从“新闻监控”升级为“项目机会监控”，重点优化源头分级、检索词拆分、项目价值打分与变化检测。 - `openclaw cron list` 在当前环境出现“结果已返回但 CLI 看起来仍在卡住”的假阻塞现象；已新增 `scripts/cron-list-safe.sh` 用超时包裹并优先输出已捕获结果，作为临时稳定查看方案。 - 已完成“河南关键源站可达性排查”：`henan.gov.cn`、`fgw.henan.gov.cn`、`m.jyt.henan.gov.cn` 当前服务器出口直抓均为 403；`hca.miit.gov.cn`、`henb.nea.gov.cn`、`www.zzu.edu.cn`、`www.gov.cn` 可稳定直抓。已新增 `docs/henan-source-reachability-and-fallbacks.md` 与 `scripts/check-henan-sources.sh`，用于后续监控源分层与 fallback 策略。 - 已手动恢复虚拟桌面与有头 Chrome：`Xvfb :1` + Puppeteer Chrome + `--remote-debugging-port=9222`；验证结果为：`m.jyt.henan.gov.cn` 可通过浏览器代抓链路打开，`henan.gov.cn` / `fgw.henan.gov.cn` 在真实浏览器下仍返回 403。 - 已正式落地两类规则：`m.jyt.henan.gov.cn` 接入浏览器代抓（`script",
-      "recallCount": 3,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.7805375151764777,
-      "maxScore": 0.926846938424775,
+      "totalScore": 4.634232150643535,
+      "maxScore": 0.926847697042282,
       "firstRecalledAt": "2026-04-13T00:55:59.987Z",
-      "lastRecalledAt": "2026-04-15T05:08:51.603Z",
+      "lastRecalledAt": "2026-04-16T00:30:26.340Z",
       "queryHashes": [
         "3e64fb387c70",
         "6cd3317528cb",
-        "0449757e6793"
+        "0449757e6793",
+        "fc115841744b",
+        "c982ee866df5"
       ],
       "recallDays": [
         "2026-04-13",
-        "2026-04-15"
+        "2026-04-15",
+        "2026-04-16"
       ],
       "conceptTags": [
         "scripts/cron-list-safe.sh",
@@ -266,21 +269,24 @@
       "endLine": 32,
       "source": "memory",
       "snippet": "- 已手动恢复虚拟桌面与有头 Chrome：`Xvfb :1` + Puppeteer Chrome + `--remote-debugging-port=9222`；验证结果为：`m.jyt.henan.gov.cn` 可通过浏览器代抓链路打开，`henan.gov.cn` / `fgw.henan.gov.cn` 在真实浏览器下仍返回 403。 - 已正式落地两类规则：`m.jyt.henan.gov.cn` 接入浏览器代抓（`scripts/henan-browser-fetch.py` + `config/henan-source-routing.json`），`henan.gov.cn` / `fgw.henan.gov.cn` 接入 fallback 占位规则（状态：`原站403，待补链`）。 - 为提高重启后恢复性，新增 `scripts/start-headed-browser.sh` 作为虚拟桌面 + headed Chrome + CDP(`9222`) 一键恢复脚本；同时将 `x2n` / `u2n` 从 `.bashrc` alias 固化为 `/usr/local/bin` 全局命令，避免非交互 shell 下不可见。 - 已按新方案升级定时任务 `monitor:lianghui-henan-industries:0830` / `monitor:lianghui-henan-industries:1730`：将 Baidu skill 明确下沉为“发现层”，新增 A/B/C 源分层、`m.jyt` 浏览器代抓、`henan.gov.cn`/`fgw",
-      "recallCount": 3,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2.7801360836007336,
-      "maxScore": 0.9267131299969923,
+      "totalScore": 4.633563103639379,
+      "maxScore": 0.9267138900416536,
       "firstRecalledAt": "2026-04-13T00:55:59.987Z",
-      "lastRecalledAt": "2026-04-15T05:08:51.603Z",
+      "lastRecalledAt": "2026-04-16T00:30:26.340Z",
       "queryHashes": [
         "3e64fb387c70",
         "6cd3317528cb",
-        "0449757e6793"
+        "0449757e6793",
+        "fc115841744b",
+        "c982ee866df5"
       ],
       "recallDays": [
         "2026-04-13",
-        "2026-04-15"
+        "2026-04-15",
+        "2026-04-16"
       ],
       "conceptTags": [
         "remote-debugging-port",
