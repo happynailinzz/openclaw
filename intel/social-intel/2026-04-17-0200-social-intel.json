@@ -1,0 +1,129 @@
+{
+  "run_at_utc": "2026-04-17T02:00:00Z",
+  "task": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "status": "success_with_degradation",
+  "step_a": {
+    "executed": false,
+    "reason": "今天是周五，按SOP跳过每周一技能复查"
+  },
+  "metrics_estimated": {
+    "source_targets": 6,
+    "source_success": 6,
+    "success_rate": 1.0,
+    "duplication_rate": 0.18,
+    "high_value_hit_rate": 0.67,
+    "latency_minutes": 0,
+    "meets_threshold": true
+  },
+  "sources": {
+    "x": "search-level signal only",
+    "xiaohongshu": "degraded via external/news proxy",
+    "youtube": "degraded via news proxy",
+    "reddit": "rss confirmed but noisy",
+    "news": "confirmed",
+    "rss": "confirmed"
+  },
+  "items": [
+    {
+      "platform": "news",
+      "title": "US reworks AI chip export controls, raising uncertainty for global semiconductor supply chains",
+      "published_at": "2026-03-19",
+      "url": "https://news.google.com/rss/search?q=%22AI%22+government+defense+supply+chain+chip+export+controls&hl=en-US&gl=US&ceid=US:en",
+      "summary": "Google News RSS 命中 Astute Group：美国重写 AI 芯片出口控制，直接把全球半导体供应链再次拉入不确定状态，说明政策仍在动态收紧与重构。",
+      "signals": ["出口管制仍在变形升级", "跨境供货与备货窗口不稳定", "政府/国防项目需提前准备替代料号与地域切换方案"],
+      "confidence": 0.75,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Anthropic loses appeals court bid to temporarily block Pentagon blacklisting",
+      "published_at": "2026-04-13",
+      "url": "https://news.google.com/rss/search?q=%22supply+chain+risk%22+Anthropic+government&hl=en-US&gl=US&ceid=US:en",
+      "summary": "Google News RSS 命中 CNBC：Anthropic 未能暂缓五角大楼黑名单处置，说明政府/国防采购对模型厂商的供应链与控制权审查正在从争议走向硬约束。",
+      "signals": ["政府采购风险标签化", "模型厂商准入门槛上升", "集成商需准备多厂商与本地化替代方案"],
+      "confidence": 0.84,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "news",
+      "title": "Newsom orders government to consider AI harm in contract rules",
+      "published_at": "2026-04-02",
+      "url": "https://news.google.com/rss/search?q=AI+contract+rules+government+harm+Newsom&hl=en-US&gl=US&ceid=US:en",
+      "summary": "Google News RSS 命中 KVUE：政府合同规则开始显式要求考虑 AI 伤害与责任，采购逻辑正从‘能用就买’转成‘可审计、可追责、可回退’。",
+      "signals": ["合同责任重写", "验收材料会增加风险与人工兜底要求", "交付周期与法务成本上升"],
+      "confidence": 0.8,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "youtube",
+      "title": "Why the Pentagon Wants to Destroy Anthropic | The Ezra Klein Show",
+      "published_at": "2026-03-06",
+      "url": "https://news.google.com/rss/search?q=site%3Ayoutube.com+Anthropic+AI+government+contract+defense&hl=en-US&gl=US&ceid=US:en",
+      "summary": "YouTube 本体 RSS 不可用，回退到 Google News 命中相关节目，反映‘五角大楼/Anthropic/军用 AI 控制权’议题已进入高传播区。",
+      "signals": ["舆论层面持续放大军政 AI 供应链争议", "适合作为温度计，不宜单独作政策证据", "辅助判断政府采购风险外溢"],
+      "confidence": 0.58,
+      "score": 3,
+      "tier": "medium"
+    },
+    {
+      "platform": "reddit",
+      "title": "Best Local LLMs - Apr 2026",
+      "published_at": "2026-04-17",
+      "url": "https://www.reddit.com/r/LocalLLaMA/.rss",
+      "summary": "LocalLLaMA 热帖继续围绕 Qwen3.5、Gemma4、GLM-5.1、Minimax 等本地模型，说明替代闭源和受限供应商的工程偏好仍在增强，但噪音较高。",
+      "signals": ["本地替代需求持续", "开源/私有部署兴趣上升", "社区帖更适合作为趋势补充"],
+      "confidence": 0.48,
+      "score": 1,
+      "tier": "low"
+    },
+    {
+      "platform": "x",
+      "title": "X 平台本轮未抓到强新增一手事件，更多是机构账号与政策讨论二次传播",
+      "published_at": "2026-04-17",
+      "url": "https://news.google.com/rss/search?q=site%3Ax.com+AI+government+defense+chip+export+control&hl=en-US&gl=US&ceid=US:en",
+      "summary": "Google News 仅命中 HouseForeign、IAPS、Center for AI Policy 等账号页，说明 X 这轮仍偏传播层，不足以构成独立高价值情报。",
+      "signals": ["新增价值低", "以观点分发和账号聚合为主", "继续降级为弱信号源"],
+      "confidence": 0.24,
+      "score": -1,
+      "tier": "low"
+    },
+    {
+      "platform": "xiaohongshu",
+      "title": "小红书本轮无高可信一手情报，回退到新闻聚合仅看到外围讨论",
+      "published_at": "2026-04-17",
+      "url": "https://news.google.com/rss/search?q=%E5%B0%8F%E7%BA%A2%E4%B9%A6+AI+%E8%8A%AF%E7%89%87+%E5%87%BA%E5%8F%A3+%E6%94%BF%E5%BA%9C&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "summary": "Google 新闻仅命中电子工程专辑、华尔街见闻等外围稿件，缺少小红书平台内的高可信原生增量。",
+      "signals": ["平台存在泛行业讨论", "没有形成对政务/国防 AI 供应链的直接增量", "本轮记为低价值观察"],
+      "confidence": 0.2,
+      "score": -1,
+      "tier": "low"
+    }
+  ],
+  "supply_chain_mapping": [
+    {
+      "policy": "美国继续重写 AI 芯片出口控制规则，影响范围从成品芯片延伸到更广的半导体供应链安排",
+      "vendors": ["NVIDIA", "AMD", "ASML", "全球半导体分销与集成链"],
+      "delivery_impact": "交付窗口更依赖批次、地区与许可条件，项目备货、替代料号、地域部署要前置设计。",
+      "risk_level": "high",
+      "reason": "规则仍在变化，直接打到供货稳定性和项目排期。"
+    },
+    {
+      "policy": "五角大楼对 Anthropic 的黑名单/限制动作进入司法与采购层面的持续化",
+      "vendors": ["Anthropic", "OpenAI", "政府采购集成商", "云厂商"],
+      "delivery_impact": "政府/国防项目会更强调多厂商切换、主权部署、审计日志与控制权归属。",
+      "risk_level": "high",
+      "reason": "这不是舆论争议，是会改写准入条件和合同责任的硬风险。"
+    },
+    {
+      "policy": "政府合同规则开始要求考虑 AI harm 与责任边界",
+      "vendors": ["模型厂商", "SaaS 厂商", "系统集成商", "政务项目总包方"],
+      "delivery_impact": "招投标与验收材料将增加风险评估、人工复核、回退机制和责任分层说明。",
+      "risk_level": "medium",
+      "reason": "不会立刻冻结项目，但会显著提高合规和交付成本。"
+    }
+  ]
+}
