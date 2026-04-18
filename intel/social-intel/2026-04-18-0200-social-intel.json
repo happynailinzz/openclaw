@@ -1,0 +1,90 @@
+[
+  {
+    "platform": "news/reuters",
+    "title": "U.S. lawmakers scale back bill targeting Chinese chipmaking",
+    "published_at": "2026-04-16T14:41:44Z",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZDVjY3o4LThVWVQydjdDakVRLWNoMHgxcVM3MzhfYUhTdXJMS3hkSDFBSVVZWEhUbUlJRGgyVGhtaElBUVRUQThrbjhHc2M3Z1c1SFVxd3BmaElCMTRsaGk5MWtPc04tUWNNdDU0eUxQcXI1ZXE2QjZTc2ROY3hoN1VEQk1OdE9xTk4tb0lBT0doeVRKUG9yOWxiMWo1dURzTnhSRTdMRFU?oc=5",
+    "summary": "美国议员针对中国芯片制造的立法动作出现收缩，说明限制方向仍在，但落地节奏与力度存在重新校准。对AI芯片、设备和代工链的政策不确定性继续维持高位。",
+    "signals": ["出口管制", "芯片", "立法调整", "中美供应链"],
+    "confidence": 0.88,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/reuters",
+    "title": "US targets Chinese chipmaking with proposed export restrictions on ASML and others",
+    "published_at": "2026-04-03T07:00:00Z",
+    "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOS2VvanJZRy04RmpiTUF4aG5QSXhVV3RNdTVUM0ZSdy1NN1d2dmZhMVhveTF2ZkdFY2JsdmF4RGZXcXB3NmVkOHI1cFZVQ1NzdU9ncU84RkZVX3IzeXpwUVByVk5uOWRNT2JHcHZaSUxFU0k0YTcyX0dhLTBZM3pLMDhaMkREd3MtWUlwRkl0REpTNUc3bDdIZUVva3c1UVYxcXR3TGJLUGpHWjRNMmt5R1g1cHFyRnhudng1MllRaWg?oc=5",
+    "summary": "美国拟把对华限制继续延伸到芯片制造设备与相关企业，意味着政务/国防相关AI项目的上游算力和制造能力仍受地缘政策牵引。",
+    "signals": ["ASML", "出口限制", "制造设备", "芯片供应链"],
+    "confidence": 0.9,
+    "score": 9,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/reuters",
+    "title": "Pentagon's ouster of Anthropic opens doors for small AI rivals",
+    "published_at": "2026-04-09T07:00:00Z",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZ29kWnhpS2pMRlJ0UHNrcnFZZ1JLbzU0M3VxcU82NlhGZHRoSjBkVHM2UUFwR1MweWwwbmJOcC1hcm1Vd2M2ZWFHTmJ3eHdkX1JtZkRiRkoyM3JXMlVhR2RiWDJmR3F5dHRJNmJld1EzbE1jSGR5dVEtdkxVeVdLVUNuc1JZZEFHTDZ5eVZ6OUNKUUdtbGhEZVRNNGhBa1pkTFJqdVFvaFRUWlU?oc=5",
+    "summary": "五角大楼将Anthropic剔除后，更多小型AI供应商获得进入机会，反映出国防采购侧对AI模型供应链的审查正在前置化、政治化。",
+    "signals": ["Pentagon", "Anthropic", "供应商替换", "国防采购"],
+    "confidence": 0.91,
+    "score": 8,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/defenseone",
+    "title": "It would take the Pentagon months to replace Anthropic’s AI tools: sources",
+    "published_at": "2026-02-26T08:00:00Z",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeHVMaUplUDB4ektsak9PSnlTU0JVeG5xRW1JVXNWYUJzNks0d3ZPd3NwbFBCZ0x2cjJ0bXVWR3JYbWZpODVsZm54RTBfTndRN1N1d3JNaGREOFJXQ2JFN1AzMmY5YmpXZjNyLVhOdjZrSk9HS0FXT1ZZel9tZGJtdkR3WTRqLWIxeDYtajNwTXVhT0ZnR1E0SzJ0MEFuN094NmNyMHBwMmxmLS1MUnZzX1BKd1loWU0?oc=5",
+    "summary": "如果现有主供应商被替换，五角大楼完成工具迁移需要数月，说明政务/国防AI项目已出现明显锁定效应，切换成本和交付窗口风险都在上升。",
+    "signals": ["替换周期", "交付窗口", "供应链锁定", "国防AI"],
+    "confidence": 0.85,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/hklaw",
+    "title": "GSA's Proposed AI Clause: A Deep Dive into New Requirements for Government Contractors",
+    "published_at": "2026-03-18T07:00:00Z",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOOE1pR3pvaVludFpNVVd3eFRDV09iVnktakowNjRubWdoU1NEalVFTkd2V085MWpWN1poOFFCZWhoXzV3Y3FjMEVxaWJmaGxWcW5RWHdKbENNMjhpOFMtdm1xN3RKQ0cyclhFM1lZcVhxd3ZEMmhDaldyS19SenkzeGprMW5LRTYtLWNBNGR4Sy1KSU5k?oc=5",
+    "summary": "GSA拟议AI条款把责任、披露与可控性要求前置到政府承包商合同里，意味着后续AI项目不仅要拼能力，还要拼合规证据链。",
+    "signals": ["GSA", "合同条款", "责任前置", "政府采购"],
+    "confidence": 0.8,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "rss/reddit",
+    "title": "r/artificial 最新讨论噪音偏高，未见高可信新增政务/国防AI信号",
+    "published_at": "2026-04-18T02:00:45Z",
+    "url": "https://www.reddit.com/r/artificial/.rss",
+    "summary": "Reddit 通道可用，但本轮主要是产品吐槽与泛讨论，未发现足以进入高价值池的政务/国防AI供应链线索。",
+    "signals": ["社区噪音", "弱信号", "可用但低价值"],
+    "confidence": 0.45,
+    "score": 0,
+    "tier": "低价值"
+  },
+  {
+    "platform": "news/youtube-fallback",
+    "title": "YouTube 回退结果相关性不足，暂未纳入核心发现",
+    "published_at": "2026-04-18T02:00:45Z",
+    "url": "https://news.google.com/rss/search?q=site%3Ayoutube.com+AI+government+defense+chips&hl=en-US&gl=US&ceid=US:en",
+    "summary": "通过 Google News 回退抓 YouTube 时出现大量非目标主题视频，说明该通道本轮可用性一般，适合作为弱信号补充，不适合作为主证据。",
+    "signals": ["YouTube", "回退抓取", "相关性不足"],
+    "confidence": 0.4,
+    "score": -1,
+    "tier": "低价值"
+  },
+  {
+    "platform": "news/x-xhs-fallback",
+    "title": "X / 小红书 本轮仅获得聚合层弱信号，未形成可采纳核心条目",
+    "published_at": "2026-04-18T02:00:45Z",
+    "url": "https://news.google.com/rss/search?q=X+AI+government+ban+chip+export&hl=en-US&gl=US&ceid=US:en",
+    "summary": "X 与小红书缺少可直接验证的高可信主帖，本轮只保留为补充观测，不进入核心情报发现。",
+    "signals": ["X", "小红书", "弱信号", "聚合回退"],
+    "confidence": 0.35,
+    "score": -1,
+    "tier": "低价值"
+  }
+]
