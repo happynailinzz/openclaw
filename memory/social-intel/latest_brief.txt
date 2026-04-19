@@ -1,48 +1,35 @@
 【10:00 社交情报简报】
 - 【发现】
-1. Reuters 命中显示，美方拟把对华限制从先进 AI 芯片继续外扩到 ASML 等设备链，影响从“买不到高端芯片”升级为“制造、扩产、维护都更难”。
-2. Reuters 命中显示，DeepSeek V4 将运行在华为芯片上，说明国产模型+国产算力的替代路线正在从叙事走向产品化。
-3. 纽约时报/Google News 命中显示，法院未支持 Anthropic 去掉“供应链风险”标签，政府/国防采购对模型厂商的供应链分级审查在制度化。
-4. 华邮/Google News 命中显示，政府合同规则开始要求考虑 AI 伤害与责任，采购条款正从“能不能买”转向“出了事谁负责、如何回退”。
-5. YouTube 侧面信号显示，Anthropic agent 可靠性/作弊问题继续发酵，意味着未来项目验收更看重可验证、可审计，而不是 demo 漂亮。
+  1. 美国针对中国芯片制造的限制法案表述有所收缩，但收紧方向没变，说明政策并非松动，而是在重新校准执行口径。来源：https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZDVjY3o4LThVWVQydjdDakVRLWNoMHgxcVM3MzhfYUhTdXJMS3hkSDFBSVVZWEhUbUlJRGgyVGhtaElBUVRUQThrbjhHc2M3Z1c1SFVxd3BmaElCMTRsaGk5MWtPc04tUWNNdDU0eUxQcXI1ZXE2QjZTc2ROY3hoN1VEQk1OdE9xTk4tb0lBT0doeVRKUG9yOWxiMWo1dURzTnhSRTdMRFU?oc=5
+  2. 美国拟继续把对华限制延伸到 ASML 等芯片制造设备链，上游设备与代工能力仍被地缘政策强牵引。来源：https://news.google.com/rss/articles/CBMiwAFBVV95cUxOS2VvanJZRy04RmpiTUF4aG5QSXhVV3RNdTVUM0ZSdy1NN1d2dmZhMVhveTF2ZkdFY2JsdmF4RGZXcXB3NmVkOHI1cFZVQ1NzdU9ncU84RkZVX3IzeXpwUVByVk5uOWRNT2JHcHZaSUxFU0k0YTcyX0dhLTBZM3pLMDhaMkREd3MtWUlwRkl0REpTNUc3bDdIZUVva3c1UVYxcXR3TGJLUGpHWjRNMmt5R1g1cHFyRnhudng1MllRaWg?oc=5
+  3. 五角大楼与 Anthropic 的争议说明，国防 AI 采购已不是单纯比模型能力，而是先看供应链可控、可替代和政治风险。来源：https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWFU5RjN1NzVHaVBRbTVUWVdvLXl2V0dDVG5UUjVISGlZVkRnQkhDX3dJUmxWZjI2bVYtbndNWUNqaW4tUzFmZTZCblB0UUU3ZHVIcHE1Z0ZGSzVxdWlOXzBvTTZFaWpmVndjalRuUnA5Uldfb0phS21waW40dXlnTnNiRDFuSTNRaDBIZmRGcHV1RlVTdHRDdVlNcVVUb1F0UlZfY0F1bVFRNnpvSHNXb0gyR0s3Y2Z0OG5aRGJ4TFNNTldULXQ3SmJpMnc5bmFldDctVA?oc=5
+  4. 若主模型供应商被替换，五角大楼完成迁移需要数月，说明政务/国防 AI 项目已经出现明显平台锁定与交付窗口风险。来源：https://news.google.com/rss/articles/CBMitwFBVV95cUxOeHVMaUplUDB4ektsak9PSnlTU0JVeG5xRW1JVXNWYUJzNks0d3ZPd3NwbFBCZ0x2cjJ0bXVWR3JYbWZpODVsZm54RTBfTndRN1N1d3JNaGREOFJXQ2JFN1AzMmY5YmpXZjNyLVhOdjZrSk9HS0FXT1ZZel9tZGJtdkR3WTRqLWIxeDYtajNwTXVhT0ZnR1E0SzJ0MEFuN094NmNyMHBwMmxmLS1MUnZzX1BKd1loWU0?oc=5
+  5. GSA 新 AI 条款持续抬高政府承包商的披露、责任和审计要求，后续 AI 项目交付会更像“合规工程 + 技术工程”。来源：https://news.google.com/rss/articles/CBMitgFBVV95cUxNdnhmMkdIdEtObzJrZ1RGT3NIOExZY0drdlhpanVUV0pydDFxM0R6bGpnVWRRYWF4Y1VVVVFZNFJxeW1Gal92N1VfSUE4VFkxVDF4OERIVlQ3YkV2Y0JUTHc0WlRqM0RVLXlFa1c1emVIa2ozRjljeGI3aC14ZzR0NnBobVlCd29yNjhlNGRPMElsMmp4cVBTSG9YMG5QSnBaSkt1Q3Njckp3VVJjRFlIYTBSTG9VQQ?oc=5
 
 - 【政务/国防 AI 供应链波动映射】
-1. 政策动作：美方拟进一步限制对华芯片制造设备与相关出口。
-   厂商影响：ASML、Applied Materials、Lam、KLA、中国晶圆/设备链。
-   交付影响：先进制程扩产、备件维护、后续升级窗口更不稳，替代路径必须前置。
-   风险等级：高——从芯片端打到设备端，影响更深更长。
-2. 政策动作：政府/国防采购中的“供应链风险”标签与司法背书强化。
-   厂商影响：Anthropic、OpenAI、云厂商、政务集成商。
-   交付影响：单一模型厂商绑定方案更难过审，需准备多厂商/本地化/权限隔离方案。
-   风险等级：高——直接影响采购准入和责任归属。
-3. 政策动作：政府合同规则开始把 AI 风险与伤害纳入采购条款。
-   厂商影响：模型厂商、SaaS、系统集成商、总包方。
-   交付影响：投标材料和验收方案需要补齐审计、回退、人工兜底与责任划分。
-   风险等级：中——不一定立刻停项目，但会显著拉长周期、抬高成本。
-4. 政策动作：受外部限制刺激，国产模型与国产芯片协同加强。
-   厂商影响：DeepSeek、Huawei、本土算力生态、集成商。
-   交付影响：替代路线更清晰，但性能、兼容栈和生态成熟度仍是现实约束。
-   风险等级：中——能替，但不是无痛替。
+  - 政策动作：美国继续讨论并调整针对中国芯片制造与设备链的限制；GSA 持续推进 AI 承包条款；DoD 对模型供应商准入争议延续。
+  - 厂商影响：受影响厂商包括 Anthropic、ASML，以及所有依赖受限芯片/设备/云资源的 AI 集成商和政府承包商。
+  - 交付影响：短期内会拉长采购评估和合规审查周期，抬高替代切换成本；中期会逼着项目预留多模型、多云和国产/本地替代路径。
+  - 风险等级：高。理由：政策、采购和交付三条线同时收紧，且已出现“替换需要数月”的硬约束。
 
 - 【依据】
-1. Reuters / Google News：<https://news.google.com/rss/search?q=site%3Areuters.com+AI+chip+China+April+2026&hl=en-US&gl=US&ceid=US:en>
-2. Google News / 政府与国防供应链搜索：<https://news.google.com/rss/search?q=government+defense+AI+supply+chain+April+2026&hl=en-US&gl=US&ceid=US:en>
-3. Google News / AI chip export controls：<https://news.google.com/rss/search?q=AI+chip+export+controls+April+2026&hl=en-US&gl=US&ceid=US:en>
-4. Reddit / LocalLLaMA RSS：<https://www.reddit.com/r/LocalLLaMA/.rss>
-5. YouTube / Two Minute Papers RSS：<https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg>
-6. The Verge AI RSS：<https://www.theverge.com/rss/ai-artificial-intelligence/index.xml>
+  - Reuters（chipmaking bill）：https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZDVjY3o4LThVWVQydjdDakVRLWNoMHgxcVM3MzhfYUhTdXJMS3hkSDFBSVVZWEhUbUlJRGgyVGhtaElBUVRUQThrbjhHc2M3Z1c1SFVxd3BmaElCMTRsaGk5MWtPc04tUWNNdDU0eUxQcXI1ZXE2QjZTc2ROY3hoN1VEQk1OdE9xTk4tb0lBT0doeVRKUG9yOWxiMWo1dURzTnhSRTdMRFU?oc=5
+  - Reuters（ASML/export curbs）：https://news.google.com/rss/articles/CBMiwAFBVV95cUxOS2VvanJZRy04RmpiTUF4aG5QSXhVV3RNdTVUM0ZSdy1NN1d2dmZhMVhveTF2ZkdFY2JsdmF4RGZXcXB3NmVkOHI1cFZVQ1NzdU9ncU84RkZVX3IzeXpwUVByVk5uOWRNT2JHcHZaSUxFU0k0YTcyX0dhLTBZM3pLMDhaMkREd3MtWUlwRkl0REpTNUc3bDdIZUVva3c1UVYxcXR3TGJLUGpHWjRNMmt5R1g1cHFyRnhudng1MllRaWg?oc=5
+  - CIO（Anthropic reprieve）：https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWFU5RjN1NzVHaVBRbTVUWVdvLXl2V0dDVG5UUjVISGlZVkRnQkhDX3dJUmxWZjI2bVYtbndNWUNqaW4tUzFmZTZCblB0UUU3ZHVIcHE1Z0ZGSzVxdWlOXzBvTTZFaWpmVndjalRuUnA5Uldfb0phS21waW40dXlnTnNiRDFuSTNRaDBIZmRGcHV1RlVTdHRDdVlNcVVUb1F0UlZfY0F1bVFRNnpvSHNXb0gyR0s3Y2Z0OG5aRGJ4TFNNTldULXQ3SmJpMnc5bmFldDctVA?oc=5
+  - Defense One（replace Anthropic takes months）：https://news.google.com/rss/articles/CBMitwFBVV95cUxOeHVMaUplUDB4ektsak9PSnlTU0JVeG5xRW1JVXNWYUJzNks0d3ZPd3NwbFBCZ0x2cjJ0bXVWR3JYbWZpODVsZm54RTBfTndRN1N1d3JNaGREOFJXQ2JFN1AzMmY5YmpXZjNyLVhOdjZrSk9HS0FXT1ZZel9tZGJtdkR3WTRqLWIxeDYtajNwTXVhT0ZnR1E0SzJ0MEFuN094NmNyMHBwMmxmLS1MUnZzX1BKd1loWU0?oc=5
+  - Federal News Network（GSA AI clause）：https://news.google.com/rss/articles/CBMitgFBVV95cUxNdnhmMkdIdEtObzJrZ1RGT3NIOExZY0drdlhpanVUV0pydDFxM0R6bGpnVWRRYWF4Y1VVVVFZNFJxeW1Gal92N1VfSUE4VFkxVDF4OERIVlQ3YkV2Y0JUTHc0WlRqM0RVLXlFa1c1emVIa2ozRjljeGI3aC14ZzR0NnBobVlCd29yNjhlNGRPMElsMmp4cVBTSG9YMG5QSnBaSkt1Q3Njckp3VVJjRFlIYTBSTG9VQQ?oc=5
 
 - 【建议动作】
-1. 所有政务/国防相关 AI 项目，立刻补一页“供应链与模型替代预案”，至少写清主供应商、备选、切换条件、回退机制。
-2. 投标/方案材料别再只写模型能力，必须加“部署位置、权限边界、审计日志、人工兜底、责任归属”。
-3. 持续盯“设备链限制 + 政府采购标签化”这两条线，它们比模型榜单更直接决定项目能不能交付。
+  1. 政务/国防类 AI 项目，默认把“多模型 + 多云 + 本地替代”写进方案，不要再按单一供应商设计。
+  2. 投标和交付文档里前置补齐：模型来源、替代路径、人工兜底、审计留痕、责任边界。
+  3. 持续盯 Reuters / DoD / GSA 这三类信号源，别被社媒热闹带偏，真正改项目风险的是政策和合同文本。
 
 - 【低优先级观察】
-1. Reddit 仍在高频讨论本地/开源模型替代路线，但更多是工程温度计，不是硬情报。
-2. X 本轮没抓到强新增一手事件，更多是政策解读的二次传播。
-3. 小红书本轮没有形成高可信一手增量，更多是行业大会/经验分享类内容。
+  1. Reddit 通道可用，但本轮噪音高，更适合看情绪，不适合做主证据。
+  2. YouTube 回退可补弱信号，但相关性一般，建议继续作为辅通道。
+  3. 小红书本轮无命中，说明这个主题在中文公开内容面暂时没形成有效传播。
 
 - 【质量指标】
-抓取成功率：约 100%
-重复率：约 17%
-高价值命中率：约 67%
+  - 抓取成功率：90%
+  - 重复率：18%
+  - 高价值命中率：60%（估计）

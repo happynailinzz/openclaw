@@ -1,0 +1,112 @@
+[
+  {
+    "platform": "news/reuters",
+    "title": "U.S. lawmakers scale back bill targeting Chinese chipmaking",
+    "published_at": "2026-04-16T14:41:44Z",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZDVjY3o4LThVWVQydjdDakVRLWNoMHgxcVM3MzhfYUhTdXJMS3hkSDFBSVVZWEhUbUlJRGgyVGhtaElBUVRUQThrbjhHc2M3Z1c1SFVxd3BmaElCMTRsaGk5MWtPc04tUWNNdDU0eUxQcXI1ZXE2QjZTc2ROY3hoN1VEQk1OdE9xTk4tb0lBT0doeVRKUG9yOWxiMWo1dURzTnhSRTdMRFU?oc=5",
+    "summary": "美国议员对打击中国芯片制造的法案表述出现收缩，但限制方向并未撤回，说明政策主线仍是收紧，只是节奏与口径在重校。对政务/国防相关 AI 项目的上游算力与设备链，不确定性继续维持高位。",
+    "signals": ["出口管制", "芯片制造", "立法调整", "中美供应链"],
+    "confidence": 0.9,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/reuters",
+    "title": "US targets Chinese chipmaking with proposed export restrictions on ASML and others",
+    "published_at": "2026-04-03T07:00:00Z",
+    "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOS2VvanJZRy04RmpiTUF4aG5QSXhVV3RNdTVUM0ZSdy1NN1d2dmZhMVhveTF2ZkdFY2JsdmF4RGZXcXB3NmVkOHI1cFZVQ1NzdU9ncU84RkZVX3IzeXpwUVByVk5uOWRNT2JHcHZaSUxFU0k0YTcyX0dhLTBZM3pLMDhaMkREd3MtWUlwRkl0REpTNUc3bDdIZUVva3c1UVYxcXR3TGJLUGpHWjRNMmt5R1g1cHFyRnhudng1MllRaWg?oc=5",
+    "summary": "美国拟将对华限制延伸至芯片制造设备与相关企业，ASML 等链上节点被继续卷入。对政府、军工与关键行业 AI 交付来说，这会直接抬高交期、替代采购和方案切换成本。",
+    "signals": ["ASML", "出口限制", "制造设备", "芯片供应链"],
+    "confidence": 0.92,
+    "score": 9,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/cio.com",
+    "title": "Anthropic wins reprieve against US DoD ban, buying time for contractors to assess AI supply chains",
+    "published_at": "2026-03-27T10:35:52Z",
+    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWFU5RjN1NzVHaVBRbTVUWVdvLXl2V0dDVG5UUjVISGlZVkRnQkhDX3dJUmxWZjI2bVYtbndNWUNqaW4tUzFmZTZCblB0UUU3ZHVIcHE1Z0ZGSzVxdWlOXzBvTTZFaWpmVndjalRuUnA5Uldfb0phS21waW40dXlnTnNiRDFuSTNRaDBIZmRGcHV1RlVTdHRDdVlNcVVUb1F0UlZfY0F1bVFRNnpvSHNXb0gyR0s3Y2Z0OG5aRGJ4TFNNTldULXQ3SmJpMnc5bmFldDctVA?oc=5",
+    "summary": "Anthropic 获得暂缓执行空间，说明五角大楼对模型供应商的准入限制并未结束，而是进入争议与重审阶段。政府承包商不得不提前检查模型来源、可替代性与合规链条。",
+    "signals": ["Anthropic", "DoD", "承包商", "供应链审查"],
+    "confidence": 0.82,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/defenseone",
+    "title": "It would take the Pentagon months to replace Anthropic’s AI tools: sources",
+    "published_at": "2026-02-26T08:00:00Z",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeHVMaUplUDB4ektsak9PSnlTU0JVeG5xRW1JVXNWYUJzNks0d3ZPd3NwbFBCZ0x2cjJ0bXVWR3JYbWZpODVsZm54RTBfTndRN1N1d3JNaGREOFJXQ2JFN1AzMmY5YmpXZjNyLVhOdjZrSk9HS0FXT1ZZel9tZGJtdkR3WTRqLWIxeDYtajNwTXVhT0ZnR1E0SzJ0MEFuN094NmNyMHBwMmxmLS1MUnZzX1BKd1loWU0?oc=5",
+    "summary": "若主模型供应商被替换，五角大楼需要数月完成迁移，暴露出明显的平台锁定与交付窗口风险。对正在实施或竞标中的政务/国防 AI 项目，这是一个很硬的风险信号。",
+    "signals": ["替换周期", "交付窗口", "平台锁定", "国防 AI"],
+    "confidence": 0.87,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/federalnewsnetwork",
+    "title": "GSA’s new AI clause drives contractors to sound the alarm",
+    "published_at": "2026-03-24T07:00:00Z",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNdnhmMkdIdEtObzJrZ1RGT3NIOExZY0drdlhpanVUV0pydDFxM0R6bGpnVWRRYWF4Y1VVVVFZNFJxeW1Gal92N1VfSUE4VFkxVDF4OERIVlQ3YkV2Y0JUTHc0WlRqM0RVLXlFa1c1emVIa2ozRjljeGI3aC14ZzR0NnBobVlCd29yNjhlNGRPMElsMmp4cVBTSG9YMG5QSnBaSkt1Q3Njckp3VVJjRFlIYTBSTG9VQQ?oc=5",
+    "summary": "GSA 新 AI 条款引发承包商集中预警，核心不是模型能力，而是责任归属、披露要求、审计与人工兜底。项目交付将更像合规工程，而不只是技术实施。",
+    "signals": ["GSA", "AI 条款", "政府承包商", "合规前置"],
+    "confidence": 0.84,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/hklaw",
+    "title": "GSA's Proposed AI Clause: A Deep Dive into New Requirements for Government Contractors",
+    "published_at": "2026-03-18T07:00:00Z",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOOE1pR3pvaVludFpNVVd3eFRDV09iVnktakowNjRubWdoU1NEalVFTkd2V085MWpWN1poOFFCZWhoXzV3Y3FjMEVxaWJmaGxWcW5RWHdKbENNMjhpOFMtdm1xN3RKQ0cyclhFM1lZcVhxd3ZEMmhDaldyS19SenkzeGprMW5LRTYtLWNBNGR4Sy1KSU5k?oc=5",
+    "summary": "政府承包商面临的新要求包括披露、风险控制、责任承担和审计留痕。对政企数字化与 AI 集成商来说，这意味着标书、交付件和验收逻辑要一起升级。",
+    "signals": ["GSA", "合同条款", "责任前置", "政府采购"],
+    "confidence": 0.81,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "rss/reddit",
+    "title": "r/artificial 本轮以模型体验讨论为主，未见可采纳的高可信政务/国防新增信号",
+    "published_at": "2026-04-19T02:01:03Z",
+    "url": "https://www.reddit.com/r/artificial/.rss",
+    "summary": "Reddit 通道可用，但样本以产品体验、个体观察和泛讨论为主，缺少足够可信的政务/国防 AI 供应链硬信号，只适合作为弱趋势温度计。",
+    "signals": ["社区噪音", "弱信号", "可用但低价值"],
+    "confidence": 0.46,
+    "score": 0,
+    "tier": "低价值"
+  },
+  {
+    "platform": "news/youtube-fallback",
+    "title": "YouTube 回退结果相关性不足，未形成核心情报条目",
+    "published_at": "2026-04-19T02:01:03Z",
+    "url": "https://news.google.com/rss/search?q=site%3Ayoutube.com+%28AI+government+OR+AI+defense+OR+AI+chip+export%29&hl=en-US&gl=US&ceid=US:en",
+    "summary": "YouTube 通过 Google News 回退后拿到的多为泛财经或无关视频，相关性一般。该通道本轮只保留为补充观测，不纳入核心发现。",
+    "signals": ["YouTube", "回退抓取", "相关性不足"],
+    "confidence": 0.4,
+    "score": -1,
+    "tier": "低价值"
+  },
+  {
+    "platform": "news/x-fallback",
+    "title": "X 本轮仅获得聚合层弱信号，未形成可采纳核心条目",
+    "published_at": "2026-04-19T02:01:03Z",
+    "url": "https://news.google.com/rss/search?q=%28x.com+OR+twitter%29+AI+government+ban+chip+export&hl=en-US&gl=US&ceid=US:en",
+    "summary": "X 没拿到足够可验证的高可信主帖，搜索结果更多是评论、智库文章或旧闻，因此只保留为弱信号。",
+    "signals": ["X", "弱信号", "聚合回退"],
+    "confidence": 0.36,
+    "score": -1,
+    "tier": "低价值"
+  },
+  {
+    "platform": "news/xiaohongshu-fallback",
+    "title": "小红书通道本轮未命中有效结果",
+    "published_at": "2026-04-19T02:01:22Z",
+    "url": "https://news.google.com/rss/search?q=%28%E5%B0%8F%E7%BA%A2%E4%B9%A6+OR+xiaohongshu+OR+rednote%29+AI+government+chip+export&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+    "summary": "小红书聚合回退未返回相关结果，说明该平台在本主题下本轮无可用公开增量。按 SOP 记失败回退，但不阻塞全流程。",
+    "signals": ["小红书", "无命中", "失败回退"],
+    "confidence": 0.25,
+    "score": -1,
+    "tier": "低价值"
+  }
+]
