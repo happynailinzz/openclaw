@@ -1131,3 +1131,119 @@ trust model: personal assistant (one trusted operator boundary), not hostile mul
 critical=13 warn=2 info=2
 top_issues: Summary: 11 critical · 1 warn · 1 info | CRITICAL | Found 1 critical issue(s) in 1 scanned file(s) under /root/.agents/skills/baoyu-compress-image:
 sanitized: summary excludes secrets; review full audit log locally if needed.
+===== 2026-04-19T04:02:42Z =====
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-article-illustrator resolved=~/.agents/skills/baoyu-article-illustrator
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-comic resolved=~/.agents/skills/baoyu-comic
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-compress-image resolved=~/.agents/skills/baoyu-compress-image
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-cover-image resolved=~/.agents/skills/baoyu-cover-image
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-danger-gemini-web resolved=~/.agents/skills/baoyu-danger-gemini-web
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-danger-x-to-markdown resolved=~/.agents/skills/baoyu-danger-x-to-markdown
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-format-markdown resolved=~/.agents/skills/baoyu-format-markdown
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-image-gen resolved=~/.agents/skills/baoyu-image-gen
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-infographic resolved=~/.agents/skills/baoyu-infographic
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-markdown-to-html resolved=~/.agents/skills/baoyu-markdown-to-html
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-post-to-wechat resolved=~/.agents/skills/baoyu-post-to-wechat
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-post-to-x resolved=~/.agents/skills/baoyu-post-to-x
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-slide-deck resolved=~/.agents/skills/baoyu-slide-deck
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-url-to-markdown resolved=~/.agents/skills/baoyu-url-to-markdown
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-xhs-images resolved=~/.agents/skills/baoyu-xhs-images
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/pdf resolved=~/.agents/skills/pdf
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/planning-with-files resolved=~/.agents/skills/planning-with-files
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/pptx resolved=~/.agents/skills/pptx
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/release-skills resolved=~/.agents/skills/release-skills
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/web-artifacts-builder resolved=~/.agents/skills/web-artifacts-builder
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/write-xiaohongshu resolved=~/.agents/skills/write-xiaohongshu
+[skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/xiaohongshu resolved=~/.agents/skills/xiaohongshu
+OpenClaw security audit
+Summary: 11 critical · 1 warn · 1 info
+Run deeper: openclaw security audit --deep
+
+CRITICAL
+skills.code_safety Skill "baoyu-compress-image" contains dangerous code patterns
+  Found 1 critical issue(s) in 1 scanned file(s) under /root/.agents/skills/baoyu-compress-image:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/main.ts:32)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-compress-image".
+skills.code_safety Skill "baoyu-danger-gemini-web" contains dangerous code patterns
+  Found 1 critical issue(s) in 24 scanned file(s) under /root/.agents/skills/baoyu-danger-gemini-web:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/gemini-webapi/utils/load-browser-cookies.ts:178)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-danger-gemini-web".
+skills.code_safety Skill "baoyu-danger-x-to-markdown" contains dangerous code patterns
+  Found 4 critical issue(s) in 14 scanned file(s) under /root/.agents/skills/baoyu-danger-x-to-markdown:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/cookies.ts:204)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/cookies.ts:137)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/graphql.ts:256)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/http.ts:112)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-danger-x-to-markdown".
+skills.code_safety Skill "baoyu-format-markdown" contains dangerous code patterns
+  Found 1 critical issue(s) in 3 scanned file(s) under /root/.agents/skills/baoyu-format-markdown:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/autocorrect.ts:5)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-format-markdown".
+skills.code_safety Skill "baoyu-image-gen" contains dangerous code patterns
+  Found 3 critical issue(s) in 5 scanned file(s) under /root/.agents/skills/baoyu-image-gen:
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/providers/dashscope.ts:4)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/providers/google.ts:9)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/providers/openai.ts:6)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-image-gen".
+skills.code_safety Skill "baoyu-markdown-to-html" contains dangerous code patterns
+  Found 1 critical issue(s) in 13 scanned file(s) under /root/.agents/skills/baoyu-markdown-to-html:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/main.ts:203)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-markdown-to-html".
+skills.code_safety Skill "baoyu-post-to-wechat" contains dangerous code patterns
+  Found 12 critical issue(s) in 21 scanned file(s) under /root/.agents/skills/baoyu-post-to-wechat:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/cdp.ts:192)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/cdp.ts:34)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/check-permissions.ts:69)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/copy-to-clipboard.ts:59)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/md-to-wechat.ts:188)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/paste-from-clipboard.ts:54)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/wechat-agent-browser.ts:17)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/wechat-api.ts:317)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/wechat-api.ts:76)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/wechat-article.ts:83)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/wechat-browser.ts:340)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/wechat-browser.ts:132)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-post-to-wechat".
+skills.code_safety Skill "baoyu-post-to-x" contains dangerous code patterns
+  Found 9 critical issue(s) in 9 scanned file(s) under /root/.agents/skills/baoyu-post-to-x:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/check-paste-permissions.ts:69)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/copy-to-clipboard.ts:59)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/paste-from-clipboard.ts:54)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/x-article.ts:123)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/x-browser.ts:39)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/x-quote.ts:43)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/x-utils.ts:224)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/x-utils.ts:63)
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/x-video.ts:43)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-post-to-x".
+skills.code_safety Skill "baoyu-url-to-markdown" contains dangerous code patterns
+  Found 2 critical issue(s) in 5 scanned file(s) under /root/.agents/skills/baoyu-url-to-markdown:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/cdp.ts:196)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/cdp.ts:125)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.agents/skills/baoyu-url-to-markdown".
+skills.code_safety Skill "tavily" contains dangerous code patterns
+  Found 2 critical issue(s) in 2 scanned file(s) under /root/.openclaw/workspace/skills/tavily-search:
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/extract.mjs:18)
+  - [env-harvesting] Environment variable access combined with network send — possible credential harvesting (scripts/search.mjs:42)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.openclaw/workspace/skills/tavily-search".
+skills.code_safety Skill "wechat-template-publisher" contains dangerous code patterns
+  Found 1 critical issue(s) in 1 scanned file(s) under /root/.openclaw/workspace/skills/wechat-template-publisher:
+  - [dangerous-exec] Shell command execution detected (child_process) (scripts/publish.ts:431)
+  Fix: Review the skill source code before use. If untrusted, remove "/root/.openclaw/workspace/skills/wechat-template-publisher".
+
+WARN
+gateway.trusted_proxies_missing Reverse proxy headers are not trusted
+  gateway.bind is loopback and gateway.trustedProxies is empty. If you expose the Control UI through a reverse proxy, configure trusted proxies so local-client checks cannot be spoofed.
+  Fix: Set gateway.trustedProxies to your proxy IPs or keep the Control UI local-only.
+
+INFO
+summary.attack_surface Attack surface summary
+  groups: open=0, allowlist=1
+tools.elevated: enabled
+hooks.webhooks: disabled
+hooks.internal: enabled
+browser control: enabled
+trust model: personal assistant (one trusted operator boundary), not hostile multi-tenant on one shared gateway
+Summary: critical=13 warn=2 info=2
+Top issues: skills] Skipping escaped skill path outside its configured root: source=openclaw-managed root=~/.openclaw/skills reason=symlink-escape requested=~/.openclaw/skills/baoyu-infographic resolved=~/.agents/skills/baoyu-infographic;Summary: 11 critical · 1 warn · 1 info;CRITICAL;
+Sanitized: no secrets included in summary.
+
