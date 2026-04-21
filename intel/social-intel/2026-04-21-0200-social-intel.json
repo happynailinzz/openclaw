@@ -1,0 +1,89 @@
+{
+  "run_at": "2026-04-21T02:00:00Z",
+  "sop": "social-intel-sop-openclaw",
+  "step_a_skills_check": {
+    "executed": false,
+    "reason": "本次为周二，按SOP跳过每周一skills复查"
+  },
+  "sources": {
+    "x": {"status": "weak_signal", "method": "web_fetch:nitter", "note": "返回空白结果，未形成有效情报"},
+    "xiaohongshu": {"status": "failed", "method": "web_fetch", "note": "仅返回站点页脚/壳页面，未拿到有效内容"},
+    "youtube": {"status": "partial", "method": "web_fetch", "note": "搜索页可达但正文为脚本壳，未提取出稳定视频结果"},
+    "reddit": {"status": "partial", "method": "rss", "note": "有结果但高噪音，相关性偏低"},
+    "news": {"status": "success", "method": "web_fetch"},
+    "rss": {"status": "success", "method": "web_fetch"},
+    "gov": {"status": "success", "method": "web_fetch"}
+  },
+  "items": [
+    {
+      "platform": "DefenseScoop",
+      "title": "Army suspended soldier-built AI talent tool VECTOR pending compliance review",
+      "published_at": "2026-02-02T00:00:00Z",
+      "url": "https://defensescoop.com/2026/02/02/artificial-intelligence-army-review-vector-talent-management-tool/",
+      "summary": "美国陆军暂停一款部署在官方分析平台上的非正式AI人才管理工具VECTOR，并启动合规审查，显示军方在鼓励AI试验与制度护栏之间的张力正在前置化。",
+      "signals": ["defense ai", "compliance review", "unauthorized tool", "policy guardrails"],
+      "confidence": 0.88,
+      "value_score": 8,
+      "tier": "high"
+    },
+    {
+      "platform": "AI.mil",
+      "title": "DoD AI stack highlights Agent Network, GenAI.mil and War Data Platform",
+      "published_at": "2026-04-21T02:01:00Z",
+      "url": "https://www.ai.mil/",
+      "summary": "美国国防AI主站当前重点突出 Agent Network、GenAI.mil、Enterprise Agents、War Data Platform 等，说明国防AI正在从单点模型试验转向平台化、代理化、数据底座化建设。",
+      "signals": ["government ai", "agent network", "genai.mil", "war data platform"],
+      "confidence": 0.84,
+      "value_score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "AEI",
+      "title": "Strengthening Export Controls framed as urgent congressional national security priority",
+      "published_at": "2026-04-21T02:01:00Z",
+      "url": "https://www.aei.org/op-eds/strengthening-export-controls-a-critical-national-security-priority-for-congress/",
+      "summary": "AEI文章汇总近期国会与政策圈对先进AI芯片、芯片制造设备及配套能力出口管制的升级呼声，强调Nvidia服务器绕道流向中国、DUV设备约束与执法补位。虽非官方公告，但反映政策加码预期升温。",
+      "signals": ["export controls", "nvidia servers", "duv lithography", "congress markup"],
+      "confidence": 0.76,
+      "value_score": 6,
+      "tier": "high"
+    },
+    {
+      "platform": "The Register",
+      "title": "GitHub pauses new Copilot individual sign-ups amid capacity crunch",
+      "published_at": "2026-04-20T23:42:49Z",
+      "url": "https://go.theregister.com/feed/www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/",
+      "summary": "GitHub暂停新的Copilot个人订阅开户，理由直指容量与服务承诺压力。对企业客户不是直接政策风险，但说明上游模型/推理供给侧仍存在资源紧约束。",
+      "signals": ["copilot", "capacity crunch", "ai supply", "service commitments"],
+      "confidence": 0.72,
+      "value_score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "O'Reilly Radar",
+      "title": "Scenario Planning for AI and the Jobless Future",
+      "published_at": "2026-04-20T10:41:09Z",
+      "url": "https://www.oreilly.com/radar/scenario-planning-for-ai-and-the-jobless-future/",
+      "summary": "O'Reilly讨论AI带来的就业不确定性与情景规划方法，偏宏观认知框架，对当前政务/国防AI供应链监控相关性有限。",
+      "signals": ["ai labor", "scenario planning"],
+      "confidence": 0.74,
+      "value_score": 1,
+      "tier": "low"
+    },
+    {
+      "platform": "Reddit RSS",
+      "title": "Search results for government AI / defense AI / export controls",
+      "published_at": "2026-04-21T02:00:58Z",
+      "url": "https://www.reddit.com/search.rss?q=%28government%20AI%20OR%20defense%20AI%20OR%20export%20controls%29&sort=new",
+      "summary": "Reddit RSS可抓到结果，但命中内容以泛社区、二级讨论和噪音为主，本轮未提炼出高置信增量情报。",
+      "signals": ["community chatter", "noise high", "weak relevance"],
+      "confidence": 0.45,
+      "value_score": 0,
+      "tier": "low"
+    }
+  ],
+  "dedupe_rate_est": 0.12,
+  "success_rate_est": 0.71,
+  "high_value_hit_rate_est": 0.5,
+  "note": "本轮未达到SOP质量目标，主要受X/小红书/YouTube抓取稳定性影响。"
+}
