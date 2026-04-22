@@ -1,0 +1,118 @@
+{
+  "run_at": "2026-04-22T02:00:00Z",
+  "report_title": "10:00 社交情报简报",
+  "status": {
+    "weekly_skill_check_executed": false,
+    "reason": "本次为周三，按 SOP 跳过 Step A 每周一技能复查"
+  },
+  "items": [
+    {
+      "platform": "News / DefenseNews",
+      "title": "Pentagon seeks funds for Golden Dome, drones, AI in largest-ever budget request",
+      "published_at": "2026-04-21",
+      "url": "https://www.defensenews.com/news/pentagon-congress/2026/04/21/pentagon-seeks-funds-for-golden-dome-drones-ai-in-largest-ever-budget-request/",
+      "summary": "美国国防部披露 2027 财年 1.5 万亿美元预算提案，明确把 AI、数据基础设施、无人机与反无人系统、工业基础列为重点投入方向，说明政务/国防侧 AI 需求已从试点走向大规模预算化采购。",
+      "signals": ["国防预算", "AI", "数据基础设施", "无人系统", "工业基础"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "Website / AI.mil",
+      "title": "AI.mil 首页持续突出 Agent Network / GenAI.mil / War Data Platform",
+      "published_at": "2026-04-22",
+      "url": "https://www.ai.mil/",
+      "summary": "AI.mil 当前首页将 Agent Network、GenAI.mil、Enterprise Agents、Maven Smart System、War Data Platform 等列为核心项目，显示美国国防体系正在把 Agent 化、生成式 AI、战时数据底座作为连续建设主线。",
+      "signals": ["Agent Network", "GenAI.mil", "War Data Platform", "Maven", "enterprise agents"],
+      "confidence": "high",
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "News / Google News aggregate",
+      "title": "China officials overseeing allocation of high-end AI chips, prioritizing homegrown options — government's AI chip pivot accelerates as US export restrictions bite",
+      "published_at": "2025-11-12",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPNEhKQWczdW91WmZBQ083RERfUHZVUkxfOXJvUjJDXzFHaEpNT0lYY1dxdFJCUHRqWTVpUE45NnhvUmZfUGdwb2MwN05tcS1kWHF5Y0thUnVSVVU1RTZQS2s2UGdkdjdxb01nNkgydGIyMm5FSVVFcVFfVWRUclA5aHNlMFM4Y0ZHdDhTY2c1SjlvZVY4ek1VTWhLeDY5ZFNxMktjbkhQbnF2ZXJON3B5UzFBdG1EVXp2ZlA1X0Zn?oc=5",
+      "summary": "Google News 聚合结果显示，围绕美国出口限制，中国正在强化高端 AI 芯片分配与国产替代优先级。这类信号意味着供应链正在被政策重排，政府/国防相关算力交付将更依赖本土路线与受控分配。",
+      "signals": ["出口管制", "AI 芯片", "国产替代", "分配机制", "供应链重排"],
+      "confidence": "medium",
+      "score": 5,
+      "tier": "high"
+    },
+    {
+      "platform": "RSS / DefenseNews",
+      "title": "Navy ‘going to study’ possibility of building ships outside US, Phelan says",
+      "published_at": "2026-04-22T00:27:50Z",
+      "url": "https://www.defensenews.com/news/your-navy/2026/04/22/navy-going-to-study-possibility-of-building-ships-outside-us-phelan-says/",
+      "summary": "美海军研究在美国境外建造舰船的可能性，理由是本土劳动力与产能承压。虽然不是纯 AI 新闻，但反映国防工业基础与交付能力吃紧，间接影响 AI/数据/电子系统集成的交付窗口与外包协作逻辑。",
+      "signals": ["工业基础", "劳动力瓶颈", "海外产能", "交付窗口", "国防供应链"],
+      "confidence": "medium",
+      "score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "Reddit / r/artificial",
+      "title": "Apple's play for AI is a hardware bet, not software",
+      "published_at": "2026-04-21T12:35:57Z",
+      "url": "https://www.reddit.com/r/artificial/comments/1srmdg7/apples_play_for_ai_is_a_hardware_bet_not_software/",
+      "summary": "社区讨论继续强化“AI 竞争先卷硬件再卷软件”的判断，说明算力、端侧芯片与硬件平台仍是产业链核心约束。但该条偏行业情绪，不直接对应政务/国防落地。",
+      "signals": ["AI 硬件", "端侧推理", "产业情绪"],
+      "confidence": "low",
+      "score": 1,
+      "tier": "low"
+    }
+  ],
+  "failures": [
+    {
+      "platform": "X",
+      "status": "failed",
+      "reason": "本轮未获得稳定可提取结果"
+    },
+    {
+      "platform": "Xiaohongshu",
+      "status": "failed",
+      "reason": "web 抓取仅壳页；browser 兜底不可用"
+    },
+    {
+      "platform": "YouTube",
+      "status": "failed",
+      "reason": "feed 路径 404；browser 兜底不可用"
+    }
+  ],
+  "supply_chain_mapping": {
+    "topic": "政务/国防 AI 供应链波动映射",
+    "events": [
+      {
+        "policy_action": "美国继续以出口限制与相关政策收紧高端 AI 芯片流向，外溢到全球算力分配与采购秩序",
+        "vendors_impacted": ["NVIDIA 生态", "受限 GPU 渠道商", "中国本土模型厂商", "中国本土芯片厂商", "云服务与集成商"],
+        "delivery_impact": "高端 GPU 获取更依赖政策窗口、配额与替代型号，政府/国防相关项目更容易出现交付延迟与规格调整",
+        "risk_level": "high",
+        "reason": "直接作用于底层算力供给，且影响会沿模型、云、集成三层传导"
+      },
+      {
+        "policy_action": "美国国防预算把 AI、数据基础设施、无人系统和工业基础一并前置为预算重点",
+        "vendors_impacted": ["国防 AI 平台商", "数据平台商", "无人系统厂商", "军工集成商"],
+        "delivery_impact": "相关厂商需求明确提升，但也会推高合规、集成与产能压力，项目会更看重可交付性与安全分级能力",
+        "risk_level": "medium",
+        "reason": "需求端确定性增强，但供给端是否跟上取决于工业基础和安全体系"
+      },
+      {
+        "policy_action": "美海军研究境外造船，显示本土工业基础与劳动力已成硬约束",
+        "vendors_impacted": ["军工总包", "海外制造合作方", "系统集成商", "配套电子与软件供应商"],
+        "delivery_impact": "未来更多项目可能采用跨国产能协同与分段交付，AI/电子/数据系统需适配更复杂的供应链与验收链条",
+        "risk_level": "medium",
+        "reason": "不是直接禁令，但明确暴露出交付能力瓶颈"
+      }
+    ]
+  },
+  "metrics": {
+    "success_rate_estimated": 0.67,
+    "duplicate_rate_estimated": 0.14,
+    "high_value_hit_rate_estimated": 0.60
+  },
+  "distribution": {
+    "telegram_target": "1511915498",
+    "delivery_status": "not_sent_by_policy",
+    "note": "任务明确要求外部推送，按当前策略仅标注去向，不直接发送"
+  }
+}
