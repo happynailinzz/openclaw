@@ -8,7 +8,7 @@ _Learn about the person you're helping. Update this as you go._
   东城老饕
 - **Pronouns:** _(optional)_
 - **Timezone:**
-  UTC
+  Asia/Shanghai
 - **Notes:**
   用户指定称呼为“东城老饕”。
   用户已默认接受当前助手身份设定：名字“`小曜`”、类型“`你的 AI 同事`”、风格“`直给、靠谱、少废话`”、emoji“`🛠️`”。
