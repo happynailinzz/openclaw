@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-21T09:31:04.983Z",
+  "updatedAt": "2026-04-22T03:16:40.910Z",
   "entries": {
     "memory:memory/2026-03-11.md:1:11": {
       "key": "memory:memory/2026-03-11.md:1:11",
@@ -517,6 +517,37 @@
         "scripts/url-to-notion.py",
         "scripts/wechat-md-to-notion.py",
         "scripts/x-to-notion.py"
+      ]
+    },
+    "memory:memory/2026-04-22.md:56:66": {
+      "key": "memory:memory/2026-04-22.md:56:66",
+      "path": "memory/2026-04-22.md",
+      "startLine": 56,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "- 对新版附件 PDF 的定位与设计要求已明确：竖版、导读友好、目录清晰、每份文件前补“这份文件是什么/为什么重要/与文章关系”，整体保持正式、克制、政策研究感，不做花哨视觉。 ## 2026-04-22 02:51 UTC - 用户选择将“读者附件版”继续升级为更像白皮书小册子的版本，要求增强封面、页眉页脚、章节色条、引用高亮、统一蓝色体系。 - 已交付的升级产物路径：`/root/.openclaw/workspace/drafts/nea-coalmine-standards-review/国家能源局-煤矿数字化智能化官方文件汇编-白皮书附件版.pdf` - 当前该套附件 PDF 已形成三层版本： 1) 审查版：`国家能源局-煤矿数字化智能化相关官方文件汇编-审查版.pdf` 2) 读者附件版：`国家能源局-煤矿数字化智能化官方文件汇编-读者附件版.pdf` 3) 白皮书附件版：`国家能源局-煤矿数字化智能化官方文件汇编-白皮书附件版.pdf` - 后续默认建议：若用于公众号正文中供读者下载，优先使用“白皮书附件版”。 ## 2026-04-22 02:57 UTC - 用户要求将“第 3 个 PDF”即白皮书附件版发回 Telegram。",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-22T03:16:40.910Z",
+      "lastRecalledAt": "2026-04-22T03:16:40.910Z",
+      "queryHashes": [
+        "4e7b1812a38a"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "这份文件是什么/为什么重要/与文章关系",
+        "国家能源局-煤矿数字化智能化相关官方文件汇编-审查版.pdf",
+        "国家能源局-煤矿数字化智能化官方文件汇编-读者附件版.pdf",
+        "国家能源局-煤矿数字化智能化官方文件汇编-白皮书附件版.pdf",
+        "新版",
+        "附件",
+        "pdf",
+        "定位"
       ]
     }
   }
