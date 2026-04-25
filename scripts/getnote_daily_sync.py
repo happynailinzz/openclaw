@@ -273,6 +273,10 @@ def sync_day(target_day):
         'syncedTitles': sorted(synced_titles),
         'lastSyncedAt': dt.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
     }
+    state['lastSyncedDay'] = day_key
+    if notes:
+        state['lastNoteTitle'] = notes[-1]['title']
+    state['lastSyncedAt'] = dt.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     state['syncedLinkIds'] = sorted(synced_link_ids)
     save_state(state)
     return results

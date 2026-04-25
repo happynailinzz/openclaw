@@ -1,0 +1,150 @@
+{
+  "run_at": "2026-04-25T02:00:00Z",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "step_a": {
+    "executed": false,
+    "reason": "周六，按规则跳过每周一 skills 复查"
+  },
+  "source_status": {
+    "x": {
+      "status": "failed",
+      "reason": "web_fetch 返回错误壳页：Something went wrong"
+    },
+    "xiaohongshu": {
+      "status": "failed",
+      "reason": "仅返回备案/站点壳页，未获得正文级结果"
+    },
+    "youtube": {
+      "status": "failed",
+      "reason": "搜索结果仅返回前端脚本壳页"
+    },
+    "reddit": {
+      "status": "partial",
+      "reason": "RSS 可用，但结果以版块/泛讨论为主，噪音高"
+    },
+    "news_sites": {
+      "status": "ok",
+      "reason": "DefenseScoop 可读"
+    },
+    "rss": {
+      "status": "ok",
+      "reason": "Google News RSS 可用"
+    },
+    "official_sites": {
+      "status": "ok",
+      "reason": "AI.mil、State Department、AI.gov 可读"
+    },
+    "browser_fallback": {
+      "status": "failed",
+      "reason": "browser 网关超时，不再重试，按 SOP 记回退失败"
+    }
+  },
+  "items": [
+    {
+      "platform": "news-site",
+      "title": "Pentagon uses GenAI.mil to create 100K agents",
+      "published_at": "2026-04-25T02:01:06Z",
+      "url": "https://defensescoop.com/",
+      "summary": "DefenseScoop 首页将 GenAI.mil 扩展到 100K agents 置于头部，说明国防体系正在把生成式 AI 从试点工具推进到代理化规模部署，平台容量、权限治理与可控交付进入硬约束阶段。",
+      "signals": ["GenAI.mil", "100K agents", "defense deployment scale", "agent governance"],
+      "confidence": 0.86,
+      "score": 8,
+      "tier": "high"
+    },
+    {
+      "platform": "official-site",
+      "title": "AI.mil 持续突出 Agent Network / GenAI.mil / Enterprise Agents / War Data Platform",
+      "published_at": "2026-04-25T02:01:07Z",
+      "url": "https://www.ai.mil/",
+      "summary": "AI.mil 首页持续把 Agent Network、GenAI.mil、Enterprise Agents、Maven Smart System、War Data Platform 放在核心位，说明美军 AI 主线仍是“数据底座 + 代理化应用 + 作战/情报融合”。",
+      "signals": ["agentic AI", "warfighting", "Maven", "data platform"],
+      "confidence": 0.90,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "official-site",
+      "title": "State Department 推进 Enterprise Data and AI Strategy 与 OMB M-25-21 合规计划",
+      "published_at": "2026-04-25T02:01:06Z",
+      "url": "https://www.state.gov/artificial-intelligence/",
+      "summary": "美国国务院继续公开推进 Enterprise Data and AI Strategy 与 OMB M-25-21 合规计划，重点覆盖 AI 创新、治理、共享复用、高影响用例与终止不合规用例，说明联邦 AI 制度化还在加码。",
+      "signals": ["federal AI governance", "OMB M-25-21", "compliance plan", "high-impact use cases"],
+      "confidence": 0.89,
+      "score": 7,
+      "tier": "high"
+    },
+    {
+      "platform": "official-site",
+      "title": "AI.gov 延续总统 AI Strategy and Action Plan 对美国 AI 领先地位的政策表述",
+      "published_at": "2026-04-25T02:01:23Z",
+      "url": "https://www.ai.gov/",
+      "summary": "AI.gov 页面虽信息量不大，但继续统一释放联邦层面对 AI 领先、政策统筹和行动计划的顶层口径，适合作为政策背景信号，不足以单独支撑硬事件判断。",
+      "signals": ["federal AI strategy", "top-level policy signaling"],
+      "confidence": 0.63,
+      "score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "news/rss",
+      "title": "AP report: Hegseth warns Anthropic to let the military use company's AI tech as it sees fit",
+      "published_at": "2026-02-24T08:00:00Z",
+      "url": "https://news.google.com/search?q=(AI+chip+export+controls+OR+defense+AI+procurement+OR+government+AI+restriction+OR+DoD+AI+OR+federal+AI+policy)&hl=en-US&gl=US&ceid=US:en",
+      "summary": "Google News RSS 仍能稳定命中国防 AI 采购与模型厂商边界冲突相关条目，持续提示模型接入权限、军用边界和合同约束是交付层面的高敏感变量。",
+      "signals": ["government AI procurement", "model vendor compliance pressure", "defense AI governance"],
+      "confidence": 0.74,
+      "score": 6,
+      "tier": "high"
+    },
+    {
+      "platform": "news/rss",
+      "title": "The New AI Chip Export Policy to China: Strategically Incoherent and Unenforceable",
+      "published_at": "2026-01-14T08:00:00Z",
+      "url": "https://news.google.com/search?q=(AI+chip+export+controls+OR+defense+AI+procurement+OR+government+AI+restriction+OR+DoD+AI+OR+federal+AI+policy)&hl=en-US&gl=US&ceid=US:en",
+      "summary": "AI 芯片出口限制依然是供应链波动的硬底座，但本条偏评论型回顾，更多用于强化风险判断而不是作为最新事件。",
+      "signals": ["AI chip export controls", "China", "supply chain pressure"],
+      "confidence": 0.67,
+      "score": 4,
+      "tier": "medium"
+    },
+    {
+      "platform": "reddit",
+      "title": "Reddit RSS 结果以版块/泛讨论为主，新增情报有限",
+      "published_at": "2026-04-25T02:01:08Z",
+      "url": "https://www.reddit.com/search?q=%28government+AI+procurement+OR+AI+chip+export+controls+OR+defense+AI%29&sort=new",
+      "summary": "Reddit RSS 本轮主要返回版块或泛 AI 资讯，能当温度计，但不足以承载核心结论。",
+      "signals": ["community chatter", "low signal", "high noise"],
+      "confidence": 0.40,
+      "score": 0,
+      "tier": "low"
+    }
+  ],
+  "mapping": [
+    {
+      "policy_action": "联邦 AI 制度化继续推进（State Department / OMB M-25-21 / AI.gov）",
+      "vendor_impact": "模型厂商、云服务商、政务 AI 集成商将持续面对更重的披露、治理、复用与审计要求。",
+      "delivery_impact": "政府项目从‘能跑’转向‘可审计、可复用、可终止不合规用例’，正式交付窗口被明显收紧。",
+      "risk_level": "medium",
+      "reason": "不是突然断供型冲击，但会持续抬高政务项目准入和验收门槛。"
+    },
+    {
+      "policy_action": "国防部门对模型使用边界施压（Anthropic 相关公开争议）",
+      "vendor_impact": "模型厂商、国防承包商、AI 安全/红队服务商都会被卷进军用边界与合同条款博弈。",
+      "delivery_impact": "若模型接入权限、用途边界或责任条款谈不拢，项目很容易在上线前被卡死或被迫切换替代模型。",
+      "risk_level": "high",
+      "reason": "这事直接打在模型可用性和合同边界上，属于最容易影响交付窗口的风险。"
+    },
+    {
+      "policy_action": "AI 芯片出口管制持续作为底层约束",
+      "vendor_impact": "高端 GPU 厂商、云算力供应商、境外算力租赁商和国产替代链条都受影响。",
+      "delivery_impact": "训练/推理资源供给、成本和扩容节奏更不稳定，替代路径将继续偏向降配方案、模型压缩和本地化替代。",
+      "risk_level": "high",
+      "reason": "它直接作用在算力供给和成本，不是嘴炮风险，是硬约束。"
+    }
+  ],
+  "metrics": {
+    "success_rate_est": 0.75,
+    "duplicate_rate_est": 0.14,
+    "high_value_hit_rate_est": 0.67,
+    "latency_est_minutes": 30
+  }
+}

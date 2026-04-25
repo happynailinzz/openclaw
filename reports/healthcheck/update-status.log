@@ -8,9 +8,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.2.21-2                                                                            │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm channel=stable latest=2026.2.21-2
 
 ===== 2026-02-22T08:32:43Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.21-2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -20,9 +20,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.2.21-2                                                                            │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm channel=stable latest=2026.2.21-2
 
 ===== 2026-02-23T04:00:24Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.21-2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -32,9 +32,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.2.21-2                                                                            │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: OpenClaw update status ┌──────────┬─────────────────────────────────────────────────────�
 
 ===== 2026-02-24T04:00:17Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.21-2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -44,9 +44,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.2.22-2                                                                            │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm; channel=stable (default); latest=npm latest 2026.2.22-2
 
 ===== 2026-02-25T04:00:18Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.22-2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -58,9 +58,9 @@ OpenClaw update status
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.2.24). Run: openclaw update
-Summary: install=pnpm channel=stable latest=npm 2026.2.24 (update available)
 
 ===== 2026-02-26T04:00:33Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.2.24; status=update available
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -70,9 +70,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.2.24                                                                              │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable (default), latest=npm latest 2026.2.24
 
 ===== 2026-02-27T04:00:28Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.24
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -82,9 +82,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.2.26                                                                              │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable (default), latest=pnpm · npm latest 2026.2.26
 
 ===== 2026-02-28T04:00:16Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.26
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -94,9 +94,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.2.26                                                                              │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable (default), latest=npm 2026.2.26.
 
 ===== 2026-03-01T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.26
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -106,9 +106,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.2.26                                                                              │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable, latest=2026.2.26.
 
 ===== 2026-03-02T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.26
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -119,9 +119,9 @@ OpenClaw update status
 │ Update   │ pnpm · npm latest 2026.2.26                                                                              │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-Summary: install=pnpm, channel=stable (default), latest=2026.2.26 (update available via pnpm).
 
 ===== 2026-03-03T04:00:24Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.2.26
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -133,7 +133,6 @@ OpenClaw update status
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.1). Run: openclaw update
-summary: │ Install  │ pnpm                                                                                                     │ | channel: (not detected) | Update available (npm 2026.3.1). Run: openclaw update
 ===== 2026-03-04T04:00:27Z =====
 │
 ◇  Doctor warnings ────────────────────────────────────────────────────────╮
@@ -144,6 +143,7 @@ summary: │ Install  │ pnpm                                                  
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.1; status=update available
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -153,7 +153,6 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.2                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-summary: install=pnpm; channel=stable (default); latest=npm latest 2026.3.2
 
 ===== 2026-03-05T04:00:17Z =====
 │
@@ -165,6 +164,7 @@ summary: install=pnpm; channel=stable (default); latest=npm latest 2026.3.2
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -174,9 +174,7 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.2                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=│ | channel=│ | latest=│
 
-Summary: install=pnpm | channel=stable (default) | latest=npm latest 2026.3.2
 ===== 2026-03-06T04:00:30Z =====
 │
 ◇  Doctor warnings ────────────────────────────────────────────────────────╮
@@ -187,6 +185,7 @@ Summary: install=pnpm | channel=stable (default) | latest=npm latest 2026.3.2
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -196,7 +195,6 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.2                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2.
 
 ===== 2026-03-07T04:00:48Z =====
 │
@@ -208,6 +206,7 @@ Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -217,7 +216,6 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.2                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2
 
 ===== 2026-03-08T04:01:15Z =====
 │
@@ -229,6 +227,7 @@ Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -249,6 +248,7 @@ OpenClaw update status
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -269,6 +269,7 @@ install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.2
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -278,7 +279,6 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.7                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.7
 
 ===== 2026-03-10T04:00:18Z =====
 │
@@ -290,6 +290,7 @@ Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.7
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -299,7 +300,6 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.8                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=unknown; channel=unknown; latest=unknown
 
 ===== 2026-03-10T04:00:46Z =====
 │
@@ -311,6 +311,7 @@ Summary: install=unknown; channel=unknown; latest=unknown
 │    channels.telegram.allowFrom, or set groupPolicy to "open".            │
 │                                                                          │
 ├──────────────────────────────────────────────────────────────────────────╯
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.8
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -320,9 +321,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.8                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.8
 
 ===== 2026-03-11T04:00:19Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.8
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -333,8 +334,8 @@ OpenClaw update status
 │ Update   │ pnpm · npm latest 2026.3.8                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-Summary: install=unknown; channel=unknown; latest=unknown
 ===== 2026-03-12T04:00:18Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.8
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -344,9 +345,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.8                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-summary: install=unknown; channel=unknown; latest=unknown
 
 ===== 2026-03-12T04:00:42Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.8
 OpenClaw update status
 
 ┌──────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -356,9 +357,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                         │
 │ Update   │ pnpm · npm latest 2026.3.8                                                                               │
 └──────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.8
 
 ===== 2026-03-13T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.8
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -368,9 +369,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · npm latest 2026.3.11                                                                               │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable (default), latest=npm 2026.3.11.
 
 ===== 2026-03-14T04:00:15Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.11
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -380,9 +381,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · npm latest 2026.3.12                                                                               │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-summary: install=│ Install  │ pnpm                                                                                                      │ | channel=│ Channel  │ stable (default)                                                                                          │ | latest=│ Update   │ pnpm · npm latest 2026.3.12                                                                               │
 
 ===== 2026-03-15T04:01:52Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.12
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -394,9 +395,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.13). Run: openclaw update
-Summary: install=pnpm, channel=stable (default), latest=npm 2026.3.13, update=available.
 
 ===== 2026-03-16T04:00:15Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.13; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -408,9 +409,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.13). Run: openclaw update
-Summary: install=unknown; channel=unknown; latest=unknown
 
 ===== 2026-03-16T04:00:51Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.13; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -422,9 +423,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.13). Run: openclaw update
-Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.13
 
 ===== 2026-03-17T04:00:52Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.13; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -436,9 +437,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.13). Run: openclaw update
-Summary: install=pnpm, channel=stable, latest=npm 2026.3.13 (update available).
 
 ===== 2026-03-18T04:00:25Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.13; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -448,9 +449,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · npm latest 2026.3.13                                                                               │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=unknown, channel=unknown, current=unknown, latest=unknown, update_available=unknown
 
 ===== 2026-03-19T04:00:22Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.13
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -460,9 +461,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · npm latest 2026.3.13                                                                               │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: OpenClaw update status ┌──────────┬───────────────────────────────────────────────
 
 ===== 2026-03-20T04:00:31Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.13
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -472,9 +473,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · npm latest 2026.3.13                                                                               │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable (default), latest=npm 2026.3.13.
 
 ===== 2026-03-21T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.13
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -484,9 +485,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · npm latest 2026.3.13                                                                               │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable (default), latest=2026.3.13 (update source: npm latest via pnpm).
 
 ===== 2026-03-22T04:01:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.13
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -496,9 +497,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · npm latest 2026.3.13                                                                               │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable (default), latest=2026.3.13.
 
 ===== 2026-03-23T04:00:14Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.13
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -508,9 +509,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · npm latest 2026.3.13                                                                               │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install: (not found in output) | channel: (not found in output) | latest: (not found in output)
 
 ===== 2026-03-24T04:00:46Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · npm latest 2026.3.13
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -522,9 +523,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.23-2). Run: openclaw update
-Summary: install=pnpm, channel=stable, latest=npm 2026.3.23-2 (update available)
 
 ===== 2026-03-25T04:00:22Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.23-2; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -539,6 +540,7 @@ Update available (npm 2026.3.23-2). Run: openclaw update
 
 install=│ Install  │ pnpm                                                                                                      │; channel=│ Channel  │ stable (default)                                                                                          │; latest=Update available (npm 2026.3.23-2). Run: openclaw update
 ===== 2026-03-26T04:00:46Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.23-2; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -550,9 +552,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.24). Run: openclaw update
-Summary: install=pnpm, channel=stable, latest=npm 2026.3.24, update=available
 
 ===== 2026-03-27T04:00:46Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.24; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -564,9 +566,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.24). Run: openclaw update
-Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.24
 
 ===== 2026-03-28T04:00:43Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.24; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -578,9 +580,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.24). Run: openclaw update
-summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.24
 
 ===== 2026-03-29T04:01:16Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.24; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -592,8 +594,8 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.28). Run: openclaw update
-summary: install=pnpm; channel=stable (default); latest=npm 2026.3.28 (update available)
 ===== 2026-03-30T04:00:46Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.28; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -606,9 +608,9 @@ OpenClaw update status
 
 Update available (npm 2026.3.28). Run: openclaw update
 
-Summary: install=pnpm; channel=stable (default); latest=update
 
 ===== 2026-03-31T04:00:18Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.28; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -620,11 +622,10 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.3.28). Run: openclaw update
-Summary: install=unknown; channel=unknown; latest=unknown
 
-Summary: install=pnpm; channel=stable (default); latest=npm 2026.3.28 (update available)
 
 ===== 2026-03-31T13:43:47Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.3.28; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -636,6 +637,7 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 install=unknown; channel=unknown; latest=unknown
 ===== 2026-04-02T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.3.28; status=up to date
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -647,10 +649,10 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.1). Run: openclaw update
-summary: install=unknown; channel=unknown; latest=unknown
 
 summary-corrected: install=pnpm; channel=stable (default); latest=2026.4.1
 ===== 2026-04-03T04:00:22Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.1; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -664,6 +666,7 @@ OpenClaw update status
 Update available (npm 2026.4.2). Run: openclaw update
 install=unknown; channel=unknown; latest=unknown
 ===== 2026-04-04T04:00:15Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.2; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -675,9 +678,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.2). Run: openclaw update
-Summary: │ Install │ pnpm │; │ Channel │ stable (default) │; │ Update │ available · pnpm · npm update 2026.4.2 │
 
 ===== 2026-04-05T04:01:06Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.2; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -689,9 +692,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.2). Run: openclaw update
-Summary: install=unknown; channel=unknown; latest=unknown
 
 ===== 2026-04-06T04:00:17Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.2; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -703,9 +706,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.5). Run: openclaw update
-Summary: install=unknown; channel=unknown; latest=unknown
 
 ===== 2026-04-07T04:00:43Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.5; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -717,9 +720,8 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.5). Run: openclaw update
-Summary: channel=stable
-summary: install=pnpm; channel=stable (default); latest=2026.4.5
 ===== 2026-04-09T04:00:18Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.5; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -733,6 +735,7 @@ OpenClaw update status
 Update available (npm 2026.4.9). Run: openclaw update
 install=unknown; channel=unknown; latest=Update available (npm 2026.4.9). Run: openclaw update
 ===== 2026-04-10T04:00:16Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.9; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -744,9 +747,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.9). Run: openclaw update
-summary:  |  | 
 
 ===== 2026-04-10T04:00:49Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.9; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -758,9 +761,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.9). Run: openclaw update
-summary: install=pnpm | channel=stable (default) | latest=available · pnpm · npm update 2026.4.9
 
 ===== 2026-04-11T04:00:16Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.9; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -774,6 +777,7 @@ OpenClaw update status
 Update available (npm 2026.4.10). Run: openclaw update
 install=unknown | channel=unknown | latest=unknown
 ===== 2026-04-12T04:02:02Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.10; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -783,9 +787,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · up to date · npm latest 2026.4.11                                                                  │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=unknown; channel=unknown; latest=2026.4.11                                                                  │
 
 ===== 2026-04-13T04:00:22Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.4.11; status=up to date
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -795,9 +799,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · up to date · npm latest 2026.4.11                                                                  │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=unknown; channel=unknown; latest=unknown
 
 ===== 2026-04-15T05:21:53Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.4.11; status=up to date
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -809,9 +813,9 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.14). Run: openclaw update
-Summary: │ Install  │ pnpm                                                                                                      │; │ Channel  │ stable (default)                                                                                          │; latest: unknown
 
 ===== 2026-04-16T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.14; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -823,8 +827,8 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.14). Run: openclaw update
-Summary: install=pnpm, channel=stable, latest=2026.4.14, update available.
 ===== 2026-04-17T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.14; status=update available
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -835,8 +839,8 @@ OpenClaw update status
 │ Update   │ pnpm · up to date · npm latest 2026.4.15                                                                  │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-Summary: install=pnpm, channel=stable, latest=2026.4.15, up to date.
 ===== 2026-04-18T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.4.15; status=up to date
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -846,9 +850,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · up to date · npm latest 2026.4.15                                                                  │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm, channel=stable (default), latest=npm 2026.4.15, status=up to date.
 
 ===== 2026-04-19T04:04:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.4.15; status=up to date
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -858,9 +862,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · up to date · npm latest 2026.4.15                                                                  │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm; channel=stable (default); latest=npm 2026.4.15; status=up to date.
 
 ===== 2026-04-20T04:01:08Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.4.15; status=up to date
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -871,9 +875,9 @@ OpenClaw update status
 │ Update   │ pnpm · up to date · npm latest 2026.4.15                                                                  │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-Summary: install=pnpm, channel=stable (default), latest=npm 2026.4.15, status=up to date
 
 ===== 2026-04-21T04:00:25Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.4.15; status=up to date
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -883,9 +887,9 @@ OpenClaw update status
 │ Channel  │ stable (default)                                                                                          │
 │ Update   │ pnpm · up to date · npm latest 2026.4.15                                                                  │
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Summary: install=pnpm; channel=stable (default); latest=npm 2026.4.15; status=up to date.
 
 ===== 2026-04-22T04:00:00Z =====
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.4.15; status=up to date
 OpenClaw update status
 
 ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -897,5 +901,38 @@ OpenClaw update status
 └──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Update available (npm 2026.4.21). Run: openclaw update
-Summary: install=unknown | channel=unknown | latest=unknown
 
+===== 2026-04-23T04:00:23Z =====
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.21; status=update available
+OpenClaw update status
+
+┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item     │ Value                                                                                                     │
+├──────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Install  │ pnpm                                                                                                      │
+│ Channel  │ stable (default)                                                                                          │
+│ Update   │ pnpm · up to date · npm latest 2026.4.21                                                                  │
+└──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Summary: install=pnpm; channel=stable (default); latest=pnpm · up to date · npm latest 2026.4.21; status=up to date
+===== 2026-04-23T05:49:48Z =====
+OpenClaw update status
+
+timeout after 25s
+Summary: status=timeout
+
+===== 2026-04-24T04:00:22Z =====
+OpenClaw update status
+
+┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item     │ Value                                                                                                     │
+├──────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Install  │ pnpm                                                                                                      │
+│ Channel  │ stable (default)                                                                                          │
+│ Update   │ available · pnpm · npm update 2026.4.22                                                                   │
+└──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Update available (npm 2026.4.22). Run: openclaw update
+Summary: install=unknown; channel=unknown; latest=unknown
+
+Summary: install=pnpm; channel=stable (default); latest=available · pnpm · npm update 2026.4.22

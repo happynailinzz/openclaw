@@ -4,6 +4,7 @@ set -euo pipefail
 WORKSPACE="/root/.openclaw/workspace"
 SKILLS_DIR="$WORKSPACE/skills"
 REQUIRED_SKILLS=(tavily-search baidu-search jina-reader humanize-zh notion-api-skill obsidian word-docx excel-xlsx)
+OPENCLAW_TIMEOUT_SECONDS="${OPENCLAW_TIMEOUT_SECONDS:-25}"
 
 section() {
   echo
@@ -14,6 +15,19 @@ ok() { echo "[OK] $1"; }
 warn() { echo "[WARN] $1"; }
 fail() { echo "[FAIL] $1"; }
 
+run_openclaw() {
+  local output_file="$1"
+  shift
+  if timeout "$OPENCLAW_TIMEOUT_SECONDS" "$@" >"$output_file" 2>&1; then
+    return 0
+  fi
+  local status=$?
+  if [ "$status" -eq 124 ]; then
+    printf 'timeout after %ss\n' "$OPENCLAW_TIMEOUT_SECONDS" >"$output_file"
+  fi
+  return "$status"
+}
+
 section "Version"
 if command -v openclaw >/dev/null 2>&1; then
   openclaw --version || true
@@ -23,16 +37,16 @@ else
 fi
 
 section "Gateway"
-if openclaw gateway status >/tmp/openclaw-gateway-status.txt 2>&1; then
+if run_openclaw /tmp/openclaw-gateway-status.txt openclaw gateway status; then
   ok "gateway reachable"
 else
-  warn "gateway status command returned non-zero"
+  warn "gateway status command returned non-zero or timed out"
 fi
 sed -n '1,80p' /tmp/openclaw-gateway-status.txt || true
 
 section "Cron"
-if openclaw cron list --json >/tmp/openclaw-cron.json 2>/dev/null; then
-  python3 - <<'PY'
+if run_openclaw /tmp/openclaw-cron.json openclaw cron list --json; then
+  if python3 - <<'PY' 2>/dev/null
 import json
 j=json.load(open('/tmp/openclaw-cron.json'))
 jobs=j.get('jobs',[])
@@ -41,13 +55,20 @@ for x in jobs:
     s=x.get('state',{})
     print(f"- {x['name']}: enabled={x.get('enabled')} last={s.get('lastStatus')} consecutiveErrors={s.get('consecutiveErrors',0)}")
 PY
+  then
+    true
+  else
+    warn "cron list returned non-JSON output"
+    sed -n '1,40p' /tmp/openclaw-cron.json || true
+  fi
 else
   warn "cannot read cron list"
+  sed -n '1,40p' /tmp/openclaw-cron.json || true
 fi
 
 section "Memory"
-if openclaw memory status --json >/tmp/openclaw-memory.json 2>/dev/null; then
-  python3 - <<'PY'
+if run_openclaw /tmp/openclaw-memory.json openclaw memory status --json; then
+  if python3 - <<'PY' 2>/dev/null
 import json
 arr=json.load(open('/tmp/openclaw-memory.json'))
 for item in arr:
@@ -59,8 +80,15 @@ for item in arr:
     if reason and st.get('provider')=='none':
         print(' note=embeddings provider not configured')
 PY
+  then
+    true
+  else
+    warn "memory status returned non-JSON output"
+    sed -n '1,40p' /tmp/openclaw-memory.json || true
+  fi
 else
   warn "cannot read memory status"
+  sed -n '1,40p' /tmp/openclaw-memory.json || true
 fi
 
 section "Skills"
