@@ -1,18 +1,24 @@
-# 河南六大重点领域项目机会监控（2026-04-26 00:30 UTC）
+# 社交情报抓取任务计划
 
 ## 目标
-执行一轮升级版监控，重点跟踪河南省厅办、重点地市、驻豫国央企在六大领域中的新增动作、项目信号、平台建设、示范场景、投资动态与合作线索，输出可转化项目机会。
+按《社交平台情报抓取 SOP（OpenClaw版）》执行一次完整流程，覆盖 X / 小红书 / YouTube / Reddit / 新闻网站 / RSS，并输出结构化情报、评分分层、供应链波动映射、归档与推送摘要。
 
 ## 阶段
-- [complete] 阶段1：确认可用搜索路由与本地脚本
-- [complete] 阶段2：发现层抓取（优先 tavily/cn/baidu/multi-engine 的本地替代）
-- [complete] 阶段3：确认层抓正文并筛选
-- [in_progress] 阶段4：生成简报
+- [complete] A. 周一 skills 发现与可用性检查
+- [complete] B. 多源抓取与失败回退
+- [complete] C. 结构化整理与评分
+- [complete] D. 生成简报、归档、记忆留痕
 
 ## 约束
-- 不把搜索摘要直接当最终情报
-- A/B 类源优先，C 类只补线索
-- 宁缺毋滥，每条必须带链接与状态
+- 单源失败不阻塞全流程
+- 输出字段固定：platform/title/published_at/url/summary/signals/confidence
+- 质量目标：成功率>=85%，重复率<=20%，高价值命中率>=60%（估计）
+- 新增一级主题：政务/国防 AI 供应链波动映射
 
 ## 错误记录
-- memory_search 不可用：embedding/provider 凭证缺失，本轮改用 workspace memory 文件 + 实时抓取
+| 错误 | 尝试 | 处理 |
+|---|---:|---|
+| planning skill 首次路径读取失败 | 1 | 改读 ~/.agents/skills/planning-with-files/SKILL.md |
+| X 抓取失败 | 1 | web_fetch 壳页；browser 超时，按 SOP 回退 |
+| YouTube 抓取失败 | 1 | web_fetch 仅前端脚本；browser 超时，按 SOP 回退 |
+| 小红书抓取失败 | 1 | web_fetch fetch failed；browser 超时，按 SOP 回退 |
