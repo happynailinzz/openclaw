@@ -1,10 +1,4 @@
 # Progress
 
-- 02:00 UTC：收到 cron 社交情报抓取任务
-- 02:01 UTC：读取 persona / user / memory / 昨日日志 / 长期记忆
-- 02:02 UTC：载入 planning-with-files skill 并初始化 planning files
-- 02:03 UTC：完成周一 skills 可用性检查；发现 xiaohongshu / write-xiaohongshu / agent-reach / find-skills，可用；reddit / youtube 无专用 skill
-- 02:04-02:06 UTC：完成官方站点、新闻站点、RSS、Reddit RSS 抓取
-- 02:06 UTC：X / YouTube / 小红书 web_fetch 失败或仅壳页
-- 02:07 UTC：browser 兜底三次均因 gateway 超时失败，停止重试并按 SOP 回退
-- 02:08 UTC：完成结构化整理、评分分层、供应链波动映射、归档与记忆留痕
+- 2026-04-28：初始化监控任务，准备进行发现层检索与正文确认。
+- 2026-04-28 02:00 UTC：执行 `monitor:social-intel-sop:1000`。按《社交平台情报抓取 SOP（OpenClaw版）》完成 Step B/C/D/E/F；Step A 因非周一跳过。成功源为 ai.mil、state.gov、spacenews、Google News RSS；失败源为 X / 小红书 / YouTube / browser fallback。结构化归档：`intel/social-intel/2026-04-28-0200-social-intel.json`；报告归档：`memory/social-intel/2026-04-28-0200-social-intel-report.md`。

@@ -1,0 +1,116 @@
+{
+  "run_at_utc": "2026-04-28T02:00:00Z",
+  "run_label": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "step_a_skills_check": {
+    "executed": false,
+    "reason": "本次运行日期为周二，按 SOP 仅周一执行每周 skills 复查。"
+  },
+  "source_status": [
+    {"platform": "X", "status": "failed", "method": "web_fetch", "note": "返回 Something went wrong 壳页"},
+    {"platform": "小红书", "status": "failed", "method": "web_fetch", "note": "fetch failed"},
+    {"platform": "YouTube", "status": "failed", "method": "web_fetch", "note": "目标 feed URL 404，未拿到可用条目"},
+    {"platform": "Reddit", "status": "partial", "method": "RSS", "note": "抓取成功，但本轮命中内容噪音高、有效情报弱"},
+    {"platform": "新闻网站", "status": "success", "method": "web_fetch", "note": "ai.mil / state.gov / spacenews / defensescoop 页面可读"},
+    {"platform": "RSS", "status": "success", "method": "Google News RSS / Reddit RSS", "note": "Google News RSS 可稳定提供发现层"},
+    {"platform": "Browser fallback", "status": "failed", "method": "browser", "note": "gateway/browser 启动超时，按工具提示不重试"}
+  ],
+  "items": [
+    {
+      "platform": "新闻网站/DefenseScoop via Google News RSS",
+      "title": "Pentagon uses GenAI.mil to create 100K agents",
+      "published_at": "2026-04-23T19:49:49Z",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMXlxeF9YVXRGUjcwRDhLRXREdmRzWV93UnVoTXprcjJ6OFRiYi1WZWZUNFBDVTh4dWlBZFhlRVBMVjlSS1dheG1CZFQyWElvNlB6NVgzU3JLTm05dkJDN3BITk03bUJaalpDSVFlMllzOWpOZDNYWUJoZk5faHhsQUNmVQ?oc=5",
+      "summary": "五角大楼已在非密网络环境推进 10 万级 AI agents 创建与使用，说明 GenAI.mil 从实验平台转向大规模组织级部署。",
+      "signals": ["国防 AI 需求快速放量", "agent 开发进入规模化阶段", "对模型、编排、治理、审计工具需求上升"],
+      "confidence": 0.86,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "ai.mil",
+      "title": "AI.mil 首页持续将 Agent Network / GenAI.mil / Enterprise Agents / War Data Platform 列为核心项目",
+      "published_at": null,
+      "url": "https://www.ai.mil/",
+      "summary": "官方首页核心栏目未变，继续把 agent network、enterprise agents、GenAI.mil 与 War Data Platform 置于主线，说明 DoD 当前 AI 路径是 agent + data platform 双轮推进。",
+      "signals": ["官方优先级清晰", "agentic AI 与数据底座强绑定", "集成与安全接入能力成为交付门槛"],
+      "confidence": 0.82,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "state.gov",
+      "title": "Department of State 发布 Enterprise Data and AI Strategy 与 OMB M-25-21 Compliance Plan",
+      "published_at": null,
+      "url": "https://www.state.gov/artificial-intelligence/",
+      "summary": "美国国务院明确将 OMB M-25-21 合规、治理、复用、AI 人才与高影响用例风险管理纳入正式计划，联邦 AI 正式进入制度化与验收化阶段。",
+      "signals": ["联邦 AI 治理门槛上升", "合规文件将影响采购与验收", "高影响 AI 用例风险管理成为硬约束"],
+      "confidence": 0.9,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "新闻网站/SpaceNews",
+      "title": "Pentagon seeks $2.3 billion for Maven AI battlefield system",
+      "published_at": "2026-04-21",
+      "url": "https://spacenews.com/pentagon-seeks-2-3-billion-for-maven-ai-battlefield-system/",
+      "summary": "五角大楼申请未来五年 23 亿美元扩展 Maven Smart System，并将 AI 洞察进一步直连联合火力网络，说明 AI 从情报分析继续前推到指挥、态势感知与打击链路。",
+      "signals": ["预算强化", "Palantir/Maven 生态受益", "AI 向 mission workflow 深度嵌入"],
+      "confidence": 0.88,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Google News RSS / Bloomberg",
+      "title": "AI Export Control Measures Aimed at China Gain Steam in US House",
+      "published_at": "2026-04-23T00:27:00Z",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOalRmbEJxcE9Idk1MdHREUHZvTlJWLWtURkZmVFc1STFoUFRxTGtTUU55Q3p0VzkyZzZsZXdoRlRHZGhzc3pRdDBmM0Y3anBHZzlWamI0V2YtMU8xamdMZEY4aVdMMXhXUWEtbTByWHFYSUhaV2Rualc1c1RzNUxmT3lLUGxWUDBHUVhaVFU5VjZEWTF1dUM2cnlGVzBNUkU2MWVBQ01nRGsxczlOOTdwTHYxaUdJdw?oc=5",
+      "summary": "美国国会推动针对中国的 AI / 芯片出口管制进一步加码，表明算力、芯片、先进制造工具的跨境可得性仍在收紧。",
+      "signals": ["供应链约束升级", "芯片与云算力受影响", "替代路径与国产化/本地化需求上升"],
+      "confidence": 0.74,
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "ai.gov",
+      "title": "President Trump's AI Strategy and Action Plan",
+      "published_at": null,
+      "url": "https://www.ai.gov/",
+      "summary": "ai.gov 首页继续强调美国保持 AI 领导地位的国家级叙事，属于方向性背景信号，但缺少本轮新增执行细节。",
+      "signals": ["国家层政策基调延续", "偏背景，新增信息有限"],
+      "confidence": 0.55,
+      "score": 2,
+      "tier": "中价值"
+    }
+  ],
+  "gov_defense_supply_chain_map": [
+    {
+      "policy_action": "国务院按 OMB M-25-21 推出 Enterprise Data and AI Strategy 与 Compliance Plan",
+      "vendor_impact": "影响模型厂商、企业 AI 平台、政府集成商、审计治理供应商；能做合规、治理、用例审计的厂商更受益。",
+      "delivery_impact": "联邦项目的立项、采购、验收将更强调治理、风险管理、复用与高影响用例判定，纯模型能力不够。",
+      "risk_level": "中",
+      "reason": "不是禁令型冲击，但会直接抬高准入门槛和交付复杂度。"
+    },
+    {
+      "policy_action": "美国众议院推动 AI / 芯片对华出口管制进一步加码（MATCH Act 相关动向）",
+      "vendor_impact": "受影响厂商包括芯片厂商、先进制造设备、跨境云服务商，以及依赖受限算力供应链的模型公司。",
+      "delivery_impact": "可能压缩高端芯片交付窗口，增加海外部署和跨境训练的不确定性，迫使项目转向替代芯片、区域化部署、本地化算力。",
+      "risk_level": "高",
+      "reason": "直接作用于供给侧可得性，且会波及价格、周期、合规路径。"
+    },
+    {
+      "policy_action": "DoD 持续推进 GenAI.mil、Enterprise Agents、War Data Platform，并扩大 Maven 预算",
+      "vendor_impact": "受益方更偏 agent orchestration、数据底座、审计治理、C2/mission workflow 集成商，而不只是基础模型厂商。",
+      "delivery_impact": "交付窗口打开，但要求更强的分级数据接入、战术工作流嵌入与安全治理能力；单点 demo 厂商会被边缘化。",
+      "risk_level": "中",
+      "reason": "需求爆发利好市场，但对交付能力筛选更严。"
+    }
+  ],
+  "quality": {
+    "success_rate_est": 0.7,
+    "duplicate_rate_est": 0.18,
+    "high_value_hit_rate_est": 0.67,
+    "met_target": false,
+    "note": "重复率与高价值命中率达线；成功率未达 85%，主因是 X/小红书/YouTube 与 browser fallback 失效。"
+  }
+}
