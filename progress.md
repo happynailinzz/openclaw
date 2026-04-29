@@ -1,4 +1,7 @@
-# Progress
+# progress.md
 
-- 2026-04-28：初始化监控任务，准备进行发现层检索与正文确认。
-- 2026-04-28 02:00 UTC：执行 `monitor:social-intel-sop:1000`。按《社交平台情报抓取 SOP（OpenClaw版）》完成 Step B/C/D/E/F；Step A 因非周一跳过。成功源为 ai.mil、state.gov、spacenews、Google News RSS；失败源为 X / 小红书 / YouTube / browser fallback。结构化归档：`intel/social-intel/2026-04-28-0200-social-intel.json`；报告归档：`memory/social-intel/2026-04-28-0200-social-intel-report.md`。
+- 2026-04-29 02:03Z：收到 cron 任务，开始按社交平台情报 SOP 执行。
+- 2026-04-29 02:05Z：已读取 planning-with-files skill，建立 task_plan/findings/progress。
+- 2026-04-29 02:06Z：已读取历史 social-intel 归档与生产 SOP，准备执行多源抓取。
+- 2026-04-29 02:08Z：已完成主源抓取与回退：web_fetch、jina-reader、RSS 成功；browser fallback 按工具提示停止重试。
+- 2026-04-29 02:10Z：已完成结构化评分、分层、归档与 memory 留痕，准备输出简报。

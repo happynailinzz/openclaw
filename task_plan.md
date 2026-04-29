@@ -1,23 +1,21 @@
-# 任务计划：河南六大重点领域项目机会监控（2026-04-28）
+# task_plan.md
 
-## 目标
-围绕河南省厅办局、重点地市、驻豫国央企，筛出六大领域内新增动作、项目信号、平台建设、示范场景、投资动态与合作线索，并提炼可转化项目机会。
+## Goal
+按《社交平台情报抓取 SOP（OpenClaw版）》完成一次完整社交情报抓取、评分、归档与简报输出，覆盖 X/小红书/YouTube/Reddit/新闻网站/RSS，并单列“政务/国防 AI 供应链波动映射”。
 
-## 阶段
-- [complete] 1. 发现层检索：搜索官方源与权威媒体候选
-- [complete] 2. 确认层抓取：在当前网络受限条件下，完成“可确认标题级”核验，并标记受限状态
-- [complete] 3. 归类筛选：按六大领域分组，剔除泛政策复述
-- [in_progress] 4. 产出简报：按固定格式输出
+## Phases
+- [complete] 1. 读取现有 SOP、历史格式与可用抓取路径
+- [complete] 2. 执行多源抓取与失败回退
+- [complete] 3. 结构化评分、去重、分层
+- [complete] 4. 生成归档文件、memory 留痕与简报
 
-## 约束
-- 优先 A 类源，其次 B 类源，C 类仅补线索
-- 宁少勿滥，不凑数
-- 每条必须带链接与抓取状态
+## Constraints
+- 周三运行，Step A 每周 skills 复查本轮跳过
+- 单源失败不阻塞全流程
+- 输出固定格式，附来源链接
+- 目标质量：成功率>=85%，重复率<=20%，高价值命中率>=60%（估计）
 
-## 错误记录
-| 错误 | 尝试 | 处理 |
+## Errors Encountered
+| Error | Attempt | Resolution |
 |---|---:|---|
-| 无 first-class tavily/cn-web-search 工具 | 1 | 改用 browser + 官方站/搜索引擎组合做发现层 |
-| browser 网关超时 | 1 | 停止重试 browser，改走命令行与 RSS 发现层 |
-| 河南省/厅局官网对当前出口 IP 普遍 403 | 1 | 保留官方标题级线索，正文状态标为“原站受限待补” |
-| Baidu/Bing 搜索页 challenge/captcha | 1 | 放弃直接搜索结果抓取，改用 Google News RSS 发现层 |
+| memory_search 不可用（credentials/provider error） | 1 | 向结果中显式说明，改用本地文件/历史归档辅助 |

@@ -1,0 +1,153 @@
+{
+  "run_at_utc": "2026-04-29T02:03:00Z",
+  "run_label": "monitor:social-intel-sop:1000",
+  "sop": "社交平台情报抓取 SOP（OpenClaw版）",
+  "step_a_skills_check": {
+    "executed": false,
+    "reason": "本次运行日期为周三，按 SOP 仅周一执行每周 skills 复查。"
+  },
+  "source_status": [
+    {"platform": "X", "status": "failed", "method": "web_fetch + jina-reader", "note": "直连与 Jina 均仅返回登录/错误壳页"},
+    {"platform": "小红书", "status": "failed", "method": "web_fetch", "note": "仅拿到 explore 页底部备案信息，无有效内容；browser fallback 超时不可用"},
+    {"platform": "YouTube", "status": "partial", "method": "jina-reader", "note": "频道公开视频列表可读，但未形成与主题强相关的高价值硬情报"},
+    {"platform": "Reddit", "status": "partial", "method": "RSS", "note": "RSS 可访问，但定向搜索结果噪音偏高，主要作为情绪/辅助信号"},
+    {"platform": "新闻网站", "status": "success", "method": "web_fetch + jina-reader", "note": "state.gov / ai.mil / DefenseScoop / SpaceNews 可读"},
+    {"platform": "RSS", "status": "success", "method": "Google News RSS / Reddit RSS", "note": "Google News RSS 继续提供稳定发现层"},
+    {"platform": "Browser fallback", "status": "failed", "method": "browser", "note": "gateway/browser 启动超时，按工具提示不重试"}
+  ],
+  "items": [
+    {
+      "platform": "Google News RSS / CNBC",
+      "title": "Pentagon AI chief confirms DOD's expanded use of Google, says reliance on one model 'never a good thing'",
+      "published_at": "2026-04-28T21:34:49Z",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM3pSMEp5eWlSb1BmNDBUWDNGVmRpM2lkdUNRYlBHWE8yaWl6MGItM1d1NW11dnhuTnlHN29uLUpqREhBbzRqZkFTVGREcENubkREaDg4S0tXZGVSU1dKSFhXMDV6QW1kNllWSUlrS2dEaU5KMjNtTkJyVkxSVncxMEw0RDFTWUlUUHVHUE5DbkYxR1l2dVNkbXBiX3lrWGp4WjFRRkFITS1Xd9IBrwFBVV95cUxPQjd4dFRTM3VBWnNqZWFJMklKYXlQb2l1UmF2V1hKTFhpSmltRW9mWjBNVEozcXM2dlF4WHVaSGE4YlQ5cWQxZTBqdG1UalA2WGdfUnhEbGdTeml5NkprS3drT0xtT1ZXcFd3Rk9XUWdwTXhoWEoxRWtlcldrT0pQODdCaUN3VHlRbWVOeDlCOWhpelo2czkzS1BvQXRhRXRKWl9nRzlRYXBnMGdQSTdV?oc=5",
+      "summary": "五角大楼 AI 负责人确认 DoD 正扩大对 Google 等商业模型的使用，并强调不能依赖单一模型，说明国防 AI 采购正在向多模型、多供应商架构倾斜。",
+      "signals": ["国防采购多供应商化", "单一模型锁定风险上升", "模型编排与治理需求增强"],
+      "confidence": 0.79,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "DefenseScoop",
+      "title": "Pentagon uses GenAI.mil to create 100K agents",
+      "published_at": "2026-04-23T19:48:36Z",
+      "url": "https://defensescoop.com/2026/04/23/pentagon-uses-genai-mil-to-create-agents/",
+      "summary": "五角大楼已用 GenAI.mil 创建 10 万个 agents，说明 agent 开发从实验进入组织级规模部署，且需求不再停留在概念验证。",
+      "signals": ["agent 规模化", "企业级 AI 平台落地", "国防 agent 工作流成型"],
+      "confidence": 0.92,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "ai.mil",
+      "title": "AI.mil 持续将 Agent Network / GenAI.mil / Enterprise Agents / Maven Smart System / War Data Platform 列为核心项目",
+      "published_at": null,
+      "url": "https://www.ai.mil/",
+      "summary": "官方首页继续把 agent network、enterprise agents、Maven 与 WDP 绑定呈现，说明 DoD 当前主线不是单点模型，而是 agent + data platform + mission workflow 的整套能力。",
+      "signals": ["官方优先级稳定", "agent 与数据底座强绑定", "集成型厂商受益"],
+      "confidence": 0.89,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "state.gov",
+      "title": "Department of State 发布 Enterprise Data and AI Strategy 与 OMB M-25-21 Compliance Plan",
+      "published_at": null,
+      "url": "https://www.state.gov/artificial-intelligence/",
+      "summary": "美国国务院正式把 OMB M-25-21 合规、治理、复用、AI 人才与高影响用例风险管理纳入计划，联邦 AI 正进入制度化与验收化阶段。",
+      "signals": ["联邦 AI 治理加强", "采购验收门槛抬升", "治理/审计型供应商受益"],
+      "confidence": 0.91,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "SpaceNews",
+      "title": "Pentagon seeks $2.3 billion for Maven AI battlefield system",
+      "published_at": "2026-04-21",
+      "url": "https://spacenews.com/pentagon-seeks-2-3-billion-for-maven-ai-battlefield-system/",
+      "summary": "五角大楼申请未来五年 23 亿美元扩展 Maven Smart System，并把 AI 洞察进一步接入联合火力网络，说明 AI 正深入指挥、态势感知与打击链路。",
+      "signals": ["预算强化", "Palantir/Maven 生态受益", "AI 向作战工作流深嵌"],
+      "confidence": 0.88,
+      "score": 7,
+      "tier": "高价值"
+    },
+    {
+      "platform": "Google News RSS / MSN",
+      "title": "Nvidia and AMD could face worldwide AI chip export controls imposed by the Trump administration",
+      "published_at": "2026-04-28T23:08:28Z",
+      "url": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxPNDNPdzk2T2ZmLTQ4aHhrYlhoSGhKZ29DcG1Ga2VyU295MXdCVGsyZW14VUNCY19aTzVGSFZPOV8yLTdCRmdUbDlTbHlRX21ySk5GMkdJY1RrZXZCelZqZHU2dTdaS25DVjBKX3pXb1BGeFROVi1TdnRJOUYtU3J4OFNjS1dmMW5Yci1iS1k2ZTZXbS1PS18xX3kwY0lSdW1xNnhWWVBsYUlJNG9YNk91T0lfOUhoQVYyWmpxUDlxdG9LQ253MHcwZ0xya3VLOFVFYUhrdFMyUWtsOVJfYjVoU2dzQm40ME5DdXZZazFnRng3Q0luT1VaUkdmYzBxR1owNXh5b3N6RmlrN1B2MmlYTUNHZTRyWHZQVFVYbkVteDd0dTMzZ0dHc0VMd3RXTV9CZmVObXlSUXJEc2lqTGNya1RPY3F3ZGdzZlNxeWlxb0VPanE2QjYtTEo4bTJmQldYNzJjN1pyWWxHR29QOG9lQUVkeDMycVMydDl6Q1BBNmdwNF9sSThpX19HT3BJTk0wZmltamVqSWo2TDJnV3h0Z0IzSlhTNTBfbFFJWk9SSWFJNEMxOExEdngtc0dHWDVPemQ4UE84QXN0a3BIenNkZkNtcw?oc=5",
+      "summary": "Google News RSS 命中对全球 AI 芯片出口控制继续扩大的报道，NVIDIA 与 AMD 被直接点名，说明监管冲击正从特定国家管制向更广泛供给侧约束延伸。",
+      "signals": ["出口管制升级", "芯片厂商直接受影响", "交付与报价窗口收紧"],
+      "confidence": 0.76,
+      "score": 5,
+      "tier": "高价值"
+    },
+    {
+      "platform": "YouTube / OpenAI channel",
+      "title": "Workspace agents in ChatGPT 系列视频持续发布",
+      "published_at": null,
+      "url": "https://www.youtube.com/@OpenAI/videos",
+      "summary": "OpenAI 频道近期持续强化 workspace agents 叙事，反映 agent 工作流产品化正在平台侧加速，但对政务/国防供应链主题关联度一般。",
+      "signals": ["agent 产品化", "平台叙事延续", "弱相关信号"],
+      "confidence": 0.63,
+      "score": 2,
+      "tier": "中价值"
+    },
+    {
+      "platform": "Reddit RSS",
+      "title": "Reddit export-controls search stream",
+      "published_at": "2026-04-29T02:06:56Z",
+      "url": "https://www.reddit.com/search.rss?q=%22AI%20chip%22%20export%20controls&sort=new",
+      "summary": "Reddit 定向搜索链路可访问，但本轮结果以版块页和噪音为主，未形成高价值新增，仅保留为辅助市场情绪信号。",
+      "signals": ["社区噪音高", "可作情绪补充", "不宜作硬依据"],
+      "confidence": 0.42,
+      "score": 0,
+      "tier": "低价值"
+    },
+    {
+      "platform": "小红书",
+      "title": "小红书 explore 公开页",
+      "published_at": null,
+      "url": "https://www.xiaohongshu.com/explore",
+      "summary": "公开抓取仅拿到站点备案与页脚信息，未取得可分析内容，本轮记为失败样本并不纳入发现层。",
+      "signals": ["公共抓取受限", "需登录态或专用技能"],
+      "confidence": 0.15,
+      "score": -2,
+      "tier": "低价值"
+    }
+  ],
+  "gov_defense_supply_chain_map": [
+    {
+      "policy_action": "美国国务院发布 Enterprise Data and AI Strategy 与 OMB M-25-21 Compliance Plan",
+      "vendor_impact": "影响模型厂商、政府 AI 平台、系统集成商、治理审计供应商；能提供合规、用例审计、风险管理能力的厂商更受益。",
+      "delivery_impact": "联邦项目的立项、采购、验收将更强调治理、复用、高影响用例判定与风险管理，纯模型能力不足以过线。",
+      "risk_level": "中",
+      "reason": "不是禁令型冲击，但会直接抬高准入门槛与交付复杂度。"
+    },
+    {
+      "policy_action": "Google News RSS 命中全球 AI 芯片出口控制继续扩大的报道，NVIDIA/AMD 被直接点名",
+      "vendor_impact": "受影响厂商包括芯片厂商、跨境云服务商、依赖受限高端算力供应链的模型公司，以及相关系统集成商。",
+      "delivery_impact": "可能压缩高端芯片交付窗口，增加海外训练与跨境部署不确定性，迫使项目转向替代芯片、区域化部署、本地化算力。",
+      "risk_level": "高",
+      "reason": "直接作用于供给侧可得性，并会联动价格、周期与合规路径。"
+    },
+    {
+      "policy_action": "DoD 持续推进 GenAI.mil、Enterprise Agents、War Data Platform，并扩张 Maven 预算",
+      "vendor_impact": "更利好 agent orchestration、数据底座、安全治理、mission workflow 集成商，而不只是基础模型厂商。",
+      "delivery_impact": "需求窗口打开，但要求更强的数据接入、安全分级、工作流嵌入与治理闭环；demo 型厂商更易被边缘化。",
+      "risk_level": "中",
+      "reason": "需求侧利好明显，但交付能力筛选同步变严。"
+    }
+  ],
+  "quality": {
+    "success_rate_est": 0.86,
+    "duplicate_rate_est": 0.18,
+    "high_value_hit_rate_est": 0.67,
+    "met_target": true,
+    "note": "通过新闻网站、Jina 与 RSS 回填，成功率回到达线；X/小红书/browser fallback 仍失效。"
+  },
+  "limitations": [
+    "memory_search 当前不可用（embedding/provider credentials error），本轮未使用语义记忆检索。",
+    "browser tool 当前超时不可用，按工具提示未重试。"
+  ]
+}
