@@ -1,7 +1,8 @@
 # progress.md
 
-- 2026-04-29 02:03Z：收到 cron 任务，开始按社交平台情报 SOP 执行。
-- 2026-04-29 02:05Z：已读取 planning-with-files skill，建立 task_plan/findings/progress。
-- 2026-04-29 02:06Z：已读取历史 social-intel 归档与生产 SOP，准备执行多源抓取。
-- 2026-04-29 02:08Z：已完成主源抓取与回退：web_fetch、jina-reader、RSS 成功；browser fallback 按工具提示停止重试。
-- 2026-04-29 02:10Z：已完成结构化评分、分层、归档与 memory 留痕，准备输出简报。
+- 2026-04-30 02:00 UTC: 启动社交情报 SOP 执行。
+- 2026-04-30 02:01 UTC: 非周一，按 SOP 跳过 skills 周检。
+- 2026-04-30 02:01 UTC: 创建规划文件并准备抓取多源情报。
+- 2026-04-30 02:02 UTC: 完成 AI.mil、State.gov、Google News RSS、Reddit RSS、YouTube feed 的主通道抓取。
+- 2026-04-30 02:02 UTC: 记录失败回退：X 返回错误壳页；小红书返回备案壳页；未阻塞全流程。
+- 2026-04-30 02:03 UTC: 完成结构化归档、价值评分、记忆留痕与简报整理。

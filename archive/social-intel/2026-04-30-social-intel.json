@@ -1,0 +1,79 @@
+[
+  {
+    "platform": "news/DefenseScoop via Google News RSS",
+    "title": "Pentagon uses GenAI.mil to create 100K agents",
+    "published_at": "2026-04-23T19:49:49Z",
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMXlxeF9YVXRGUjcwRDhLRXREdmRzWV93UnVoTXprcjJ6OFRiYi1WZWZUNFBDVTh4dWlBZFhlRVBMVjlSS1dheG1CZFQyWElvNlB6NVgzU3JLTm05dkJDN3BITk03bUJaalpDSVFlMllzOWpOZDNYWUJoZk5faHhsQUNmVQ?oc=5",
+    "summary": "DefenseScoop 披露五角大楼正通过 GenAI.mil 形成 10 万级 agent 创建能力，说明联邦/国防 AI 已从试点转向大规模生产与组织化部署。",
+    "signals": ["国防AI规模化", "agent平台化", "政府采购牵引"],
+    "confidence": 0.9,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "official/ai.mil",
+    "title": "AI.mil 首页持续强化 Agent Network / GenAI.mil / War Data Platform",
+    "published_at": "2026-04-30T02:01:11Z",
+    "url": "https://www.ai.mil/",
+    "summary": "AI.mil 当前公开项目持续把 Agent Network、GenAI.mil、Maven Smart System、War Data Platform 放在核心位置，表明 DoD 的重点仍是 agent 化决策支持、数据底座和战场AI平台。",
+    "signals": ["官方口径", "项目连续性", "战场AI平台"],
+    "confidence": 0.88,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/SpaceNews via Google News RSS",
+    "title": "Pentagon seeks $2.3 billion for Maven AI battlefield system",
+    "published_at": "2026-04-23T13:52:38Z",
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUUZrQ3B0Vmc2dXZkZ0NHUzhiLUJPb2VsTmI5aVBOSGRrSGNtd2M4MHRtRGJpYnpYM2x2SERublF4WDRMTnJPUEg4Mjd1NnZMRDhBZFZId1VVLTlJUGx5azVJUlhvR0hWS2tFUm9MMUN6eXRuOXhQQTJFRkYyR2IxX0hMaHozV0RS?oc=5",
+    "summary": "SpaceNews 指出五角大楼为 Maven AI 战场系统寻求 23 亿美元预算，说明 AI 战场感知/决策系统仍处在持续扩编和资金加码阶段。",
+    "signals": ["预算加码", "Maven持续推进", "战场感知决策"],
+    "confidence": 0.87,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "official/state.gov",
+    "title": "State Department AI page: Compliance Plan for OMB M-25-21 and StateChat/Northstar rollout",
+    "published_at": "2026-04-30T02:01:10Z",
+    "url": "https://www.state.gov/artificial-intelligence/",
+    "summary": "美国国务院公布 OMB M-25-21 合规计划，并明确 StateChat 与 Northstar 等内部 AI 工具的应用，显示联邦AI部署正在从试验进入治理、审计、复用和规模化运营。",
+    "signals": ["联邦AI治理", "合规落地", "内部工具规模化"],
+    "confidence": 0.92,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/Reuters via Google News RSS",
+    "title": "Exclusive: US orders chip equipment companies to halt some shipments to China's No. 2 chipmaker Hua Hong",
+    "published_at": "2026-04-28T16:53:00Z",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMEIzUUg3RkZRT3hFRGliNUJ0eGN3Y2tna3FWeGs2RVFhclpFbXpoZzBfeXhzUjVlbERETm5QZjRhbXo2LW5fVWYwYnpFdWR5Z1RoUmFFdG1Eem0zaWJQNmdrVk5jbGllbThoUDNpYlF5Z2RWS2V2Y0dvc2x6TUotdC0zRnlUb0RUcFIydFZFbzJIR041UV84bkU2bG9mWUtPU05FUktsVGFTanhWUTl1cXk4cGZfWWJwUExfcGV1N1JpaVk?oc=5",
+    "summary": "路透称美国要求部分芯片设备企业暂停向华虹的部分出货，说明出口管制已从高端芯片延展到设备与产线供给侧，对中国半导体及AI算力链条形成进一步扰动。",
+    "signals": ["出口管制升级", "设备侧受限", "供应链扰动"],
+    "confidence": 0.9,
+    "score": 7,
+    "tier": "高价值"
+  },
+  {
+    "platform": "news/Reuters via Google News RSS",
+    "title": "Exclusive: Big Chinese tech firms scramble to secure Huawei AI chips after DeepSeek V4 launch, sources say",
+    "published_at": "2026-04-29T06:36:00Z",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQb2k3eWk0STFfck5fbjZoWkMzRlg5OFRGR19BM0xXV3Vfb0dCX1NralZ2SDNVQ1RvU1Zpck1mVGhNT0FfRFIwcERIaFVmTHRJRTVRVlNOQlR1a0lyVE9iLW9OT0pYQTdZc3NqdVhPeTJhajhwWlJfZUpOeFdSZmd2M3QxZ2RraG12d2xFSkk1VXloOTNtSFJXS05wb3Y5Zk94VHJwQ2Z4d0V2X1BsbWlIWm1CVTBkYkVVS1hXSy1jR0JMVURZSmc?oc=5",
+    "summary": "路透称 DeepSeek V4 上线后，中国大型科技企业正加紧 확보/锁定华为AI芯片，反映受限环境下的国产替代加速与算力供给紧张。",
+    "signals": ["国产替代", "算力紧张", "模型升级拉动芯片需求"],
+    "confidence": 0.84,
+    "score": 4,
+    "tier": "中价值"
+  },
+  {
+    "platform": "reddit/r/artificial",
+    "title": "‘The cost of compute is far beyond the costs of the employees’: Nvidia exec says right now AI is more expensive than paying human workers",
+    "published_at": "2026-04-29T05:02:40Z",
+    "url": "https://www.reddit.com/r/artificial/comments/1syp2jz/the_cost_of_compute_is_far_beyond_the_costs_of/",
+    "summary": "Reddit 转引 Fortune 讨论 Nvidia 高管对算力成本的表态，侧面印证 AI 投入的硬件/能耗成本仍高，适合作为产业成本侧观察，但对当前用户主业务的直接指向较弱。",
+    "signals": ["算力成本高企", "产业投资压力", "二手转述"],
+    "confidence": 0.55,
+    "score": 0,
+    "tier": "低价值"
+  }
+]
