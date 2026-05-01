@@ -1,20 +1,22 @@
 # task_plan.md
 
 ## Goal
-执行一次《社交平台情报抓取 SOP（OpenClaw版）》完整流程，围绕用户业务相关方向抓取 X / 小红书 / YouTube / Reddit / 新闻网站 / RSS 情报，完成评分、去重、简报、分发、留痕与可检索归档。
+按《社交平台情报抓取 SOP（OpenClaw版）》执行一次完整社交情报抓取，覆盖 X / 小红书 / YouTube / Reddit / 新闻网站 / RSS，并输出固定格式简报、结构化归档与本地记忆留痕。
 
 ## Phases
-- [complete] Phase 1: 读取上下文并建立工作文件
-- [complete] Phase 2: 多源抓取与失败回退
-- [complete] Phase 3: 结构化整理、评分、筛噪
-- [complete] Phase 4: 输出简报、归档、记忆留痕
+- [complete] 1. 读取既有样本/SOP痕迹并确定本轮执行约束
+- [complete] 2. 抓取各平台主源与回退源
+- [complete] 3. 结构化去重、评分、分层、生成政务/国防 AI 供应链波动映射
+- [complete] 4. 归档 JSON / 更新 memory / 输出简报
 
-## Constraints
-- 非周一，跳过 Step A skills 周检
-- 单源失败不阻塞全流程
-- 输出字段固定：platform/title/published_at/url/summary/signals/confidence
-- 价值评分规则：关键词+2，高可信源+2，业务直接相关+3，营销噪音-2，重复-3
+## Decisions
+- 今日为周五，按 SOP 跳过 Step A 每周 skills 复查。
+- 主抓取优先 web_fetch/RSS；对受限源保留失败样本并走回退，不因单源失败阻塞。
+- 参考既有 social-intel 归档格式，保持字段兼容：platform/title/published_at/url/summary/signals/confidence。
 
-## Notes
-- 当前为 cron 场景，最终 plain-text reply 会自动投递到当前聊天。
-- 优先官方/高可信源；社交平台若直接抓取受阻，采用 RSS / 镜像 / 新闻转述回退。
+## Errors Encountered
+| Error | Attempt | Resolution |
+|---|---:|---|
+| memory/2026-05-01.md 不存在 | 1 | 视为今日记忆尚未创建，后续已新建 |
+| X 搜索页仅返回错误壳页 | 1 | 记为失败样本，不阻塞主流程 |
+| 小红书公开页仅返回备案信息 | 1 | 记为失败样本，不阻塞主流程 |
