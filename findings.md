@@ -1,12 +1,9 @@
 # findings.md
 
-## 2026-05-01 本轮结论
-- 最稳定主通道仍是：新闻网站 + Google News RSS；适合作为硬情报发现层。
-- X 与小红书继续受公开抓取限制，适合作为失败样本保留，不宜承担主发现职责。
-- DoD/State Department 两条线已形成较清晰结构：
-  - DoD：agent 规模化 + Maven 预算上升 + 数据底座绑定；
-  - State：合规、治理、复用、高影响用例管理制度化。
-- “政务/国防 AI 供应链波动映射”本轮核心不是单一禁令，而是：
-  1) 芯片出口规则波动；
-  2) 联邦治理门槛提升；
-  3) 国防 AI 从试点转向规模化交付。
+## 2026-05-02
+- 今日为周六，不需要执行 SOP Step A 的每周一 skills 复查。
+- 2026-05-01 已执行过同类抓取，主源曾包括 ai.mil / state.gov / DefenseScoop / SpaceNews / Google News RSS / Reddit RSS / YouTube feed。
+- X 与小红书在前次抓取中已出现失败，需要本轮优先准备回退路径。
+- 本轮稳定主线未变：DoD 的 agent + data platform + mission workflow 仍是核心观察面。
+- 供应链波动主线未变：联邦 AI 治理合规继续抬门槛，AI 芯片出口政策继续影响 NVIDIA / AMD / 云与集成链路。
+- browser tool 当前不可用，SOP 中 browser 兜底已验证失败，应默认只记录一次，不要反复重试。
